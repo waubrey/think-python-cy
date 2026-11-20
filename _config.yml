@@ -1,0 +1,21 @@
+title: Meddwl yn Python
+subtitle: Cyfieithiad Cymraeg o "Think Python" (3ydd Argraffiad) gan Allen B. Downey
+author: Cyfieithwyd gan Wayne Aubrey
+logo: ""
+
+execute:
+  execute_notebooks: "off"
+
+exclude_patterns: [README.md, TERMINOLOGY.md]
+
+sphinx:
+  extra_extensions:
+    - sphinx_tippy
+
+html:
+  use_issues_button: false
+  use_repository_button: true
+
+repository:
+  url: https://github.com/waubrey/think-python-cy
+  branch: main
