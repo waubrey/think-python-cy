@@ -18,6 +18,45 @@ math data
 cyfanrif
     integer
 
+gwerth
+    value
+
+math
+    type (kind of value)
+
+mynegiad
+    expression
+
+gweithredydd
+    operator
+
+gweithredydd rhifyddol
+    arithmetic operator
+
+gweithredyn
+    operand
+
+galwad swyddogaeth
+    function call
+
+gwall cystrawen
+    syntax error
+
+iaith naturiol
+    natural language
+
+iaith ffurfiol
+    formal language
+
+nam
+    bug
+
+dadnamu
+    debugging / debug
+
+cydgatenu
+    concatenation
+
 real
     float / real number
 

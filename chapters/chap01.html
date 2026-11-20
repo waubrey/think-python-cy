@@ -62,7 +62,7 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../_static/tippy/chapters/chap01.05b02b77-21b4-4703-aa18-9f10f90e2da3.js"></script>
+    <script defer="defer" src="../_static/tippy/chapters/chap01.9eceb93b-98a3-4a63-80f0-edbf0d9abe07.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/chap01';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -155,6 +155,10 @@
     </div>
   
 
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
   
 </div>
 
@@ -370,7 +374,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -386,6 +392,29 @@
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gweithredyddion-rhifyddol">Gweithredyddion Rhifyddol</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mynegiadau">Mynegiadau</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#swyddogaethau-rhifyddol">Swyddogaethau Rhifyddol</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#llinynnau">Llinynnau</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gwerthoedd-a-mathau">Gwerthoedd a Mathau</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ieithoedd-ffurfiol-a-naturiol">Ieithoedd Ffurfiol a Naturiol</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dadnamu">Dadnamu</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rhestr-termau-r-bennod">Rhestr Termau’r Bennod</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ymarferion">Ymarferion</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gofyn-i-gynorthwyydd-rhithwir">Gofyn i gynorthwyydd rhithwir</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ymarfer">Ymarfer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Ymarfer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Ymarfer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Ymarfer</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -397,11 +426,478 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="rhaglennu-fel-ffordd-o-feddwl">
 <h1>Rhaglennu fel ffordd o feddwl<a class="headerlink" href="#rhaglennu-fel-ffordd-o-feddwl" title="Link to this heading">#</a></h1>
-<div class="warning admonition">
-<p class="admonition-title">Statws cyfieithu</p>
-<p>Pennod heb ei chyfieithu eto. Ffynhonnell Saesneg: <strong>Programming as a way of thinking</strong>
-(gweler y bennod wreiddiol yn <a class="reference external" href="https://allendowney.github.io/ThinkPython/">https://allendowney.github.io/ThinkPython/</a> ar gyfer y testun gwreiddiol).</p>
+<p>Nod cyntaf y llyfr hwn yw dysgu i chi sut i raglennu yn Python.
+Ond mae dysgu rhaglennu yn golygu dysgu ffordd newydd o feddwl, felly ail nod y llyfr
+hwn yw eich helpu i feddwl fel gwyddonydd cyfrifiadurol.
+Mae’r ffordd hon o feddwl yn cyfuno rhai o nodweddion gorau mathemateg, peirianneg, a
+gwyddoniaeth naturiol.
+Fel mathemategwyr, mae gwyddonwyr cyfrifiadurol yn defnyddio <a class="reference internal" href="../glossary.html#term-iaith-ffurfiol"><span class="xref std std-term">iaith ffurfiol</span></a> i
+ddynodi syniadau — cyfrifiadau yn benodol.
+Fel peirianwyr, maen nhw’n dylunio pethau, gan gydosod cydrannau yn systemau a
+gwerthuso cyfaddawdau rhwng dewisiadau amgen.
+Fel gwyddonwyr, maen nhw’n arsylwi ymddygiad systemau cymhleth, yn llunio
+damcaniaethau, ac yn profi rhagfynegiadau.</p>
+<p>Byddwn yn dechrau gydag elfennau mwyaf sylfaenol rhaglennu ac yn gweithio ein ffordd i
+fyny. Yn y bennod hon, byddwn yn gweld sut mae Python yn cynrychioli rhifau,
+llythrennau, a geiriau. A byddwch yn dysgu sut i berfformio gweithrediadau rhifyddol.</p>
+<p>Byddwch hefyd yn dechrau dysgu geirfa rhaglennu, gan gynnwys termau fel
+<a class="reference internal" href="../glossary.html#term-gweithredydd"><span class="xref std std-term">gweithredydd</span></a>, <a class="reference internal" href="../glossary.html#term-mynegiad"><span class="xref std std-term">mynegiad</span></a>, <a class="reference internal" href="../glossary.html#term-gwerth"><span class="xref std std-term">gwerth</span></a>, a <a class="reference internal" href="../glossary.html#term-math"><span class="xref std std-term">math</span></a>.
+Mae’r eirfa hon yn bwysig — bydd ei hangen arnoch i ddeall gweddill y llyfr, i
+gyfathrebu â rhaglenwyr eraill, ac i ddefnyddio a deall cynorthwywyr rhithwir.</p>
+<section id="gweithredyddion-rhifyddol">
+<h2>Gweithredyddion Rhifyddol<a class="headerlink" href="#gweithredyddion-rhifyddol" title="Link to this heading">#</a></h2>
+<p>Mae <strong><a class="reference internal" href="../glossary.html#term-gweithredydd-rhifyddol"><span class="xref std std-term">gweithredydd rhifyddol</span></a></strong> yn symbol sy’n cynrychioli cyfrifiad
+rhifyddol. Er enghraifft, mae’r arwydd adio, <code class="docutils literal notranslate"><span class="pre">+</span></code>, yn perfformio adio.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">30</span> <span class="o">+</span> <span class="mi">12</span>
+</pre></div>
 </div>
+<p>Yr arwydd tynnu, <code class="docutils literal notranslate"><span class="pre">-</span></code>, yw’r gweithredydd sy’n perfformio tynnu.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">43</span> <span class="o">-</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>Mae’r seren, <code class="docutils literal notranslate"><span class="pre">*</span></code>, yn perfformio lluosi.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">6</span> <span class="o">*</span> <span class="mi">7</span>
+</pre></div>
+</div>
+<p>A’r blaenslaes, <code class="docutils literal notranslate"><span class="pre">/</span></code>, yn perfformio rhannu:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">84</span> <span class="o">/</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<p>Sylwch mai <code class="docutils literal notranslate"><span class="pre">42.0</span></code> yw canlyniad y rhaniad, nid <code class="docutils literal notranslate"><span class="pre">42</span></code>. Mae hynny oherwydd bod dau fath o
+rifau yn Python:</p>
+<ul class="simple">
+<li><p>**<a class="reference internal" href="../glossary.html#term-cyfanrif"><span class="xref std std-term">cyfanrif</span></a>**ion, sy’n cynrychioli rhifau heb ran ffracsiynol na degol, a</p></li>
+<li><p>rhifau pwynt arnawf (<strong><a class="reference internal" href="../glossary.html#term-real"><span class="xref std std-term">real</span></a></strong>), sy’n cynrychioli cyfanrifau a rhifau â
+phwynt degol.</p></li>
+</ul>
+<p>Os ydych chi’n adio, tynnu, neu luosi dau gyfanrif, cyfanrif yw’r canlyniad. Ond os
+ydych chi’n rhannu dau gyfanrif, rhif pwynt arnawf yw’r canlyniad. Mae Python yn
+darparu gweithredydd arall, <code class="docutils literal notranslate"><span class="pre">//</span></code>, sy’n perfformio rhaniad cyfanrif. Mae canlyniad
+rhaniad cyfanrif bob amser yn gyfanrif.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">84</span> <span class="o">//</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<p>Gelwir rhaniad cyfanrif hefyd yn “rhaniad llawr” am ei fod bob amser yn talgrynnu i
+lawr (tuag at y “llawr”).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">85</span> <span class="o">//</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<p>Yn olaf, mae’r gweithredydd <code class="docutils literal notranslate"><span class="pre">**</span></code> yn perfformio esbonyddiad; hynny yw, mae’n codi rhif
+i bŵer:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">7</span> <span class="o">**</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<p>Mewn rhai ieithoedd eraill, defnyddir y to bach, <code class="docutils literal notranslate"><span class="pre">^</span></code>, ar gyfer esbonyddiad, ond yn
+Python mae’n weithredydd didol o’r enw XOR. Os nad ydych yn gyfarwydd â gweithredyddion
+didol, gallai’r canlyniad fod yn annisgwyl:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">7</span> <span class="o">^</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<p>Ni fyddaf yn trafod gweithredyddion didol yn y llyfr hwn, ond gallwch ddarllen
+amdanynt yn <a class="reference external" href="http://wiki.python.org/moin/BitwiseOperators">http://wiki.python.org/moin/BitwiseOperators</a>.</p>
+</section>
+<section id="mynegiadau">
+<h2>Mynegiadau<a class="headerlink" href="#mynegiadau" title="Link to this heading">#</a></h2>
+<p>Gelwir casgliad o weithredyddion a rhifau yn <strong><a class="reference internal" href="../glossary.html#term-mynegiad"><span class="xref std std-term">mynegiad</span></a></strong>. Gall mynegiad
+gynnwys unrhyw nifer o weithredyddion a rhifau. Er enghraifft, dyma fynegiad sy’n
+cynnwys dau weithredydd.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">6</span> <span class="o">+</span> <span class="mi">6</span> <span class="o">**</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<p>Sylwch fod esbonyddiad yn digwydd cyn adio. Mae Python yn dilyn y drefn gweithredu y
+gallech fod wedi’i dysgu mewn gwers fathemateg: mae esbonyddiad yn digwydd cyn lluosi
+a rhannu, sy’n digwydd cyn adio a thynnu.</p>
+<p>Yn yr enghraifft ganlynol, mae lluosi’n digwydd cyn adio.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">12</span> <span class="o">+</span> <span class="mi">5</span> <span class="o">*</span> <span class="mi">6</span>
+</pre></div>
+</div>
+<p>Os ydych chi am i’r adio ddigwydd yn gyntaf, gallwch ddefnyddio cromfachau.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">12</span> <span class="o">+</span> <span class="mi">5</span><span class="p">)</span> <span class="o">*</span> <span class="mi">6</span>
+</pre></div>
+</div>
+<p>Mae gan bob mynegiad <strong><a class="reference internal" href="../glossary.html#term-gwerth"><span class="xref std std-term">gwerth</span></a></strong>. Er enghraifft, mae gan y mynegiad <code class="docutils literal notranslate"><span class="pre">6</span> <span class="pre">*</span> <span class="pre">7</span></code> y
+gwerth <code class="docutils literal notranslate"><span class="pre">42</span></code>.</p>
+</section>
+<section id="swyddogaethau-rhifyddol">
+<h2>Swyddogaethau Rhifyddol<a class="headerlink" href="#swyddogaethau-rhifyddol" title="Link to this heading">#</a></h2>
+<p>Yn ogystal â’r gweithredyddion rhifyddol, mae Python yn darparu ychydig o
+**<a class="reference internal" href="../glossary.html#term-swyddogaeth"><span class="xref std std-term">swyddogaeth</span></a>**au sy’n gweithio gyda rhifau. Er enghraifft, mae’r swyddogaeth
+<code class="docutils literal notranslate"><span class="pre">round</span></code> yn cymryd rhif pwynt arnawf ac yn ei dalgrynnu i’r cyfanrif agosaf.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">round</span><span class="p">(</span><span class="mf">42.4</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">round</span><span class="p">(</span><span class="mf">42.6</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Mae’r swyddogaeth <code class="docutils literal notranslate"><span class="pre">abs</span></code> yn cyfrifo gwerth absoliwt rhif. Ar gyfer rhif positif, y rhif
+ei hun yw’r gwerth absoliwt.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">abs</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Ar gyfer rhif negatif, mae’r gwerth absoliwt yn bositif.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">abs</span><span class="p">(</span><span class="o">-</span><span class="mi">42</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Pan fyddwn yn defnyddio swyddogaeth fel hyn, dywedwn ein bod yn <strong>galw</strong> y
+swyddogaeth. Mynegiad sy’n galw swyddogaeth yw <strong><a class="reference internal" href="../glossary.html#term-galwad-swyddogaeth"><span class="xref std std-term">galwad swyddogaeth</span></a></strong>.</p>
+<p>Wrth alw swyddogaeth, mae’r cromfachau’n ofynnol. Os byddwch yn eu gadael allan,
+byddwch yn cael neges wall.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Mae’r gell ganlynol yn defnyddio <code class="docutils literal notranslate"><span class="pre">%%expect</span></code>, sef “gorchymyn hud” Jupyter sy’n golygu
+ein bod yn disgwyl i’r cod yn y gell hon gynhyrchu gwall.</p>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">expect</span> <span class="ne">SyntaxError</span>
+
+<span class="nb">abs</span> <span class="mi">42</span>
+</pre></div>
+</div>
+<p>Gallwch anwybyddu llinell gyntaf y neges hon; nid yw’n cynnwys unrhyw wybodaeth sydd
+angen i ni ei deall ar hyn o bryd. Y llinell nesaf yw’r cod sy’n cynnwys y gwall, gyda
+to bach (<code class="docutils literal notranslate"><span class="pre">^</span></code>) oddi tano i ddangos ble darganfuwyd y gwall.</p>
+<p>Mae’r llinell olaf yn dangos mai <strong><a class="reference internal" href="../glossary.html#term-gwall-cystrawen"><span class="xref std std-term">gwall cystrawen</span></a></strong> yw hwn, sy’n golygu bod
+rhywbeth o’i le ar strwythur y mynegiad. Yn yr enghraifft hon, y broblem yw bod angen
+cromfachau ar alwad swyddogaeth.</p>
+<p>Gadewch i ni weld beth sy’n digwydd os byddwch yn gadael allan y cromfachau <em>a’r</em>
+gwerth.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">abs</span>
+</pre></div>
+</div>
+<p>Mae enw swyddogaeth ar ei ben ei hun yn fynegiad cyfreithlon sydd â gwerth. Pan gaiff
+ei arddangos, mae’r gwerth yn dangos mai swyddogaeth yw <code class="docutils literal notranslate"><span class="pre">abs</span></code>, ac mae’n cynnwys
+rhywfaint o wybodaeth ychwanegol y byddaf yn ei esbonio yn ddiweddarach.</p>
+</section>
+<section id="llinynnau">
+<h2>Llinynnau<a class="headerlink" href="#llinynnau" title="Link to this heading">#</a></h2>
+<p>Yn ogystal â rhifau, gall Python hefyd gynrychioli dilyniannau o lythrennau, a elwir
+yn **<a class="reference internal" href="../glossary.html#term-llinyn"><span class="xref std std-term">llinyn</span></a>**nau am fod y llythrennau wedi’u llinynnu gyda’i gilydd fel
+gleiniau ar gadwyn. I ysgrifennu llinyn, gallwn roi dilyniant o lythrennau y tu mewn i
+ddyfynodau syth.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s1">'Hello'</span>
+</pre></div>
+</div>
+<p>Mae hefyd yn gyfreithlon defnyddio dyfynodau dwbl.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s2">"world"</span>
+</pre></div>
+</div>
+<p>Mae dyfynodau dwbl yn ei gwneud hi’n hawdd ysgrifennu llinyn sy’n cynnwys collnod, sef
+yr un symbol â dyfynnod syth.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s2">"it's a small "</span>
+</pre></div>
+</div>
+<p>Gall llinynnau hefyd gynnwys bylchau, atalnodi, a digidau.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s1">'Well, '</span>
+</pre></div>
+</div>
+<p>Mae’r gweithredydd <code class="docutils literal notranslate"><span class="pre">+</span></code> yn gweithio gyda llinynnau; mae’n cydio dau linyn yn un llinyn
+sengl, a elwir yn <strong><a class="reference internal" href="../glossary.html#term-cydgatenu"><span class="xref std std-term">cydgatenu</span></a></strong>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s1">'Well, '</span> <span class="o">+</span> <span class="s2">"it's a small "</span> <span class="o">+</span> <span class="s1">'world.'</span>
+</pre></div>
+</div>
+<p>Mae’r gweithredydd <code class="docutils literal notranslate"><span class="pre">*</span></code> hefyd yn gweithio gyda llinynnau; mae’n gwneud sawl copi o
+linyn ac yn eu cydgatenu.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s1">'Spam, '</span> <span class="o">*</span> <span class="mi">4</span>
+</pre></div>
+</div>
+<p>Nid yw’r gweithredyddion rhifyddol eraill yn gweithio gyda llinynnau.</p>
+<p>Mae Python yn darparu swyddogaeth o’r enw <code class="docutils literal notranslate"><span class="pre">len</span></code> sy’n cyfrifo hyd llinyn.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="s1">'Spam'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Sylwch fod <code class="docutils literal notranslate"><span class="pre">len</span></code> yn cyfrif y llythrennau rhwng y dyfynodau, ond nid y dyfynodau.</p>
+<p>Wrth greu llinyn, gwnewch yn siŵr eich bod yn defnyddio dyfynodau syth. Mae’r dyfynnod
+ôl, a elwir hefyd yn facryn, yn achosi gwall cystrawen.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">expect</span> <span class="ne">SyntaxError</span>
+
+<span class="err">`</span><span class="n">Hello</span><span class="err">`</span>
+</pre></div>
+</div>
+<p>Mae dyfynodau clyfar, a elwir hefyd yn ddyfynodau cyrliog, hefyd yn anghyfreithlon.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">expect</span> <span class="ne">SyntaxError</span>
+
+<span class="err">‘</span><span class="n">Hello</span><span class="err">’</span>
+</pre></div>
+</div>
+</section>
+<section id="gwerthoedd-a-mathau">
+<h2>Gwerthoedd a Mathau<a class="headerlink" href="#gwerthoedd-a-mathau" title="Link to this heading">#</a></h2>
+<p>Hyd yn hyn rydym wedi gweld tri math o werth:</p>
+<ul class="simple">
+<li><p>mae <code class="docutils literal notranslate"><span class="pre">2</span></code> yn gyfanrif,</p></li>
+<li><p>mae <code class="docutils literal notranslate"><span class="pre">42.0</span></code> yn rif pwynt arnawf, a</p></li>
+<li><p>mae <code class="docutils literal notranslate"><span class="pre">'Hello'</span></code> yn llinyn.</p></li>
+</ul>
+<p>Gelwir math o werth yn <strong><a class="reference internal" href="../glossary.html#term-math"><span class="xref std std-term">math</span></a></strong>. Mae gan bob gwerth fath — neu weithiau
+dywedwn ei fod yn “perthyn i” fath.</p>
+<p>Mae Python yn darparu swyddogaeth o’r enw <code class="docutils literal notranslate"><span class="pre">type</span></code> sy’n dweud wrthych fath unrhyw
+werth. <code class="docutils literal notranslate"><span class="pre">int</span></code> yw math cyfanrif.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">float</span></code> yw math rhif pwynt arnawf.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="mf">42.0</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>A <code class="docutils literal notranslate"><span class="pre">str</span></code> yw math llinyn.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="s1">'Hello, World!'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Gellir defnyddio’r mathau <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code>, a <code class="docutils literal notranslate"><span class="pre">str</span></code> fel swyddogaethau. Er enghraifft,
+gall <code class="docutils literal notranslate"><span class="pre">int</span></code> gymryd rhif pwynt arnawf a’i drosi’n gyfanrif (gan dalgrynnu i lawr bob
+amser).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span><span class="p">(</span><span class="mf">42.9</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>A gall <code class="docutils literal notranslate"><span class="pre">float</span></code> drosi cyfanrif yn werth pwynt arnawf.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">float</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Nawr, dyma rywbeth a allai fod yn ddryslyd. Beth gewch chi os rhowch ddilyniant o
+ddigidau mewn dyfynodau?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s1">'126'</span>
+</pre></div>
+</div>
+<p>Mae’n edrych fel rhif, ond mewn gwirionedd mae’n llinyn.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="s1">'126'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Os ceisiwch ei ddefnyddio fel rhif, efallai y cewch wall.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">expect</span> <span class="ne">TypeError</span>
+
+<span class="s1">'126'</span> <span class="o">/</span> <span class="mi">3</span>
+</pre></div>
+</div>
+<p>Mae’r enghraifft hon yn cynhyrchu <code class="docutils literal notranslate"><span class="pre">TypeError</span></code>, sy’n golygu bod gan y gwerthoedd yn y
+mynegiad, a elwir yn **<a class="reference internal" href="../glossary.html#term-gweithredyn"><span class="xref std std-term">gweithredyn</span></a>**nau, y math anghywir. Mae’r neges wall yn
+dangos nad yw’r gweithredydd <code class="docutils literal notranslate"><span class="pre">/</span></code> yn cefnogi mathau’r gwerthoedd hyn, sef <code class="docutils literal notranslate"><span class="pre">str</span></code> a
+<code class="docutils literal notranslate"><span class="pre">int</span></code>.</p>
+<p>Os oes gennych linyn sy’n cynnwys digidau, gallwch ddefnyddio <code class="docutils literal notranslate"><span class="pre">int</span></code> i’w drosi’n
+gyfanrif.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span><span class="p">(</span><span class="s1">'126'</span><span class="p">)</span> <span class="o">/</span> <span class="mi">3</span>
+</pre></div>
+</div>
+<p>Os oes gennych linyn sy’n cynnwys digidau a phwynt degol, gallwch ddefnyddio <code class="docutils literal notranslate"><span class="pre">float</span></code>
+i’w drosi’n rif pwynt arnawf.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">float</span><span class="p">(</span><span class="s1">'12.6'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Wrth ysgrifennu cyfanrif mawr, efallai y cewch eich temtio i ddefnyddio atalnodau
+rhwng grwpiau o ddigidau, fel yn <code class="docutils literal notranslate"><span class="pre">1,000,000</span></code>. Mae hwn yn fynegiad cyfreithlon yn
+Python, ond nid cyfanrif yw’r canlyniad.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span><span class="p">,</span><span class="mi">000</span><span class="p">,</span><span class="mi">000</span>
+</pre></div>
+</div>
+<p>Mae Python yn dehongli <code class="docutils literal notranslate"><span class="pre">1,000,000</span></code> fel dilyniant o gyfanrifau wedi’u gwahanu gan
+atalnodau. Byddwn yn dysgu mwy am y math hwn o ddilyniant yn ddiweddarach.</p>
+<p>Gallwch ddefnyddio tanlinellau i wneud rhifau mawr yn haws eu darllen.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">1_000_000</span>
+</pre></div>
+</div>
+</section>
+<section id="ieithoedd-ffurfiol-a-naturiol">
+<h2>Ieithoedd Ffurfiol a Naturiol<a class="headerlink" href="#ieithoedd-ffurfiol-a-naturiol" title="Link to this heading">#</a></h2>
+<p>**<a class="reference internal" href="../glossary.html#term-iaith-naturiol"><span class="xref std std-term">iaith naturiol</span></a>**au yw’r ieithoedd y mae pobl yn eu siarad, fel Saesneg,
+Sbaeneg, a Ffrangeg. Ni chawsant eu dylunio gan bobl; fe wnaethant esblygu’n naturiol.</p>
+<p>Mae **<a class="reference internal" href="../glossary.html#term-iaith-ffurfiol"><span class="xref std std-term">iaith ffurfiol</span></a>**au yn ieithoedd a ddyluniwyd gan bobl ar gyfer
+cymwysiadau penodol. Er enghraifft, mae’r nodiant a ddefnyddir gan fathemategwyr yn
+iaith ffurfiol sy’n arbennig o dda am ddynodi perthnasoedd rhwng rhifau a symbolau. Yn
+yr un modd, mae ieithoedd rhaglennu yn ieithoedd ffurfiol sydd wedi’u dylunio i fynegi
+cyfrifiadau.</p>
+<p>Er bod gan ieithoedd ffurfiol a naturiol rai nodweddion yn gyffredin, mae
+gwahaniaethau pwysig:</p>
+<ul class="simple">
+<li><p><strong>Amwysedd</strong>: Mae ieithoedd naturiol yn llawn amwysedd, y mae pobl yn ymdopi ag ef
+drwy ddefnyddio cliwiau cyd-destunol a gwybodaeth arall. Dyluniwyd ieithoedd
+ffurfiol i fod bron neu’n gyfan gwbl ddiamwys, sy’n golygu bod gan unrhyw raglen un
+ystyr yn union, waeth beth fo’r cyd-destun.</p></li>
+<li><p><strong>Gormodedd</strong>: Er mwyn gwneud iawn am amwysedd a lleihau camddealltwriaeth, mae
+ieithoedd naturiol yn defnyddio gormodedd. O ganlyniad, maent yn aml yn eiriog. Mae
+ieithoedd ffurfiol yn llai gormodol ac yn fwy cryno.</p></li>
+<li><p><strong>Llythrennoldeb</strong>: Mae ieithoedd naturiol yn llawn idiomau a throsiadau. Mae
+ieithoedd ffurfiol yn golygu’n union yr hyn y maent yn ei ddweud.</p></li>
+</ul>
+<p>Am ein bod i gyd yn tyfu i fyny yn siarad ieithoedd naturiol, mae weithiau’n anodd
+addasu i ieithoedd ffurfiol. Mae ieithoedd ffurfiol yn fwy dwys nag ieithoedd
+naturiol, felly mae’n cymryd mwy o amser i’w darllen. Hefyd, mae’r strwythur yn
+bwysig, felly nid yw bob amser orau darllen o’r brig i’r gwaelod, o’r chwith i’r
+dde. Yn olaf, mae’r manylion yn bwysig. Gall gwallau bach mewn sillafu ac atalnodi, y
+gallwch ddianc â nhw mewn ieithoedd naturiol, wneud gwahaniaeth mawr mewn iaith
+ffurfiol.</p>
+</section>
+<section id="dadnamu">
+<h2>Dadnamu<a class="headerlink" href="#dadnamu" title="Link to this heading">#</a></h2>
+<p>Mae rhaglenwyr yn gwneud camgymeriadau. Am resymau mympwyol, gelwir gwallau rhaglennu
+yn **<a class="reference internal" href="../glossary.html#term-nam"><span class="xref std std-term">nam</span></a>**au a gelwir y broses o’u holrhain yn <strong><a class="reference internal" href="../glossary.html#term-dadnamu"><span class="xref std std-term">dadnamu</span></a></strong>.</p>
+<p>Mae rhaglennu, ac yn enwedig dadnamu, weithiau’n codi teimladau cryf. Os ydych yn cael
+trafferth gyda nam anodd, efallai y byddwch yn teimlo’n ddig, yn drist, neu’n
+chwithig.</p>
+<p>Gallai paratoi ar gyfer yr adweithiau hyn eich helpu i ymdopi â nhw. Un dull yw
+meddwl am y cyfrifiadur fel cyflogai â chryfderau penodol, fel cyflymder a chywirdeb,
+a gwendidau penodol, fel diffyg empathi ac anallu i amgyffred y darlun mawr.</p>
+<p>Eich swydd chi yw bod yn rheolwr da: dod o hyd i ffyrdd o fanteisio ar y cryfderau a
+lliniaru’r gwendidau. A dod o hyd i ffyrdd o ddefnyddio’ch teimladau i ymgysylltu â’r
+broblem, heb adael i’ch adweithiau ymyrryd â’ch gallu i weithio’n effeithiol.</p>
+<p>Gall dysgu dadnamu fod yn rhwystredig, ond mae’n sgil gwerthfawr sy’n ddefnyddiol ar
+gyfer llawer o weithgareddau y tu hwnt i raglennu. Ar ddiwedd pob pennod mae adran,
+fel hon, gyda awgrymiadau ar gyfer dadnamu. Gobeithio y byddan nhw’n helpu!</p>
+</section>
+<section id="rhestr-termau-r-bennod">
+<h2>Rhestr Termau’r Bennod<a class="headerlink" href="#rhestr-termau-r-bennod" title="Link to this heading">#</a></h2>
+<p><strong>gweithredydd rhifyddol:</strong>
+Symbol, fel <code class="docutils literal notranslate"><span class="pre">+</span></code> a <code class="docutils literal notranslate"><span class="pre">*</span></code>, sy’n dynodi gweithrediad rhifyddol fel adio neu luosi.</p>
+<p><strong>cyfanrif:</strong>
+Math sy’n cynrychioli rhifau heb ran ffracsiynol na degol.</p>
+<p><strong>pwynt arnawf (real):</strong>
+Math sy’n cynrychioli cyfanrifau a rhifau â rhannau degol.</p>
+<p><strong>rhaniad cyfanrif:</strong>
+Gweithredydd, <code class="docutils literal notranslate"><span class="pre">//</span></code>, sy’n rhannu dau rif ac yn talgrynnu i lawr i gyfanrif.</p>
+<p><strong>mynegiad:</strong>
+Cyfuniad o newidynnau, gwerthoedd, a gweithredyddion.</p>
+<p><strong>gwerth:</strong>
+Cyfanrif, rhif pwynt arnawf, neu linyn — neu un o fathau eraill o werthoedd y byddwn
+yn eu gweld yn ddiweddarach.</p>
+<p><strong>swyddogaeth:</strong>
+Dilyniant o osodiadau sydd ag enw ac sy’n perfformio rhyw weithrediad defnyddiol. Gall
+swyddogaethau gymryd dadleuon neu beidio, a gallant gynhyrchu canlyniad neu beidio.</p>
+<p><strong>galwad swyddogaeth:</strong>
+Mynegiad — neu ran o fynegiad — sy’n rhedeg swyddogaeth. Mae’n cynnwys enw’r
+swyddogaeth wedi’i ddilyn gan restr o ddadleuon mewn cromfachau.</p>
+<p><strong>gwall cystrawen:</strong>
+Gwall mewn rhaglen sy’n ei gwneud hi’n amhosibl ei dosrannu — ac felly’n amhosibl ei
+rhedeg.</p>
+<p><strong>llinyn:</strong>
+Math sy’n cynrychioli dilyniannau o nodau.</p>
+<p><strong>cydgatenu:</strong>
+Cydio dau linyn ben-wrth-ben.</p>
+<p><strong>math:</strong>
+Categori o werthoedd. Y mathau rydym wedi’u gweld hyd yn hyn yw cyfanrifau (math
+<code class="docutils literal notranslate"><span class="pre">int</span></code>), rhifau pwynt arnawf (math <code class="docutils literal notranslate"><span class="pre">float</span></code>), a llinynnau (math <code class="docutils literal notranslate"><span class="pre">str</span></code>).</p>
+<p><strong>gweithredyn:</strong>
+Un o’r gwerthoedd y mae gweithredydd yn gweithredu arno.</p>
+<p><strong>iaith naturiol:</strong>
+Unrhyw un o’r ieithoedd y mae pobl yn eu siarad sydd wedi esblygu’n naturiol.</p>
+<p><strong>iaith ffurfiol:</strong>
+Unrhyw un o’r ieithoedd y mae pobl wedi’u dylunio at ddibenion penodol, fel
+cynrychioli syniadau mathemategol neu raglenni cyfrifiadurol. Mae pob iaith raglennu
+yn iaith ffurfiol.</p>
+<p><strong>nam:</strong>
+Gwall mewn rhaglen.</p>
+<p><strong>dadnamu:</strong>
+Y broses o ddod o hyd i wallau a’u cywiro.</p>
+</section>
+<section id="ymarferion">
+<h2>Ymarferion<a class="headerlink" href="#ymarferion" title="Link to this heading">#</a></h2>
+<section id="gofyn-i-gynorthwyydd-rhithwir">
+<h3>Gofyn i gynorthwyydd rhithwir<a class="headerlink" href="#gofyn-i-gynorthwyydd-rhithwir" title="Link to this heading">#</a></h3>
+<p>Wrth i chi weithio drwy’r llyfr hwn, mae sawl ffordd y gallwch ddefnyddio
+cynorthwyydd rhithwir neu sgwrsfot i’ch helpu i ddysgu.</p>
+<ul class="simple">
+<li><p>Os ydych am ddysgu mwy am bwnc yn y bennod, neu os nad yw rhywbeth yn glir, gallwch
+ofyn am esboniad.</p></li>
+<li><p>Os ydych yn cael trafferth gydag unrhyw un o’r ymarferion, gallwch ofyn am help.</p></li>
+</ul>
+<p>Ym mhob pennod, byddaf yn awgrymu ymarferion y gallwch eu gwneud gyda chynorthwyydd
+rhithwir, ond rwy’n eich annog i roi cynnig ar bethau ar eich pen eich hun a gweld
+beth sy’n gweithio i chi.</p>
+<p>Dyma rai pynciau y gallech ofyn amdanynt i gynorthwyydd rhithwir:</p>
+<ul class="simple">
+<li><p>Yn gynharach soniais am weithredyddion didol ond ni wnes i esbonio pam mai 5 yw
+gwerth <code class="docutils literal notranslate"><span class="pre">7</span> <span class="pre">^</span> <span class="pre">2</span></code>. Ceisiwch ofyn “Beth yw’r gweithredyddion didol yn Python?” neu “Beth
+yw gwerth <code class="docutils literal notranslate"><span class="pre">7</span> <span class="pre">XOR</span> <span class="pre">2</span></code>?”</p></li>
+<li><p>Soniais hefyd am y drefn gweithredu. Am fwy o fanylion, gofynnwch “Beth yw’r drefn
+gweithredu yn Python?”</p></li>
+<li><p>Gall y swyddogaeth <code class="docutils literal notranslate"><span class="pre">round</span></code>, a ddefnyddiwyd gennym i dalgrynnu rhif pwynt arnawf i’r
+cyfanrif agosaf, gymryd ail ddadl. Ceisiwch ofyn “Beth yw dadleuon y swyddogaeth
+round?” neu “Sut rwy’n talgrynnu pi i dri lle degol?”</p></li>
+<li><p>Mae un gweithredydd rhifyddol arall na soniais amdano; ceisiwch ofyn “Beth yw’r
+gweithredydd modwlws yn Python?”</p></li>
+</ul>
+<p>Mae’r rhan fwyaf o gynorthwywyr rhithwir yn gwybod am Python, felly maen nhw’n ateb
+cwestiynau fel hyn yn weddol ddibynadwy. Ond cofiwch fod y teclynnau hyn yn gwneud
+camgymeriadau. Os cewch chi god gan sgwrsfot, profwch ef!</p>
+</section>
+<section id="ymarfer">
+<h3>Ymarfer<a class="headerlink" href="#ymarfer" title="Link to this heading">#</a></h3>
+<p>Efallai eich bod yn meddwl tybed beth mae <code class="docutils literal notranslate"><span class="pre">round</span></code> yn ei wneud os yw rhif yn gorffen
+mewn <code class="docutils literal notranslate"><span class="pre">0.5</span></code>. Yr ateb yw ei fod weithiau’n talgrynnu i fyny ac weithiau i lawr. Rhowch
+gynnig ar yr enghreifftiau hyn a gweld a allwch ddarganfod pa reol y mae’n ei dilyn.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">round</span><span class="p">(</span><span class="mf">42.5</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">round</span><span class="p">(</span><span class="mf">43.5</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Os ydych yn chwilfrydig, gofynnwch i gynorthwyydd rhithwir, “Os yw rhif yn gorffen
+mewn 0.5, a yw Python yn talgrynnu i fyny neu i lawr?”</p>
+</section>
+<section id="id1">
+<h3>Ymarfer<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>Pan fyddwch yn dysgu am nodwedd newydd, dylech roi cynnig arni a gwneud camgymeriadau’n
+fwriadol. Fel hyn, byddwch yn dysgu’r negeseuon gwall, a phan welwch nhw eto, byddwch
+yn gwybod beth maen nhw’n ei olygu. Mae’n well gwneud camgymeriadau nawr ac yn
+fwriadol na wedyn ac yn ddamweiniol.</p>
+<ol class="arabic simple">
+<li><p>Gallwch ddefnyddio arwydd minws i wneud rhif negatif fel <code class="docutils literal notranslate"><span class="pre">-2</span></code>. Beth sy’n digwydd os
+rhowch arwydd positif o flaen rhif? Beth am <code class="docutils literal notranslate"><span class="pre">2++2</span></code>?</p></li>
+<li><p>Beth sy’n digwydd os oes gennych ddau werth heb weithredydd rhyngddynt, fel <code class="docutils literal notranslate"><span class="pre">4</span> <span class="pre">2</span></code>?</p></li>
+<li><p>Os galwch swyddogaeth fel <code class="docutils literal notranslate"><span class="pre">round(42.5)</span></code>, beth sy’n digwydd os gadewch allan un neu’r
+ddwy gromfach?</p></li>
+</ol>
+</section>
+<section id="id2">
+<h3>Ymarfer<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>Cofiwch fod gan bob mynegiad werth, bod gan bob gwerth fath, a gallwn ddefnyddio’r
+swyddogaeth <code class="docutils literal notranslate"><span class="pre">type</span></code> i ddarganfod math unrhyw werth.</p>
+<p>Beth yw math gwerth y mynegiadau canlynol? Gwnewch eich dyfaliad gorau ar gyfer pob
+un, ac yna defnyddiwch <code class="docutils literal notranslate"><span class="pre">type</span></code> i ddarganfod.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">765</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">2.718</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'2</span> <span class="pre">pi'</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">abs(-7)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">abs(-7.0)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">abs</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">type</span></code></p></li>
+</ul>
+</section>
+<section id="id3">
+<h3>Ymarfer<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>Mae’r cwestiynau canlynol yn rhoi cyfle i chi ymarfer ysgrifennu mynegiadau
+rhifyddol.</p>
+<ol class="arabic simple">
+<li><p>Faint o eiliadau sydd mewn 42 munud 42 eiliad?</p></li>
+<li><p>Faint o filltiroedd sydd mewn 10 cilometr? Awgrym: mae 1.61 cilometr mewn milltir.</p></li>
+<li><p>Os rhedwch ras 10 cilometr mewn 42 munud 42 eiliad, beth yw eich cyflymder
+cyfartalog mewn eiliadau y filltir?</p></li>
+<li><p>Beth yw eich cyflymder cyfartalog mewn munudau ac eiliadau y filltir?</p></li>
+<li><p>Beth yw eich cyflymder cyfartalog mewn milltiroedd yr awr?</p></li>
+</ol>
+<p>Os ydych eisoes yn gwybod am newidynnau, gallwch eu defnyddio ar gyfer yr ymarfer
+hwn. Os nad ydych, gallwch wneud yr ymarfer heb eu defnyddio — ac yna byddwn yn eu
+gweld yn y bennod nesaf.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p><a class="reference external" href="https://allendowney.github.io/ThinkPython/index.html">Think Python: 3rd Edition</a> gan
+Allen B. Downey. Cyfieithiad Cymraeg gan Wayne Aubrey.</p>
+<p>Hawlfraint 2024 <a class="reference external" href="https://allendowney.com">Allen B. Downey</a>. Trwydded testun: <a class="reference external" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative
+Commons Attribution-NonCommercial-ShareAlike 4.0 International</a>.</p>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -458,6 +954,38 @@
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gweithredyddion-rhifyddol">Gweithredyddion Rhifyddol</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mynegiadau">Mynegiadau</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#swyddogaethau-rhifyddol">Swyddogaethau Rhifyddol</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#llinynnau">Llinynnau</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gwerthoedd-a-mathau">Gwerthoedd a Mathau</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ieithoedd-ffurfiol-a-naturiol">Ieithoedd Ffurfiol a Naturiol</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dadnamu">Dadnamu</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rhestr-termau-r-bennod">Rhestr Termau’r Bennod</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ymarferion">Ymarferion</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gofyn-i-gynorthwyydd-rhithwir">Gofyn i gynorthwyydd rhithwir</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ymarfer">Ymarfer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Ymarfer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Ymarfer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Ymarfer</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
