@@ -121,6 +121,31 @@ textbook.
 | widget | teclyn (pl. *teclynnau*) | ✅ | |
 | window / frame / button | ffenestr(i) / ffram(iau) / botwm (*botymau*) | ✅ | |
 
+## Chapter 1 vocabulary (arithmetic, expressions, basic types)
+
+Added while translating Chapter 1. Y Termiadur Addysg got unreliable for new lookups
+(it kept returning its A-Z headword browser instead of real term-pair results), so
+most of these are reasoned choices rather than freshly sourced — several are plain,
+unambiguous Welsh vocabulary rather than jargon (value, type, natural/formal
+language), so the risk is low; the rest are flagged for the same later check as the
+OOP terms.
+
+| English | Welsh | Status | Notes |
+|---|---|---|---|
+| value | gwerth | ✅ | ordinary, unambiguous Welsh word in any context |
+| type (kind of value) | math | ✅ | ordinary word; already used via *math data* = data type |
+| operator | gweithredydd (pl. *gweithredyddion*) | ✅ | confirmed earlier from the WJEC GCSE spec's own pseudocode text: *"gweithredyddion rhesymegol AC NEU NID"* = "logical operators AND OR NOT" |
+| arithmetic operator | gweithredydd rhifyddol | 🟡 | built from the confirmed *gweithredydd* (operator) + standard *rhifyddol* (arithmetic, adj.) — not found as this exact compound |
+| expression | mynegiad | 🟡 | plausible/common in Welsh-medium Maths teaching (*mynegiad algebraidd* = algebraic expression), not freshly sourced today |
+| operand | gweithredyn | 🟡 | coined in parallel to *gweithredydd* (operator) — lower confidence, worth checking |
+| function call | galwad swyddogaeth | 🟡 | compositional, built from confirmed *swyddogaeth* (function) |
+| syntax error | gwall cystrawen | 🟡 | *cystrawen* is the standard Welsh linguistics/grammar term for "syntax" — reasonable extension, not confirmed for CS specifically |
+| natural language | iaith naturiol | ✅ | transparent, unambiguous compound |
+| formal language | iaith ffurfiol | ✅ | transparent, unambiguous compound |
+| bug | nam | 🟡 | recognized convention in Welsh software localization (Microsoft/Mozilla Cymraeg use *nam* for "bug"), not verified against a CS-education source |
+| debugging / debug | dadnamu | 🟡 | same localization convention as *nam* above (*dad-* + *nam* = "de-fault", i.e. remove the bug) |
+| concatenation | cydgatenu | 🟡 | calque matching English's own Latin root (*catena* = chain) — lowest-confidence pick in this batch, worth a second look |
+
 ## Important pattern to carry into translation
 
 In the official WJEC pseudocode (used throughout the Welsh-medium exam), **programming
