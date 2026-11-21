@@ -1,9 +1,7 @@
 # Rhestr Termau
 
 Hofranwch y llygoden dros unrhyw derm sydd wedi'i amlygu drwy'r llyfr i weld y term
-technegol cyfatebol yn Saesneg. Ceir y ffynonellau a'r nodiadau llawn ar gyfer pob
-term yn [TERMINOLOGY.md](https://github.com/waubrey/think-python-cy/blob/main/TERMINOLOGY.md)
-yn y ffynhonnell.
+technegol cyfatebol yn Saesneg.
 
 ```{glossary}
 newidyn
