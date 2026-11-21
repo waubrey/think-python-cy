@@ -62,7 +62,7 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../_static/tippy/chapters/chap08.e8ed7003-570b-480e-b9f9-0b944b7e6805.js"></script>
+    <script defer="defer" src="../_static/tippy/chapters/chap08.f039233e-303a-41a6-8789-b1cb3b868efd.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/chap08';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -155,6 +155,10 @@
     </div>
   
 
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
   
 </div>
 
@@ -374,7 +378,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -390,6 +396,32 @@
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mae-llinyn-yn-ddilyniant">8.1. Mae Llinyn yn Ddilyniant</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sleisys-llinyn">8.2. Sleisys Llinyn</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mae-llinynnau-n-anghyfnewidiol">8.3. Mae Llinynnau’n Anghyfnewidiol</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cymharu-llinynnau">8.4. Cymharu Llinynnau</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dulliau-llinynnau">8.5. Dulliau Llinynnau</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ysgrifennu-ffeiliau">8.6. Ysgrifennu Ffeiliau</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dod-o-hyd-a-disodli">8.7. Dod o Hyd a Disodli</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mynegiadau-rheolaidd">8.8. Mynegiadau Rheolaidd</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#amnewid-llinynnau">8.9. Amnewid Llinynnau</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dadnamu">8.10. Dadnamu</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rhestr-termau-r-bennod">8.11. Rhestr Termau’r Bennod</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ymarferion">8.12. Ymarferion</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gofyn-i-gynorthwyydd-rhithwir">8.12.1. Gofyn i gynorthwyydd rhithwir</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ymarfer">8.12.2. Ymarfer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">8.12.3. Ymarfer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">8.12.4. Ymarfer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">8.12.5. Ymarfer</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -401,11 +433,773 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="llinynnau-a-mynegiadau-rheolaidd">
 <h1><span class="section-number">8. </span>Llinynnau a Mynegiadau Rheolaidd<a class="headerlink" href="#llinynnau-a-mynegiadau-rheolaidd" title="Link to this heading">#</a></h1>
-<div class="warning admonition">
-<p class="admonition-title">Statws cyfieithu</p>
-<p>Pennod heb ei chyfieithu eto. Ffynhonnell Saesneg: <strong>Strings and Regular Expressions</strong>
-(gweler y bennod wreiddiol yn <a class="reference external" href="https://allendowney.github.io/ThinkPython/">https://allendowney.github.io/ThinkPython/</a> ar gyfer y testun gwreiddiol).</p>
+<p>Nid yw llinynnau fel cyfanrifau, rhifau pwynt arnawf, a Booleaid. Mae llinyn yn
+<strong><a class="reference internal" href="../glossary.html#term-dilyniant"><span class="xref std std-term">dilyniant</span></a></strong>, sy’n golygu ei fod yn cynnwys sawl gwerth mewn trefn
+benodol. Yn y bennod hon byddwn yn gweld sut i gyrchu’r gwerthoedd sy’n
+cyfansoddi llinyn, a byddwn yn defnyddio swyddogaethau sy’n prosesu llinynnau.</p>
+<p>Byddwn hefyd yn defnyddio mynegiadau rheolaidd, sy’n arf pwerus ar gyfer dod o
+hyd i batrymau mewn llinyn a pherfformio gweithrediadau fel chwilio a disodli.</p>
+<p>Fel ymarfer, cewch gyfle i gymhwyso’r arfau hyn i gêm eiriau o’r enw Wordle.</p>
+<section id="mae-llinyn-yn-ddilyniant">
+<h2><span class="section-number">8.1. </span>Mae Llinyn yn Ddilyniant<a class="headerlink" href="#mae-llinyn-yn-ddilyniant" title="Link to this heading">#</a></h2>
+<p>Mae llinyn yn ddilyniant o nodau. Gall <strong><a class="reference internal" href="../glossary.html#term-nod"><span class="xref std std-term">nod</span></a></strong> fod yn llythyren (mewn
+bron unrhyw wyddor), yn ddigid, yn arwydd atalnodi, neu’n fwlch gwyn.</p>
+<p>Gallwch ddewis nod o linyn gyda’r gweithredydd cromfachau. Mae’r gosodiad
+enghreifftiol hwn yn dewis nod rhif 1 o <code class="docutils literal notranslate"><span class="pre">fruit</span></code> ac yn ei neilltuo i <code class="docutils literal notranslate"><span class="pre">letter</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fruit</span> <span class="o">=</span> <span class="s1">'banana'</span>
+<span class="n">letter</span> <span class="o">=</span> <span class="n">fruit</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
 </div>
+<p>Gelwir y mynegiad mewn cromfachau yn <strong><a class="reference internal" href="../glossary.html#term-mynegai"><span class="xref std std-term">mynegai</span></a></strong>, a elwir felly am ei
+fod yn <em>mynegi</em> pa nod yn y dilyniant i’w ddewis. Ond efallai nad yw’r
+canlyniad yr hyn rydych yn ei ddisgwyl.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">letter</span>
+</pre></div>
+</div>
+<p>Mewn gwirionedd, ail lythyren y llinyn yw’r llythyren â mynegai <code class="docutils literal notranslate"><span class="pre">1</span></code>. Mae
+mynegai yn atred o ddechrau’r llinyn, felly atred y llythyren gyntaf yw <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fruit</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Gallwch feddwl am <code class="docutils literal notranslate"><span class="pre">'b'</span></code> fel llythyren 0fed <code class="docutils literal notranslate"><span class="pre">'banana'</span></code> — ynganir “sero-ed”.</p>
+<p>Gall y mynegai mewn cromfachau fod yn newidyn.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">fruit</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Neu’n fynegiad sy’n cynnwys newidynnau a gweithredyddion.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fruit</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Ond mae’n rhaid i werth y mynegai fod yn gyfanrif — fel arall cewch
+<code class="docutils literal notranslate"><span class="pre">TypeError</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">expect</span> <span class="ne">TypeError</span>
+
+<span class="n">fruit</span><span class="p">[</span><span class="mf">1.5</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Fel y gwelsom ym Mhennod 1, gallwn ddefnyddio’r swyddogaeth gynhenid <code class="docutils literal notranslate"><span class="pre">len</span></code> i
+gael hyd llinyn.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">fruit</span><span class="p">)</span>
+<span class="n">n</span>
+</pre></div>
+</div>
+<p>I gael llythyren olaf llinyn, efallai y cewch eich temtio i ysgrifennu hyn:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">expect</span> <span class="ne">IndexError</span>
+
+<span class="n">fruit</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Ond mae hynny’n achosi <code class="docutils literal notranslate"><span class="pre">IndexError</span></code> am nad oes llythyren yn <code class="docutils literal notranslate"><span class="pre">'banana'</span></code> â’r
+mynegai 6. Am ein bod wedi dechrau cyfrif o <code class="docutils literal notranslate"><span class="pre">0</span></code>, rhifir y chwe llythyren o <code class="docutils literal notranslate"><span class="pre">0</span></code>
+i <code class="docutils literal notranslate"><span class="pre">5</span></code>. I gael y nod olaf, mae’n rhaid i chi dynnu <code class="docutils literal notranslate"><span class="pre">1</span></code> o <code class="docutils literal notranslate"><span class="pre">n</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fruit</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Ond mae ffordd haws. I gael llythyren olaf llinyn, gallwch ddefnyddio mynegai
+negatif, sy’n cyfrif yn ôl o’r diwedd.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fruit</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Mae’r mynegai <code class="docutils literal notranslate"><span class="pre">-1</span></code> yn dewis y llythyren olaf, <code class="docutils literal notranslate"><span class="pre">-2</span></code> yn dewis yr ail-olaf, ac yn
+y blaen.</p>
+</section>
+<section id="sleisys-llinyn">
+<h2><span class="section-number">8.2. </span>Sleisys Llinyn<a class="headerlink" href="#sleisys-llinyn" title="Link to this heading">#</a></h2>
+<p>Gelwir segment o linyn yn <strong><a class="reference internal" href="../glossary.html#term-sleisen"><span class="xref std std-term">sleisen</span></a></strong>. Mae dewis sleisen yn debyg i
+ddewis nod.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fruit</span> <span class="o">=</span> <span class="s1">'banana'</span>
+<span class="n">fruit</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Mae’r gweithredydd <code class="docutils literal notranslate"><span class="pre">[n:m]</span></code> yn dychwelyd rhan o’r llinyn o’r <code class="docutils literal notranslate"><span class="pre">n</span></code>fed nod i’r
+<code class="docutils literal notranslate"><span class="pre">m</span></code>fed nod, gan gynnwys y cyntaf ond eithrio’r ail. Mae’r ymddygiad hwn yn
+wrthreddfol, ond gall helpu dychmygu’r mynegeion yn pwyntio <em>rhwng</em> y nodau,
+fel yn y ffigur hwn:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">diagram</span><span class="w"> </span><span class="kn">import</span> <span class="n">make_binding</span><span class="p">,</span> <span class="n">Element</span><span class="p">,</span> <span class="n">Value</span>
+
+<span class="n">binding</span> <span class="o">=</span> <span class="n">make_binding</span><span class="p">(</span><span class="s2">"fruit"</span><span class="p">,</span> <span class="s1">' b a n a n a '</span><span class="p">)</span>
+<span class="n">elements</span> <span class="o">=</span> <span class="p">[</span><span class="n">Element</span><span class="p">(</span><span class="n">Value</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="kc">None</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">7</span><span class="p">)]</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">diagram</span><span class="w"> </span><span class="kn">import</span> <span class="n">diagram</span><span class="p">,</span> <span class="n">adjust</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.transforms</span><span class="w"> </span><span class="kn">import</span> <span class="n">Bbox</span>
+
+<span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.35</span><span class="p">,</span> <span class="mf">0.54</span><span class="p">,</span> <span class="mf">0.23</span><span class="p">,</span> <span class="mf">0.39</span><span class="p">]</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">diagram</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
+<span class="n">bbox</span> <span class="o">=</span> <span class="n">binding</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">bboxes</span> <span class="o">=</span> <span class="p">[</span><span class="n">bbox</span><span class="p">]</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">draw_elts</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">elements</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">elt</span> <span class="ow">in</span> <span class="n">elements</span><span class="p">:</span>
+        <span class="n">bbox</span> <span class="o">=</span> <span class="n">elt</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">draw_value</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="n">bboxes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">bbox</span><span class="p">)</span>
+
+        <span class="n">x1</span> <span class="o">=</span> <span class="p">(</span><span class="n">bbox</span><span class="o">.</span><span class="n">xmin</span> <span class="o">+</span> <span class="n">bbox</span><span class="o">.</span><span class="n">xmax</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+        <span class="n">y1</span> <span class="o">=</span> <span class="n">bbox</span><span class="o">.</span><span class="n">ymax</span> <span class="o">+</span> <span class="mf">0.02</span>
+        <span class="n">y2</span> <span class="o">=</span> <span class="n">y1</span> <span class="o">+</span> <span class="mf">0.14</span>
+        <span class="n">handle</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">x1</span><span class="p">,</span> <span class="n">x1</span><span class="p">],</span> <span class="p">[</span><span class="n">y1</span><span class="p">,</span> <span class="n">y2</span><span class="p">],</span> <span class="s1">':'</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'gray'</span><span class="p">)</span>
+        <span class="n">x</span> <span class="o">+=</span> <span class="mf">0.105</span>
+    
+<span class="n">draw_elts</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mf">0.48</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="mf">0.25</span><span class="p">,</span> <span class="n">elements</span><span class="p">)</span>
+<span class="n">bbox</span> <span class="o">=</span> <span class="n">Bbox</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">bboxes</span><span class="p">)</span>
+<span class="c1"># adjust(x, y, bbox)</span>
+</pre></div>
+</div>
+<p>Er enghraifft, mae’r sleisen <code class="docutils literal notranslate"><span class="pre">[3:6]</span></code> yn dewis y llythrennau <code class="docutils literal notranslate"><span class="pre">ana</span></code>, sy’n golygu
+bod <code class="docutils literal notranslate"><span class="pre">6</span></code> yn gyfreithlon fel rhan o sleisen, ond nid yn gyfreithlon fel mynegai.</p>
+<p>Os hepgorwch y mynegai cyntaf, mae’r sleisen yn dechrau ar ddechrau’r llinyn.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fruit</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Os hepgorwch yr ail fynegai, mae’r sleisen yn mynd i ddiwedd y llinyn:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fruit</span><span class="p">[</span><span class="mi">3</span><span class="p">:]</span>
+</pre></div>
+</div>
+<p>Os yw’r mynegai cyntaf yn fwy na neu’n hafal i’r ail, y canlyniad yw
+<strong><a class="reference internal" href="../glossary.html#term-llinyn-gwag"><span class="xref std std-term">llinyn gwag</span></a></strong>, a gynrychiolir gan ddau ddyfynnod:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fruit</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Nid yw llinyn gwag yn cynnwys unrhyw nodau ac mae ganddo hyd 0.</p>
+<p>Gan barhau â’r enghraifft hon, beth ydych chi’n meddwl mae <code class="docutils literal notranslate"><span class="pre">fruit[:]</span></code> yn ei
+olygu? Rhowch gynnig arni a gweld.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fruit</span><span class="p">[:]</span>
+</pre></div>
+</div>
+</section>
+<section id="mae-llinynnau-n-anghyfnewidiol">
+<h2><span class="section-number">8.3. </span>Mae Llinynnau’n Anghyfnewidiol<a class="headerlink" href="#mae-llinynnau-n-anghyfnewidiol" title="Link to this heading">#</a></h2>
+<p>Mae’n demtasiwn defnyddio’r gweithredydd <code class="docutils literal notranslate"><span class="pre">[]</span></code> ar ochr chwith neilltuad, gyda’r
+bwriad o newid nod mewn llinyn, fel hyn:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">expect</span> <span class="ne">TypeError</span>
+
+<span class="n">greeting</span> <span class="o">=</span> <span class="s1">'Hello, world!'</span>
+<span class="n">greeting</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'J'</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">TypeError</span></code> yw’r canlyniad. Yn y neges wall, y “gwrthrych” yw’r llinyn a’r
+“eitem” yw’r nod y ceisiom ei neilltuo. Am y tro, mae <strong><a class="reference internal" href="../glossary.html#term-gwrthrych"><span class="xref std std-term">gwrthrych</span></a></strong> yr
+un peth â gwerth, ond byddwn yn mireinio’r diffiniad hwnnw’n ddiweddarach.</p>
+<p>Rheswm y gwall hwn yw bod llinynnau’n <strong><a class="reference internal" href="../glossary.html#term-anghyfnewidiol"><span class="xref std std-term">anghyfnewidiol</span></a></strong>, sy’n golygu
+na allwch newid llinyn presennol. Y gorau y gallwch ei wneud yw creu llinyn
+newydd sy’n amrywiad o’r gwreiddiol.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">new_greeting</span> <span class="o">=</span> <span class="s1">'J'</span> <span class="o">+</span> <span class="n">greeting</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+<span class="n">new_greeting</span>
+</pre></div>
+</div>
+<p>Mae’r enghraifft hon yn cydgatenu llythyren gyntaf newydd ar sleisen o
+<code class="docutils literal notranslate"><span class="pre">greeting</span></code>. Nid oes ganddi unrhyw effaith ar y llinyn gwreiddiol.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">greeting</span>
+</pre></div>
+</div>
+</section>
+<section id="cymharu-llinynnau">
+<h2><span class="section-number">8.4. </span>Cymharu Llinynnau<a class="headerlink" href="#cymharu-llinynnau" title="Link to this heading">#</a></h2>
+<p>Mae’r gweithredyddion perthynol yn gweithio ar linynnau. I weld a yw dau
+linyn yn hafal, gallwn ddefnyddio’r gweithredydd <code class="docutils literal notranslate"><span class="pre">==</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">word</span> <span class="o">=</span> <span class="s1">'banana'</span>
+
+<span class="k">if</span> <span class="n">word</span> <span class="o">==</span> <span class="s1">'banana'</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'All right, banana.'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Mae gweithrediadau perthynol eraill yn ddefnyddiol ar gyfer rhoi geiriau mewn
+trefn yr wyddor:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">compare_word</span><span class="p">(</span><span class="n">word</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">word</span> <span class="o">&lt;</span> <span class="s1">'banana'</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="s1">'comes before banana.'</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">word</span> <span class="o">&gt;</span> <span class="s1">'banana'</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="s1">'comes after banana.'</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">'All right, banana.'</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">compare_word</span><span class="p">(</span><span class="s1">'apple'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Nid yw Python yn trin priflythrennau a llythrennau bach yn yr un ffordd â
+phobl. Mae pob priflythyren yn dod cyn pob llythyren fach, felly:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">compare_word</span><span class="p">(</span><span class="s1">'Pineapple'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>I ddatrys y broblem hon, gallwn drosi llinynnau i fformat safonol, fel pob
+llythyren fach, cyn perfformio’r gymhariaeth. Cadwch hynny mewn cof os bydd
+raid i chi amddiffyn eich hun yn erbyn dyn arfog ag Pineapple.</p>
+</section>
+<section id="dulliau-llinynnau">
+<h2><span class="section-number">8.5. </span>Dulliau Llinynnau<a class="headerlink" href="#dulliau-llinynnau" title="Link to this heading">#</a></h2>
+<p>Mae llinynnau’n darparu dulliau sy’n perfformio amrywiaeth o weithrediadau
+defnyddiol. Mae dull yn debyg i swyddogaeth — mae’n cymryd dadleuon ac yn
+dychwelyd gwerth — ond mae’r gystrawen yn wahanol. Er enghraifft, mae’r dull
+<code class="docutils literal notranslate"><span class="pre">upper</span></code> yn cymryd llinyn ac yn dychwelyd llinyn newydd gyda phob llythyren yn
+briflythyren.</p>
+<p>Yn lle’r gystrawen swyddogaeth <code class="docutils literal notranslate"><span class="pre">upper(word)</span></code>, mae’n defnyddio’r gystrawen
+dull <code class="docutils literal notranslate"><span class="pre">word.upper()</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">word</span> <span class="o">=</span> <span class="s1">'banana'</span>
+<span class="n">new_word</span> <span class="o">=</span> <span class="n">word</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+<span class="n">new_word</span>
+</pre></div>
+</div>
+<p>Mae’r defnydd hwn o’r gweithredydd dot yn nodi enw’r dull, <code class="docutils literal notranslate"><span class="pre">upper</span></code>, ac enw’r
+llinyn i gymhwyso’r dull iddo, <code class="docutils literal notranslate"><span class="pre">word</span></code>. Mae’r cromfachau gwag yn nodi nad yw’r
+dull hwn yn cymryd unrhyw ddadleuon.</p>
+<p>Gelwir galwad dull yn <strong><a class="reference internal" href="../glossary.html#term-galwad-dull"><span class="xref std std-term">galwad dull</span></a></strong>; yn yr achos hwn, byddem yn
+dweud ein bod yn galw <code class="docutils literal notranslate"><span class="pre">upper</span></code> ar <code class="docutils literal notranslate"><span class="pre">word</span></code>.</p>
+</section>
+<section id="ysgrifennu-ffeiliau">
+<h2><span class="section-number">8.6. </span>Ysgrifennu Ffeiliau<a class="headerlink" href="#ysgrifennu-ffeiliau" title="Link to this heading">#</a></h2>
+<p>Mae gweithredyddion a dulliau llinynnau’n ddefnyddiol ar gyfer darllen ac
+ysgrifennu ffeiliau testun. Fel enghraifft, byddwn yn gweithio gyda thestun
+<em>Dracula</em>, nofel gan Bram Stoker sydd ar gael o Project Gutenberg
+(<a class="reference external" href="https://www.gutenberg.org/ebooks/345">https://www.gutenberg.org/ebooks/345</a>).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">download</span><span class="p">(</span><span class="s1">'https://github.com/AllenDowney/ThinkPython/raw/v3/pg345.txt'</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Rwyf wedi lawrlwytho’r llyfr mewn ffeil testun plaen o’r enw <code class="docutils literal notranslate"><span class="pre">pg345.txt</span></code>, y
+gallwn ei hagor i’w darllen fel hyn:</p>
+<p>Nid yw’r ddadl allweddair <code class="docutils literal notranslate"><span class="pre">encoding='utf-8'</span></code> yn y llyfr printiedig. Dim ond ar
+Windows mae ei hangen.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">reader</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'pg345.txt'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Yn ogystal â thestun y llyfr, mae’r ffeil hon yn cynnwys adran ar y dechrau
+gyda gwybodaeth am y llyfr ac adran ar y diwedd gyda gwybodaeth am y
+drwydded. Cyn i ni brosesu’r testun, gallwn dynnu’r deunydd ychwanegol hwn
+drwy ddarganfod y llinellau arbennig ar y dechrau a’r diwedd sy’n dechrau
+gyda <code class="docutils literal notranslate"><span class="pre">'***'</span></code>.</p>
+<p>Mae’r swyddogaeth ganlynol yn cymryd llinell ac yn gwirio a yw’n un o’r
+llinellau arbennig. Mae’n defnyddio’r dull <code class="docutils literal notranslate"><span class="pre">startswith</span></code>, sy’n gwirio a yw
+llinyn yn dechrau gyda dilyniant penodol o nodau.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">is_special_line</span><span class="p">(</span><span class="n">line</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'*** '</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Gallwn ddefnyddio’r swyddogaeth hon i ddolennu drwy’r llinellau yn y ffeil ac
+argraffu dim ond y llinellau arbennig.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">is_special_line</span><span class="p">(</span><span class="n">line</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>Nawr gadewch i ni greu ffeil newydd, o’r enw <code class="docutils literal notranslate"><span class="pre">pg345_cleaned.txt</span></code>, sy’n
+cynnwys dim ond testun y llyfr. Er mwyn dolennu drwy’r llyfr eto, mae’n rhaid
+i ni ei hagor eto i’w darllen. Ac, i ysgrifennu ffeil newydd, gallwn ei
+hagor i ysgrifennu.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">reader</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'pg345.txt'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span>
+<span class="n">writer</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'pg345_cleaned.txt'</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Mae <code class="docutils literal notranslate"><span class="pre">open</span></code> yn cymryd paramedr dewisol sy’n nodi’r “modd” — yn yr enghraifft
+hon, mae <code class="docutils literal notranslate"><span class="pre">'w'</span></code> yn nodi ein bod yn agor y ffeil i ysgrifennu. Os nad yw’r ffeil
+yn bodoli, caiff ei chreu; os yw eisoes yn bodoli, disodlir y cynnwys.</p>
+<p>Fel cam cyntaf, byddwn yn dolennu drwy’r ffeil nes i ni ddarganfod y llinell
+arbennig gyntaf.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">is_special_line</span><span class="p">(</span><span class="n">line</span><span class="p">):</span>
+        <span class="k">break</span>
+</pre></div>
+</div>
+<p>Mae’r gosodiad <code class="docutils literal notranslate"><span class="pre">break</span></code> yn “torri” allan o’r ddolen — hynny yw, mae’n achosi
+i’r ddolen ddod i ben ar unwaith, cyn i ni gyrraedd diwedd y ffeil.</p>
+<p>Pan ddaw’r ddolen i ben, mae <code class="docutils literal notranslate"><span class="pre">line</span></code> yn cynnwys y llinell arbennig a wnaeth yr
+amod yn wir.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">line</span>
+</pre></div>
+</div>
+<p>Am fod <code class="docutils literal notranslate"><span class="pre">reader</span></code> yn cadw golwg ar ble mae yn y ffeil, gallwn ddefnyddio ail
+ddolen i godi lle gadawom.</p>
+<p>Mae’r ddolen ganlynol yn darllen gweddill y ffeil, un llinell ar y tro. Pan
+ddarganfyddir y llinell arbennig sy’n nodi diwedd y testun, mae’n torri allan
+o’r ddolen. Fel arall, mae’n ysgrifennu’r llinell i’r ffeil allbwn.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">is_special_line</span><span class="p">(</span><span class="n">line</span><span class="p">):</span>
+        <span class="k">break</span>
+    <span class="n">writer</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Pan ddaw’r ddolen hon i ben, mae <code class="docutils literal notranslate"><span class="pre">line</span></code> yn cynnwys yr ail linell arbennig.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">line</span>
+</pre></div>
+</div>
+<p>Ar hyn o bryd mae <code class="docutils literal notranslate"><span class="pre">reader</span></code> a <code class="docutils literal notranslate"><span class="pre">writer</span></code> yn dal ar agor, sy’n golygu y gallem
+barhau i ddarllen llinellau o <code class="docutils literal notranslate"><span class="pre">reader</span></code> neu ysgrifennu llinellau i <code class="docutils literal notranslate"><span class="pre">writer</span></code>. I
+nodi ein bod wedi gorffen, gallwn gau’r ddwy ffeil drwy alw’r dull <code class="docutils literal notranslate"><span class="pre">close</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">reader</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="n">writer</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>I wirio a fu’r broses hon yn llwyddiannus, gallwn ddarllen ychydig linellau
+cyntaf y ffeil newydd a grëwyd gennym.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'pg345_cleaned.txt'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">):</span>
+    <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">line</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">'Stoker'</span><span class="p">):</span>
+        <span class="k">break</span>
+</pre></div>
+</div>
+<p>Mae’r dull <code class="docutils literal notranslate"><span class="pre">endswith</span></code> yn gwirio a yw llinyn yn gorffen gyda dilyniant penodol
+o nodau.</p>
+</section>
+<section id="dod-o-hyd-a-disodli">
+<h2><span class="section-number">8.7. </span>Dod o Hyd a Disodli<a class="headerlink" href="#dod-o-hyd-a-disodli" title="Link to this heading">#</a></h2>
+<p>Yng nghyfieithiad Islandeg <em>Dracula</em> o 1901, newidiwyd enw un o’r cymeriadau
+o “Jonathan” i “Thomas”. I wneud y newid hwn yn y fersiwn Saesneg, gallwn
+ddolennu drwy’r llyfr, defnyddio’r dull <code class="docutils literal notranslate"><span class="pre">replace</span></code> i ddisodli un enw ag un
+arall, ac ysgrifennu’r canlyniad i ffeil newydd.</p>
+<p>Byddwn yn dechrau drwy gyfrif y llinellau yn fersiwn lanhaedig y ffeil.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'pg345_cleaned.txt'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">):</span>
+    <span class="n">total</span> <span class="o">+=</span> <span class="mi">1</span>
+    
+<span class="n">total</span>
+</pre></div>
+</div>
+<p>I weld a yw llinell yn cynnwys “Jonathan”, gallwn ddefnyddio’r gweithredydd
+<code class="docutils literal notranslate"><span class="pre">in</span></code>, sy’n gwirio a yw’r dilyniant hwn o nodau’n ymddangos yn unrhyw le yn y
+llinell.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'pg345_cleaned.txt'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">):</span>
+    <span class="k">if</span> <span class="s1">'Jonathan'</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
+        <span class="n">total</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="n">total</span>
+</pre></div>
+</div>
+<p>Mae 199 llinell sy’n cynnwys yr enw, ond nid yw hynny’n gwbl gywir fel cyfanswm
+nifer y troeon y mae’n ymddangos, am ei fod yn gallu ymddangos fwy nag unwaith
+mewn llinell. I gael y cyfanswm, gallwn ddefnyddio’r dull <code class="docutils literal notranslate"><span class="pre">count</span></code>, sy’n
+dychwelyd nifer y troeon y mae dilyniant yn ymddangos mewn llinyn.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'pg345_cleaned.txt'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">):</span>
+    <span class="n">total</span> <span class="o">+=</span> <span class="n">line</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">'Jonathan'</span><span class="p">)</span>
+
+<span class="n">total</span>
+</pre></div>
+</div>
+<p>Nawr gallwn ddisodli <code class="docutils literal notranslate"><span class="pre">'Jonathan'</span></code> â <code class="docutils literal notranslate"><span class="pre">'Thomas'</span></code> fel hyn:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">writer</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'pg345_replaced.txt'</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'pg345_cleaned.txt'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">):</span>
+    <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'Jonathan'</span><span class="p">,</span> <span class="s1">'Thomas'</span><span class="p">)</span>
+    <span class="n">writer</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Y canlyniad yw ffeil newydd o’r enw <code class="docutils literal notranslate"><span class="pre">pg345_replaced.txt</span></code> sy’n cynnwys fersiwn
+o <em>Dracula</em> lle gelwir Jonathan Harker yn Thomas.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'pg345_replaced.txt'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">):</span>
+    <span class="n">total</span> <span class="o">+=</span> <span class="n">line</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">'Thomas'</span><span class="p">)</span>
+
+<span class="n">total</span>
+</pre></div>
+</div>
+</section>
+<section id="mynegiadau-rheolaidd">
+<h2><span class="section-number">8.8. </span>Mynegiadau Rheolaidd<a class="headerlink" href="#mynegiadau-rheolaidd" title="Link to this heading">#</a></h2>
+<p>Os gwyddom yn union pa ddilyniant o nodau rydym yn chwilio amdano, gallwn
+ddefnyddio’r gweithredydd <code class="docutils literal notranslate"><span class="pre">in</span></code> i’w ddarganfod a’r dull <code class="docutils literal notranslate"><span class="pre">replace</span></code> i’w ddisodli.
+Ond mae arf arall, o’r enw <strong><a class="reference internal" href="../glossary.html#term-mynegiad-rheolaidd"><span class="xref std std-term">mynegiad rheolaidd</span></a></strong>, sy’n gallu
+perfformio’r gweithrediadau hyn hefyd — a llawer mwy.</p>
+<p>I ddangos hyn, byddaf yn dechrau gydag enghraifft syml ac yn gweithio ein
+ffordd ymlaen. Tybiwch, unwaith eto, ein bod am ddarganfod pob llinell sy’n
+cynnwys gair penodol. Am newid, gadewch i ni chwilio am gyfeiriadau at
+brif gymeriad y llyfr, Count Dracula. Dyma linell sy’n ei grybwyll.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s2">"I am Dracula; and I bid you welcome, Mr. Harker, to my house."</span>
+</pre></div>
+</div>
+<p>A dyma’r <strong><a class="reference internal" href="../glossary.html#term-patrwm"><span class="xref std std-term">patrwm</span></a></strong> y byddwn yn ei ddefnyddio i chwilio.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pattern</span> <span class="o">=</span> <span class="s1">'Dracula'</span>
+</pre></div>
+</div>
+<p>Mae modiwl o’r enw <code class="docutils literal notranslate"><span class="pre">re</span></code> yn darparu swyddogaethau sy’n ymwneud â mynegiadau
+rheolaidd. Gallwn ei fewnforio fel hyn a defnyddio’r swyddogaeth <code class="docutils literal notranslate"><span class="pre">search</span></code> i
+wirio a yw’r patrwm yn ymddangos yn y testun.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+<span class="n">result</span>
+</pre></div>
+</div>
+<p>Os yw’r patrwm yn ymddangos yn y testun, mae <code class="docutils literal notranslate"><span class="pre">search</span></code> yn dychwelyd gwrthrych
+<code class="docutils literal notranslate"><span class="pre">Match</span></code> sy’n cynnwys canlyniadau’r chwiliad. Ymhlith gwybodaeth arall, mae
+ganddo newidyn o’r enw <code class="docutils literal notranslate"><span class="pre">string</span></code> sy’n cynnwys y testun a chwiliwyd.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span><span class="o">.</span><span class="n">string</span>
+</pre></div>
+</div>
+<p>Mae hefyd yn darparu dull o’r enw <code class="docutils literal notranslate"><span class="pre">group</span></code> sy’n dychwelyd y rhan o’r testun a
+gydweddodd â’r patrwm.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Ac mae’n darparu dull o’r enw <code class="docutils literal notranslate"><span class="pre">span</span></code> sy’n dychwelyd y mynegai yn y testun lle
+mae’r patrwm yn dechrau ac yn gorffen.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span><span class="o">.</span><span class="n">span</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Os nad yw’r patrwm yn ymddangos yn y testun, <code class="docutils literal notranslate"><span class="pre">None</span></code> yw’r gwerth dychwelyd o
+<code class="docutils literal notranslate"><span class="pre">search</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">'Count'</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Felly gallwn wirio a fu’r chwiliad yn llwyddiannus drwy wirio a yw’r
+canlyniad yn <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">==</span> <span class="kc">None</span>
+</pre></div>
+</div>
+<p>Gan roi hynny i gyd at ei gilydd, dyma swyddogaeth sy’n dolennu drwy’r
+llinellau yn y llyfr nes iddi ddarganfod un sy’n cydweddu â’r patrwm penodol,
+ac yn dychwelyd y gwrthrych <code class="docutils literal notranslate"><span class="pre">Match</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">find_first</span><span class="p">(</span><span class="n">pattern</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'pg345_cleaned.txt'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">):</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">line</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">result</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">result</span>
+</pre></div>
+</div>
+<p>Gallwn ei defnyddio i ddarganfod y cyfeiriad cyntaf at gymeriad.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">find_first</span><span class="p">(</span><span class="s1">'Harker'</span><span class="p">)</span>
+<span class="n">result</span><span class="o">.</span><span class="n">string</span>
+</pre></div>
+</div>
+<p>Ar gyfer yr enghraifft hon, nid oedd angen i ni ddefnyddio mynegiadau
+rheolaidd — gallem fod wedi gwneud yr un peth yn haws gyda’r gweithredydd
+<code class="docutils literal notranslate"><span class="pre">in</span></code>. Ond gall mynegiadau rheolaidd wneud pethau na all y gweithredydd <code class="docutils literal notranslate"><span class="pre">in</span></code>
+eu gwneud.</p>
+<p>Er enghraifft, os yw’r patrwm yn cynnwys y nod bar fertigol, <code class="docutils literal notranslate"><span class="pre">'|'</span></code>, gall
+gydweddu naill ai â’r dilyniant ar y chwith neu’r dilyniant ar y dde. Tybiwch
+ein bod am ddarganfod y cyfeiriad cyntaf at Mina Murray yn y llyfr, ond nad
+ydym yn siŵr a gyfeirir ati wrth ei henw cyntaf neu ei chyfenw. Gallwn
+ddefnyddio’r patrwm canlynol, sy’n cydweddu ag un o’r ddau enw.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pattern</span> <span class="o">=</span> <span class="s1">'Mina|Murray'</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">find_first</span><span class="p">(</span><span class="n">pattern</span><span class="p">)</span>
+<span class="n">result</span><span class="o">.</span><span class="n">string</span>
+</pre></div>
+</div>
+<p>Gallwn ddefnyddio patrwm fel hwn i weld faint o weithiau y crybwyllir
+cymeriad gan y naill enw neu’r llall. Dyma swyddogaeth sy’n dolennu drwy’r
+llyfr ac yn cyfrif nifer y llinellau sy’n cydweddu â’r patrwm penodol.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">count_matches</span><span class="p">(</span><span class="n">pattern</span><span class="p">):</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'pg345_cleaned.txt'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">):</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">line</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">result</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">count</span>
+</pre></div>
+</div>
+<p>Nawr gadewch i ni weld sawl gwaith y crybwyllir Mina.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">count_matches</span><span class="p">(</span><span class="s1">'Mina|Murray'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Mae’r nod arbennig <code class="docutils literal notranslate"><span class="pre">'^'</span></code> yn cydweddu â dechrau llinyn, felly gallwn
+ddarganfod llinell sy’n dechrau gyda phatrwm penodol.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">find_first</span><span class="p">(</span><span class="s1">'^Dracula'</span><span class="p">)</span>
+<span class="n">result</span><span class="o">.</span><span class="n">string</span>
+</pre></div>
+</div>
+<p>A’r nod arbennig <code class="docutils literal notranslate"><span class="pre">'$'</span></code> yn cydweddu â diwedd llinyn, felly gallwn ddarganfod
+llinell sy’n gorffen gyda phatrwm penodol (gan anwybyddu’r llinell newydd ar
+y diwedd).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">find_first</span><span class="p">(</span><span class="s1">'Harker$'</span><span class="p">)</span>
+<span class="n">result</span><span class="o">.</span><span class="n">string</span>
+</pre></div>
+</div>
+</section>
+<section id="amnewid-llinynnau">
+<h2><span class="section-number">8.9. </span>Amnewid Llinynnau<a class="headerlink" href="#amnewid-llinynnau" title="Link to this heading">#</a></h2>
+<p>Ganed Bram Stoker yn Iwerddon, a phan gyhoeddwyd <em>Dracula</em> yn 1897, roedd yn
+byw yn Lloegr. Felly byddem yn disgwyl iddo ddefnyddio’r sillafiad Prydeinig
+o eiriau fel “centre” a “colour”. I wirio, gallwn ddefnyddio’r patrwm
+canlynol, sy’n cydweddu naill ai â “centre” neu’r sillafiad Americanaidd
+“center”.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pattern</span> <span class="o">=</span> <span class="s1">'cent(er|re)'</span>
+</pre></div>
+</div>
+<p>Yn y patrwm hwn, mae’r cromfachau’n amgáu’r rhan o’r patrwm y mae’r bar
+fertigol yn gymwys iddi. Felly mae’r patrwm hwn yn cydweddu â dilyniant sy’n
+dechrau gyda <code class="docutils literal notranslate"><span class="pre">'cent'</span></code> ac yn gorffen gyda naill ai <code class="docutils literal notranslate"><span class="pre">'er'</span></code> neu <code class="docutils literal notranslate"><span class="pre">'re'</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">find_first</span><span class="p">(</span><span class="n">pattern</span><span class="p">)</span>
+<span class="n">result</span><span class="o">.</span><span class="n">string</span>
+</pre></div>
+</div>
+<p>Fel y disgwylid, defnyddiodd y sillafiad Prydeinig.</p>
+<p>Gallwn hefyd wirio a ddefnyddiodd y sillafiad Prydeinig o “colour”. Mae’r
+patrwm canlynol yn defnyddio’r nod arbennig <code class="docutils literal notranslate"><span class="pre">'?'</span></code>, sy’n golygu bod y nod
+blaenorol yn ddewisol.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pattern</span> <span class="o">=</span> <span class="s1">'colou?r'</span>
+</pre></div>
+</div>
+<p>Mae’r patrwm hwn yn cydweddu naill ai â “colour” gyda’r <code class="docutils literal notranslate"><span class="pre">'u'</span></code> neu “color”
+hebddo.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">find_first</span><span class="p">(</span><span class="n">pattern</span><span class="p">)</span>
+<span class="n">line</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">string</span>
+<span class="n">line</span>
+</pre></div>
+</div>
+<p>Unwaith eto, fel y disgwylid, defnyddiodd y sillafiad Prydeinig.</p>
+<p>Nawr tybiwch ein bod am gynhyrchu argraffiad o’r llyfr gyda sillafiadau
+Americanaidd. Gallwn ddefnyddio’r swyddogaeth <code class="docutils literal notranslate"><span class="pre">sub</span></code> yn y modiwl <code class="docutils literal notranslate"><span class="pre">re</span></code>, sy’n
+gwneud <strong><a class="reference internal" href="../glossary.html#term-amnewid-llinynnau"><span class="xref std std-term">amnewid llinynnau</span></a></strong>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="s1">'color'</span><span class="p">,</span> <span class="n">line</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Y ddadl gyntaf yw’r patrwm rydym am ei ddarganfod a’i ddisodli, yr ail yw’r
+hyn rydym am ei ddisodli ag ef, a’r drydedd yw’r llinyn rydym am ei chwilio.
+Yn y canlyniad, gallwch weld bod “colour” wedi’i ddisodli â “color”.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># I used this function to search for lines to use as examples</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">all_matches</span><span class="p">(</span><span class="n">pattern</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'pg345_cleaned.txt'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">):</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">line</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">result</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Here's the pattern I used (which uses some features we haven't seen)</span>
+
+<span class="n">names</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">'(?&lt;!\.\s)[A-Z][a-zA-Z]+'</span>
+
+<span class="n">all_matches</span><span class="p">(</span><span class="n">names</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="dadnamu">
+<h2><span class="section-number">8.10. </span>Dadnamu<a class="headerlink" href="#dadnamu" title="Link to this heading">#</a></h2>
+<p>Pan fyddwch yn darllen ac yn ysgrifennu ffeiliau, gall dadnamu fod yn anodd.
+Os ydych yn gweithio mewn llyfr nodiadau Jupyter, gallwch ddefnyddio
+**<a class="reference internal" href="../glossary.html#term-gorchymyn-shell"><span class="xref std std-term">gorchymyn shell</span></a>**au i helpu. Er enghraifft, i ddangos ychydig
+linellau cyntaf ffeil, gallwch ddefnyddio’r gorchymyn <code class="docutils literal notranslate"><span class="pre">!head</span></code>, fel hyn:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="err">!</span><span class="n">head</span> <span class="n">pg345_cleaned</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>Mae’r ebychnod cychwynnol, <code class="docutils literal notranslate"><span class="pre">!</span></code>, yn nodi mai gorchymyn shell yw hwn, nad yw’n
+rhan o Python. I ddangos ychydig linellau olaf, gallwch ddefnyddio <code class="docutils literal notranslate"><span class="pre">!tail</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="err">!</span><span class="n">tail</span> <span class="n">pg345_cleaned</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>Pan fyddwch yn gweithio gyda ffeiliau mawr, gall dadnamu fod yn anodd am y
+gallai fod gormod o allbwn i’w wirio â llaw. Strategaeth dadnamu dda yw
+dechrau gyda dim ond rhan o’r ffeil, cael y rhaglen i weithio, ac yna ei
+rhedeg gyda’r ffeil gyfan.</p>
+<p>I wneud ffeil fach sy’n cynnwys rhan o ffeil fwy, gallwn ddefnyddio <code class="docutils literal notranslate"><span class="pre">!head</span></code>
+eto gyda’r gweithredydd ailgyfeirio, <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, sy’n nodi y dylid ysgrifennu’r
+canlyniadau i ffeil yn hytrach na’u dangos.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="err">!</span><span class="n">head</span> <span class="n">pg345_cleaned</span><span class="o">.</span><span class="n">txt</span> <span class="o">&gt;</span> <span class="n">pg345_cleaned_10_lines</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>Yn ddiofyn, mae <code class="docutils literal notranslate"><span class="pre">!head</span></code> yn darllen y 10 llinell gyntaf, ond mae’n cymryd dadl
+ddewisol sy’n nodi nifer y llinellau i’w darllen.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="err">!</span><span class="n">head</span> <span class="o">-</span><span class="mi">100</span> <span class="n">pg345_cleaned</span><span class="o">.</span><span class="n">txt</span> <span class="o">&gt;</span> <span class="n">pg345_cleaned_100_lines</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>Mae’r gorchymyn shell hwn yn darllen y 100 llinell gyntaf o
+<code class="docutils literal notranslate"><span class="pre">pg345_cleaned.txt</span></code> ac yn eu hysgrifennu i ffeil o’r enw
+<code class="docutils literal notranslate"><span class="pre">pg345_cleaned_100_lines.txt</span></code>.</p>
+<p>Sylwch: Nid yw’r gorchmynion shell <code class="docutils literal notranslate"><span class="pre">!head</span></code> a <code class="docutils literal notranslate"><span class="pre">!tail</span></code> ar gael ar bob system
+weithredu. Os nad ydynt yn gweithio i chi, gallwn ysgrifennu swyddogaethau
+tebyg yn Python. Gweler yr ymarfer cyntaf ar ddiwedd y bennod hon am
+awgrymiadau.</p>
+</section>
+<section id="rhestr-termau-r-bennod">
+<h2><span class="section-number">8.11. </span>Rhestr Termau’r Bennod<a class="headerlink" href="#rhestr-termau-r-bennod" title="Link to this heading">#</a></h2>
+<p><strong>dilyniant:</strong>
+Casgliad trefnus o werthoedd lle mae pob gwerth yn cael ei adnabod gan fynegai
+cyfanrif.</p>
+<p><strong>nod:</strong>
+Elfen o linyn, gan gynnwys llythrennau, rhifau, a symbolau.</p>
+<p><strong>mynegai:</strong>
+Gwerth cyfanrif a ddefnyddir i ddewis eitem mewn dilyniant, fel nod mewn
+llinyn. Yn Python mae mynegeion yn dechrau o <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
+<p><strong>sleisen:</strong>
+Rhan o linyn a nodir gan ystod o fynegeion.</p>
+<p><strong>llinyn gwag:</strong>
+Llinyn nad yw’n cynnwys unrhyw nodau ac sydd â hyd <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
+<p><strong>gwrthrych:</strong>
+Rhywbeth y gall newidyn gyfeirio ato. Mae gan wrthrych fath a gwerth.</p>
+<p><strong>anghyfnewidiol:</strong>
+Os na ellir newid elfennau gwrthrych, mae’r gwrthrych yn anghyfnewidiol.</p>
+<p><strong>galwad dull:</strong>
+Mynegiad — neu ran o fynegiad — sy’n galw dull.</p>
+<p><strong>mynegiad rheolaidd:</strong>
+Dilyniant o nodau sy’n diffinio patrwm chwilio.</p>
+<p><strong>patrwm:</strong>
+Rheol sy’n nodi’r gofynion y mae’n rhaid i linyn eu bodloni i gyfansoddi
+cydweddiad.</p>
+<p><strong>amnewid llinynnau:</strong>
+Disodli llinyn, neu ran o linyn, â llinyn arall.</p>
+<p><strong>gorchymyn shell:</strong>
+Gosodiad mewn iaith shell, sef iaith a ddefnyddir i ryngweithio â system
+weithredu.</p>
+</section>
+<section id="ymarferion">
+<h2><span class="section-number">8.12. </span>Ymarferion<a class="headerlink" href="#ymarferion" title="Link to this heading">#</a></h2>
+<section id="gofyn-i-gynorthwyydd-rhithwir">
+<h3><span class="section-number">8.12.1. </span>Gofyn i gynorthwyydd rhithwir<a class="headerlink" href="#gofyn-i-gynorthwyydd-rhithwir" title="Link to this heading">#</a></h3>
+<p>Yn y bennod hon, dim ond crafu wyneb yr hyn y gall mynegiadau rheolaidd ei
+wneud a wnaethom. I gael syniad o’r hyn sy’n bosibl, gofynnwch i gynorthwyydd
+rhithwir, “Beth yw’r nodau arbennig mwyaf cyffredin a ddefnyddir mewn
+mynegiadau rheolaidd Python?”</p>
+<p>Gallwch hefyd ofyn am batrwm sy’n cydweddu â mathau penodol o linynnau. Er
+enghraifft, ceisiwch ofyn:</p>
+<ul class="simple">
+<li><p>Ysgrifennwch fynegiad rheolaidd Python sy’n cydweddu â rhif ffôn 10-digid
+gyda chysylltnodau.</p></li>
+<li><p>Ysgrifennwch fynegiad rheolaidd Python sy’n cydweddu â chyfeiriad stryd
+gyda rhif ac enw stryd, wedi’i ddilyn gan <code class="docutils literal notranslate"><span class="pre">ST</span></code> neu <code class="docutils literal notranslate"><span class="pre">AVE</span></code>.</p></li>
+<li><p>Ysgrifennwch fynegiad rheolaidd Python sy’n cydweddu ag enw llawn gydag
+unrhyw deitl cyffredin fel <code class="docutils literal notranslate"><span class="pre">Mr</span></code> neu <code class="docutils literal notranslate"><span class="pre">Mrs</span></code> wedi’i ddilyn gan unrhyw nifer o
+enwau sy’n dechrau â phriflythrennau, o bosibl gyda chysylltnodau rhwng
+rhai enwau.</p></li>
+</ul>
+<p>Ac os hoffech weld rhywbeth mwy cymhleth, ceisiwch ofyn am fynegiad rheolaidd
+sy’n cydweddu ag unrhyw URL cyfreithlon.</p>
+<p>Yn aml mae gan fynegiad rheolaidd y llythyren <code class="docutils literal notranslate"><span class="pre">r</span></code> cyn y dyfynnod, sy’n nodi
+mai “llinyn crai” ydyw. Am fwy o wybodaeth, gofynnwch i gynorthwyydd rhithwir,
+“Beth yw llinyn crai yn Python?”</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">doctest</span><span class="w"> </span><span class="kn">import</span> <span class="n">run_docstring_examples</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">run_doctests</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="n">run_docstring_examples</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="nb">globals</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="ymarfer">
+<h3><span class="section-number">8.12.2. </span>Ymarfer<a class="headerlink" href="#ymarfer" title="Link to this heading">#</a></h3>
+<p>Gweler a allwch ysgrifennu swyddogaeth sy’n gwneud yr un peth â’r gorchymyn
+shell <code class="docutils literal notranslate"><span class="pre">!head</span></code>. Dylai gymryd fel dadleuon enw ffeil i’w darllen, nifer y
+llinellau i’w darllen, ac enw’r ffeil i ysgrifennu’r llinellau iddi. Os yw’r
+trydydd paramedr yn <code class="docutils literal notranslate"><span class="pre">None</span></code>, dylai ddangos y llinellau yn hytrach na’u
+hysgrifennu i ffeil.</p>
+<p>Ystyriwch ofyn i gynorthwyydd rhithwir am help, ond os gwnewch, dywedwch wrtho
+i beidio â defnyddio gosodiad <code class="docutils literal notranslate"><span class="pre">with</span></code> na gosodiad <code class="docutils literal notranslate"><span class="pre">try</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+<p>Gallwch ddefnyddio’r enghreifftiau canlynol i brofi eich swyddogaeth.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">head</span><span class="p">(</span><span class="s1">'pg345_cleaned.txt'</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">head</span><span class="p">(</span><span class="s1">'pg345_cleaned.txt'</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">'pg345_cleaned_100_lines.txt'</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="err">!</span><span class="n">tail</span> <span class="n">pg345_cleaned_100_lines</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+</section>
+<section id="id1">
+<h3><span class="section-number">8.12.3. </span>Ymarfer<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>Mae “Wordle” yn gêm eiriau ar-lein lle mae’r nod yn dyfalu gair pum llythyren
+mewn chwe chynnig neu lai. Mae’n rhaid i bob cynnig gael ei adnabod fel gair,
+heb gynnwys enwau priod.</p>
+<p>Ar ôl pob cynnig, cewch wybodaeth am ba rai o’r llythrennau a ddyfalwyd sy’n
+ymddangos yn y gair targed, a pha rai sydd yn y safle cywir.</p>
+<p>Er enghraifft, tybiwch mai <code class="docutils literal notranslate"><span class="pre">MOWER</span></code> yw’r gair targed a’ch bod yn dyfalu
+<code class="docutils literal notranslate"><span class="pre">TRIED</span></code>. Byddech yn dysgu bod <code class="docutils literal notranslate"><span class="pre">E</span></code> yn y gair ac yn y safle cywir, bod <code class="docutils literal notranslate"><span class="pre">R</span></code> yn y
+gair ond nid yn y safle cywir, a nad yw <code class="docutils literal notranslate"><span class="pre">T</span></code>, <code class="docutils literal notranslate"><span class="pre">I</span></code>, na <code class="docutils literal notranslate"><span class="pre">D</span></code> yn y gair.</p>
+<p>Fel enghraifft wahanol, tybiwch eich bod wedi dyfalu’r geiriau <code class="docutils literal notranslate"><span class="pre">SPADE</span></code> a
+<code class="docutils literal notranslate"><span class="pre">CLERK</span></code>, a’ch bod wedi dysgu bod <code class="docutils literal notranslate"><span class="pre">E</span></code> yn y gair, ond nid yn yr un o’r
+safleoedd hynny, ac nad yw unrhyw un o’r llythrennau eraill yn ymddangos yn
+y gair. O’r geiriau yn y rhestr eiriau, sawl un allai fod y gair targed?
+Ysgrifennwch swyddogaeth o’r enw <code class="docutils literal notranslate"><span class="pre">check_word</span></code> sy’n cymryd gair pum llythyren
+ac yn gwirio a allai fod y gair targed, o gael y dyfaliadau hyn.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+<p>Gallwch ddefnyddio unrhyw un o’r swyddogaethau o’r bennod flaenorol, fel
+<code class="docutils literal notranslate"><span class="pre">uses_any</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">uses_any</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">letters</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">word</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">letters</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+            <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">return</span> <span class="kc">False</span>
+</pre></div>
+</div>
+<p>Gallwch ddefnyddio’r ddolen ganlynol i brofi eich swyddogaeth.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'words.txt'</span><span class="p">):</span>
+    <span class="n">word</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="o">==</span> <span class="mi">5</span> <span class="ow">and</span> <span class="n">check_word</span><span class="p">(</span><span class="n">word</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id2">
+<h3><span class="section-number">8.12.4. </span>Ymarfer<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>Gan barhau â’r ymarfer blaenorol, tybiwch eich bod yn dyfalu’r gair <code class="docutils literal notranslate"><span class="pre">TOTEM</span></code>
+ac yn dysgu bod <code class="docutils literal notranslate"><span class="pre">E</span></code> yn <em>dal</em> ddim yn y lle cywir, ond bod <code class="docutils literal notranslate"><span class="pre">M</span></code> yn y lle cywir.
+Sawl gair sydd ar ôl?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+</section>
+<section id="id3">
+<h3><span class="section-number">8.12.5. </span>Ymarfer<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>Mae <em>The Count of Monte Cristo</em> yn nofel gan Alexandre Dumas a ystyrir yn
+glasur. Serch hynny, yn rhagymadrodd cyfieithiad Saesneg o’r llyfr, mae’r
+awdur Umberto Eco yn cyfaddef iddo ganfod y llyfr yn “un o’r nofelau sydd
+wedi’u hysgrifennu waethaf erioed”.</p>
+<p>Yn benodol, mae’n dweud ei bod yn “ddigywilydd o ran ei hailadrodd o’r un
+ansoddair,” gan sôn yn benodol am y nifer o weithiau y mae “ei chymeriadau
+naill ai’n crynu neu’n gwelwi.”</p>
+<p>I weld a yw ei wrthwynebiad yn ddilys, gadewch i ni gyfrif nifer y
+llinellau sy’n cynnwys y gair <code class="docutils literal notranslate"><span class="pre">pale</span></code> ar unrhyw ffurf, gan gynnwys <code class="docutils literal notranslate"><span class="pre">pale</span></code>,
+<code class="docutils literal notranslate"><span class="pre">pales</span></code>, <code class="docutils literal notranslate"><span class="pre">paled</span></code>, a <code class="docutils literal notranslate"><span class="pre">paleness</span></code>, yn ogystal â’r gair cysylltiedig <code class="docutils literal notranslate"><span class="pre">pallor</span></code>.
+Defnyddiwch un mynegiad rheolaidd sengl sy’n cydweddu ag unrhyw un o’r
+geiriau hyn. Fel her ychwanegol, gwnewch yn siŵr nad yw’n cydweddu ag unrhyw
+eiriau eraill, fel <code class="docutils literal notranslate"><span class="pre">impale</span></code> — efallai yr hoffech ofyn i gynorthwyydd rhithwir
+am help.</p>
+<p>Mae’r gell ganlynol yn lawrlwytho’r llyfr o Project Gutenberg
+<a class="reference external" href="https://www.gutenberg.org/ebooks/1184">https://www.gutenberg.org/ebooks/1184</a>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">download</span><span class="p">(</span><span class="s1">'https://github.com/AllenDowney/ThinkPython/raw/v3/pg1184.txt'</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Mae’r gell ganlynol yn rhedeg swyddogaeth sy’n darllen y ffeil o Project
+Gutenberg ac yn ysgrifennu ffeil sy’n cynnwys dim ond testun y llyfr, nid y
+wybodaeth ychwanegol am y llyfr.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">clean_file</span><span class="p">(</span><span class="n">input_file</span><span class="p">,</span> <span class="n">output_file</span><span class="p">):</span>
+    <span class="n">reader</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">input_file</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span>
+    <span class="n">writer</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">output_file</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">is_special_line</span><span class="p">(</span><span class="n">line</span><span class="p">):</span>
+            <span class="k">break</span>
+
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">is_special_line</span><span class="p">(</span><span class="n">line</span><span class="p">):</span>
+            <span class="k">break</span>
+        <span class="n">writer</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+        
+    <span class="n">reader</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="n">writer</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="n">clean_file</span><span class="p">(</span><span class="s1">'pg1184.txt'</span><span class="p">,</span> <span class="s1">'pg1184_cleaned.txt'</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+<p>Yn ôl y cyfrif hwn, mae’r geiriau hyn yn ymddangos ar <code class="docutils literal notranslate"><span class="pre">223</span></code> llinell o’r
+llyfr, felly efallai bod gan Mr. Eco bwynt.</p>
+<hr class="docutils" />
+<p><a class="reference external" href="https://allendowney.github.io/ThinkPython/index.html">Think Python: 3rd Edition</a> gan
+Allen B. Downey. Cyfieithiad Cymraeg gan Wayne Aubrey.</p>
+<p>Hawlfraint 2024 <a class="reference external" href="https://allendowney.com">Allen B. Downey</a>. Trwydded testun: <a class="reference external" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative
+Commons Attribution-NonCommercial-ShareAlike 4.0 International</a>.</p>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -462,6 +1256,41 @@
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mae-llinyn-yn-ddilyniant">8.1. Mae Llinyn yn Ddilyniant</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sleisys-llinyn">8.2. Sleisys Llinyn</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mae-llinynnau-n-anghyfnewidiol">8.3. Mae Llinynnau’n Anghyfnewidiol</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cymharu-llinynnau">8.4. Cymharu Llinynnau</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dulliau-llinynnau">8.5. Dulliau Llinynnau</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ysgrifennu-ffeiliau">8.6. Ysgrifennu Ffeiliau</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dod-o-hyd-a-disodli">8.7. Dod o Hyd a Disodli</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mynegiadau-rheolaidd">8.8. Mynegiadau Rheolaidd</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#amnewid-llinynnau">8.9. Amnewid Llinynnau</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dadnamu">8.10. Dadnamu</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rhestr-termau-r-bennod">8.11. Rhestr Termau’r Bennod</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ymarferion">8.12. Ymarferion</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gofyn-i-gynorthwyydd-rhithwir">8.12.1. Gofyn i gynorthwyydd rhithwir</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ymarfer">8.12.2. Ymarfer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">8.12.3. Ymarfer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">8.12.4. Ymarfer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">8.12.5. Ymarfer</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

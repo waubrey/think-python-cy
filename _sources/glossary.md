@@ -396,4 +396,28 @@ llwyddo
 
 methu
     fail (a test)
+
+sleisen
+    slice (noun)
+
+llinyn gwag
+    empty string
+
+anghyfnewidiol
+    immutable
+
+galwad dull
+    invocation (method call)
+
+mynegiad rheolaidd
+    regular expression
+
+patrwm
+    pattern
+
+amnewid llinynnau
+    string substitution
+
+gorchymyn shell
+    shell command
 ```
