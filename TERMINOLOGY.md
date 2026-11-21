@@ -161,6 +161,20 @@ OOP terms.
 | runtime error | gwall rhedeg | 🟡 | *rhedeg* = to run, already used informally for "running" a program/line of code |
 | semantic error | gwall semantig | ✅ | direct cognate, low risk |
 
+## Chapter 3 vocabulary (defining functions, stack diagrams, tracebacks)
+
+| English | Welsh | Status | Notes |
+|---|---|---|---|
+| function definition | diffiniad swyddogaeth | ✅ | *diffiniad* (definition) is ordinary, unambiguous Welsh |
+| header (of a function) | pennawd | ✅ | ordinary Welsh word for "header," transparent extension |
+| body (of a function) | corff | ✅ | ordinary Welsh word for "body," transparent extension |
+| function object | gwrthrych swyddogaeth | 🟡 | compositional, built from two already-confirmed terms |
+| stack diagram | diagram pentwr | 🟡 | *pentwr* = stack/pile, transparent compound |
+| traceback | hanes galwadau | 🟡 | descriptive phrase ("call history") rather than a coined single word — lowest-confidence pick in this batch, worth a second look if a sourced term turns up |
+
+Reused without change from earlier chapters: *paramedr* (parameter), *dolen* (loop),
+*newidyn lleol* (local variable), *ffram* (frame) — all already in the glossary.
+
 ## Important pattern to carry into translation
 
 In the official WJEC pseudocode (used throughout the Welsh-medium exam), **programming

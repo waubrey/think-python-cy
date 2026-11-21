@@ -249,4 +249,25 @@ gwall rhedeg
 
 gwall semantig
     semantic error
+
+diffiniad swyddogaeth
+    function definition
+
+pennawd
+    header
+
+corff
+    body
+
+gwrthrych swyddogaeth
+    function object
+
+diagram pentwr
+    stack diagram
+
+ffram
+    frame
+
+hanes galwadau
+    traceback
 ```
