@@ -287,6 +287,18 @@ Reused without change: *priodoledd* (attribute, from the ch1 OOP decisions).
 Reused without change: *geiriadur* (dictionary), *allwedd* (key), *gwerth*
 (value) — all already in the glossary.
 
+## Chapter 11 vocabulary (tuples, packing/unpacking, zip, sort keys)
+
+| English | Welsh | Status | Notes |
+|---|---|---|---|
+| pack / unpack | pacio / dadbacio | ✅ | ordinary Welsh words, direct cognate + standard *dad-* prefix |
+| zip object / enumerate object | gwrthrych zip / gwrthrych enumerate | ✅ | "zip"/"enumerate" kept untranslated since they name actual Python builtins, not general concepts |
+| sort key | allwedd trefnu | ✅ | compositional, both roots already confirmed |
+| data structure | strwythur data | ✅ | compositional, *strwythur* already confirmed, "data" direct cognate |
+
+Reused without change: *tŵpl* (tuple, confirmed from the original WJEC
+research).
+
 ## Important pattern to carry into translation
 
 In the official WJEC pseudocode (used throughout the Welsh-medium exam), **programming
