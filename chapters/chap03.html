@@ -62,7 +62,7 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../_static/tippy/chapters/chap03.8bf13625-0058-4d1a-a07e-948408d67af4.js"></script>
+    <script defer="defer" src="../_static/tippy/chapters/chap03.e7c61789-028f-4131-9c07-8f8bd9b8ae5f.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/chap03';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -155,6 +155,10 @@
     </div>
   
 
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
   
 </div>
 
@@ -374,7 +378,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -390,6 +396,31 @@
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diffinio-swyddogaethau-newydd">3.1. Diffinio swyddogaethau newydd</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#paramedrau">3.2. Paramedrau</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#galw-swyddogaethau">3.3. Galw swyddogaethau</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ailadrodd">3.4. Ailadrodd</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mae-newidynnau-a-pharamedrau-n-lleol">3.5. Mae Newidynnau a Pharamedrau’n Lleol</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diagramau-pentwr">3.6. Diagramau Pentwr</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hanes-galwadau">3.7. Hanes Galwadau</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pam-swyddogaethau">3.8. Pam Swyddogaethau?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dadnamu">3.9. Dadnamu</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rhestr-termau-r-bennod">3.10. Rhestr Termau’r Bennod</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ymarferion">3.11. Ymarferion</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gofyn-i-gynorthwyydd-rhithwir">3.11.1. Gofyn i gynorthwyydd rhithwir</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ymarfer">3.11.2. Ymarfer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3.11.3. Ymarfer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">3.11.4. Ymarfer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3.11.5. Ymarfer</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -401,11 +432,490 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="swyddogaethau">
 <h1><span class="section-number">3. </span>Swyddogaethau<a class="headerlink" href="#swyddogaethau" title="Link to this heading">#</a></h1>
-<div class="warning admonition">
-<p class="admonition-title">Statws cyfieithu</p>
-<p>Pennod heb ei chyfieithu eto. Ffynhonnell Saesneg: <strong>Functions</strong>
-(gweler y bennod wreiddiol yn <a class="reference external" href="https://allendowney.github.io/ThinkPython/">https://allendowney.github.io/ThinkPython/</a> ar gyfer y testun gwreiddiol).</p>
+<p>Yn y bennod flaenorol fe wnaethom ddefnyddio sawl swyddogaeth a ddarperir gan
+Python, fel <code class="docutils literal notranslate"><span class="pre">int</span></code> a <code class="docutils literal notranslate"><span class="pre">float</span></code>, a rhai a ddarperir gan y modiwl <code class="docutils literal notranslate"><span class="pre">math</span></code>, fel <code class="docutils literal notranslate"><span class="pre">sqrt</span></code> a
+<code class="docutils literal notranslate"><span class="pre">pow</span></code>.</p>
+<p>Yn y bennod hon, byddwch yn dysgu sut i greu eich swyddogaethau eich hun a’u
+rhedeg. A byddwn yn gweld sut gall un swyddogaeth alw un arall. Fel enghreifftiau,
+byddwn yn dangos geiriau caneuon gan Monty Python. Mae’r enghreifftiau ffôl hyn yn
+dangos nodwedd bwysig — mae’r gallu i ysgrifennu eich swyddogaethau eich hun yn
+sylfaen rhaglennu.</p>
+<p>Mae’r bennod hon hefyd yn cyflwyno gosodiad newydd, y ddolen <code class="docutils literal notranslate"><span class="pre">for</span></code>, a ddefnyddir i
+ailadrodd cyfrifiant.</p>
+<section id="diffinio-swyddogaethau-newydd">
+<h2><span class="section-number">3.1. </span>Diffinio swyddogaethau newydd<a class="headerlink" href="#diffinio-swyddogaethau-newydd" title="Link to this heading">#</a></h2>
+<p>Mae <strong><a class="reference internal" href="../glossary.html#term-diffiniad-swyddogaeth"><span class="xref std std-term">diffiniad swyddogaeth</span></a></strong> yn nodi enw swyddogaeth newydd a’r dilyniant
+o osodiadau sy’n rhedeg pan gaiff y swyddogaeth ei galw. Dyma enghraifft:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">print_lyrics</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"I'm a lumberjack, and I'm okay."</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"I sleep all night and I work all day."</span><span class="p">)</span>
+</pre></div>
 </div>
+<p>Mae <code class="docutils literal notranslate"><span class="pre">def</span></code> yn allweddair sy’n nodi mai diffiniad swyddogaeth yw hwn. Enw’r
+swyddogaeth yw <code class="docutils literal notranslate"><span class="pre">print_lyrics</span></code>. Mae unrhyw beth sy’n enw newidyn cyfreithlon hefyd
+yn enw swyddogaeth cyfreithlon.</p>
+<p>Mae’r cromfachau gwag ar ôl yr enw yn nodi nad yw’r swyddogaeth hon yn cymryd
+unrhyw ddadleuon.</p>
+<p>Gelwir llinell gyntaf y diffiniad swyddogaeth yn <strong><a class="reference internal" href="../glossary.html#term-pennawd"><span class="xref std std-term">pennawd</span></a></strong> — gelwir
+gweddill y diffiniad yn <strong><a class="reference internal" href="../glossary.html#term-corff"><span class="xref std std-term">corff</span></a></strong>. Mae’n rhaid i’r pennawd orffen gyda
+cholon ac mae’n rhaid i’r corff fod wedi’i fewnoli. Yn ôl confensiwn, pedwar bwlch
+yw mewnoliad bob amser. Corff y swyddogaeth hon yw dau osodiad <code class="docutils literal notranslate"><span class="pre">print</span></code>; yn
+gyffredinol, gall corff swyddogaeth gynnwys unrhyw nifer o osodiadau o unrhyw fath.</p>
+<p>Mae diffinio swyddogaeth yn creu <strong><a class="reference internal" href="../glossary.html#term-gwrthrych-swyddogaeth"><span class="xref std std-term">gwrthrych swyddogaeth</span></a></strong>, y gallwn ei
+ddangos fel hyn.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">print_lyrics</span>
+</pre></div>
+</div>
+<p>Mae’r allbwn yn dangos mai swyddogaeth heb ddadleuon yw <code class="docutils literal notranslate"><span class="pre">print_lyrics</span></code>. <code class="docutils literal notranslate"><span class="pre">__main__</span></code>
+yw enw’r modiwl sy’n cynnwys <code class="docutils literal notranslate"><span class="pre">print_lyrics</span></code>.</p>
+<p>Nawr ein bod wedi diffinio swyddogaeth, gallwn ei galw yn yr un ffordd ag y
+galwn swyddogaethau cynhenid.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">print_lyrics</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Pan fydd y swyddogaeth yn rhedeg, mae’n cyflawni’r gosodiadau yn y corff, sy’n
+dangos dwy linell gyntaf “The Lumberjack Song”.</p>
+</section>
+<section id="paramedrau">
+<h2><span class="section-number">3.2. </span>Paramedrau<a class="headerlink" href="#paramedrau" title="Link to this heading">#</a></h2>
+<p>Mae rhai o’r swyddogaethau rydym wedi’u gweld yn gofyn am ddadleuon; er enghraifft,
+pan alwch <code class="docutils literal notranslate"><span class="pre">abs</span></code> rydych yn pasio rhif fel dadl. Mae rhai swyddogaethau’n cymryd mwy
+nag un ddadl; er enghraifft, mae <code class="docutils literal notranslate"><span class="pre">math.pow</span></code> yn cymryd dwy, y sail a’r esbonydd.</p>
+<p>Dyma ddiffiniad ar gyfer swyddogaeth sy’n cymryd dadl.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">print_twice</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Mae’r enw newidyn mewn cromfachau yn <strong><a class="reference internal" href="../glossary.html#term-paramedr"><span class="xref std std-term">paramedr</span></a></strong>. Pan gaiff y swyddogaeth
+ei galw, caiff gwerth y ddadl ei neilltuo i’r paramedr. Er enghraifft, gallwn alw
+<code class="docutils literal notranslate"><span class="pre">print_twice</span></code> fel hyn.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">print_twice</span><span class="p">(</span><span class="s1">'Dennis Moore, '</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Mae gan redeg y swyddogaeth hon yr un effaith â neilltuo’r ddadl i’r paramedr ac
+yna cyflawni corff y swyddogaeth, fel hyn.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">string</span> <span class="o">=</span> <span class="s1">'Dennis Moore, '</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Gallwch hefyd ddefnyddio newidyn fel dadl.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">line</span> <span class="o">=</span> <span class="s1">'Dennis Moore, '</span>
+<span class="n">print_twice</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Yn yr enghraifft hon, caiff gwerth <code class="docutils literal notranslate"><span class="pre">line</span></code> ei neilltuo i’r paramedr <code class="docutils literal notranslate"><span class="pre">string</span></code>.</p>
+</section>
+<section id="galw-swyddogaethau">
+<h2><span class="section-number">3.3. </span>Galw swyddogaethau<a class="headerlink" href="#galw-swyddogaethau" title="Link to this heading">#</a></h2>
+<p>Unwaith y byddwch wedi diffinio swyddogaeth, gallwch ei defnyddio y tu mewn i
+swyddogaeth arall. I ddangos hyn, byddwn yn ysgrifennu swyddogaethau sy’n argraffu
+geiriau “The Spam Song”
+(<a class="reference external" href="https://www.songfacts.com/lyrics/monty-python/the-spam-song">https://www.songfacts.com/lyrics/monty-python/the-spam-song</a>).</p>
+<blockquote>
+<div><p>Spam, Spam, Spam, Spam,
+Spam, Spam, Spam, Spam,
+Spam, Spam,
+(Lovely Spam, Wonderful Spam!)
+Spam, Spam,</p>
+</div></blockquote>
+<p>Byddwn yn dechrau gyda’r swyddogaeth ganlynol, sy’n cymryd dau baramedr.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">repeat</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">word</span> <span class="o">*</span> <span class="n">n</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Gallwn ddefnyddio’r swyddogaeth hon i argraffu llinell gyntaf y gân, fel hyn.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">spam</span> <span class="o">=</span> <span class="s1">'Spam, '</span>
+<span class="n">repeat</span><span class="p">(</span><span class="n">spam</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>I ddangos y ddwy linell gyntaf, gallwn ddiffinio swyddogaeth newydd sy’n defnyddio
+<code class="docutils literal notranslate"><span class="pre">repeat</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">first_two_lines</span><span class="p">():</span>
+    <span class="n">repeat</span><span class="p">(</span><span class="n">spam</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+    <span class="n">repeat</span><span class="p">(</span><span class="n">spam</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Ac yna ei galw fel hyn.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">first_two_lines</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>I ddangos y tair llinell olaf, gallwn ddiffinio swyddogaeth arall, sydd hefyd yn
+defnyddio <code class="docutils literal notranslate"><span class="pre">repeat</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">last_three_lines</span><span class="p">():</span>
+    <span class="n">repeat</span><span class="p">(</span><span class="n">spam</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'(Lovely Spam, Wonderful Spam!)'</span><span class="p">)</span>
+    <span class="n">repeat</span><span class="p">(</span><span class="n">spam</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">last_three_lines</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Yn olaf, gallwn ddod â’r cyfan at ei gilydd gydag un swyddogaeth sy’n argraffu’r
+pennill cyfan.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">print_verse</span><span class="p">():</span>
+    <span class="n">first_two_lines</span><span class="p">()</span>
+    <span class="n">last_three_lines</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">print_verse</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Pan redwn <code class="docutils literal notranslate"><span class="pre">print_verse</span></code>, mae’n galw <code class="docutils literal notranslate"><span class="pre">first_two_lines</span></code>, sy’n galw <code class="docutils literal notranslate"><span class="pre">repeat</span></code>, sy’n
+galw <code class="docutils literal notranslate"><span class="pre">print</span></code>. Mae hynny’n lot o swyddogaethau.</p>
+<p>Wrth gwrs, gallem fod wedi gwneud yr un peth gyda llai o swyddogaethau, ond pwynt
+yr enghraifft hon yw dangos sut gall swyddogaethau weithio gyda’i gilydd.</p>
+</section>
+<section id="ailadrodd">
+<h2><span class="section-number">3.4. </span>Ailadrodd<a class="headerlink" href="#ailadrodd" title="Link to this heading">#</a></h2>
+<p>Os ydym am ddangos mwy nag un pennill, gallwn ddefnyddio gosodiad <code class="docutils literal notranslate"><span class="pre">for</span></code>. Dyma
+enghraifft syml.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Pennawd yw’r llinell gyntaf sy’n gorffen gyda cholon. Y corff yw’r ail linell,
+sydd rhaid iddi fod wedi’i mewnoli.</p>
+<p>Mae’r pennawd yn dechrau gyda’r allweddair <code class="docutils literal notranslate"><span class="pre">for</span></code>, newidyn newydd o’r enw <code class="docutils literal notranslate"><span class="pre">i</span></code>, ac
+allweddair arall, <code class="docutils literal notranslate"><span class="pre">in</span></code>. Mae’n defnyddio’r swyddogaeth <code class="docutils literal notranslate"><span class="pre">range</span></code> i greu dilyniant o
+ddau werth, sef <code class="docutils literal notranslate"><span class="pre">0</span></code> ac <code class="docutils literal notranslate"><span class="pre">1</span></code>. Yn Python, pan fyddwn yn dechrau cyfrif, rydym fel
+arfer yn dechrau o <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
+<p>Pan fydd y gosodiad <code class="docutils literal notranslate"><span class="pre">for</span></code> yn rhedeg, mae’n neilltuo’r gwerth cyntaf o <code class="docutils literal notranslate"><span class="pre">range</span></code> i
+<code class="docutils literal notranslate"><span class="pre">i</span></code> ac yna’n rhedeg y swyddogaeth <code class="docutils literal notranslate"><span class="pre">print</span></code> yn y corff, sy’n dangos <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
+<p>Pan gyrhaeddir diwedd y corff, mae’n dolennu’n ôl i’r pennawd, a dyna pam y gelwir
+y gosodiad hwn yn <strong><a class="reference internal" href="../glossary.html#term-dolen"><span class="xref std std-term">dolen</span></a></strong>. Yr ail dro drwy’r ddolen, mae’n neilltuo’r
+gwerth nesaf o <code class="docutils literal notranslate"><span class="pre">range</span></code> i <code class="docutils literal notranslate"><span class="pre">i</span></code>, ac yn ei ddangos. Yna, am mai dyna’r gwerth olaf o
+<code class="docutils literal notranslate"><span class="pre">range</span></code>, mae’r ddolen yn dod i ben.</p>
+<p>Dyma sut gallwn ddefnyddio dolen <code class="docutils literal notranslate"><span class="pre">for</span></code> i argraffu dau bennill o’r gân.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Verse"</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+    <span class="n">print_verse</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Gallwch roi dolen <code class="docutils literal notranslate"><span class="pre">for</span></code> y tu mewn i swyddogaeth. Er enghraifft, mae
+<code class="docutils literal notranslate"><span class="pre">print_n_verses</span></code> yn cymryd paramedr o’r enw <code class="docutils literal notranslate"><span class="pre">n</span></code>, sy’n rhaid iddo fod yn gyfanrif,
+ac yn dangos y nifer penodol o benillion.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">print_n_verses</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">print_verse</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Yn yr enghraifft hon, nid ydym yn defnyddio <code class="docutils literal notranslate"><span class="pre">i</span></code> yng nghorff y ddolen, ond mae’n
+rhaid cael enw newidyn yn y pennawd beth bynnag.</p>
+</section>
+<section id="mae-newidynnau-a-pharamedrau-n-lleol">
+<h2><span class="section-number">3.5. </span>Mae Newidynnau a Pharamedrau’n Lleol<a class="headerlink" href="#mae-newidynnau-a-pharamedrau-n-lleol" title="Link to this heading">#</a></h2>
+<p>Pan fyddwch yn creu newidyn y tu mewn i swyddogaeth, mae’n <strong><a class="reference internal" href="../glossary.html#term-newidyn-lleol"><span class="xref std std-term">newidyn lleol</span></a></strong>,
+sy’n golygu ei fod ond yn bodoli y tu mewn i’r swyddogaeth. Er enghraifft, mae’r
+swyddogaeth ganlynol yn cymryd dwy ddadl, yn eu cydgatenu, ac yn argraffu’r
+canlyniad ddwywaith.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">cat_twice</span><span class="p">(</span><span class="n">part1</span><span class="p">,</span> <span class="n">part2</span><span class="p">):</span>
+    <span class="n">cat</span> <span class="o">=</span> <span class="n">part1</span> <span class="o">+</span> <span class="n">part2</span>
+    <span class="n">print_twice</span><span class="p">(</span><span class="n">cat</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Dyma enghraifft sy’n ei defnyddio:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">line1</span> <span class="o">=</span> <span class="s1">'Always look on the '</span>
+<span class="n">line2</span> <span class="o">=</span> <span class="s1">'bright side of life.'</span>
+<span class="n">cat_twice</span><span class="p">(</span><span class="n">line1</span><span class="p">,</span> <span class="n">line2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Pan redith <code class="docutils literal notranslate"><span class="pre">cat_twice</span></code>, mae’n creu newidyn lleol o’r enw <code class="docutils literal notranslate"><span class="pre">cat</span></code>, sy’n cael ei
+ddinistrio pan ddaw’r swyddogaeth i ben. Os ceisiwn ei ddangos, cawn <code class="docutils literal notranslate"><span class="pre">NameError</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">expect</span> <span class="ne">NameError</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">cat</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Y tu allan i’r swyddogaeth, nid yw <code class="docutils literal notranslate"><span class="pre">cat</span></code> wedi’i ddiffinio.</p>
+<p>Mae paramedrau hefyd yn lleol. Er enghraifft, y tu allan i <code class="docutils literal notranslate"><span class="pre">cat_twice</span></code>, nid oes
+y fath beth â <code class="docutils literal notranslate"><span class="pre">part1</span></code> na <code class="docutils literal notranslate"><span class="pre">part2</span></code>.</p>
+</section>
+<section id="diagramau-pentwr">
+<h2><span class="section-number">3.6. </span>Diagramau Pentwr<a class="headerlink" href="#diagramau-pentwr" title="Link to this heading">#</a></h2>
+<p>I gadw golwg ar ba newidynnau y gellir eu defnyddio lle, mae weithiau’n ddefnyddiol
+tynnu <strong><a class="reference internal" href="../glossary.html#term-diagram-pentwr"><span class="xref std std-term">diagram pentwr</span></a></strong>. Fel diagramau cyflwr, mae diagramau pentwr yn
+dangos gwerth pob newidyn, ond maent hefyd yn dangos pa swyddogaeth y mae pob
+newidyn yn perthyn iddi.</p>
+<p>Cynrychiolir pob swyddogaeth gan <strong><a class="reference internal" href="../glossary.html#term-ffram"><span class="xref std std-term">ffram</span></a></strong>. Mae ffram yn flwch gydag enw
+swyddogaeth y tu allan a pharamedrau a newidynnau lleol y swyddogaeth y tu mewn.</p>
+<p>Dyma’r diagram pentwr ar gyfer yr enghraifft flaenorol.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">diagram</span><span class="w"> </span><span class="kn">import</span> <span class="n">make_frame</span><span class="p">,</span> <span class="n">Stack</span>
+
+<span class="n">d1</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">line1</span><span class="o">=</span><span class="n">line1</span><span class="p">,</span> <span class="n">line2</span><span class="o">=</span><span class="n">line2</span><span class="p">)</span>
+<span class="n">frame1</span> <span class="o">=</span> <span class="n">make_frame</span><span class="p">(</span><span class="n">d1</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">'__main__'</span><span class="p">,</span> <span class="n">dy</span><span class="o">=-</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">'left'</span><span class="p">)</span>
+
+<span class="n">d2</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">part1</span><span class="o">=</span><span class="n">line1</span><span class="p">,</span> <span class="n">part2</span><span class="o">=</span><span class="n">line2</span><span class="p">,</span> <span class="n">cat</span><span class="o">=</span><span class="n">line1</span><span class="o">+</span><span class="n">line2</span><span class="p">)</span>
+<span class="n">frame2</span> <span class="o">=</span> <span class="n">make_frame</span><span class="p">(</span><span class="n">d2</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">'cat_twice'</span><span class="p">,</span> <span class="n">dy</span><span class="o">=-</span><span class="mf">0.3</span><span class="p">,</span> 
+                    <span class="n">offsetx</span><span class="o">=</span><span class="mf">0.03</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">'left'</span><span class="p">)</span>
+
+<span class="n">d3</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">string</span><span class="o">=</span><span class="n">line1</span><span class="o">+</span><span class="n">line2</span><span class="p">)</span>
+<span class="n">frame3</span> <span class="o">=</span> <span class="n">make_frame</span><span class="p">(</span><span class="n">d3</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">'print_twice'</span><span class="p">,</span> 
+                    <span class="n">offsetx</span><span class="o">=</span><span class="mf">0.04</span><span class="p">,</span> <span class="n">offsety</span><span class="o">=-</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">'left'</span><span class="p">)</span>
+
+<span class="n">d4</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"?"</span><span class="p">:</span> <span class="n">line1</span><span class="o">+</span><span class="n">line2</span><span class="p">}</span>
+<span class="n">frame4</span> <span class="o">=</span> <span class="n">make_frame</span><span class="p">(</span><span class="n">d4</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">'print'</span><span class="p">,</span> 
+                    <span class="n">offsetx</span><span class="o">=-</span><span class="mf">0.22</span><span class="p">,</span> <span class="n">offsety</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">'left'</span><span class="p">)</span>
+
+<span class="n">stack</span> <span class="o">=</span> <span class="n">Stack</span><span class="p">([</span><span class="n">frame1</span><span class="p">,</span> <span class="n">frame2</span><span class="p">,</span> <span class="n">frame3</span><span class="p">,</span> <span class="n">frame4</span><span class="p">],</span> <span class="n">dy</span><span class="o">=-</span><span class="mf">0.8</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">diagram</span><span class="w"> </span><span class="kn">import</span> <span class="n">diagram</span><span class="p">,</span> <span class="n">adjust</span>
+
+
+<span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mf">3.77</span><span class="p">,</span> <span class="mf">2.9</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">,</span> <span class="mf">2.65</span><span class="p">]</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">diagram</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
+<span class="n">bbox</span> <span class="o">=</span> <span class="n">stack</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="c1"># adjust(x, y, bbox)</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">'chap03_stack_diagram.png'</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Trefnir y fframiau mewn pentwr sy’n dangos pa swyddogaeth alwodd pa un, ac yn y
+blaen. Gan ddarllen o’r gwaelod, galwyd <code class="docutils literal notranslate"><span class="pre">print</span></code> gan <code class="docutils literal notranslate"><span class="pre">print_twice</span></code>, a alwyd gan
+<code class="docutils literal notranslate"><span class="pre">cat_twice</span></code>, a alwyd gan <code class="docutils literal notranslate"><span class="pre">__main__</span></code> — sef enw arbennig ar gyfer y ffram ucha’.
+Pan fyddwch yn creu newidyn y tu allan i unrhyw swyddogaeth, mae’n perthyn i
+<code class="docutils literal notranslate"><span class="pre">__main__</span></code>.</p>
+<p>Yn ffram <code class="docutils literal notranslate"><span class="pre">print</span></code>, mae’r marc cwestiwn yn dangos nad ydym yn gwybod enw’r
+paramedr. Os ydych yn chwilfrydig, gofynnwch i gynorthwyydd rhithwir, “Beth yw
+paramedrau swyddogaeth print Python?”</p>
+</section>
+<section id="hanes-galwadau">
+<h2><span class="section-number">3.7. </span>Hanes Galwadau<a class="headerlink" href="#hanes-galwadau" title="Link to this heading">#</a></h2>
+<p>Pan fydd gwall rhedeg yn digwydd mewn swyddogaeth, mae Python yn dangos enw’r
+swyddogaeth oedd yn rhedeg, enw’r swyddogaeth a’i galwodd, ac yn y blaen, i fyny’r
+pentwr. I ddangos enghraifft, byddaf yn diffinio fersiwn o <code class="docutils literal notranslate"><span class="pre">print_twice</span></code> sy’n
+cynnwys gwall — mae’n ceisio argraffu <code class="docutils literal notranslate"><span class="pre">cat</span></code>, sy’n newidyn lleol mewn swyddogaeth
+arall.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">print_twice</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">cat</span><span class="p">)</span>            <span class="c1"># NameError</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">cat</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Nawr dyma beth sy’n digwydd pan redwn <code class="docutils literal notranslate"><span class="pre">cat_twice</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># This cell tells Jupyter to provide detailed debugging information</span>
+<span class="c1"># when a runtime error occurs, including a traceback.</span>
+
+<span class="o">%</span><span class="n">xmode</span> <span class="n">Verbose</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">expect</span> <span class="ne">NameError</span>
+
+<span class="n">cat_twice</span><span class="p">(</span><span class="n">line1</span><span class="p">,</span> <span class="n">line2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Mae’r neges wall yn cynnwys <strong><a class="reference internal" href="../glossary.html#term-hanes-galwadau"><span class="xref std std-term">hanes galwadau</span></a></strong>, sy’n dangos y swyddogaeth
+oedd yn rhedeg pan ddigwyddodd y gwall, y swyddogaeth a’i galwodd, ac yn y blaen.
+Yn yr enghraifft hon, mae’n dangos bod <code class="docutils literal notranslate"><span class="pre">cat_twice</span></code> wedi galw <code class="docutils literal notranslate"><span class="pre">print_twice</span></code>, ac i’r
+gwall ddigwydd yn <code class="docutils literal notranslate"><span class="pre">print_twice</span></code>.</p>
+<p>Mae trefn y swyddogaethau yn yr hanes galwadau yr un fath â threfn y fframiau yn y
+diagram pentwr. Mae’r swyddogaeth oedd yn rhedeg ar y gwaelod.</p>
+</section>
+<section id="pam-swyddogaethau">
+<h2><span class="section-number">3.8. </span>Pam Swyddogaethau?<a class="headerlink" href="#pam-swyddogaethau" title="Link to this heading">#</a></h2>
+<p>Efallai nad yw’n glir eto pam mae’n werth y drafferth i rannu rhaglen yn
+swyddogaethau. Mae sawl rheswm:</p>
+<ul class="simple">
+<li><p>Mae creu swyddogaeth newydd yn rhoi cyfle i chi enwi grŵp o osodiadau, sy’n
+gwneud eich rhaglen yn haws ei darllen a’i dadnamu.</p></li>
+<li><p>Gall swyddogaethau wneud rhaglen yn llai drwy ddileu cod ailadroddus. Yn
+ddiweddarach, os gwnewch newid, dim ond mewn un lle y mae’n rhaid i chi ei
+wneud.</p></li>
+<li><p>Mae rhannu rhaglen hir yn swyddogaethau yn caniatáu i chi ddadnamu’r rhannau un
+ar y tro ac yna eu cydosod yn gyfanwaith sy’n gweithio.</p></li>
+<li><p>Mae swyddogaethau wedi’u dylunio’n dda yn aml yn ddefnyddiol ar gyfer llawer o
+raglenni. Unwaith y byddwch wedi ysgrifennu ac wedi dadnamu un, gallwch ei
+hailddefnyddio.</p></li>
+</ul>
+</section>
+<section id="dadnamu">
+<h2><span class="section-number">3.9. </span>Dadnamu<a class="headerlink" href="#dadnamu" title="Link to this heading">#</a></h2>
+<p>Gall dadnamu fod yn rhwystredig, ond mae hefyd yn heriol, yn ddiddorol, ac weithiau
+hyd yn oed yn hwyl. Ac mae’n un o’r sgiliau pwysicaf y gallwch eu dysgu.</p>
+<p>Mewn rhai ffyrdd mae dadnamu fel gwaith ditectif. Rhoddir cliwiau i chi ac mae’n
+rhaid i chi ddidynnu’r digwyddiadau a arweiniodd at y canlyniadau rydych yn eu
+gweld.</p>
+<p>Mae dadnamu hefyd fel gwyddoniaeth arbrofol. Unwaith y bydd gennych syniad am beth
+sy’n mynd o’i le, rydych yn addasu eich rhaglen ac yn ceisio eto. Os oedd eich
+damcaniaeth yn gywir, gallwch ragfynegi canlyniad yr addasiad, ac rydych yn camu’n
+agosach at raglen sy’n gweithio. Os oedd eich damcaniaeth yn anghywir, mae’n rhaid
+i chi feddwl am un newydd.</p>
+<p>I rai pobl, mae rhaglennu a dadnamu yr un peth; hynny yw, mae rhaglennu’n broses o
+ddadnamu rhaglen yn raddol nes ei bod yn gwneud yr hyn rydych ei eisiau. Y syniad
+yw y dylech ddechrau gyda rhaglen sy’n gweithio a gwneud newidiadau bach, gan eu
+dadnamu wrth fynd.</p>
+<p>Os byddwch yn treulio llawer o amser yn dadnamu, mae hynny’n aml yn arwydd eich
+bod yn ysgrifennu gormod o god cyn i chi ddechrau profi. Os cymerwch gamau llai,
+efallai y gwelwch y gallwch symud yn gyflymach.</p>
+</section>
+<section id="rhestr-termau-r-bennod">
+<h2><span class="section-number">3.10. </span>Rhestr Termau’r Bennod<a class="headerlink" href="#rhestr-termau-r-bennod" title="Link to this heading">#</a></h2>
+<p><strong>diffiniad swyddogaeth:</strong>
+Gosodiad sy’n creu swyddogaeth.</p>
+<p><strong>pennawd:</strong>
+Llinell gyntaf diffiniad swyddogaeth.</p>
+<p><strong>corff:</strong>
+Dilyniant y gosodiadau y tu mewn i ddiffiniad swyddogaeth.</p>
+<p><strong>gwrthrych swyddogaeth:</strong>
+Gwerth a grëwyd gan ddiffiniad swyddogaeth. Mae enw’r swyddogaeth yn newidyn sy’n
+cyfeirio at wrthrych swyddogaeth.</p>
+<p><strong>paramedr:</strong>
+Enw a ddefnyddir y tu mewn i swyddogaeth i gyfeirio at y gwerth a basiwyd fel dadl.</p>
+<p><strong>dolen:</strong>
+Gosodiad sy’n rhedeg un gosodiad neu fwy, yn aml dro ar ôl tro.</p>
+<p><strong>newidyn lleol:</strong>
+Newidyn a ddiffinnir y tu mewn i swyddogaeth, ac y gellir ond ei gyrchu y tu mewn
+i’r swyddogaeth honno.</p>
+<p><strong>diagram pentwr:</strong>
+Cynrychiolaeth graffigol o bentwr o swyddogaethau, eu newidynnau, a’r gwerthoedd y
+maent yn cyfeirio atynt.</p>
+<p><strong>ffram:</strong>
+Blwch mewn diagram pentwr sy’n cynrychioli galwad swyddogaeth. Mae’n cynnwys
+newidynnau lleol a pharamedrau’r swyddogaeth.</p>
+<p><strong>hanes galwadau:</strong>
+Rhestr o’r swyddogaethau sy’n cyflawni, a argraffir pan ddigwydd eithriad.</p>
+</section>
+<section id="ymarferion">
+<h2><span class="section-number">3.11. </span>Ymarferion<a class="headerlink" href="#ymarferion" title="Link to this heading">#</a></h2>
+<section id="gofyn-i-gynorthwyydd-rhithwir">
+<h3><span class="section-number">3.11.1. </span>Gofyn i gynorthwyydd rhithwir<a class="headerlink" href="#gofyn-i-gynorthwyydd-rhithwir" title="Link to this heading">#</a></h3>
+<p>Mae’r gosodiadau mewn swyddogaeth neu ddolen <code class="docutils literal notranslate"><span class="pre">for</span></code> wedi’u mewnoli â phedwar
+bwlch, yn ôl confensiwn. Ond nid yw pawb yn cytuno â’r confensiwn hwnnw. Os ydych
+yn chwilfrydig am hanes y ddadl fawr hon, gofynnwch i gynorthwyydd rhithwir i
+“dweud wrthyf am fylchau a thabiau yn Python”.</p>
+<p>Mae cynorthwywyr rhithwir yn eithaf da am ysgrifennu swyddogaethau bach.</p>
+<ol class="arabic simple">
+<li><p>Gofynnwch i’ch hoff gynorthwyydd rhithwir “Ysgrifennwch swyddogaeth o’r enw
+repeat sy’n cymryd llinyn a chyfanrif ac yn argraffu’r llinyn y nifer penodol
+o weithiau.”</p></li>
+<li><p>Os yw’r canlyniad yn defnyddio dolen <code class="docutils literal notranslate"><span class="pre">for</span></code>, gallech ofyn, “Allwch chi ei wneud
+heb ddolen for?”</p></li>
+<li><p>Dewiswch unrhyw swyddogaeth arall yn y bennod hon a gofynnwch i gynorthwyydd
+rhithwir ei hysgrifennu. Yr her yw disgrifio’r swyddogaeth yn ddigon manwl
+gywir i gael yr hyn rydych ei eisiau. Defnyddiwch yr eirfa rydych wedi’i dysgu
+hyd yn hyn yn y llyfr hwn.</p></li>
+</ol>
+<p>Mae cynorthwywyr rhithwir hefyd yn eithaf da am ddadnamu swyddogaethau.</p>
+<ol class="arabic">
+<li><p>Gofynnwch i gynorthwyydd rhithwir beth sydd o’i le gyda’r fersiwn hon o
+<code class="docutils literal notranslate"><span class="pre">print_twice</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">print_twice</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">cat</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">cat</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>Ac os byddwch yn mynd yn sownd ar unrhyw un o’r ymarferion isod, ystyriwch ofyn i
+gynorthwyydd rhithwir am help.</p>
+</section>
+<section id="ymarfer">
+<h3><span class="section-number">3.11.2. </span>Ymarfer<a class="headerlink" href="#ymarfer" title="Link to this heading">#</a></h3>
+<p>Ysgrifennwch swyddogaeth o’r enw <code class="docutils literal notranslate"><span class="pre">print_right</span></code> sy’n cymryd llinyn o’r enw <code class="docutils literal notranslate"><span class="pre">text</span></code>
+fel paramedr ac yn argraffu’r llinyn gyda digon o fylchau blaenorol fel bod
+llythyren olaf y llinyn yn y 40fed golofn o’r arddangosfa.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+<p>Awgrym: Defnyddiwch y swyddogaeth <code class="docutils literal notranslate"><span class="pre">len</span></code>, gweithredydd cydgatenu llinynnau (<code class="docutils literal notranslate"><span class="pre">+</span></code>) a
+gweithredydd ailadrodd llinynnau (<code class="docutils literal notranslate"><span class="pre">*</span></code>).</p>
+<p>Dyma enghraifft sy’n dangos sut y dylai weithio.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>                                   <span class="n">Monty</span>
+                                <span class="n">Python</span><span class="s1">'s</span>
+                           <span class="n">Flying</span> <span class="n">Circus</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">print_right</span><span class="p">(</span><span class="s2">"Monty"</span><span class="p">)</span>
+<span class="n">print_right</span><span class="p">(</span><span class="s2">"Python's"</span><span class="p">)</span>
+<span class="n">print_right</span><span class="p">(</span><span class="s2">"Flying Circus"</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id1">
+<h3><span class="section-number">3.11.3. </span>Ymarfer<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>Ysgrifennwch swyddogaeth o’r enw <code class="docutils literal notranslate"><span class="pre">triangle</span></code> sy’n cymryd llinyn a chyfanrif ac yn
+tynnu pyramid gyda’r uchder penodol, wedi’i wneud o gopïau o’r llinyn. Dyma
+enghraifft o byramid gyda <code class="docutils literal notranslate"><span class="pre">5</span></code> lefel, gan ddefnyddio’r llinyn <code class="docutils literal notranslate"><span class="pre">'L'</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">L</span>
+<span class="n">LL</span>
+<span class="n">LLL</span>
+<span class="n">LLLL</span>
+<span class="n">LLLLL</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">triangle</span><span class="p">(</span><span class="s1">'L'</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id2">
+<h3><span class="section-number">3.11.4. </span>Ymarfer<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>Ysgrifennwch swyddogaeth o’r enw <code class="docutils literal notranslate"><span class="pre">rectangle</span></code> sy’n cymryd llinyn a dau gyfanrif ac
+yn tynnu petryal gyda’r lled a’r uchder penodol, wedi’i wneud o gopïau o’r llinyn.
+Dyma enghraifft o betryal gyda lled <code class="docutils literal notranslate"><span class="pre">5</span></code> ac uchder <code class="docutils literal notranslate"><span class="pre">4</span></code>, wedi’i wneud o’r llinyn
+<code class="docutils literal notranslate"><span class="pre">'H'</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">HHHHH</span>
+<span class="n">HHHHH</span>
+<span class="n">HHHHH</span>
+<span class="n">HHHHH</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rectangle</span><span class="p">(</span><span class="s1">'H'</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id3">
+<h3><span class="section-number">3.11.5. </span>Ymarfer<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>Mae’r gân “99 Bottles of Beer” yn dechrau gyda’r pennill hwn:</p>
+<blockquote>
+<div><p>99 bottles of beer on the wall
+99 bottles of beer
+Take one down, pass it around
+98 bottles of beer on the wall</p>
+</div></blockquote>
+<p>Yna mae’r ail bennill yr un fath, ac eithrio ei fod yn dechrau gyda 98 o boteli
+ac yn gorffen gyda 97. Mae’r gân yn parhau — am amser hir iawn — nes bod 0 potel
+o gwrw.</p>
+<p>Ysgrifennwch swyddogaeth o’r enw <code class="docutils literal notranslate"><span class="pre">bottle_verse</span></code> sy’n cymryd rhif fel paramedr ac
+yn dangos y pennill sy’n dechrau gyda’r nifer penodol o boteli.</p>
+<p>Awgrym: Ystyriwch ddechrau gyda swyddogaeth a all argraffu llinell gyntaf, ail
+linell, neu linell olaf y pennill, ac yna ei defnyddio i ysgrifennu
+<code class="docutils literal notranslate"><span class="pre">bottle_verse</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+<p>Defnyddiwch yr alwad swyddogaeth hon i ddangos y pennill cyntaf.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">bottle_verse</span><span class="p">(</span><span class="mi">99</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Os ydych am argraffu’r gân gyfan, gallwch ddefnyddio’r ddolen <code class="docutils literal notranslate"><span class="pre">for</span></code> hon, sy’n
+cyfrif i lawr o <code class="docutils literal notranslate"><span class="pre">99</span></code> i <code class="docutils literal notranslate"><span class="pre">1</span></code>. Does dim rhaid i chi ddeall yr enghraifft hon yn
+llwyr — byddwn yn dysgu mwy am ddolenni <code class="docutils literal notranslate"><span class="pre">for</span></code> a’r swyddogaeth <code class="docutils literal notranslate"><span class="pre">range</span></code> yn
+ddiweddarach.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">99</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">bottle_verse</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p><a class="reference external" href="https://allendowney.github.io/ThinkPython/index.html">Think Python: 3rd Edition</a> gan
+Allen B. Downey. Cyfieithiad Cymraeg gan Wayne Aubrey.</p>
+<p>Hawlfraint 2024 <a class="reference external" href="https://allendowney.com">Allen B. Downey</a>. Trwydded testun: <a class="reference external" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative
+Commons Attribution-NonCommercial-ShareAlike 4.0 International</a>.</p>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -462,6 +972,40 @@
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diffinio-swyddogaethau-newydd">3.1. Diffinio swyddogaethau newydd</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#paramedrau">3.2. Paramedrau</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#galw-swyddogaethau">3.3. Galw swyddogaethau</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ailadrodd">3.4. Ailadrodd</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mae-newidynnau-a-pharamedrau-n-lleol">3.5. Mae Newidynnau a Pharamedrau’n Lleol</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diagramau-pentwr">3.6. Diagramau Pentwr</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hanes-galwadau">3.7. Hanes Galwadau</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pam-swyddogaethau">3.8. Pam Swyddogaethau?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dadnamu">3.9. Dadnamu</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rhestr-termau-r-bennod">3.10. Rhestr Termau’r Bennod</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ymarferion">3.11. Ymarferion</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gofyn-i-gynorthwyydd-rhithwir">3.11.1. Gofyn i gynorthwyydd rhithwir</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ymarfer">3.11.2. Ymarfer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3.11.3. Ymarfer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">3.11.4. Ymarfer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3.11.5. Ymarfer</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
