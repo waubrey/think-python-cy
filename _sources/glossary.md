@@ -420,4 +420,25 @@ amnewid llinynnau
 
 gorchymyn shell
     shell command
+
+elfen
+    element
+
+rhestr nythol
+    nested list
+
+terfynydd
+    delimiter
+
+cyfwerth
+    equivalent
+
+unfath
+    identical
+
+cyfeiriad
+    reference
+
+arallenwi
+    to alias / aliased
 ```
