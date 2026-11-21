@@ -299,6 +299,17 @@ Reused without change: *geiriadur* (dictionary), *allwedd* (key), *gwerth*
 Reused without change: *tŵpl* (tuple, confirmed from the original WJEC
 research).
 
+## Chapter 12 vocabulary (text analysis, Markov generation)
+
+| English | Welsh | Status | Notes |
+|---|---|---|---|
+| default value | gwerth rhagosodedig | ✅ | already used informally in ch4, now a formal glossary term |
+| override | disodli | ✅ | reuses the verb already established for "replace" throughout |
+| deterministic | penderfyniadol | 🟡 | coined from *penderfynu* (to decide/determine) |
+| pseudorandom | ffug-hap | 🟡 | *ffug-* (pseudo/fake) + *hap* (chance, as in "ar hap" = at random) |
+| bigram / trigram / n-gram | deuair / triair / n-air | 🟡 | compositional from *gair* (word) + number prefixes, parallel pattern to the English bi-/tri-/n- |
+| rubber duck debugging | dadnamu hwyaden rwber | ✅ | compositional, playful but transparent |
+
 ## Important pattern to carry into translation
 
 In the official WJEC pseudocode (used throughout the Welsh-medium exam), **programming

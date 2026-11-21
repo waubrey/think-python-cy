@@ -486,4 +486,28 @@ allwedd trefnu
 
 strwythur data
     data structure
+
+gwerth rhagosodedig
+    default value
+
+disodli
+    override
+
+penderfyniadol
+    deterministic
+
+ffug-hap
+    pseudorandom
+
+deuair
+    bigram
+
+triair
+    trigram
+
+n-air
+    n-gram
+
+dadnamu hwyaden rwber
+    rubber duck debugging
 ```
