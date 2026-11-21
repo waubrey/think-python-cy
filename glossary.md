@@ -627,4 +627,19 @@ dosbarth plentyn
 
 arbenigaeth
     specialization
+
+ffatri
+    factory
+
+mynegiad amodol
+    conditional expression
+
+dirnadaeth rhestr
+    list comprehension
+
+mynegiad cynhyrchydd
+    generator expression
+
+darganfod profion
+    test discovery
 ```

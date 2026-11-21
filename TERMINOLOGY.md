@@ -386,6 +386,21 @@ Termiadur Addysg only has *etifeddiaeth*/*etifeddiad* in the biological/genetic 
 senses, not a computing-specific entry, so the existing confirmed term continues to be
 used for the OOP sense as before.
 
+## Chapter 18 vocabulary (sets, Counter, defaultdict, conditional expressions, list comprehensions, any/all, named tuples, packing kwargs, unittest)
+
+| English | Welsh | Status | Notes |
+|---|---|---|---|
+| factory (function) | ffatri | ✅/🟡 | *ffatri* (factory, building) is confirmed via Y Termiadur Addysg (general category); reused here for the same software-design metaphor English uses, which is not itself a sourced CS entry |
+| conditional expression | mynegiad amodol | 🟡 | compositional: *mynegiad* (✅ expression) + *amodol* (✅ conditional, already used in *gosodiad amodol* "conditional statement" since ch5) |
+| list comprehension | dirnadaeth rhestr | 🟡 | compositional: *dirnadaeth* (comprehension/grasp, ordinary literary Welsh word) + *rhestr* (✅ list) |
+| generator expression | mynegiad cynhyrchydd | 🟡 | compositional: *mynegiad* (✅ expression) + *cynhyrchydd* (ordinary Welsh word for "generator/producer") |
+| test discovery | darganfod profion | 🟡 | compositional: *darganfod* (discover, ordinary verb) + *profion* (plural of *prawf*, test) |
+
+No sourced CS-specific entries found in Y Termiadur Addysg for "list comprehension",
+"generator expression", or "test discovery" — these are Python-specific terms not
+covered by the WJEC/CBAC GCSE or A-level specifications, so all three are reasoned
+compositional coinages.
+
 ## Important pattern to carry into translation
 
 In the official WJEC pseudocode (used throughout the Welsh-medium exam), **programming
