@@ -369,6 +369,23 @@ Reused without change: *dull* (method, confirmed since ch7).
 Reused without change: *cyfwerth* (equivalent) and *unfath* (identical), both confirmed
 since ch9, used again here for the equivalence-vs-identity discussion (`==` vs `is`).
 
+## Chapter 17 vocabulary (inheritance, cards/decks/hands, encoding, ordering, delegation, specialization)
+
+| English | Welsh | Status | Notes |
+|---|---|---|---|
+| encode | amgodio | ✅ | confirmed via Y Termiadur Addysg (ITC category), e.g. "language encoding" = *amgodio iaith* |
+| class variable | newidyn dosbarth | 🟡 | compositional: *newidyn* (✅ variable) + *dosbarth* (✅ class, confirmed via Y Termiadur Addysg) |
+| totally ordered | wedi'u trefnu'n llwyr | 🟡 | compositional: *trefnu* (to order/arrange, ordinary Welsh verb) + *llwyr* (totally/complete, ordinary adjective) |
+| delegation | dirprwyo | ✅ | confirmed via Y Termiadur Addysg (general/legal/business category: *dirprwyo cyllideb* "delegation of budgets"); applied here to the OOP sense of one method handing off work to another |
+| parent class | dosbarth rhiant | 🟡 | compositional: *dosbarth* (✅) + *rhiant* (✅ confirmed as "parent" noun via Y Termiadur Addysg, Crefydd ac Athroniaeth category) |
+| child class | dosbarth plentyn | 🟡 | compositional: *dosbarth* (✅) + *plentyn* (ordinary Welsh word for "child") |
+| specialization | arbenigaeth | ✅ | confirmed via Y Termiadur Addysg (general category); reused here for the OOP sense of a specialized subclass |
+
+Reused without change: *etifeddiaeth* (inheritance, confirmed since ch14/15) — note Y
+Termiadur Addysg only has *etifeddiaeth*/*etifeddiad* in the biological/genetic and legal
+senses, not a computing-specific entry, so the existing confirmed term continues to be
+used for the OOP sense as before.
+
 ## Important pattern to carry into translation
 
 In the official WJEC pseudocode (used throughout the Welsh-medium exam), **programming
