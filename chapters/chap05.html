@@ -62,7 +62,7 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../_static/tippy/chapters/chap05.d37cb205-b790-40d2-9d2c-e8613f8b2017.js"></script>
+    <script defer="defer" src="../_static/tippy/chapters/chap05.82306ba4-877a-48a2-a70d-ac652e4625fc.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/chap05';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -155,6 +155,10 @@
     </div>
   
 
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
   
 </div>
 
@@ -374,7 +378,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -390,6 +396,36 @@
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rhaniad-cyfanrif-a-modwlws">5.1. Rhaniad Cyfanrif a Modwlws</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mynegiadau-boole">5.2. Mynegiadau Boole</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gweithredyddion-rhesymegol">5.3. Gweithredyddion Rhesymegol</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gosodiadau-if">5.4. Gosodiadau if</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#y-cymal-else">5.5. Y Cymal else</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#amodolion-cadwynol">5.6. Amodolion Cadwynol</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#amodolion-nythol">5.7. Amodolion Nythol</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dychweliad">5.8. Dychweliad</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diagramau-pentwr-ar-gyfer-swyddogaethau-dychweliadol">5.9. Diagramau Pentwr ar gyfer Swyddogaethau Dychweliadol</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dychweliad-anfeidrol">5.10. Dychweliad Anfeidrol</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mewnbwn-bysellfwrdd">5.11. Mewnbwn Bysellfwrdd</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dadnamu">5.12. Dadnamu</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rhestr-termau-r-bennod">5.13. Rhestr Termau’r Bennod</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ymarferion">5.14. Ymarferion</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gofyn-i-gynorthwyydd-rhithwir">5.14.1. Gofyn i gynorthwyydd rhithwir</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ymarfer">5.14.2. Ymarfer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">5.14.3. Ymarfer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">5.14.4. Ymarfer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">5.14.5. Ymarfer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">5.14.6. Ymarfer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">5.14.7. Ymarfer</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -401,11 +437,737 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="amodau-ac-ailadroddiad-recursion">
 <h1><span class="section-number">5. </span>Amodau ac Ailadroddiad (Recursion)<a class="headerlink" href="#amodau-ac-ailadroddiad-recursion" title="Link to this heading">#</a></h1>
-<div class="warning admonition">
-<p class="admonition-title">Statws cyfieithu</p>
-<p>Pennod heb ei chyfieithu eto. Ffynhonnell Saesneg: <strong>Conditionals and Recursion</strong>
-(gweler y bennod wreiddiol yn <a class="reference external" href="https://allendowney.github.io/ThinkPython/">https://allendowney.github.io/ThinkPython/</a> ar gyfer y testun gwreiddiol).</p>
+<p>Prif bwnc y bennod hon yw’r gosodiad <code class="docutils literal notranslate"><span class="pre">if</span></code>, sy’n cyflawni gwahanol god yn dibynnu
+ar gyflwr y rhaglen. A chyda’r gosodiad <code class="docutils literal notranslate"><span class="pre">if</span></code> byddwn yn gallu archwilio un o’r
+syniadau mwyaf pwerus mewn cyfrifiadureg, <strong><a class="reference internal" href="../glossary.html#term-dychweliad"><span class="xref std std-term">dychweliad</span></a></strong>.</p>
+<p>Ond byddwn yn dechrau gyda thair nodwedd newydd: y gweithredydd modwlws,
+mynegiadau Boole, a gweithredyddion rhesymegol.</p>
+<section id="rhaniad-cyfanrif-a-modwlws">
+<h2><span class="section-number">5.1. </span>Rhaniad Cyfanrif a Modwlws<a class="headerlink" href="#rhaniad-cyfanrif-a-modwlws" title="Link to this heading">#</a></h2>
+<p>Cofiwch fod y gweithredydd rhaniad cyfanrif, <code class="docutils literal notranslate"><span class="pre">//</span></code>, yn rhannu dau rif ac yn
+talgrynnu i lawr i gyfanrif. Er enghraifft, tybiwch fod amser rhedeg ffilm yn
+105 munud. Efallai yr hoffech wybod hyd hynny mewn oriau. Mae rhaniad
+confensiynol yn dychwelyd rhif pwynt arnawf:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">minutes</span> <span class="o">=</span> <span class="mi">105</span>
+<span class="n">minutes</span> <span class="o">/</span> <span class="mi">60</span>
+</pre></div>
 </div>
+<p>Ond nid ydym fel arfer yn ysgrifennu oriau gyda phwyntiau degol. Mae rhaniad
+cyfanrif yn dychwelyd nifer cyfan yr oriau, gan dalgrynnu i lawr:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">minutes</span> <span class="o">=</span> <span class="mi">105</span>
+<span class="n">hours</span> <span class="o">=</span> <span class="n">minutes</span> <span class="o">//</span> <span class="mi">60</span>
+<span class="n">hours</span>
+</pre></div>
+</div>
+<p>I gael y gweddill, gallech dynnu un awr mewn munudau:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">remainder</span> <span class="o">=</span> <span class="n">minutes</span> <span class="o">-</span> <span class="n">hours</span> <span class="o">*</span> <span class="mi">60</span>
+<span class="n">remainder</span>
+</pre></div>
+</div>
+<p>Neu gallech ddefnyddio’r <strong><a class="reference internal" href="../glossary.html#term-gweithredydd-modwlws"><span class="xref std std-term">gweithredydd modwlws</span></a></strong>, <code class="docutils literal notranslate"><span class="pre">%</span></code>, sy’n rhannu dau
+rif ac yn dychwelyd y gweddill.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">remainder</span> <span class="o">=</span> <span class="n">minutes</span> <span class="o">%</span> <span class="mi">60</span>
+<span class="n">remainder</span>
+</pre></div>
+</div>
+<p>Mae’r gweithredydd modwlws yn fwy defnyddiol nag y gallai ymddangos. Er
+enghraifft, gall wirio a yw un rhif yn rhanadwy ag un arall — os yw <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">%</span> <span class="pre">y</span></code> yn
+sero, mae <code class="docutils literal notranslate"><span class="pre">x</span></code> yn rhanadwy â <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p>
+<p>Hefyd, gall dynnu’r digid neu’r digidau mwyaf i’r dde o rif. Er enghraifft, mae
+<code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">%</span> <span class="pre">10</span></code> yn cynhyrchu digid mwyaf i’r dde <code class="docutils literal notranslate"><span class="pre">x</span></code> (yn sail 10). Yn yr un modd, mae
+<code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">%</span> <span class="pre">100</span></code> yn cynhyrchu’r ddau ddigid olaf.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">123</span>
+<span class="n">x</span> <span class="o">%</span> <span class="mi">10</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">%</span> <span class="mi">100</span>
+</pre></div>
+</div>
+<p>Yn olaf, gall y gweithredydd modwlws wneud “rhifyddeg cloc”. Er enghraifft, os
+yw digwyddiad yn dechrau am 11 y bore ac yn para tair awr, gallwn ddefnyddio’r
+gweithredydd modwlws i ddarganfod pryd mae’n gorffen.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">start</span> <span class="o">=</span> <span class="mi">11</span>
+<span class="n">duration</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">end</span> <span class="o">=</span> <span class="p">(</span><span class="n">start</span> <span class="o">+</span> <span class="n">duration</span><span class="p">)</span> <span class="o">%</span> <span class="mi">12</span>
+<span class="n">end</span>
+</pre></div>
+</div>
+<p>Byddai’r digwyddiad yn gorffen am 2 y prynhawn.</p>
+</section>
+<section id="mynegiadau-boole">
+<h2><span class="section-number">5.2. </span>Mynegiadau Boole<a class="headerlink" href="#mynegiadau-boole" title="Link to this heading">#</a></h2>
+<p>Mae <strong><a class="reference internal" href="../glossary.html#term-mynegiad-Boole"><span class="xref std std-term">mynegiad Boole</span></a></strong> yn fynegiad sy’n wir neu’n anwir. Er enghraifft,
+mae’r mynegiadau canlynol yn defnyddio’r gweithredydd hafal, <code class="docutils literal notranslate"><span class="pre">==</span></code>, sy’n cymharu
+dau werth ac yn cynhyrchu <code class="docutils literal notranslate"><span class="pre">True</span></code> os ydynt yn hafal a <code class="docutils literal notranslate"><span class="pre">False</span></code> fel arall:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span> <span class="o">==</span> <span class="mi">5</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span> <span class="o">==</span> <span class="mi">7</span>
+</pre></div>
+</div>
+<p>Camgymeriad cyffredin yw defnyddio un arwydd hafal (<code class="docutils literal notranslate"><span class="pre">=</span></code>) yn lle dau arwydd hafal
+(<code class="docutils literal notranslate"><span class="pre">==</span></code>). Cofiwch fod <code class="docutils literal notranslate"><span class="pre">=</span></code> yn neilltuo gwerth i newidyn ac mae <code class="docutils literal notranslate"><span class="pre">==</span></code> yn cymharu dau
+werth.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">7</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">==</span> <span class="n">y</span>
+</pre></div>
+</div>
+<p>Mae <code class="docutils literal notranslate"><span class="pre">True</span></code> a <code class="docutils literal notranslate"><span class="pre">False</span></code> yn werthoedd arbennig sy’n perthyn i’r math <code class="docutils literal notranslate"><span class="pre">bool</span></code>; nid
+ydynt yn llinynnau:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Mae’r gweithredydd <code class="docutils literal notranslate"><span class="pre">==</span></code> yn un o’r **<a class="reference internal" href="../glossary.html#term-gweithredydd-perthynol"><span class="xref std std-term">gweithredydd perthynol</span></a>**ion; dyma’r
+lleill:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">!=</span> <span class="n">y</span>               <span class="c1"># x is not equal to y</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span>                <span class="c1"># x is greater than y</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">&lt;</span> <span class="n">y</span>               <span class="c1"># x is less than to y</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">&gt;=</span> <span class="n">y</span>               <span class="c1"># x is greater than or equal to y</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">&lt;=</span> <span class="n">y</span>               <span class="c1"># x is less than or equal to y</span>
+</pre></div>
+</div>
+</section>
+<section id="gweithredyddion-rhesymegol">
+<h2><span class="section-number">5.3. </span>Gweithredyddion Rhesymegol<a class="headerlink" href="#gweithredyddion-rhesymegol" title="Link to this heading">#</a></h2>
+<p>I gyfuno gwerthoedd Boole yn fynegiadau, gallwn ddefnyddio
+**<a class="reference internal" href="../glossary.html#term-gweithredydd-rhesymegol"><span class="xref std std-term">gweithredydd rhesymegol</span></a>**ion. Y rhai mwyaf cyffredin yw <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code>, a
+<code class="docutils literal notranslate"><span class="pre">not</span></code>. Mae ystyr y gweithredyddion hyn yn debyg i’w hystyr yn Saesneg. Er
+enghraifft, gwerth y mynegiad canlynol yw <code class="docutils literal notranslate"><span class="pre">True</span></code> dim ond os yw <code class="docutils literal notranslate"><span class="pre">x</span></code> yn fwy na <code class="docutils literal notranslate"><span class="pre">0</span></code>
+<em>a</em> llai na <code class="docutils literal notranslate"><span class="pre">10</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">10</span>
+</pre></div>
+</div>
+<p>Mae’r mynegiad canlynol yn <code class="docutils literal notranslate"><span class="pre">True</span></code> os yw <em>un neu’r ddau</em> o’r amodau’n wir, hynny
+yw, os yw’r rhif yn rhanadwy â 2 <em>neu</em> 3:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<p>Yn olaf, mae’r gweithredydd <code class="docutils literal notranslate"><span class="pre">not</span></code> yn negyddu mynegiad Boole, felly mae’r
+mynegiad canlynol yn <code class="docutils literal notranslate"><span class="pre">True</span></code> os yw <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&gt;</span> <span class="pre">y</span></code> yn <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ow">not</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span>
+</pre></div>
+</div>
+<p>A siarad yn fanwl gywir, dylai weithredynnau gweithredydd rhesymegol fod yn
+fynegiadau Boole, ond nid yw Python yn llym iawn. Caiff unrhyw rif nad yw’n sero
+ei ddehongli fel <code class="docutils literal notranslate"><span class="pre">True</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">42</span> <span class="ow">and</span> <span class="kc">True</span>
+</pre></div>
+</div>
+<p>Gall yr hyblygrwydd hwn fod yn ddefnyddiol, ond mae rhai manion sy’n gallu bod
+yn ddryslyd. Efallai yr hoffech ei osgoi.</p>
+</section>
+<section id="gosodiadau-if">
+<h2><span class="section-number">5.4. </span>Gosodiadau if<a class="headerlink" href="#gosodiadau-if" title="Link to this heading">#</a></h2>
+<p>Er mwyn ysgrifennu rhaglenni defnyddiol, rydym bron bob amser angen y gallu i
+wirio amodau a newid ymddygiad y rhaglen yn unol â hynny. Mae
+**<a class="reference internal" href="../glossary.html#term-gosodiad-amodol"><span class="xref std std-term">gosodiad amodol</span></a>**au yn rhoi’r gallu hwn i ni. Y ffurf symlaf yw’r
+gosodiad <code class="docutils literal notranslate"><span class="pre">if</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'x is positive'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Mae <code class="docutils literal notranslate"><span class="pre">if</span></code> yn allweddair Python. Mae gan osodiadau <code class="docutils literal notranslate"><span class="pre">if</span></code> yr un strwythur â
+diffiniadau swyddogaeth: pennawd wedi’i ddilyn gan osodiad neu ddilyniant o
+osodiadau wedi’u mewnoli a elwir yn <strong><a class="reference internal" href="../glossary.html#term-bloc"><span class="xref std std-term">bloc</span></a></strong>.</p>
+<p>Gelwir y mynegiad Boole ar ôl <code class="docutils literal notranslate"><span class="pre">if</span></code> yn <strong><a class="reference internal" href="../glossary.html#term-amod"><span class="xref std std-term">amod</span></a></strong>. Os yw’n wir, mae’r
+gosodiadau yn y bloc mewnoledig yn rhedeg. Os nad yw, nid ydynt.</p>
+<p>Nid oes cyfyngiad ar nifer y gosodiadau a all ymddangos yn y bloc, ond mae’n
+rhaid cael o leiaf un. O bryd i’w gilydd, mae’n ddefnyddiol cael bloc nad yw’n
+gwneud dim — fel arfer fel lle gwag ar gyfer cod nad ydych wedi’i ysgrifennu
+eto. Yn yr achos hwnnw, gallwch ddefnyddio’r gosodiad <code class="docutils literal notranslate"><span class="pre">pass</span></code>, nad yw’n gwneud
+dim.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="k">pass</span>          <span class="c1"># TODO: need to handle negative values!</span>
+</pre></div>
+</div>
+<p>Mae’r gair <code class="docutils literal notranslate"><span class="pre">TODO</span></code> mewn sylwad yn atgoffâd confensiynol fod rhywbeth sydd angen
+i chi ei wneud yn ddiweddarach.</p>
+</section>
+<section id="y-cymal-else">
+<h2><span class="section-number">5.5. </span>Y Cymal else<a class="headerlink" href="#y-cymal-else" title="Link to this heading">#</a></h2>
+<p>Gall gosodiad <code class="docutils literal notranslate"><span class="pre">if</span></code> gael ail ran, a elwir yn gymal <code class="docutils literal notranslate"><span class="pre">else</span></code>. Mae’r gystrawen yn
+edrych fel hyn:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'x is even'</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'x is odd'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Os yw’r amod yn wir, mae’r gosodiad mewnoledig cyntaf yn rhedeg; fel arall,
+mae’r ail osodiad mewnoledig yn rhedeg.</p>
+<p>Yn yr enghraifft hon, os yw <code class="docutils literal notranslate"><span class="pre">x</span></code> yn eilrif, mae’r gweddill pan rennir <code class="docutils literal notranslate"><span class="pre">x</span></code> â <code class="docutils literal notranslate"><span class="pre">2</span></code>
+yn <code class="docutils literal notranslate"><span class="pre">0</span></code>, felly mae’r amod yn wir ac mae’r rhaglen yn dangos <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">is</span> <span class="pre">even</span></code>. Os yw
+<code class="docutils literal notranslate"><span class="pre">x</span></code> yn odrif, y gweddill yw <code class="docutils literal notranslate"><span class="pre">1</span></code>, felly mae’r amod yn anwir, ac mae’r rhaglen yn
+dangos <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">is</span> <span class="pre">odd</span></code>.</p>
+<p>Gan fod yn rhaid i’r amod fod yn wir neu’n anwir, bydd union un o’r dewisiadau
+amgen yn rhedeg. Gelwir y dewisiadau amgen yn **<a class="reference internal" href="../glossary.html#term-cangen"><span class="xref std std-term">cangen</span></a>**nau.</p>
+</section>
+<section id="amodolion-cadwynol">
+<h2><span class="section-number">5.6. </span>Amodolion Cadwynol<a class="headerlink" href="#amodolion-cadwynol" title="Link to this heading">#</a></h2>
+<p>Weithiau mae mwy na dau bosibilrwydd ac mae angen mwy na dwy gangen arnom.
+Un ffordd o fynegi cyfrifiant fel hynny yw <strong><a class="reference internal" href="../glossary.html#term-amodol-cadwynol"><span class="xref std std-term">amodol cadwynol</span></a></strong>, sy’n
+cynnwys cymal <code class="docutils literal notranslate"><span class="pre">elif</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">y</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'x is less than y'</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'x is greater than y'</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'x and y are equal'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Mae <code class="docutils literal notranslate"><span class="pre">elif</span></code> yn fyrfodd o “else if”. Nid oes cyfyngiad ar nifer y cymalau <code class="docutils literal notranslate"><span class="pre">elif</span></code>.
+Os oes cymal <code class="docutils literal notranslate"><span class="pre">else</span></code>, mae’n rhaid iddo fod ar y diwedd, ond nid oes rhaid cael
+un.</p>
+<p>Gwirir pob amod yn ei drefn. Os yw’r cyntaf yn anwir, gwirir yr un nesaf, ac yn
+y blaen. Os yw un ohonynt yn wir, mae’r gangen gyfatebol yn rhedeg ac mae’r
+gosodiad <code class="docutils literal notranslate"><span class="pre">if</span></code> yn dod i ben. Hyd yn oed os yw mwy nag un amod yn wir, dim ond y
+gangen wir gyntaf sy’n rhedeg.</p>
+</section>
+<section id="amodolion-nythol">
+<h2><span class="section-number">5.7. </span>Amodolion Nythol<a class="headerlink" href="#amodolion-nythol" title="Link to this heading">#</a></h2>
+<p>Gall un amodol hefyd gael ei nythu o fewn un arall. Gallem fod wedi ysgrifennu’r
+enghraifft yn yr adran flaenorol fel hyn:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'x and y are equal'</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">y</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">'x is less than y'</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">'x is greater than y'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Mae gan y gosodiad <code class="docutils literal notranslate"><span class="pre">if</span></code> allanol ddwy gangen. Mae’r gangen gyntaf yn cynnwys
+gosodiad syml. Mae’r ail gangen yn cynnwys gosodiad <code class="docutils literal notranslate"><span class="pre">if</span></code> arall, sydd â dwy
+gangen ei hun. Mae’r ddwy gangen hynny’n osodiadau syml, er y gallent fod wedi
+bod yn osodiadau amodol hefyd.</p>
+<p>Er bod mewnoliad y gosodiadau’n gwneud y strwythur yn amlwg, gall
+**<a class="reference internal" href="../glossary.html#term-amodol-nythol"><span class="xref std std-term">amodol nythol</span></a>**ion fod yn anodd eu darllen. Awgrymaf eich bod yn eu
+hosgoi pan allwch.</p>
+<p>Mae gweithredyddion rhesymegol yn aml yn rhoi ffordd o symleiddio gosodiadau
+amodol nythol. Dyma enghraifft gydag amodol nythol.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;</span> <span class="n">x</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">'x is a positive single-digit number.'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Dim ond os awn heibio i’r ddau amodol y mae’r gosodiad <code class="docutils literal notranslate"><span class="pre">print</span></code> yn rhedeg, felly
+cawn yr un effaith gyda’r gweithredydd <code class="docutils literal notranslate"><span class="pre">and</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;</span> <span class="n">x</span> <span class="ow">and</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'x is a positive single-digit number.'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Ar gyfer y math hwn o amod, mae Python yn darparu dewis mwy cryno:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'x is a positive single-digit number.'</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="dychweliad">
+<h2><span class="section-number">5.8. </span>Dychweliad<a class="headerlink" href="#dychweliad" title="Link to this heading">#</a></h2>
+<p>Mae’n gyfreithlon i swyddogaeth alw ei hun. Efallai nad yw’n amlwg pam mae
+hynny’n beth da, ond mae’n troi allan i fod yn un o’r pethau mwyaf hudolus y
+gall rhaglen ei wneud. Dyma enghraifft.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">countdown</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">'Blastoff!'</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+        <span class="n">countdown</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Os yw <code class="docutils literal notranslate"><span class="pre">n</span></code> yn 0 neu’n negatif, mae <code class="docutils literal notranslate"><span class="pre">countdown</span></code> yn allbynnu’r gair, “Blastoff!”
+Fel arall, mae’n allbynnu <code class="docutils literal notranslate"><span class="pre">n</span></code> ac yna’n galw ei hun, gan basio <code class="docutils literal notranslate"><span class="pre">n-1</span></code> fel dadl.</p>
+<p>Dyma beth sy’n digwydd pan alwn y swyddogaeth hon gyda’r ddadl <code class="docutils literal notranslate"><span class="pre">3</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">countdown</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Mae cyflawniad <code class="docutils literal notranslate"><span class="pre">countdown</span></code> yn dechrau gyda <code class="docutils literal notranslate"><span class="pre">n=3</span></code>, ac am fod <code class="docutils literal notranslate"><span class="pre">n</span></code> yn fwy na <code class="docutils literal notranslate"><span class="pre">0</span></code>,
+mae’n dangos <code class="docutils literal notranslate"><span class="pre">3</span></code>, ac yna’n galw ei hun…</p>
+<blockquote>
+<div><p>Mae cyflawniad <code class="docutils literal notranslate"><span class="pre">countdown</span></code> yn dechrau gyda <code class="docutils literal notranslate"><span class="pre">n=2</span></code>, ac am fod <code class="docutils literal notranslate"><span class="pre">n</span></code> yn fwy na <code class="docutils literal notranslate"><span class="pre">0</span></code>,
+mae’n dangos <code class="docutils literal notranslate"><span class="pre">2</span></code>, ac yna’n galw ei hun…</p>
+<blockquote>
+<div><p>Mae cyflawniad <code class="docutils literal notranslate"><span class="pre">countdown</span></code> yn dechrau gyda <code class="docutils literal notranslate"><span class="pre">n=1</span></code>, ac am fod <code class="docutils literal notranslate"><span class="pre">n</span></code> yn fwy na
+<code class="docutils literal notranslate"><span class="pre">0</span></code>, mae’n dangos <code class="docutils literal notranslate"><span class="pre">1</span></code>, ac yna’n galw ei hun…</p>
+<blockquote>
+<div><p>Mae cyflawniad <code class="docutils literal notranslate"><span class="pre">countdown</span></code> yn dechrau gyda <code class="docutils literal notranslate"><span class="pre">n=0</span></code>, ac am nad yw <code class="docutils literal notranslate"><span class="pre">n</span></code> yn fwy
+na <code class="docutils literal notranslate"><span class="pre">0</span></code>, mae’n dangos “Blastoff!” ac yn dychwelyd.</p>
+</div></blockquote>
+<p>Mae’r <code class="docutils literal notranslate"><span class="pre">countdown</span></code> a gafodd <code class="docutils literal notranslate"><span class="pre">n=1</span></code> yn dychwelyd.</p>
+</div></blockquote>
+<p>Mae’r <code class="docutils literal notranslate"><span class="pre">countdown</span></code> a gafodd <code class="docutils literal notranslate"><span class="pre">n=2</span></code> yn dychwelyd.</p>
+</div></blockquote>
+<p>Mae’r <code class="docutils literal notranslate"><span class="pre">countdown</span></code> a gafodd <code class="docutils literal notranslate"><span class="pre">n=3</span></code> yn dychwelyd.</p>
+<p>Mae swyddogaeth sy’n galw ei hun yn <strong><a class="reference internal" href="../glossary.html#term-dychweliadol"><span class="xref std std-term">dychweliadol</span></a></strong>. Fel enghraifft
+arall, gallwn ysgrifennu swyddogaeth sy’n argraffu llinyn <code class="docutils literal notranslate"><span class="pre">n</span></code> o weithiau.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">print_n_times</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
+        <span class="n">print_n_times</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Os yw <code class="docutils literal notranslate"><span class="pre">n</span></code> yn bositif, mae <code class="docutils literal notranslate"><span class="pre">print_n_times</span></code> yn dangos gwerth <code class="docutils literal notranslate"><span class="pre">string</span></code> ac yna’n
+galw ei hun, gan basio <code class="docutils literal notranslate"><span class="pre">string</span></code> ac <code class="docutils literal notranslate"><span class="pre">n-1</span></code> fel dadleuon.</p>
+<p>Os yw <code class="docutils literal notranslate"><span class="pre">n</span></code> yn <code class="docutils literal notranslate"><span class="pre">0</span></code> neu’n negatif, mae’r amod yn anwir ac nid yw <code class="docutils literal notranslate"><span class="pre">print_n_times</span></code>
+yn gwneud dim.</p>
+<p>Dyma sut mae’n gweithio.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">print_n_times</span><span class="p">(</span><span class="s1">'Spam '</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Ar gyfer enghreifftiau syml fel hyn, mae’n debyg ei bod hi’n haws defnyddio
+dolen <code class="docutils literal notranslate"><span class="pre">for</span></code>. Ond fe welwn enghreifftiau yn ddiweddarach sy’n anodd eu
+hysgrifennu gyda dolen <code class="docutils literal notranslate"><span class="pre">for</span></code> ac yn hawdd eu hysgrifennu gyda dychweliad, felly
+mae’n dda dechrau’n gynnar.</p>
+</section>
+<section id="diagramau-pentwr-ar-gyfer-swyddogaethau-dychweliadol">
+<h2><span class="section-number">5.9. </span>Diagramau Pentwr ar gyfer Swyddogaethau Dychweliadol<a class="headerlink" href="#diagramau-pentwr-ar-gyfer-swyddogaethau-dychweliadol" title="Link to this heading">#</a></h2>
+<p>Dyma ddiagram pentwr sy’n dangos y fframiau a grëwyd pan alwom <code class="docutils literal notranslate"><span class="pre">countdown</span></code> gyda
+<code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">=</span> <span class="pre">3</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">diagram</span><span class="w"> </span><span class="kn">import</span> <span class="n">make_frame</span><span class="p">,</span> <span class="n">Stack</span>
+
+<span class="n">frames</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]:</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">n</span><span class="p">)</span>
+    <span class="n">frame</span> <span class="o">=</span> <span class="n">make_frame</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">'countdown'</span><span class="p">,</span> <span class="n">dy</span><span class="o">=-</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">'left'</span><span class="p">)</span>
+    <span class="n">frames</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">frame</span><span class="p">)</span>
+
+<span class="n">stack</span> <span class="o">=</span> <span class="n">Stack</span><span class="p">(</span><span class="n">frames</span><span class="p">,</span> <span class="n">dy</span><span class="o">=-</span><span class="mf">0.5</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">diagram</span><span class="w"> </span><span class="kn">import</span> <span class="n">diagram</span><span class="p">,</span> <span class="n">adjust</span>
+
+
+<span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.74</span><span class="p">,</span> <span class="mf">2.04</span><span class="p">,</span> <span class="mf">1.05</span><span class="p">,</span> <span class="mf">1.77</span><span class="p">]</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">diagram</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
+<span class="n">bbox</span> <span class="o">=</span> <span class="n">stack</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="c1"># adjust(x, y, bbox)</span>
+</pre></div>
+</div>
+<p>Mae gan y pedair ffram <code class="docutils literal notranslate"><span class="pre">countdown</span></code> wahanol werthoedd ar gyfer y paramedr <code class="docutils literal notranslate"><span class="pre">n</span></code>.
+Gelwir gwaelod y pentwr, lle mae <code class="docutils literal notranslate"><span class="pre">n=0</span></code>, yn <strong><a class="reference internal" href="../glossary.html#term-achos-sylfaenol"><span class="xref std std-term">achos sylfaenol</span></a></strong>. Nid yw’n
+gwneud galwad ddychweliadol, felly nid oes rhagor o fframiau.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">diagram</span><span class="w"> </span><span class="kn">import</span> <span class="n">make_frame</span><span class="p">,</span> <span class="n">Stack</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">diagram</span><span class="w"> </span><span class="kn">import</span> <span class="n">diagram</span><span class="p">,</span> <span class="n">adjust</span>
+
+<span class="n">frames</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]:</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">string</span><span class="o">=</span><span class="s1">'Hello'</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="n">n</span><span class="p">)</span>
+    <span class="n">frame</span> <span class="o">=</span> <span class="n">make_frame</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">'print_n_times'</span><span class="p">,</span> <span class="n">dx</span><span class="o">=</span><span class="mf">1.3</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">'left'</span><span class="p">)</span>
+    <span class="n">frames</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">frame</span><span class="p">)</span>
+
+<span class="n">stack</span> <span class="o">=</span> <span class="n">Stack</span><span class="p">(</span><span class="n">frames</span><span class="p">,</span> <span class="n">dy</span><span class="o">=-</span><span class="mf">0.5</span><span class="p">)</span>
+
+<span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mf">3.53</span><span class="p">,</span> <span class="mf">1.54</span><span class="p">,</span> <span class="mf">1.54</span><span class="p">,</span> <span class="mf">1.27</span><span class="p">]</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">diagram</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
+<span class="n">bbox</span> <span class="o">=</span> <span class="n">stack</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="c1"># adjust(x, y, bbox)</span>
+</pre></div>
+</div>
+</section>
+<section id="dychweliad-anfeidrol">
+<h2><span class="section-number">5.10. </span>Dychweliad Anfeidrol<a class="headerlink" href="#dychweliad-anfeidrol" title="Link to this heading">#</a></h2>
+<p>Os na fydd dychweliad byth yn cyrraedd achos sylfaenol, mae’n parhau i wneud
+galwadau dychweliadol am byth, ac nid yw’r rhaglen byth yn terfynu. Gelwir hyn
+yn <strong><a class="reference internal" href="../glossary.html#term-dychweliad-anfeidrol"><span class="xref std std-term">dychweliad anfeidrol</span></a></strong>, ac yn gyffredinol nid yw’n syniad da. Dyma
+swyddogaeth leiaf gyda dychweliad anfeidrol.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">recurse</span><span class="p">():</span>
+    <span class="n">recurse</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Bob tro y gelwir <code class="docutils literal notranslate"><span class="pre">recurse</span></code>, mae’n galw ei hun, sy’n creu ffram arall. Yn Python,
+mae cyfyngiad ar nifer y fframiau a all fod ar y pentwr ar yr un pryd. Os bydd
+rhaglen yn mynd y tu hwnt i’r cyfyngiad, mae’n achosi gwall rhedeg.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">xmode</span> <span class="n">Context</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">expect</span> <span class="ne">RecursionError</span>
+
+<span class="n">recurse</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Mae’r hanes galwadau’n dangos bod bron 3000 o fframiau ar y pentwr pan
+ddigwyddodd y gwall.</p>
+<p>Os dowch ar draws dychweliad anfeidrol ar ddamwain, adolygwch eich swyddogaeth
+i gadarnhau bod achos sylfaenol nad yw’n gwneud galwad ddychweliadol. Ac os
+oes achos sylfaenol, gwiriwch a ydych yn sicr o’i gyrraedd.</p>
+</section>
+<section id="mewnbwn-bysellfwrdd">
+<h2><span class="section-number">5.11. </span>Mewnbwn Bysellfwrdd<a class="headerlink" href="#mewnbwn-bysellfwrdd" title="Link to this heading">#</a></h2>
+<p>Nid yw’r rhaglenni rydym wedi’u hysgrifennu hyd yn hyn yn derbyn unrhyw fewnbwn
+gan y defnyddiwr. Maent yn gwneud yr un peth bob tro.</p>
+<p>Mae Python yn darparu swyddogaeth gynhenid o’r enw <code class="docutils literal notranslate"><span class="pre">input</span></code> sy’n stopio’r
+rhaglen ac yn aros i’r defnyddiwr deipio rhywbeth. Pan fydd y defnyddiwr yn
+pwyso <em>Return</em> neu <em>Enter</em>, mae’r rhaglen yn ailddechrau ac mae <code class="docutils literal notranslate"><span class="pre">input</span></code> yn
+dychwelyd yr hyn a deipiodd y defnyddiwr fel llinyn.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Cyn cael mewnbwn gan y defnyddiwr, efallai yr hoffech ddangos anogiad yn
+dweud wrth y defnyddiwr beth i’w deipio. Gall <code class="docutils literal notranslate"><span class="pre">input</span></code> gymryd anogiad fel dadl:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">'What...is your name?</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
+<span class="n">name</span>
+</pre></div>
+</div>
+<p>Mae’r dilyniant <code class="docutils literal notranslate"><span class="pre">\n</span></code> ar ddiwedd yr anogiad yn cynrychioli <strong><a class="reference internal" href="../glossary.html#term-llinell-newydd"><span class="xref std std-term">llinell newydd</span></a></strong>,
+sef nod arbennig sy’n achosi toriad llinell — fel hyn mae mewnbwn y defnyddiwr
+yn ymddangos o dan yr anogiad.</p>
+<p>Os ydych yn disgwyl i’r defnyddiwr deipio cyfanrif, gallwch ddefnyddio’r
+swyddogaeth <code class="docutils literal notranslate"><span class="pre">int</span></code> i drosi’r gwerth a ddychwelwyd yn <code class="docutils literal notranslate"><span class="pre">int</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">prompt</span> <span class="o">=</span> <span class="s1">'What...is the airspeed velocity of an unladen swallow?</span><span class="se">\n</span><span class="s1">'</span>
+<span class="n">speed</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+<span class="n">speed</span>
+</pre></div>
+</div>
+<p>Ond os ydynt yn teipio rhywbeth nad yw’n gyfanrif, cewch wall rhedeg.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">xmode</span> <span class="n">Minimal</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">expect</span> <span class="ne">ValueError</span>
+
+<span class="nb">int</span><span class="p">(</span><span class="n">speed</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Fe welwn sut i drin y math hwn o wall yn ddiweddarach.</p>
+</section>
+<section id="dadnamu">
+<h2><span class="section-number">5.12. </span>Dadnamu<a class="headerlink" href="#dadnamu" title="Link to this heading">#</a></h2>
+<p>Pan ddigwydd gwall cystrawen neu wall rhedeg, mae’r neges wall yn cynnwys
+llawer o wybodaeth, ond gall fod yn llethol. Fel arfer y rhannau mwyaf
+defnyddiol yw:</p>
+<ul class="simple">
+<li><p>Pa fath o wall ydoedd, a</p></li>
+<li><p>Ble digwyddodd.</p></li>
+</ul>
+<p>Mae gwallau cystrawen fel arfer yn hawdd eu canfod, ond mae ambell gocyn
+hitio. Gall gwallau sy’n ymwneud â bylchau a thabiau fod yn anodd am eu bod yn
+anweledig ac rydym yn gyfarwydd ag anwybyddu nhw.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">expect</span> <span class="ne">IndentationError</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+ <span class="n">y</span> <span class="o">=</span> <span class="mi">6</span>
+</pre></div>
+</div>
+<p>Yn yr enghraifft hon, y broblem yw bod yr ail linell wedi’i mewnoli ag un
+bwlch. Ond mae’r neges wall yn pwyntio at <code class="docutils literal notranslate"><span class="pre">y</span></code>, sy’n gamarweiniol. Mae negeseuon
+gwall yn dangos ble canfuwyd y broblem, ond gallai’r gwall gwirioneddol fod yn
+gynharach yn y cod.</p>
+<p>Mae’r un peth yn wir am wallau rhedeg. Er enghraifft, tybiwch eich bod yn
+ceisio trosi cymhareb yn ddecibel, fel hyn:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">xmode</span> <span class="n">Context</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">expect</span> <span class="ne">ValueError</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+<span class="n">numerator</span> <span class="o">=</span> <span class="mi">9</span>
+<span class="n">denominator</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">ratio</span> <span class="o">=</span> <span class="n">numerator</span> <span class="o">//</span> <span class="n">denominator</span>
+<span class="n">decibels</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">ratio</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Mae’r neges wall yn dangos llinell 5, ond nid oes dim byd o’i le ar y llinell
+honno. Mae’r broblem yn llinell 4, sy’n defnyddio rhaniad cyfanrif yn lle
+rhaniad pwynt arnawf — o ganlyniad, <code class="docutils literal notranslate"><span class="pre">0</span></code> yw gwerth <code class="docutils literal notranslate"><span class="pre">ratio</span></code>. Pan alwn
+<code class="docutils literal notranslate"><span class="pre">math.log10</span></code>, cawn <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> gyda’r neges <code class="docutils literal notranslate"><span class="pre">math</span> <span class="pre">domain</span> <span class="pre">error</span></code>, am nad yw
+<code class="docutils literal notranslate"><span class="pre">0</span></code> yn y “parth” o ddadleuon dilys ar gyfer <code class="docutils literal notranslate"><span class="pre">math.log10</span></code>, am fod logarithm <code class="docutils literal notranslate"><span class="pre">0</span></code>
+yn annelwig.</p>
+<p>Yn gyffredinol, dylech gymryd amser i ddarllen negeseuon gwall yn ofalus, ond
+peidiwch â thybio bod popeth a ddywedir yn gywir.</p>
+</section>
+<section id="rhestr-termau-r-bennod">
+<h2><span class="section-number">5.13. </span>Rhestr Termau’r Bennod<a class="headerlink" href="#rhestr-termau-r-bennod" title="Link to this heading">#</a></h2>
+<p><strong>dychweliad:</strong>
+Y broses o alw’r swyddogaeth sy’n cyflawni ar hyn o bryd.</p>
+<p><strong>gweithredydd modwlws:</strong>
+Gweithredydd, <code class="docutils literal notranslate"><span class="pre">%</span></code>, sy’n gweithio ar gyfanrifau ac yn dychwelyd y gweddill pan
+rennir un rhif ag un arall.</p>
+<p><strong>mynegiad Boole:</strong>
+Mynegiad y mae ei werth naill ai’n <code class="docutils literal notranslate"><span class="pre">True</span></code> neu’n <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<p><strong>gweithredydd perthynol:</strong>
+Un o’r gweithredyddion sy’n cymharu ei weithredynnau: <code class="docutils literal notranslate"><span class="pre">==</span></code>, <code class="docutils literal notranslate"><span class="pre">!=</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>,
+<code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>, a <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>.</p>
+<p><strong>gweithredydd rhesymegol:</strong>
+Un o’r gweithredyddion sy’n cyfuno mynegiadau Boole, gan gynnwys <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code>,
+a <code class="docutils literal notranslate"><span class="pre">not</span></code>.</p>
+<p><strong>gosodiad amodol:</strong>
+Gosodiad sy’n rheoli llif cyflawniad yn dibynnu ar ryw amod.</p>
+<p><strong>amod:</strong>
+Y mynegiad Boole mewn gosodiad amodol sy’n pennu pa gangen sy’n rhedeg.</p>
+<p><strong>bloc:</strong>
+Un neu fwy o osodiadau wedi’u mewnoli i ddangos eu bod yn rhan o osodiad arall.</p>
+<p><strong>cangen:</strong>
+Un o’r dilyniannau amgen o osodiadau mewn gosodiad amodol.</p>
+<p><strong>amodol cadwynol:</strong>
+Gosodiad amodol gyda chyfres o ganghennau amgen.</p>
+<p><strong>amodol nythol:</strong>
+Gosodiad amodol sy’n ymddangos yn un o ganghennau gosodiad amodol arall.</p>
+<p><strong>dychweliadol:</strong>
+Mae swyddogaeth sy’n galw ei hun yn ddychweliadol.</p>
+<p><strong>achos sylfaenol:</strong>
+Cangen amodol mewn swyddogaeth ddychweliadol nad yw’n gwneud galwad
+ddychweliadol.</p>
+<p><strong>dychweliad anfeidrol:</strong>
+Dychweliad nad oes ganddo achos sylfaenol, neu nad yw byth yn ei gyrraedd. Yn
+y pen draw, mae dychweliad anfeidrol yn achosi gwall rhedeg.</p>
+<p><strong>llinell newydd:</strong>
+Nod sy’n creu toriad llinell rhwng dwy ran o linyn.</p>
+</section>
+<section id="ymarferion">
+<h2><span class="section-number">5.14. </span>Ymarferion<a class="headerlink" href="#ymarferion" title="Link to this heading">#</a></h2>
+<section id="gofyn-i-gynorthwyydd-rhithwir">
+<h3><span class="section-number">5.14.1. </span>Gofyn i gynorthwyydd rhithwir<a class="headerlink" href="#gofyn-i-gynorthwyydd-rhithwir" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Gofynnwch i gynorthwyydd rhithwir, “Beth yw rhai defnyddiau o’r gweithredydd
+modwlws?”</p></li>
+<li><p>Mae Python yn darparu gweithredyddion i gyfrifo’r gweithrediadau rhesymegol
+<code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code>, a <code class="docutils literal notranslate"><span class="pre">not</span></code>, ond nid oes ganddo weithredydd sy’n cyfrifo’r
+gweithrediad “neu” cyfyngol, a ysgrifennir fel arfer <code class="docutils literal notranslate"><span class="pre">xor</span></code>. Gofynnwch i
+gynorthwyydd “Beth yw’r gweithrediad rhesymegol xor a sut rwy’n ei gyfrifo
+yn Python?”</p></li>
+</ul>
+<p>Yn y bennod hon, gwelsom ddwy ffordd o ysgrifennu gosodiad <code class="docutils literal notranslate"><span class="pre">if</span></code> gyda thair
+cangen, gan ddefnyddio amodol cadwynol neu amodol nythol. Gallwch ddefnyddio
+cynorthwyydd rhithwir i drosi o un i’r llall. Er enghraifft, gofynnwch i
+gynorthwyydd, “Trosi’r gosodiad hwn yn amodol cadwynol.”</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">7</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'x and y are equal'</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">y</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">'x is less than y'</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">'x is greater than y'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Gofynnwch i gynorthwyydd, “Ailysgrifennu’r gosodiad hwn gydag un amodol.”</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;</span> <span class="n">x</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">'x is a positive single-digit number.'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Gweler a all cynorthwyydd symleiddio’r cymhlethdod diangen hwn.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="ow">not</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'x is a positive single-digit number.'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Dyma ymgais ar swyddogaeth ddychweliadol sy’n cyfrif i lawr yn ddau.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">countdown_by_two</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">'Blastoff!'</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+        <span class="n">countdown_by_two</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Mae’n ymddangos ei bod yn gweithio.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">countdown_by_two</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Ond mae ganddi wall. Gofynnwch i gynorthwyydd rhithwir beth sydd o’i le a sut
+i’w drwsio. Gludwch y datrysiad y mae’n ei ddarparu yn ôl yma a’i brofi.</p>
+</section>
+<section id="ymarfer">
+<h3><span class="section-number">5.14.2. </span>Ymarfer<a class="headerlink" href="#ymarfer" title="Link to this heading">#</a></h3>
+<p>Mae’r modiwl <code class="docutils literal notranslate"><span class="pre">time</span></code> yn darparu swyddogaeth, a elwir hefyd yn <code class="docutils literal notranslate"><span class="pre">time</span></code>, sy’n
+dychwelyd nifer yr eiliadau ers “epoch Unix”, sef Ionawr 1, 1970, 00:00:00 UTC
+(Amser Cydgysylltiedig Cyffredinol).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">time</span><span class="w"> </span><span class="kn">import</span> <span class="n">time</span>
+
+<span class="n">now</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
+<span class="n">now</span>
+</pre></div>
+</div>
+<p>Defnyddiwch raniad cyfanrif a’r gweithredydd modwlws i gyfrifo nifer y
+diwrnodau ers Ionawr 1, 1970 ac amser cyfredol y dydd mewn oriau, munudau, ac
+eiliadau.</p>
+<p>Gallwch ddarllen mwy am y modiwl <code class="docutils literal notranslate"><span class="pre">time</span></code> yn
+<a class="reference external" href="https://docs.python.org/3/library/time.html">https://docs.python.org/3/library/time.html</a>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+</section>
+<section id="id1">
+<h3><span class="section-number">5.14.3. </span>Ymarfer<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>Os rhoddir tri ffon i chi, efallai y byddwch yn gallu, neu efallai na fyddwch
+yn gallu, eu trefnu’n driongl. Er enghraifft, os yw un o’r ffyn yn 12 modfedd
+o hyd a’r ddwy arall yn fodfedd o hyd yr un, ni fyddwch yn gallu cael y ffyn
+byr i gyfarfod yn y canol. Ar gyfer unrhyw dair hyd, mae prawf i weld a yw’n
+bosibl ffurfio triongl:</p>
+<blockquote>
+<div><p>Os yw unrhyw un o’r tair hyd yn fwy na swm y ddwy arall, yna ni allwch
+ffurfio triongl. Fel arall, gallwch. (Os yw swm dwy hyd yn hafal i’r drydedd,
+maent yn ffurfio’r hyn a elwir yn driongl “ddirywiedig”.)</p>
+</div></blockquote>
+<p>Ysgrifennwch swyddogaeth o’r enw <code class="docutils literal notranslate"><span class="pre">is_triangle</span></code> sy’n cymryd tri chyfanrif fel
+dadleuon, ac sy’n argraffu “Yes” neu “No”, yn dibynnu a allwch neu na allwch
+ffurfio triongl o ffyn â’r hydoedd penodol. Awgrym: Defnyddiwch amodol
+cadwynol.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+<p>Profwch eich swyddogaeth gyda’r achosion canlynol.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">is_triangle</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>   <span class="c1"># should be Yes</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">is_triangle</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>   <span class="c1"># should be Yes</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">is_triangle</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>   <span class="c1"># should be No</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">is_triangle</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>   <span class="c1"># should be No</span>
+</pre></div>
+</div>
+</section>
+<section id="id2">
+<h3><span class="section-number">5.14.4. </span>Ymarfer<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>Beth yw allbwn y rhaglen ganlynol? Tynnwch ddiagram pentwr sy’n dangos cyflwr
+y rhaglen pan fydd yn argraffu’r canlyniad.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">recurse</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">s</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">recurse</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="n">s</span><span class="p">)</span>
+
+<span class="n">recurse</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+</section>
+<section id="id3">
+<h3><span class="section-number">5.14.5. </span>Ymarfer<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>Mae’r ymarferion canlynol yn defnyddio’r modiwl <code class="docutils literal notranslate"><span class="pre">jupyturtle</span></code>, a ddisgrifiwyd ym
+Mhennod 4.</p>
+<p>Darllenwch y swyddogaeth ganlynol a gweler a allwch ddarganfod beth mae’n ei
+wneud. Yna rhedwch hi a gweler a oeddech yn gywir. Addaswch werthoedd <code class="docutils literal notranslate"><span class="pre">length</span></code>,
+<code class="docutils literal notranslate"><span class="pre">angle</span></code> a <code class="docutils literal notranslate"><span class="pre">factor</span></code> a gweler pa effaith sydd ganddynt ar y canlyniad. Os nad
+ydych yn siŵr eich bod yn deall sut mae’n gweithio, ceisiwch ofyn i gynorthwyydd
+rhithwir.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">jupyturtle</span><span class="w"> </span><span class="kn">import</span> <span class="n">forward</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">back</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">draw</span><span class="p">(</span><span class="n">length</span><span class="p">):</span>
+    <span class="n">angle</span> <span class="o">=</span> <span class="mi">50</span>
+    <span class="n">factor</span> <span class="o">=</span> <span class="mf">0.6</span>
+    
+    <span class="k">if</span> <span class="n">length</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="n">forward</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
+        <span class="n">left</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
+        <span class="n">draw</span><span class="p">(</span><span class="n">factor</span> <span class="o">*</span> <span class="n">length</span><span class="p">)</span>
+        <span class="n">right</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">angle</span><span class="p">)</span>
+        <span class="n">draw</span><span class="p">(</span><span class="n">factor</span> <span class="o">*</span> <span class="n">length</span><span class="p">)</span>
+        <span class="n">left</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
+        <span class="n">back</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+</section>
+<section id="id4">
+<h3><span class="section-number">5.14.6. </span>Ymarfer<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p>Gofynnwch i gynorthwyydd rhithwir “Beth yw cromlin Koch?”</p>
+<p>I dynnu cromlin Koch gyda hyd <code class="docutils literal notranslate"><span class="pre">x</span></code>, y cyfan sy’n rhaid i chi ei wneud yw</p>
+<ol class="arabic simple">
+<li><p>Tynnu cromlin Koch gyda hyd <code class="docutils literal notranslate"><span class="pre">x/3</span></code>.</p></li>
+<li><p>Troi i’r chwith 60 gradd.</p></li>
+<li><p>Tynnu cromlin Koch gyda hyd <code class="docutils literal notranslate"><span class="pre">x/3</span></code>.</p></li>
+<li><p>Troi i’r dde 120 gradd.</p></li>
+<li><p>Tynnu cromlin Koch gyda hyd <code class="docutils literal notranslate"><span class="pre">x/3</span></code>.</p></li>
+<li><p>Troi i’r chwith 60 gradd.</p></li>
+<li><p>Tynnu cromlin Koch gyda hyd <code class="docutils literal notranslate"><span class="pre">x/3</span></code>.</p></li>
+</ol>
+<p>Yr eithriad yw os yw <code class="docutils literal notranslate"><span class="pre">x</span></code> yn llai na <code class="docutils literal notranslate"><span class="pre">5</span></code> — yn yr achos hwnnw, gallwch jest dynnu
+llinell syth gyda hyd <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
+<p>Ysgrifennwch swyddogaeth o’r enw <code class="docutils literal notranslate"><span class="pre">koch</span></code> sy’n cymryd <code class="docutils literal notranslate"><span class="pre">x</span></code> fel dadl ac yn tynnu
+cromlin Koch gyda’r hyd penodol.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+<p>Dylai’r canlyniad edrych fel hyn:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">make_turtle</span><span class="p">(</span><span class="n">delay</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">koch</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Unwaith y bydd gennych <code class="docutils literal notranslate"><span class="pre">koch</span></code> yn gweithio, gallwch ddefnyddio’r ddolen hon i
+dynnu tair cromlin Koch ar ffurf pluen eira.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">make_turtle</span><span class="p">(</span><span class="n">delay</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+    <span class="n">koch</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>
+    <span class="n">right</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id5">
+<h3><span class="section-number">5.14.7. </span>Ymarfer<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<p>Mae cynorthwywyr rhithwir yn gwybod am y swyddogaethau yn y modiwl
+<code class="docutils literal notranslate"><span class="pre">jupyturtle</span></code>, ond mae yna lawer o fersiynau o’r swyddogaethau hyn, gydag
+gwahanol enwau, felly efallai na fydd cynorthwyydd rhithwir yn gwybod am ba un
+rydych yn sôn.</p>
+<p>I ddatrys y broblem hon, gallwch ddarparu gwybodaeth ychwanegol cyn i chi ofyn
+cwestiwn. Er enghraifft, gallech ddechrau anogiad gyda “Dyma raglen sy’n
+defnyddio’r modiwl <code class="docutils literal notranslate"><span class="pre">jupyturtle</span></code>,” ac yna gludo un o’r enghreifftiau o’r bennod
+hon. Ar ôl hynny, dylai’r cynorthwyydd rhithwir allu cynhyrchu cod sy’n
+defnyddio’r modiwl hwn.</p>
+<p>Fel enghraifft, gofynnwch i gynorthwyydd rhithwir am raglen sy’n tynnu triongl
+Sierpiński. Dylai’r cod a gewch fod yn fan cychwyn da, ond efallai y bydd yn
+rhaid i chi wneud ychydig o ddadnamu. Os nad yw’r ymgais gyntaf yn gweithio,
+gallwch ddweud wrth y cynorthwyydd rhithwir beth ddigwyddodd a gofyn am help —
+neu gallwch ei ddadnamu eich hun.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+<p>Dyma sut y gallai’r canlyniad edrych, er y gallai’r fersiwn a gewch fod yn
+wahanol.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">make_turtle</span><span class="p">(</span><span class="n">delay</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+
+<span class="n">draw_sierpinski</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p><a class="reference external" href="https://allendowney.github.io/ThinkPython/index.html">Think Python: 3rd Edition</a> gan
+Allen B. Downey. Cyfieithiad Cymraeg gan Wayne Aubrey.</p>
+<p>Hawlfraint 2024 <a class="reference external" href="https://allendowney.com">Allen B. Downey</a>. Trwydded testun: <a class="reference external" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative
+Commons Attribution-NonCommercial-ShareAlike 4.0 International</a>.</p>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -462,6 +1224,45 @@
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rhaniad-cyfanrif-a-modwlws">5.1. Rhaniad Cyfanrif a Modwlws</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mynegiadau-boole">5.2. Mynegiadau Boole</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gweithredyddion-rhesymegol">5.3. Gweithredyddion Rhesymegol</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gosodiadau-if">5.4. Gosodiadau if</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#y-cymal-else">5.5. Y Cymal else</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#amodolion-cadwynol">5.6. Amodolion Cadwynol</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#amodolion-nythol">5.7. Amodolion Nythol</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dychweliad">5.8. Dychweliad</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diagramau-pentwr-ar-gyfer-swyddogaethau-dychweliadol">5.9. Diagramau Pentwr ar gyfer Swyddogaethau Dychweliadol</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dychweliad-anfeidrol">5.10. Dychweliad Anfeidrol</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mewnbwn-bysellfwrdd">5.11. Mewnbwn Bysellfwrdd</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dadnamu">5.12. Dadnamu</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rhestr-termau-r-bennod">5.13. Rhestr Termau’r Bennod</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ymarferion">5.14. Ymarferion</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gofyn-i-gynorthwyydd-rhithwir">5.14.1. Gofyn i gynorthwyydd rhithwir</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ymarfer">5.14.2. Ymarfer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">5.14.3. Ymarfer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">5.14.4. Ymarfer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">5.14.5. Ymarfer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">5.14.6. Ymarfer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">5.14.7. Ymarfer</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

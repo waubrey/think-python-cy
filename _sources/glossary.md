@@ -309,4 +309,43 @@ rhag-amod
 
 ôl-amod
     postcondition
+
+gweithredydd modwlws
+    modulus operator
+
+mynegiad Boole
+    boolean expression
+
+gweithredydd perthynol
+    relational operator
+
+gweithredydd rhesymegol
+    logical operator
+
+gosodiad amodol
+    conditional statement
+
+amod
+    condition
+
+bloc
+    block
+
+cangen
+    branch
+
+amodol cadwynol
+    chained conditional
+
+amodol nythol
+    nested conditional
+
+achos sylfaenol
+    base case
+
+dychweliad anfeidrol
+    infinite recursion
+
+llinell newydd
+    newline
 ```
