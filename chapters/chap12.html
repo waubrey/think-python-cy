@@ -62,7 +62,7 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../_static/tippy/chapters/chap12.2c7fc473-b244-4d5f-bd17-c8244cc18535.js"></script>
+    <script defer="defer" src="../_static/tippy/chapters/chap12.327adead-7b33-415f-978d-c04cebc1a839.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/chap12';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -155,6 +155,10 @@
     </div>
   
 
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
   
 </div>
 
@@ -374,7 +378,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -390,6 +396,31 @@
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geiriau-unigryw">12.1. Geiriau Unigryw</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#atalnodi">12.2. Atalnodi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#amlder-geiriau">12.3. Amlder Geiriau</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#paramedrau-dewisol">12.4. Paramedrau Dewisol</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tynnu-geiriaduron">12.5. Tynnu Geiriaduron</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rhifau-ar-hap">12.6. Rhifau Ar Hap</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deuair">12.7. Deuair</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dadansoddiad-markov">12.8. Dadansoddiad Markov</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cynhyrchu-testun">12.9. Cynhyrchu Testun</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dadnamu">12.10. Dadnamu</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rhestr-termau-r-bennod">12.11. Rhestr Termau’r Bennod</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ymarferion">12.12. Ymarferion</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gofyn-i-gynorthwyydd-rhithwir">12.12.1. Gofyn i gynorthwyydd rhithwir</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ymarfer">12.12.2. Ymarfer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">12.12.3. Ymarfer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">12.12.4. Ymarfer</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -401,11 +432,903 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="dadansoddi-a-chynhyrchu-testun">
 <h1><span class="section-number">12. </span>Dadansoddi a Chynhyrchu Testun<a class="headerlink" href="#dadansoddi-a-chynhyrchu-testun" title="Link to this heading">#</a></h1>
-<div class="warning admonition">
-<p class="admonition-title">Statws cyfieithu</p>
-<p>Pennod heb ei chyfieithu eto. Ffynhonnell Saesneg: <strong>Text Analysis and Generation</strong>
-(gweler y bennod wreiddiol yn <a class="reference external" href="https://allendowney.github.io/ThinkPython/">https://allendowney.github.io/ThinkPython/</a> ar gyfer y testun gwreiddiol).</p>
+<p>Erbyn hyn rydym wedi ymdrin â phrif strwythurau data Python — rhestri,
+geiriaduron, a thŵpls — a rhai algorithmau sy’n eu defnyddio. Yn y bennod
+hon, byddwn yn eu defnyddio i archwilio dadansoddi testun a chynhyrchu
+Markov:</p>
+<ul class="simple">
+<li><p>Mae dadansoddi testun yn ffordd o ddisgrifio’r cysylltiadau ystadegol
+rhwng y geiriau mewn dogfen, fel y tebygolrwydd y bydd un gair yn cael ei
+ddilyn gan un arall, a</p></li>
+<li><p>Mae cynhyrchu Markov yn ffordd o gynhyrchu testun newydd gyda geiriau ac
+ymadroddion tebyg i’r testun gwreiddiol.</p></li>
+</ul>
+<p>Mae’r algorithmau hyn yn debyg i rannau o Fodel Iaith Fawr (LLM), sef prif
+gydran sgwrsfot.</p>
+<p>Byddwn yn dechrau drwy gyfrif nifer y troeon y mae pob gair yn ymddangos
+mewn llyfr. Yna byddwn yn edrych ar barau o eiriau, a gwneud rhestr o’r
+geiriau a all ddilyn pob gair. Byddwn yn gwneud fersiwn syml o gynhyrchydd
+Markov, ac fel ymarfer, cewch gyfle i wneud fersiwn fwy cyffredinol.</p>
+<section id="geiriau-unigryw">
+<h2><span class="section-number">12.1. </span>Geiriau Unigryw<a class="headerlink" href="#geiriau-unigryw" title="Link to this heading">#</a></h2>
+<p>Fel cam cyntaf tuag at ddadansoddi testun, gadewch i ni ddarllen llyfr —
+<em>The Strange Case Of Dr. Jekyll And Mr. Hyde</em> gan Robert Louis Stevenson —
+a chyfrif nifer y geiriau unigryw. Mae cyfarwyddiadau ar gyfer lawrlwytho’r
+llyfr yn llyfr nodiadau’r bennod hon.</p>
+<p>Mae’r gell ganlynol yn lawrlwytho’r llyfr o Project Gutenberg.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">download</span><span class="p">(</span><span class="s1">'https://github.com/AllenDowney/ThinkPython/raw/v3/pg43.txt'</span><span class="p">);</span>
+</pre></div>
 </div>
+<p>Mae’r fersiwn sydd ar gael o Project Gutenberg yn cynnwys gwybodaeth am y
+llyfr ar y dechrau a gwybodaeth am y drwydded ar y diwedd. Byddwn yn
+defnyddio <code class="docutils literal notranslate"><span class="pre">clean_file</span></code> o Bennod 8 i dynnu’r deunydd hwn ac ysgrifennu ffeil
+“lân” sy’n cynnwys dim ond testun y llyfr.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">is_special_line</span><span class="p">(</span><span class="n">line</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'*** '</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">clean_file</span><span class="p">(</span><span class="n">input_file</span><span class="p">,</span> <span class="n">output_file</span><span class="p">):</span>
+    <span class="n">reader</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">input_file</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span>
+    <span class="n">writer</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">output_file</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">is_special_line</span><span class="p">(</span><span class="n">line</span><span class="p">):</span>
+            <span class="k">break</span>
+
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">is_special_line</span><span class="p">(</span><span class="n">line</span><span class="p">):</span>
+            <span class="k">break</span>
+        <span class="n">writer</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+        
+    <span class="n">reader</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="n">writer</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="s1">'dr_jekyll.txt'</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">clean_file</span><span class="p">(</span><span class="s1">'pg43.txt'</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Byddwn yn defnyddio dolen <code class="docutils literal notranslate"><span class="pre">for</span></code> i ddarllen llinellau o’r ffeil a <code class="docutils literal notranslate"><span class="pre">split</span></code> i
+rannu’r llinellau’n eiriau. Yna, i gadw golwg ar eiriau unigryw, byddwn yn
+storio pob gair fel allwedd mewn geiriadur.</p>
+<p>Nid yw’r ddadl allweddair <code class="docutils literal notranslate"><span class="pre">encoding='utf-8'</span></code> yn y llyfr printiedig. Dim ond
+ar Windows mae ei hangen.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">unique_words</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">):</span>
+    <span class="n">seq</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">seq</span><span class="p">:</span>
+        <span class="n">unique_words</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="nb">len</span><span class="p">(</span><span class="n">unique_words</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Hyd y geiriadur yw nifer y geiriau unigryw — tua <code class="docutils literal notranslate"><span class="pre">6000</span></code> yn ôl y ffordd hon
+o gyfrif. Ond os archwiliwn nhw, fe welwn nad yw rhai’n eiriau dilys.</p>
+<p>Er enghraifft, gadewch i ni edrych ar y geiriau hiraf yn <code class="docutils literal notranslate"><span class="pre">unique_words</span></code>.
+Gallwn ddefnyddio <code class="docutils literal notranslate"><span class="pre">sorted</span></code> i drefnu’r geiriau, gan basio’r swyddogaeth <code class="docutils literal notranslate"><span class="pre">len</span></code>
+fel dadl allweddair fel bod y geiriau’n cael eu trefnu yn ôl hyd.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">sorted</span><span class="p">(</span><span class="n">unique_words</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="nb">len</span><span class="p">)[</span><span class="o">-</span><span class="mi">5</span><span class="p">:]</span>
+</pre></div>
+</div>
+<p>Mae’r mynegai sleisio, <code class="docutils literal notranslate"><span class="pre">[-5:]</span></code>, yn dewis <code class="docutils literal notranslate"><span class="pre">5</span></code> elfen olaf y rhestr wedi’i
+threfnu, sef y geiriau hiraf.</p>
+<p>Mae’r rhestr yn cynnwys rhai geiriau hir dilys, fel “circumscription”, a
+rhai geiriau â chysylltnod, fel “chocolate-coloured”. Ond mewn gwirionedd,
+dau air wedi’u gwahanu gan dasen yw rhai o’r “geiriau” hiraf. Ac mae geiriau
+eraill yn cynnwys atalnodi fel atalnodau llawn, ebychnodau, a dyfynodau.</p>
+<p>Felly, cyn i ni symud ymlaen, gadewch i ni ymdrin â thasennau ac atalnodi
+arall.</p>
+</section>
+<section id="atalnodi">
+<h2><span class="section-number">12.2. </span>Atalnodi<a class="headerlink" href="#atalnodi" title="Link to this heading">#</a></h2>
+<p>I adnabod y geiriau yn y testun, mae angen i ni ymdrin â dau fater:</p>
+<ul class="simple">
+<li><p>Pan fydd tasen yn ymddangos mewn llinell, dylem ei disodli â bwlch —
+yna pan ddefnyddiwn <code class="docutils literal notranslate"><span class="pre">split</span></code>, bydd y geiriau wedi’u gwahanu.</p></li>
+<li><p>Ar ôl rhannu’r geiriau, gallwn ddefnyddio <code class="docutils literal notranslate"><span class="pre">strip</span></code> i dynnu atalnodi.</p></li>
+</ul>
+<p>I ymdrin â’r mater cyntaf, gallwn ddefnyddio’r swyddogaeth ganlynol, sy’n
+cymryd llinyn, yn disodli tasennau â bylchau, yn rhannu’r llinyn, ac yn
+dychwelyd y rhestr sy’n deillio o hynny.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">split_line</span><span class="p">(</span><span class="n">line</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">line</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'—'</span><span class="p">,</span> <span class="s1">' '</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Sylwch mai dim ond tasennau, nid cysylltnodau, y mae <code class="docutils literal notranslate"><span class="pre">split_line</span></code> yn eu
+disodli. Dyma enghraifft.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">split_line</span><span class="p">(</span><span class="s1">'coolness—frightened'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Nawr, i dynnu atalnodi o ddechrau a diwedd pob gair, gallwn ddefnyddio
+<code class="docutils literal notranslate"><span class="pre">strip</span></code>, ond mae angen rhestr o nodau a ystyrir yn atalnodi.</p>
+<p>Mae nodau mewn llinynnau Python yn Unicode, sef safon ryngwladol a
+ddefnyddir i gynrychioli llythrennau mewn bron pob gwyddor, rhifau,
+symbolau, arwyddion atalnodi, a mwy. Mae’r modiwl <code class="docutils literal notranslate"><span class="pre">unicodedata</span></code> yn darparu
+swyddogaeth <code class="docutils literal notranslate"><span class="pre">category</span></code> y gallwn ei defnyddio i ddweud pa nodau sy’n
+atalnodi. O gael llythyren, mae’n dychwelyd llinyn gyda gwybodaeth am ba
+gategori y mae’r llythyren ynddo.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">unicodedata</span>
+
+<span class="n">unicodedata</span><span class="o">.</span><span class="n">category</span><span class="p">(</span><span class="s1">'A'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Llinyn categori <code class="docutils literal notranslate"><span class="pre">'A'</span></code> yw <code class="docutils literal notranslate"><span class="pre">'Lu'</span></code> — mae’r <code class="docutils literal notranslate"><span class="pre">'L'</span></code> yn golygu ei bod yn llythyren
+ac mae’r <code class="docutils literal notranslate"><span class="pre">'u'</span></code> yn golygu ei bod yn briflythyren.</p>
+<p>Llinyn categori <code class="docutils literal notranslate"><span class="pre">'.'</span></code> yw <code class="docutils literal notranslate"><span class="pre">'Po'</span></code> — mae’r <code class="docutils literal notranslate"><span class="pre">'P'</span></code> yn golygu ei bod yn atalnodi
+ac mae’r <code class="docutils literal notranslate"><span class="pre">'o'</span></code> yn golygu bod ei his-gategori yn “arall”.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">unicodedata</span><span class="o">.</span><span class="n">category</span><span class="p">(</span><span class="s1">'.'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Gallwn ddarganfod yr arwyddion atalnodi yn y llyfr drwy wirio am nodau â
+chategorïau sy’n dechrau gyda <code class="docutils literal notranslate"><span class="pre">'P'</span></code>. Mae’r ddolen ganlynol yn storio’r
+arwyddion atalnodi unigryw mewn geiriadur.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">punc_marks</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
+        <span class="n">category</span> <span class="o">=</span> <span class="n">unicodedata</span><span class="o">.</span><span class="n">category</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">category</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'P'</span><span class="p">):</span>
+            <span class="n">punc_marks</span><span class="p">[</span><span class="n">char</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>I wneud rhestr o arwyddion atalnodi, gallwn gydio allweddi’r geiriadur yn
+llinyn.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">punctuation</span> <span class="o">=</span> <span class="s1">''</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">punc_marks</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">punctuation</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Nawr ein bod yn gwybod pa nodau yn y llyfr sy’n atalnodi, gallwn ysgrifennu
+swyddogaeth sy’n cymryd gair, yn tynnu atalnodi o’r dechrau a’r diwedd, ac
+yn ei drosi’n llythrennau bach.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">clean_word</span><span class="p">(</span><span class="n">word</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">word</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="n">punctuation</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Dyma enghraifft.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">clean_word</span><span class="p">(</span><span class="s1">'“Behold!”'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Am fod <code class="docutils literal notranslate"><span class="pre">strip</span></code> yn tynnu nodau o’r dechrau a’r diwedd, mae’n gadael geiriau
+â chysylltnod ar eu pen eu hun.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">clean_word</span><span class="p">(</span><span class="s1">'pocket-handkerchief'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Nawr dyma ddolen sy’n defnyddio <code class="docutils literal notranslate"><span class="pre">split_line</span></code> a <code class="docutils literal notranslate"><span class="pre">clean_word</span></code> i adnabod y
+geiriau unigryw yn y llyfr.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">unique_words2</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">split_line</span><span class="p">(</span><span class="n">line</span><span class="p">):</span>
+        <span class="n">word</span> <span class="o">=</span> <span class="n">clean_word</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+        <span class="n">unique_words2</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="nb">len</span><span class="p">(</span><span class="n">unique_words2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Gyda’r diffiniad caethach hwn o’r hyn yw gair, mae tua 4000 o eiriau
+unigryw. A gallwn gadarnhau bod y rhestr o eiriau hiraf wedi’i glanhau.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">sorted</span><span class="p">(</span><span class="n">unique_words2</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="nb">len</span><span class="p">)[</span><span class="o">-</span><span class="mi">5</span><span class="p">:]</span>
+</pre></div>
+</div>
+<p>Nawr gadewch i ni weld sawl gwaith y defnyddir pob gair.</p>
+</section>
+<section id="amlder-geiriau">
+<h2><span class="section-number">12.3. </span>Amlder Geiriau<a class="headerlink" href="#amlder-geiriau" title="Link to this heading">#</a></h2>
+<p>Mae’r ddolen ganlynol yn cyfrifo amlder pob gair unigryw.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">word_counter</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">split_line</span><span class="p">(</span><span class="n">line</span><span class="p">):</span>
+        <span class="n">word</span> <span class="o">=</span> <span class="n">clean_word</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">word</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">word_counter</span><span class="p">:</span>
+            <span class="n">word_counter</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">word_counter</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>Y tro cyntaf i ni weld gair, rydym yn cychwyn ei amlder i <code class="docutils literal notranslate"><span class="pre">1</span></code>. Os gwelwn yr
+un gair eto’n ddiweddarach, rydym yn cynyddu ei amlder.</p>
+<p>I weld pa eiriau sy’n ymddangos amlaf, gallwn ddefnyddio <code class="docutils literal notranslate"><span class="pre">items</span></code> i gael y
+parau allwedd-gwerth o <code class="docutils literal notranslate"><span class="pre">word_counter</span></code>, a’u trefnu yn ôl ail elfen y pâr,
+sef yr amlder. Yn gyntaf byddwn yn diffinio swyddogaeth sy’n dewis yr ail
+elfen.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">second_element</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Nawr gallwn ddefnyddio <code class="docutils literal notranslate"><span class="pre">sorted</span></code> gyda dwy ddadl allweddair:</p>
+<ul class="simple">
+<li><p>Mae <code class="docutils literal notranslate"><span class="pre">key=second_element</span></code> yn golygu y trefnir yr eitemau yn ôl amlder y
+geiriau.</p></li>
+<li><p>Mae <code class="docutils literal notranslate"><span class="pre">reverse=True</span></code> yn golygu y trefnir yr eitemau mewn trefn wrthdro,
+gyda’r geiriau mwyaf aml yn gyntaf.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">items</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">word_counter</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="n">second_element</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Dyma’r pum gair mwyaf aml.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">word</span><span class="p">,</span> <span class="n">freq</span> <span class="ow">in</span> <span class="n">items</span><span class="p">[:</span><span class="mi">5</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">word</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">'</span><span class="se">\t</span><span class="s1">'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Yn yr adran nesaf, byddwn yn amgáu’r ddolen hon mewn swyddogaeth. A byddwn
+yn ei defnyddio i ddangos nodwedd newydd — paramedrau dewisol.</p>
+</section>
+<section id="paramedrau-dewisol">
+<h2><span class="section-number">12.4. </span>Paramedrau Dewisol<a class="headerlink" href="#paramedrau-dewisol" title="Link to this heading">#</a></h2>
+<p>Rydym wedi defnyddio swyddogaethau cynhenid sy’n cymryd paramedrau
+dewisol. Er enghraifft, mae <code class="docutils literal notranslate"><span class="pre">round</span></code> yn cymryd paramedr dewisol o’r enw
+<code class="docutils literal notranslate"><span class="pre">ndigits</span></code> sy’n nodi faint o leoedd degol i’w cadw.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">round</span><span class="p">(</span><span class="mf">3.141592653589793</span><span class="p">,</span> <span class="n">ndigits</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Ond nid dim ond swyddogaethau cynhenid — gallwn ysgrifennu swyddogaethau â
+pharamedrau dewisol, hefyd. Er enghraifft, mae’r swyddogaeth ganlynol yn
+cymryd dau baramedr, <code class="docutils literal notranslate"><span class="pre">word_counter</span></code> ac <code class="docutils literal notranslate"><span class="pre">num</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">print_most_common</span><span class="p">(</span><span class="n">word_counter</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
+    <span class="n">items</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">word_counter</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="n">second_element</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">word</span><span class="p">,</span> <span class="n">freq</span> <span class="ow">in</span> <span class="n">items</span><span class="p">[:</span><span class="n">num</span><span class="p">]:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">word</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">'</span><span class="se">\t</span><span class="s1">'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Mae’r ail baramedr yn edrych fel gosodiad neilltuad, ond nid yw — paramedr
+dewisol ydyw.</p>
+<p>Os galwch y swyddogaeth hon gydag un ddadl, mae <code class="docutils literal notranslate"><span class="pre">num</span></code> yn cael y
+<strong><a class="reference internal" href="../glossary.html#term-gwerth-rhagosodedig"><span class="xref std std-term">gwerth rhagosodedig</span></a></strong>, sef <code class="docutils literal notranslate"><span class="pre">5</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">print_most_common</span><span class="p">(</span><span class="n">word_counter</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Os galwch y swyddogaeth hon gyda dwy ddadl, neilltuir yr ail ddadl i <code class="docutils literal notranslate"><span class="pre">num</span></code>
+yn lle’r gwerth rhagosodedig.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">print_most_common</span><span class="p">(</span><span class="n">word_counter</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Yn yr achos hwnnw, byddem yn dweud bod y ddadl ddewisol yn <strong><a class="reference internal" href="../glossary.html#term-disodli"><span class="xref std std-term">disodli</span></a></strong>
+y gwerth rhagosodedig.</p>
+<p>Os oes gan swyddogaeth baramedrau gofynnol a dewisol, mae’n rhaid i bob un
+o’r paramedrau gofynnol ddod yn gyntaf, wedi’u dilyn gan y rhai dewisol.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">expect</span> <span class="ne">SyntaxError</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">bad_function</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">word_counter</span><span class="p">):</span>
+    <span class="k">return</span> <span class="kc">None</span>
+</pre></div>
+</div>
+</section>
+<section id="tynnu-geiriaduron">
+<h2><span class="section-number">12.5. </span>Tynnu Geiriaduron<a class="headerlink" href="#tynnu-geiriaduron" title="Link to this heading">#</a></h2>
+<p>Tybiwch ein bod am sillafwirio llyfr — hynny yw, darganfod rhestr o eiriau
+a allai fod wedi’u camsillafu. Un ffordd o wneud hynny yw darganfod geiriau
+yn y llyfr nad ydynt yn ymddangos mewn rhestr o eiriau dilys. Mewn penodau
+blaenorol, rydym wedi defnyddio rhestr o eiriau a ystyrir yn ddilys mewn
+gemau geiriau fel Scrabble. Nawr byddwn yn defnyddio’r rhestr hon i
+sillafwirio Robert Louis Stevenson.</p>
+<p>Gallwn feddwl am y broblem hon fel tynnu setiau — hynny yw, rydym am
+ddarganfod yr holl eiriau o un set (y geiriau yn y llyfr) nad ydynt yn y
+llall (y geiriau yn y rhestr).</p>
+<p>Mae’r gell ganlynol yn lawrlwytho’r rhestr eiriau.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">download</span><span class="p">(</span><span class="s1">'https://raw.githubusercontent.com/AllenDowney/ThinkPython/v3/words.txt'</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Fel rydym wedi’i wneud o’r blaen, gallwn ddarllen cynnwys <code class="docutils literal notranslate"><span class="pre">words.txt</span></code> a’i
+rannu’n rhestr o linynnau.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">word_list</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'words.txt'</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Yna byddwn yn storio’r geiriau fel allweddi mewn geiriadur fel y gallwn
+ddefnyddio’r gweithredydd <code class="docutils literal notranslate"><span class="pre">in</span></code> i wirio’n gyflym a yw gair yn ddilys.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">valid_words</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">word_list</span><span class="p">:</span>
+    <span class="n">valid_words</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>Nawr, i adnabod geiriau sy’n ymddangos yn y llyfr ond nid yn y rhestr
+eiriau, byddwn yn defnyddio <code class="docutils literal notranslate"><span class="pre">subtract</span></code>, sy’n cymryd dau eiriadur fel
+paramedrau ac yn dychwelyd geiriadur newydd sy’n cynnwys yr holl allweddi o’r
+naill nad ydynt yn y llall.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">subtract</span><span class="p">(</span><span class="n">d1</span><span class="p">,</span> <span class="n">d2</span><span class="p">):</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">d1</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">d2</span><span class="p">:</span>
+            <span class="n">res</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">d1</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">res</span>
+</pre></div>
+</div>
+<p>Dyma sut rydym yn ei defnyddio.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">diff</span> <span class="o">=</span> <span class="n">subtract</span><span class="p">(</span><span class="n">word_counter</span><span class="p">,</span> <span class="n">valid_words</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>I gael sampl o eiriau a allai fod wedi’u camsillafu, gallwn argraffu’r
+geiriau mwyaf cyffredin yn <code class="docutils literal notranslate"><span class="pre">diff</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">print_most_common</span><span class="p">(</span><span class="n">diff</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Mae’r rhan fwyaf o’r geiriau “camsillafedig” mwyaf cyffredin yn enwau a
+rhai geiriau un-llythyren (mae Mr. Utterson yn gyfaill a chyfreithiwr Dr.
+Jekyll).</p>
+<p>Os dewiswn eiriau sy’n ymddangos unwaith yn unig, maent yn fwy tebygol o
+fod yn gamgymeriadau sillafu gwirioneddol. Gallwn wneud hynny drwy ddolennu
+drwy’r eitemau a gwneud rhestr o eiriau ag amlder <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">singletons</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">word</span><span class="p">,</span> <span class="n">freq</span> <span class="ow">in</span> <span class="n">diff</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">freq</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">singletons</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Dyma’r ychydig elfennau olaf o’r rhestr.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">singletons</span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">:]</span>
+</pre></div>
+</div>
+<p>Mae’r rhan fwyaf ohonynt yn eiriau dilys nad ydynt yn y rhestr eiriau. Ond
+mae’n ymddangos bod <code class="docutils literal notranslate"><span class="pre">'reindue'</span></code> yn gamsillafiad o <code class="docutils literal notranslate"><span class="pre">'reinduce'</span></code>, felly o
+leiaf fe wnaethom ddarganfod un gwall go iawn.</p>
+</section>
+<section id="rhifau-ar-hap">
+<h2><span class="section-number">12.6. </span>Rhifau Ar Hap<a class="headerlink" href="#rhifau-ar-hap" title="Link to this heading">#</a></h2>
+<p>Fel cam tuag at gynhyrchu testun Markov, nesaf byddwn yn dewis dilyniant ar
+hap o eiriau o <code class="docutils literal notranslate"><span class="pre">word_counter</span></code>. Ond yn gyntaf gadewch i ni siarad am
+hapgrwydd.</p>
+<p>O gael yr un mewnbynnau, mae’r rhan fwyaf o raglenni cyfrifiadurol yn
+<strong><a class="reference internal" href="../glossary.html#term-penderfyniadol"><span class="xref std std-term">penderfyniadol</span></a></strong>, sy’n golygu eu bod yn cynhyrchu’r un allbynnau
+bob tro. Mae penderfynoliaeth fel arfer yn beth da, gan ein bod yn disgwyl
+i’r un cyfrifiad roi’r un canlyniad. Ar gyfer rhai cymwysiadau, serch
+hynny, rydym am i’r cyfrifiadur fod yn anrhagweladwy. Mae gemau’n un
+enghraifft, ond mae mwy.</p>
+<p>Mae gwneud rhaglen yn wirioneddol an-benderfyniadol yn anodd, ond mae
+ffyrdd o’i ffugio. Un ohonynt yw defnyddio algorithmau sy’n cynhyrchu
+rhifau <strong><a class="reference internal" href="../glossary.html#term-ffug-hap"><span class="xref std std-term">ffug-hap</span></a></strong>. Nid yw rhifau ffug-hap yn wirioneddol ar hap am
+eu bod yn cael eu cynhyrchu gan gyfrifiant penderfyniadol, ond wrth edrych
+ar y rhifau’n unig mae bron yn amhosibl gwahaniaethu rhyngddynt a rhifau ar
+hap.</p>
+<p>Mae’r modiwl <code class="docutils literal notranslate"><span class="pre">random</span></code> yn darparu swyddogaethau sy’n cynhyrchu rhifau
+ffug-hap — y byddaf yn eu galw’n syml “ar hap” o hyn ymlaen. Gallwn ei
+fewnforio fel hyn.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># this cell initializes the random number generator so it </span>
+<span class="c1"># generates the same sequence each time the notebook runs.</span>
+
+<span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Mae’r modiwl <code class="docutils literal notranslate"><span class="pre">random</span></code> yn darparu swyddogaeth o’r enw <code class="docutils literal notranslate"><span class="pre">choice</span></code> sy’n dewis
+elfen o restr ar hap, gyda phob elfen â’r un tebygolrwydd o gael ei dewis.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Os galwch y swyddogaeth eto, efallai y cewch yr un elfen eto, neu un
+wahanol.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Yn y pen draw, rydym yn disgwyl cael pob elfen tua’r un nifer o weithiau.</p>
+<p>Os defnyddiwch <code class="docutils literal notranslate"><span class="pre">choice</span></code> gyda geiriadur, cewch <code class="docutils literal notranslate"><span class="pre">KeyError</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">expect</span> <span class="ne">KeyError</span>
+
+<span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">word_counter</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>I ddewis allwedd ar hap, mae’n rhaid i chi roi’r allweddi mewn rhestr ac
+yna galw <code class="docutils literal notranslate"><span class="pre">choice</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">words</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">word_counter</span><span class="p">)</span>
+<span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Os cynhyrchwn ddilyniant ar hap o eiriau, nid yw’n gwneud fawr o synnwyr.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">):</span>
+    <span class="n">word</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">' '</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Rhan o’r broblem yw nad ydym yn ystyried bod rhai geiriau’n fwy cyffredin
+nag eraill. Bydd y canlyniadau’n well os dewiswn eiriau â gwahanol
+“bwysau”, fel bod rhai’n cael eu dewis yn amlach nag eraill.</p>
+<p>Os defnyddiwn y gwerthoedd o <code class="docutils literal notranslate"><span class="pre">word_counter</span></code> fel pwysau, dewisir pob gair â
+thebygolrwydd sy’n dibynnu ar ei amlder.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">weights</span> <span class="o">=</span> <span class="n">word_counter</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Mae’r modiwl <code class="docutils literal notranslate"><span class="pre">random</span></code> yn darparu swyddogaeth arall o’r enw <code class="docutils literal notranslate"><span class="pre">choices</span></code> sy’n
+cymryd pwysau fel dadl ddewisol.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">random</span><span class="o">.</span><span class="n">choices</span><span class="p">(</span><span class="n">words</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">weights</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Ac mae’n cymryd dadl ddewisol arall, <code class="docutils literal notranslate"><span class="pre">k</span></code>, sy’n nodi nifer y geiriau i’w
+dewis.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">random_words</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choices</span><span class="p">(</span><span class="n">words</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">weights</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+<span class="n">random_words</span>
+</pre></div>
+</div>
+<p>Rhestr o linynnau yw’r canlyniad y gallwn eu cydio’n rhywbeth sy’n edrych
+yn fwy fel brawddeg.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s1">' '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">random_words</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Os dewiswch eiriau o’r llyfr ar hap, cewch synnwyr o’r eirfa, ond mae
+cyfres o eiriau ar hap yn anaml yn gwneud synnwyr am nad oes perthynas rhwng
+geiriau olynol. Er enghraifft, mewn brawddeg go iawn rydych yn disgwyl i
+fannod fel “the” gael ei dilyn gan ansoddair neu enw, ac yn ôl pob tebyg nid
+berf na adferf. Felly’r cam nesaf yw edrych ar y perthnasoedd hyn rhwng
+geiriau.</p>
+</section>
+<section id="deuair">
+<h2><span class="section-number">12.7. </span>Deuair<a class="headerlink" href="#deuair" title="Link to this heading">#</a></h2>
+<p>Yn lle edrych ar un gair ar y tro, nawr byddwn yn edrych ar ddilyniannau o
+ddau air, a elwir yn <strong><a class="reference internal" href="../glossary.html#term-deuair"><span class="xref std std-term">deuair</span></a></strong>. Gelwir dilyniant o dri gair yn
+<strong><a class="reference internal" href="../glossary.html#term-triair"><span class="xref std std-term">triair</span></a></strong>, a gelwir dilyniant â nifer amhenodol o eiriau yn
+<strong><a class="reference internal" href="../glossary.html#term-n-air"><span class="xref std std-term">n-air</span></a></strong>.</p>
+<p>Gadewch i ni ysgrifennu rhaglen sy’n darganfod yr holl ddeuair yn y llyfr a
+nifer y troeon y mae pob un yn ymddangos. I storio’r canlyniadau, byddwn
+yn defnyddio geiriadur lle</p>
+<ul class="simple">
+<li><p>Tŵpls o linynnau sy’n cynrychioli deuair yw’r allweddi, a</p></li>
+<li><p>Cyfanrifau sy’n cynrychioli amlderau yw’r gwerthoedd.</p></li>
+</ul>
+<p>Gadewch i ni ei alw’n <code class="docutils literal notranslate"><span class="pre">bigram_counter</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">bigram_counter</span> <span class="o">=</span> <span class="p">{}</span>
+</pre></div>
+</div>
+<p>Mae’r swyddogaeth ganlynol yn cymryd rhestr o ddau linyn fel paramedr. Yn
+gyntaf mae’n gwneud tŵpl o’r ddau linyn, y gellir ei ddefnyddio fel allwedd
+mewn geiriadur. Yna mae’n ychwanegu’r allwedd at <code class="docutils literal notranslate"><span class="pre">bigram_counter</span></code>, os nad
+yw’n bodoli, neu’n cynyddu’r amlder os yw.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">count_bigram</span><span class="p">(</span><span class="n">bigram</span><span class="p">):</span>
+    <span class="n">key</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">bigram</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">bigram_counter</span><span class="p">:</span>
+        <span class="n">bigram_counter</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">bigram_counter</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>Wrth i ni fynd drwy’r llyfr, mae’n rhaid i ni gadw golwg ar bob pâr o
+eiriau olynol. Felly os gwelwn y dilyniant “man is not truly one”, byddem
+yn ychwanegu’r deuair “man is”, “is not”, “not truly”, ac yn y blaen.</p>
+<p>I gadw golwg ar y deuair hyn, byddwn yn defnyddio rhestr o’r enw <code class="docutils literal notranslate"><span class="pre">window</span></code>,
+am ei bod fel ffenestr sy’n llithro dros dudalennau’r llyfr, gan ddangos
+dim ond dau air ar y tro. I ddechrau, mae <code class="docutils literal notranslate"><span class="pre">window</span></code> yn wag.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">window</span> <span class="o">=</span> <span class="p">[]</span>
+</pre></div>
+</div>
+<p>Byddwn yn defnyddio’r swyddogaeth ganlynol i brosesu’r geiriau un ar y
+tro.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">process_word</span><span class="p">(</span><span class="n">word</span><span class="p">):</span>
+    <span class="n">window</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">window</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="n">count_bigram</span><span class="p">(</span><span class="n">window</span><span class="p">)</span>
+        <span class="n">window</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Y tro cyntaf y gelwir y swyddogaeth hon, mae’n ychwanegu’r gair penodol at
+<code class="docutils literal notranslate"><span class="pre">window</span></code>. Gan mai dim ond un gair sydd yn y ffenestr, nid oes gennym
+ddeuair eto, felly mae’r swyddogaeth yn dod i ben.</p>
+<p>Yr ail dro y’i gelwir — a phob tro wedi hynny — mae’n ychwanegu ail air at
+<code class="docutils literal notranslate"><span class="pre">window</span></code>. Gan fod dau air yn y ffenestr, mae’n galw <code class="docutils literal notranslate"><span class="pre">count_bigram</span></code> i gadw
+golwg ar sawl gwaith y mae pob deuair yn ymddangos. Yna mae’n defnyddio
+<code class="docutils literal notranslate"><span class="pre">pop</span></code> i dynnu’r gair cyntaf o’r ffenestr.</p>
+<p>Mae’r rhaglen ganlynol yn dolennu drwy’r geiriau yn y llyfr ac yn eu
+prosesu un ar y tro.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">split_line</span><span class="p">(</span><span class="n">line</span><span class="p">):</span>
+        <span class="n">word</span> <span class="o">=</span> <span class="n">clean_word</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+        <span class="n">process_word</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Geiriadur sy’n mapio o bob deuair i nifer y troeon y mae’n ymddangos yw’r
+canlyniad. Gallwn ddefnyddio <code class="docutils literal notranslate"><span class="pre">print_most_common</span></code> i weld y deuair mwyaf
+cyffredin.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">print_most_common</span><span class="p">(</span><span class="n">bigram_counter</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Wrth edrych ar y canlyniadau hyn, gallwn gael synnwyr o ba barau o eiriau
+sy’n fwyaf tebygol o ymddangos gyda’i gilydd. Gallwn hefyd ddefnyddio’r
+canlyniadau i gynhyrchu testun ar hap, fel hyn.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">bigrams</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">bigram_counter</span><span class="p">)</span>
+<span class="n">weights</span> <span class="o">=</span> <span class="n">bigram_counter</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+<span class="n">random_bigrams</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choices</span><span class="p">(</span><span class="n">bigrams</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">weights</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Rhestr o’r deuair sy’n ymddangos yn y llyfrau yw <code class="docutils literal notranslate"><span class="pre">bigrams</span></code>. Rhestr o’u
+hamlderau yw <code class="docutils literal notranslate"><span class="pre">weights</span></code>, felly mae <code class="docutils literal notranslate"><span class="pre">random_bigrams</span></code> yn sampl lle mae’r
+tebygolrwydd y dewisir deuair yn gymesur â’i amlder.</p>
+<p>Dyma’r canlyniadau.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">pair</span> <span class="ow">in</span> <span class="n">random_bigrams</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">' '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">pair</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s1">' '</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Mae’r ffordd hon o gynhyrchu testun yn well na dewis geiriau ar hap, ond
+nid yw’n gwneud llawer o synnwyr o hyd.</p>
+</section>
+<section id="dadansoddiad-markov">
+<h2><span class="section-number">12.8. </span>Dadansoddiad Markov<a class="headerlink" href="#dadansoddiad-markov" title="Link to this heading">#</a></h2>
+<p>Gallwn wneud yn well gyda dadansoddiad testun cadwyn Markov, sy’n cyfrifo,
+ar gyfer pob gair mewn testun, y rhestr o eiriau sy’n dod nesaf. Fel
+enghraifft, byddwn yn dadansoddi’r geiriau hyn o gân Monty Python <em>Eric,
+the Half a Bee</em>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">song</span> <span class="o">=</span> <span class="s2">"""</span>
+<span class="s2">Half a bee, philosophically,</span>
+<span class="s2">Must, ipso facto, half not be.</span>
+<span class="s2">But half the bee has got to be</span>
+<span class="s2">Vis a vis, its entity. D'you see?</span>
+<span class="s2">"""</span>
+</pre></div>
+</div>
+<p>I storio’r canlyniadau, byddwn yn defnyddio geiriadur sy’n mapio o bob gair
+i’r rhestr o eiriau sy’n ei ddilyn.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">successor_map</span> <span class="o">=</span> <span class="p">{}</span>
+</pre></div>
+</div>
+<p>Fel enghraifft, gadewch i ni ddechrau gyda dau air cyntaf y gân.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">first</span> <span class="o">=</span> <span class="s1">'half'</span>
+<span class="n">second</span> <span class="o">=</span> <span class="s1">'a'</span>
+</pre></div>
+</div>
+<p>Os nad yw’r gair cyntaf yn <code class="docutils literal notranslate"><span class="pre">successor_map</span></code>, mae’n rhaid i ni ychwanegu
+eitem newydd sy’n mapio o’r gair cyntaf i restr sy’n cynnwys yr ail air.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">successor_map</span><span class="p">[</span><span class="n">first</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">second</span><span class="p">]</span>
+<span class="n">successor_map</span>
+</pre></div>
+</div>
+<p>Os yw’r gair cyntaf eisoes yn y geiriadur, gallwn chwilio amdano i gael y
+rhestr o olynwyr rydym wedi’u gweld hyd yn hyn, ac ychwanegu’r un newydd.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">first</span> <span class="o">=</span> <span class="s1">'half'</span>
+<span class="n">second</span> <span class="o">=</span> <span class="s1">'not'</span>
+
+<span class="n">successor_map</span><span class="p">[</span><span class="n">first</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">second</span><span class="p">)</span>
+<span class="n">successor_map</span>
+</pre></div>
+</div>
+<p>Mae’r swyddogaeth ganlynol yn amgáu’r camau hyn.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">add_bigram</span><span class="p">(</span><span class="n">bigram</span><span class="p">):</span>
+    <span class="n">first</span><span class="p">,</span> <span class="n">second</span> <span class="o">=</span> <span class="n">bigram</span>
+    
+    <span class="k">if</span> <span class="n">first</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">successor_map</span><span class="p">:</span>
+        <span class="n">successor_map</span><span class="p">[</span><span class="n">first</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">second</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">successor_map</span><span class="p">[</span><span class="n">first</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">second</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Os yw’r un deuair yn ymddangos fwy nag unwaith, ychwanegir yr ail air at y
+rhestr fwy nag unwaith. Fel hyn, mae <code class="docutils literal notranslate"><span class="pre">successor_map</span></code> yn cadw golwg ar sawl
+gwaith y mae pob olynydd yn ymddangos.</p>
+<p>Fel y gwnaethom yn yr adran flaenorol, byddwn yn defnyddio rhestr o’r enw
+<code class="docutils literal notranslate"><span class="pre">window</span></code> i storio parau o eiriau olynol. A byddwn yn defnyddio’r
+swyddogaeth ganlynol i brosesu’r geiriau un ar y tro.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">process_word_bigram</span><span class="p">(</span><span class="n">word</span><span class="p">):</span>
+    <span class="n">window</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">window</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="n">add_bigram</span><span class="p">(</span><span class="n">window</span><span class="p">)</span>
+        <span class="n">window</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Dyma sut rydym yn ei defnyddio i brosesu geiriau’r gân.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">successor_map</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">window</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">song</span><span class="o">.</span><span class="n">split</span><span class="p">():</span>
+    <span class="n">word</span> <span class="o">=</span> <span class="n">clean_word</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+    <span class="n">process_word_bigram</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>A dyma’r canlyniadau.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">successor_map</span>
+</pre></div>
+</div>
+<p>Gall y gair <code class="docutils literal notranslate"><span class="pre">'half'</span></code> gael ei ddilyn gan <code class="docutils literal notranslate"><span class="pre">'a'</span></code>, <code class="docutils literal notranslate"><span class="pre">'not'</span></code>, neu <code class="docutils literal notranslate"><span class="pre">'the'</span></code>. Gall y
+gair <code class="docutils literal notranslate"><span class="pre">'a'</span></code> gael ei ddilyn gan <code class="docutils literal notranslate"><span class="pre">'bee'</span></code> neu <code class="docutils literal notranslate"><span class="pre">'vis'</span></code>. Mae’r rhan fwyaf o’r
+geiriau eraill yn ymddangos unwaith yn unig, felly dim ond un gair sy’n eu
+dilyn.</p>
+<p>Nawr gadewch i ni ddadansoddi’r llyfr.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">successor_map</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">window</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">split_line</span><span class="p">(</span><span class="n">line</span><span class="p">):</span>
+        <span class="n">word</span> <span class="o">=</span> <span class="n">clean_word</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+        <span class="n">process_word_bigram</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Gallwn chwilio am unrhyw air a darganfod y geiriau a all ei ddilyn.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># I used this cell to find a predecessor with a good number of possible successors</span>
+<span class="c1"># and at least one repeated word.</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">has_duplicates</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">t</span><span class="p">))</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">successor_map</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">==</span> <span class="mi">7</span> <span class="ow">and</span> <span class="n">has_duplicates</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">successor_map</span><span class="p">[</span><span class="s1">'going'</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Yn y rhestr hon o olynwyr, sylwch fod y gair <code class="docutils literal notranslate"><span class="pre">'to'</span></code> yn ymddangos deirgwaith
+— dim ond unwaith y mae’r olynwyr eraill yn ymddangos.</p>
+</section>
+<section id="cynhyrchu-testun">
+<h2><span class="section-number">12.9. </span>Cynhyrchu Testun<a class="headerlink" href="#cynhyrchu-testun" title="Link to this heading">#</a></h2>
+<p>Gallwn ddefnyddio canlyniadau’r adran flaenorol i gynhyrchu testun newydd
+gyda’r un cysylltiadau rhwng geiriau olynol ag yn y gwreiddiol. Dyma sut
+mae’n gweithio:</p>
+<ul class="simple">
+<li><p>Gan ddechrau gydag unrhyw air sy’n ymddangos yn y testun, rydym yn
+chwilio am ei olynwyr posibl ac yn dewis un ar hap.</p></li>
+<li><p>Yna, gan ddefnyddio’r gair a ddewiswyd, rydym yn chwilio am ei olynwyr
+posibl, ac yn dewis un ar hap.</p></li>
+</ul>
+<p>Gallwn ailadrodd y broses hon i gynhyrchu cymaint o eiriau ag y dymunwn.
+Fel enghraifft, gadewch i ni ddechrau gyda’r gair <code class="docutils literal notranslate"><span class="pre">'although'</span></code>. Dyma’r
+geiriau a all ei ddilyn.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">word</span> <span class="o">=</span> <span class="s1">'although'</span>
+<span class="n">successors</span> <span class="o">=</span> <span class="n">successor_map</span><span class="p">[</span><span class="n">word</span><span class="p">]</span>
+<span class="n">successors</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># this cell initializes the random number generator so it </span>
+<span class="c1"># starts at the same point in the sequence each time this</span>
+<span class="c1"># notebook runs.</span>
+
+<span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Gallwn ddefnyddio <code class="docutils literal notranslate"><span class="pre">choice</span></code> i ddewis o’r rhestr â’r un tebygolrwydd.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">word</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">successors</span><span class="p">)</span>
+<span class="n">word</span>
+</pre></div>
+</div>
+<p>Os yw’r un gair yn ymddangos fwy nag unwaith yn y rhestr, mae’n fwy
+tebygol o gael ei ddewis.</p>
+<p>Gan ailadrodd y camau hyn, gallwn ddefnyddio’r ddolen ganlynol i
+gynhyrchu cyfres hirach.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">successors</span> <span class="o">=</span> <span class="n">successor_map</span><span class="p">[</span><span class="n">word</span><span class="p">]</span>
+    <span class="n">word</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">successors</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">' '</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Mae’r canlyniad yn swnio’n debycach i frawddeg go iawn, ond nid yw’n
+gwneud llawer o synnwyr o hyd.</p>
+<p>Gallwn wneud yn well gan ddefnyddio mwy nag un gair fel allwedd yn
+<code class="docutils literal notranslate"><span class="pre">successor_map</span></code>. Er enghraifft, gallwn wneud geiriadur sy’n mapio o bob
+deuair — neu driair — i’r rhestr o eiriau sy’n dod nesaf. Fel ymarfer, cewch
+gyfle i weithredu’r dadansoddiad hwn a gweld sut mae’r canlyniadau’n edrych.</p>
+</section>
+<section id="dadnamu">
+<h2><span class="section-number">12.10. </span>Dadnamu<a class="headerlink" href="#dadnamu" title="Link to this heading">#</a></h2>
+<p>Erbyn hyn rydym yn ysgrifennu rhaglenni mwy sylweddol, ac efallai y gwelwch
+eich hun yn treulio mwy o amser yn dadnamu. Os ydych yn sownd ar nam anodd,
+dyma ychydig o bethau i roi cynnig arnynt:</p>
+<ul class="simple">
+<li><p>Darllen: Archwiliwch eich cod, ei ddarllen yn ôl i chi’ch hun, a gwiriwch
+ei fod yn dweud yr hyn roeddech yn bwriadu ei ddweud.</p></li>
+<li><p>Rhedeg: Arbrofwch drwy wneud newidiadau a rhedeg gwahanol fersiynau. Yn
+aml, os dangoswch y peth iawn yn y lle iawn yn y rhaglen, mae’r broblem
+yn dod yn amlwg, ond weithiau mae’n rhaid i chi adeiladu sgaffaldiau.</p></li>
+<li><p>Myfyrio: Cymerwch amser i feddwl! Pa fath o wall ydyw: cystrawen,
+rhedeg, neu semantig? Pa wybodaeth y gallwch ei chael o’r negeseuon
+gwall, neu o allbwn y rhaglen? Pa fath o wall a allai achosi’r broblem
+rydych yn ei gweld? Beth wnaethoch chi newid ddiwethaf, cyn i’r broblem
+ymddangos?</p></li>
+<li><p>Dadnamu Hwyaden Rwber: Os eglurwch y broblem i rywun arall, weithiau
+byddwch yn darganfod yr ateb cyn i chi orffen gofyn y cwestiwn. Yn aml
+nid oes angen y person arall arnoch; gallech jest siarad â hwyaden
+rwber. A dyna darddiad y strategaeth adnabyddus a elwir yn
+<strong><a class="reference internal" href="../glossary.html#term-dadnamu-hwyaden-rwber"><span class="xref std std-term">dadnamu hwyaden rwber</span></a></strong>. Nid wyf yn dyfeisio hyn — gweler
+<a class="reference external" href="https://en.wikipedia.org/wiki/Rubber_duck_debugging">https://en.wikipedia.org/wiki/Rubber_duck_debugging</a>.</p></li>
+<li><p>Encilio: Ar ryw adeg, y peth gorau i’w wneud yw bacio i fyny — dadwneud
+newidiadau diweddar — nes i chi gyrraedd rhaglen sy’n gweithio. Yna
+gallwch ddechrau ailadeiladu.</p></li>
+<li><p>Gorffwys: Os rhowch seibiant i’ch ymennydd, weithiau bydd yn darganfod y
+broblem i chi.</p></li>
+</ul>
+<p>Mae rhaglenwyr newydd weithiau’n mynd yn sownd ar un o’r gweithgareddau
+hyn ac yn anghofio’r lleill. Mae gan bob gweithgaredd ei fodd methu ei hun.</p>
+<p>Er enghraifft, mae darllen eich cod yn gweithio os mai gwall teipograffyddol
+yw’r broblem, ond nid os mai camddealltwriaeth gysyniadol ydyw. Os nad
+ydych yn deall beth mae eich rhaglen yn ei wneud, gallwch ei darllen 100
+gwaith a byth weld y gwall, am fod y gwall yn eich pen.</p>
+<p>Gall rhedeg arbrofion weithio, yn enwedig os rhedwch brofion bach, syml.
+Ond os rhedwch arbrofion heb feddwl na darllen eich cod, gall gymryd amser
+hir i ddarganfod beth sy’n digwydd.</p>
+<p>Mae’n rhaid i chi gymryd amser i feddwl. Mae dadnamu fel gwyddoniaeth
+arbrofol. Dylai fod gennych o leiaf un ddamcaniaeth am beth yw’r broblem.
+Os oes dau bosibilrwydd neu fwy, ceisiwch feddwl am brawf a fyddai’n
+dileu un ohonynt.</p>
+<p>Ond bydd hyd yn oed y technegau dadnamu gorau’n methu os oes gormod o
+wallau, neu os yw’r cod rydych yn ceisio’i drwsio’n rhy fawr ac yn rhy
+gymhleth. Weithiau’r dewis gorau yw encilio, gan symleiddio’r rhaglen nes i
+chi ddychwelyd at rywbeth sy’n gweithio.</p>
+<p>Mae rhaglenwyr newydd yn aml yn amharod i encilio am na allant ddioddef
+dileu llinell o god (hyd yn oed os yw’n anghywir). Os yw’n gwneud i chi
+deimlo’n well, copïwch eich rhaglen i ffeil arall cyn i chi ddechrau ei
+thynnu i lawr. Yna gallwch gopïo’r darnau yn ôl un ar y tro.</p>
+<p>Mae darganfod nam anodd yn gofyn am ddarllen, rhedeg, myfyrio, encilio, ac
+weithiau orffwys. Os ewch yn sownd ar un o’r gweithgareddau hyn, rhowch
+gynnig ar y lleill.</p>
+</section>
+<section id="rhestr-termau-r-bennod">
+<h2><span class="section-number">12.11. </span>Rhestr Termau’r Bennod<a class="headerlink" href="#rhestr-termau-r-bennod" title="Link to this heading">#</a></h2>
+<p><strong>gwerth rhagosodedig:</strong>
+Y gwerth a neilltuir i baramedr os na ddarperir dadl.</p>
+<p><strong>disodli:</strong>
+Disodli gwerth rhagosodedig â dadl.</p>
+<p><strong>penderfyniadol:</strong>
+Mae rhaglen benderfyniadol yn gwneud yr un peth bob tro y mae’n rhedeg, o
+gael yr un mewnbynnau.</p>
+<p><strong>ffug-hap:</strong>
+Mae dilyniant ffug-hap o rifau’n ymddangos yn ar hap, ond fe’i cynhyrchir
+gan raglen benderfyniadol.</p>
+<p><strong>deuair:</strong>
+Dilyniant o ddwy elfen, geiriau yn aml.</p>
+<p><strong>triair:</strong>
+Dilyniant o dair elfen.</p>
+<p><strong>n-air:</strong>
+Dilyniant o nifer amhenodol o elfennau.</p>
+<p><strong>dadnamu hwyaden rwber:</strong>
+Ffordd o ddadnamu drwy esbonio problem yn uchel i wrthrych difywyd.</p>
+</section>
+<section id="ymarferion">
+<h2><span class="section-number">12.12. </span>Ymarferion<a class="headerlink" href="#ymarferion" title="Link to this heading">#</a></h2>
+<section id="gofyn-i-gynorthwyydd-rhithwir">
+<h3><span class="section-number">12.12.1. </span>Gofyn i gynorthwyydd rhithwir<a class="headerlink" href="#gofyn-i-gynorthwyydd-rhithwir" title="Link to this heading">#</a></h3>
+<p>Yn <code class="docutils literal notranslate"><span class="pre">add_bigram</span></code>, mae’r gosodiad <code class="docutils literal notranslate"><span class="pre">if</span></code> yn creu rhestr newydd neu’n ychwanegu
+elfen at restr bresennol, yn dibynnu a yw’r allwedd eisoes yn y geiriadur.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">add_bigram</span><span class="p">(</span><span class="n">bigram</span><span class="p">):</span>
+    <span class="n">first</span><span class="p">,</span> <span class="n">second</span> <span class="o">=</span> <span class="n">bigram</span>
+    
+    <span class="k">if</span> <span class="n">first</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">successor_map</span><span class="p">:</span>
+        <span class="n">successor_map</span><span class="p">[</span><span class="n">first</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">second</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">successor_map</span><span class="p">[</span><span class="n">first</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">second</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Mae geiriaduron yn darparu dull o’r enw <code class="docutils literal notranslate"><span class="pre">setdefault</span></code> y gallwn ei ddefnyddio
+i wneud yr un peth yn fwy cryno. Gofynnwch i gynorthwyydd rhithwir sut mae’n
+gweithio, neu gopïwch <code class="docutils literal notranslate"><span class="pre">add_bigram</span></code> i gynorthwyydd rhithwir a gofyn “Allwch
+chi ailysgrifennu hyn gan ddefnyddio <code class="docutils literal notranslate"><span class="pre">setdefault</span></code>?”</p>
+<p>Yn y bennod hon fe wnaethom weithredu dadansoddi a chynhyrchu testun cadwyn
+Markov. Os ydych yn chwilfrydig, gallwch ofyn i gynorthwyydd rhithwir am
+ragor o wybodaeth ar y pwnc. Un o’r pethau y gallech eu dysgu yw bod
+cynorthwywyr rhithwir yn defnyddio algorithmau sy’n debyg mewn sawl ffordd
+— ond hefyd yn wahanol mewn ffyrdd pwysig. Gofynnwch i gynorthwyydd, “Beth
+yw’r gwahaniaethau rhwng modelau iaith fawr fel GPT a dadansoddi testun
+cadwyn Markov?”</p>
+</section>
+<section id="ymarfer">
+<h3><span class="section-number">12.12.2. </span>Ymarfer<a class="headerlink" href="#ymarfer" title="Link to this heading">#</a></h3>
+<p>Ysgrifennwch swyddogaeth sy’n cyfrif nifer y troeon y mae pob triair
+(dilyniant o dri gair) yn ymddangos. Os profwch eich swyddogaeth gyda
+thestun <em>Dr. Jekyll and Mr. Hyde</em>, dylech ddarganfod mai’r triair mwyaf
+cyffredin yw “said the lawyer”.</p>
+<p>Awgrym: Ysgrifennwch swyddogaeth o’r enw <code class="docutils literal notranslate"><span class="pre">count_trigram</span></code> sy’n debyg i
+<code class="docutils literal notranslate"><span class="pre">count_bigram</span></code>. Yna ysgrifennwch swyddogaeth o’r enw <code class="docutils literal notranslate"><span class="pre">process_word_trigram</span></code>
+sy’n debyg i <code class="docutils literal notranslate"><span class="pre">process_word_bigram</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+<p>Gallwch ddefnyddio’r ddolen ganlynol i ddarllen y llyfr a phrosesu’r
+geiriau.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">trigram_counter</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">window</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">split_line</span><span class="p">(</span><span class="n">line</span><span class="p">):</span>
+        <span class="n">word</span> <span class="o">=</span> <span class="n">clean_word</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+        <span class="n">process_word_trigram</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Yna defnyddiwch <code class="docutils literal notranslate"><span class="pre">print_most_common</span></code> i ddarganfod y triair mwyaf cyffredin
+yn y llyfr.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">print_most_common</span><span class="p">(</span><span class="n">trigram_counter</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id1">
+<h3><span class="section-number">12.12.3. </span>Ymarfer<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>Nawr gadewch i ni weithredu dadansoddiad testun cadwyn Markov gyda mapio o
+bob deuair i restr o olynwyr posibl.</p>
+<p>Gan ddechrau gyda <code class="docutils literal notranslate"><span class="pre">add_bigram</span></code>, ysgrifennwch swyddogaeth o’r enw
+<code class="docutils literal notranslate"><span class="pre">add_trigram</span></code> sy’n cymryd rhestr o dri gair ac yn ychwanegu neu’n
+diweddaru eitem yn <code class="docutils literal notranslate"><span class="pre">successor_map</span></code>, gan ddefnyddio’r ddau air cyntaf fel
+allwedd a’r trydydd gair fel olynydd posibl.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+<p>Dyma fersiwn o <code class="docutils literal notranslate"><span class="pre">process_word_trigram</span></code> sy’n galw <code class="docutils literal notranslate"><span class="pre">add_trigram</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">process_word_trigram</span><span class="p">(</span><span class="n">word</span><span class="p">):</span>
+    <span class="n">window</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">window</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="n">add_trigram</span><span class="p">(</span><span class="n">window</span><span class="p">)</span>
+        <span class="n">window</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Gallwch ddefnyddio’r ddolen ganlynol i brofi eich swyddogaeth gyda geiriau
+“Eric, the Half a Bee”.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">successor_map</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">window</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">string</span> <span class="ow">in</span> <span class="n">song</span><span class="o">.</span><span class="n">split</span><span class="p">():</span>
+    <span class="n">word</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="n">punctuation</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+    <span class="n">process_word_trigram</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Os yw eich swyddogaeth yn gweithio fel y bwriadwyd, dylai’r rhagflaenydd
+<code class="docutils literal notranslate"><span class="pre">('half',</span> <span class="pre">'a')</span></code> fapio i restr gydag un elfen sengl, <code class="docutils literal notranslate"><span class="pre">'bee'</span></code>. Mewn
+gwirionedd, fel mae’n digwydd, dim ond unwaith y mae pob deuair yn y gân
+hon yn ymddangos, felly mae gan bob un o’r gwerthoedd yn <code class="docutils literal notranslate"><span class="pre">successor_map</span></code>
+un elfen sengl.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">successor_map</span>
+</pre></div>
+</div>
+<p>Gallwch ddefnyddio’r ddolen ganlynol i brofi eich swyddogaeth gyda geiriau’r
+llyfr.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">successor_map</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">window</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">split_line</span><span class="p">(</span><span class="n">line</span><span class="p">):</span>
+        <span class="n">word</span> <span class="o">=</span> <span class="n">clean_word</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+        <span class="n">process_word_trigram</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Yn yr ymarfer nesaf, byddwch yn defnyddio’r canlyniadau i gynhyrchu testun
+newydd ar hap.</p>
+</section>
+<section id="id2">
+<h3><span class="section-number">12.12.4. </span>Ymarfer<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>Ar gyfer yr ymarfer hwn, byddwn yn tybio mai <code class="docutils literal notranslate"><span class="pre">successor_map</span></code> yw geiriadur
+sy’n mapio o bob deuair i’r rhestr o eiriau sy’n ei ddilyn.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># this cell initializes the random number generator so it </span>
+<span class="c1"># starts at the same point in the sequence each time this</span>
+<span class="c1"># notebook runs.</span>
+
+<span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>I gynhyrchu testun ar hap, byddwn yn dechrau drwy ddewis allwedd ar hap o
+<code class="docutils literal notranslate"><span class="pre">successor_map</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">successors</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">successor_map</span><span class="p">)</span>
+<span class="n">bigram</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">successors</span><span class="p">)</span>
+<span class="n">bigram</span>
+</pre></div>
+</div>
+<p>Nawr ysgrifennwch ddolen sy’n cynhyrchu 50 gair arall gan ddilyn y camau
+hyn:</p>
+<ol class="arabic simple">
+<li><p>Yn <code class="docutils literal notranslate"><span class="pre">successor_map</span></code>, chwiliwch am y rhestr o eiriau a all ddilyn
+<code class="docutils literal notranslate"><span class="pre">bigram</span></code>.</p></li>
+<li><p>Dewiswch un ohonynt ar hap a’i argraffu.</p></li>
+<li><p>Ar gyfer yr iteriad nesaf, gwnewch ddeuair newydd sy’n cynnwys ail air
+<code class="docutils literal notranslate"><span class="pre">bigram</span></code> a’r olynydd a ddewiswyd.</p></li>
+</ol>
+<p>Er enghraifft, os dechreuwn gyda’r deuair <code class="docutils literal notranslate"><span class="pre">('doubted',</span> <span class="pre">'if')</span></code> a dewis
+<code class="docutils literal notranslate"><span class="pre">'from'</span></code> fel ei olynydd, y deuair nesaf yw <code class="docutils literal notranslate"><span class="pre">('if',</span> <span class="pre">'from')</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+<p>Os yw popeth yn gweithio, dylech ddarganfod bod y testun a gynhyrchwyd yn
+adnabyddadwy debyg o ran arddull i’r gwreiddiol, a bod rhai ymadroddion yn
+gwneud synnwyr, ond gallai’r testun grwydro o un pwnc i’r llall.</p>
+<p>Fel ymarfer bonws, addaswch eich datrysiad i’r ddau ymarfer diwethaf i
+ddefnyddio triair fel allweddi yn <code class="docutils literal notranslate"><span class="pre">successor_map</span></code>, a gweld pa effaith sydd
+ganddo ar y canlyniadau.</p>
+<hr class="docutils" />
+<p><a class="reference external" href="https://allendowney.github.io/ThinkPython/index.html">Think Python: 3rd Edition</a> gan
+Allen B. Downey. Cyfieithiad Cymraeg gan Wayne Aubrey.</p>
+<p>Hawlfraint 2024 <a class="reference external" href="https://allendowney.com">Allen B. Downey</a>. Trwydded testun: <a class="reference external" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative
+Commons Attribution-NonCommercial-ShareAlike 4.0 International</a>.</p>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -462,6 +1385,40 @@
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geiriau-unigryw">12.1. Geiriau Unigryw</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#atalnodi">12.2. Atalnodi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#amlder-geiriau">12.3. Amlder Geiriau</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#paramedrau-dewisol">12.4. Paramedrau Dewisol</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tynnu-geiriaduron">12.5. Tynnu Geiriaduron</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rhifau-ar-hap">12.6. Rhifau Ar Hap</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deuair">12.7. Deuair</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dadansoddiad-markov">12.8. Dadansoddiad Markov</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cynhyrchu-testun">12.9. Cynhyrchu Testun</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dadnamu">12.10. Dadnamu</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rhestr-termau-r-bennod">12.11. Rhestr Termau’r Bennod</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ymarferion">12.12. Ymarferion</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gofyn-i-gynorthwyydd-rhithwir">12.12.1. Gofyn i gynorthwyydd rhithwir</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ymarfer">12.12.2. Ymarfer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">12.12.3. Ymarfer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">12.12.4. Ymarfer</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
