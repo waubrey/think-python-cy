@@ -62,7 +62,9 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../_static/tippy/chapters/chap02.3a570438-7ffc-4469-8d48-c7057405d304.js"></script>
+    <script defer="defer" src="../_static/tippy/chapters/chap02.90838956-f2ec-407e-b184-440130a1f735.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/chap02';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -155,6 +157,10 @@
     </div>
   
 
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
   
 </div>
 
@@ -374,7 +380,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -390,6 +398,29 @@
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#newidynnau">2.1. Newidynnau</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diagramau-cyflwr">2.2. Diagramau Cyflwr</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#enwau-newidynnau">2.3. Enwau Newidynnau</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#y-gosodiad-import">2.4. Y Gosodiad Import</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mynegiadau-a-gosodiadau">2.5. Mynegiadau a Gosodiadau</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#y-swyddogaeth-print">2.6. Y Swyddogaeth print</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dadleuon">2.7. Dadleuon</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sylwadau">2.8. Sylwadau</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dadnamu">2.9. Dadnamu</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rhestr-termau-r-bennod">2.10. Rhestr Termau’r Bennod</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ymarferion">2.11. Ymarferion</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gofyn-i-gynorthwyydd-rhithwir">2.11.1. Gofyn i gynorthwyydd rhithwir</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ymarfer">2.11.2. Ymarfer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2.11.3. Ymarfer</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -401,11 +432,456 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="newidynnau-a-gosodiadau">
 <h1><span class="section-number">2. </span>Newidynnau a Gosodiadau<a class="headerlink" href="#newidynnau-a-gosodiadau" title="Link to this heading">#</a></h1>
-<div class="warning admonition">
-<p class="admonition-title">Statws cyfieithu</p>
-<p>Pennod heb ei chyfieithu eto. Ffynhonnell Saesneg: <strong>Variables and Statements</strong>
-(gweler y bennod wreiddiol yn <a class="reference external" href="https://allendowney.github.io/ThinkPython/">https://allendowney.github.io/ThinkPython/</a> ar gyfer y testun gwreiddiol).</p>
+<p>Yn y bennod flaenorol, defnyddiom weithredyddion i ysgrifennu mynegiadau sy’n
+perfformio cyfrifiannau rhifyddol.</p>
+<p>Yn y bennod hon, byddwch yn dysgu am newidynnau a gosodiadau, y gosodiad <code class="docutils literal notranslate"><span class="pre">import</span></code>,
+a’r swyddogaeth <code class="docutils literal notranslate"><span class="pre">print</span></code>. A byddaf yn cyflwyno rhagor o’r eirfa a ddefnyddiwn i siarad
+am raglenni, gan gynnwys “dadl” a “modiwl”.</p>
+<section id="newidynnau">
+<h2><span class="section-number">2.1. </span>Newidynnau<a class="headerlink" href="#newidynnau" title="Link to this heading">#</a></h2>
+<p>Mae <strong><a class="reference internal" href="../glossary.html#term-newidyn"><span class="xref std std-term">newidyn</span></a></strong> yn enw sy’n cyfeirio at werth. I greu newidyn, gallwn
+ysgrifennu <strong><a class="reference internal" href="../glossary.html#term-gosodiad-neilltuad"><span class="xref std std-term">gosodiad neilltuad</span></a></strong> fel hyn.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">17</span>
+</pre></div>
 </div>
+<p>Mae gan osodiad neilltuad dri rhan: enw’r newidyn ar y chwith, y gweithredydd
+hafal, <code class="docutils literal notranslate"><span class="pre">=</span></code>, a mynegiad ar y dde. Yn yr enghraifft hon, cyfanrif yw’r mynegiad. Yn
+yr enghraifft ganlynol, rhif pwynt arnawf yw’r mynegiad.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pi</span> <span class="o">=</span> <span class="mf">3.141592653589793</span>
+</pre></div>
+</div>
+<p>Ac yn yr enghraifft ganlynol, llinyn yw’r mynegiad.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">message</span> <span class="o">=</span> <span class="s1">'And now for something completely different'</span>
+</pre></div>
+</div>
+<p>Pan fyddwch yn rhedeg gosodiad neilltuad, nid oes allbwn. Mae Python yn creu’r
+newidyn ac yn rhoi gwerth iddo, ond nid oes gan y gosodiad neilltuad unrhyw effaith
+weladwy. Fodd bynnag, ar ôl creu newidyn, gallwch ei ddefnyddio fel mynegiad. Felly
+gallwn ddangos gwerth <code class="docutils literal notranslate"><span class="pre">message</span></code> fel hyn:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">message</span>
+</pre></div>
+</div>
+<p>Gallwch hefyd ddefnyddio newidyn fel rhan o fynegiad gyda gweithredyddion rhifyddol.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">+</span> <span class="mi">25</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">*</span> <span class="n">pi</span>
+</pre></div>
+</div>
+<p>A gallwch ddefnyddio newidyn wrth alw swyddogaeth.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">round</span><span class="p">(</span><span class="n">pi</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="diagramau-cyflwr">
+<h2><span class="section-number">2.2. </span>Diagramau Cyflwr<a class="headerlink" href="#diagramau-cyflwr" title="Link to this heading">#</a></h2>
+<p>Ffordd gyffredin o gynrychioli newidynnau ar bapur yw ysgrifennu’r enw gyda saeth
+yn pwyntio at ei werth.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">diagram</span><span class="w"> </span><span class="kn">import</span> <span class="n">make_binding</span><span class="p">,</span> <span class="n">Frame</span>
+
+<span class="n">binding</span> <span class="o">=</span> <span class="n">make_binding</span><span class="p">(</span><span class="s2">"message"</span><span class="p">,</span> <span class="s1">'And now for something completely different'</span><span class="p">)</span>
+<span class="n">binding2</span> <span class="o">=</span> <span class="n">make_binding</span><span class="p">(</span><span class="s2">"n"</span><span class="p">,</span> <span class="mi">17</span><span class="p">)</span>
+<span class="n">binding3</span> <span class="o">=</span> <span class="n">make_binding</span><span class="p">(</span><span class="s2">"pi"</span><span class="p">,</span> <span class="mf">3.141592653589793</span><span class="p">)</span>
+
+<span class="n">frame</span> <span class="o">=</span> <span class="n">Frame</span><span class="p">([</span><span class="n">binding2</span><span class="p">,</span> <span class="n">binding3</span><span class="p">,</span> <span class="n">binding</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">diagram</span><span class="w"> </span><span class="kn">import</span> <span class="n">diagram</span><span class="p">,</span> <span class="n">adjust</span>
+
+
+<span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mf">3.62</span><span class="p">,</span> <span class="mf">1.01</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.76</span><span class="p">]</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">diagram</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
+<span class="n">bbox</span> <span class="o">=</span> <span class="n">frame</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">dy</span><span class="o">=-</span><span class="mf">0.25</span><span class="p">)</span>
+<span class="c1"># adjust(x, y, bbox)</span>
+</pre></div>
+</div>
+<p>Gelwir y math hwn o ffigur yn <strong><a class="reference internal" href="../glossary.html#term-diagram-cyflwr"><span class="xref std std-term">diagram cyflwr</span></a></strong> am ei fod yn dangos pa
+gyflwr y mae pob un o’r newidynnau ynddo (meddyliwch amdano fel cyflwr meddwl y
+newidyn). Byddwn yn defnyddio diagramau cyflwr drwy’r llyfr i gynrychioli model o
+sut mae Python yn storio newidynnau a’u gwerthoedd.</p>
+</section>
+<section id="enwau-newidynnau">
+<h2><span class="section-number">2.3. </span>Enwau Newidynnau<a class="headerlink" href="#enwau-newidynnau" title="Link to this heading">#</a></h2>
+<p>Gall enwau newidynnau fod mor hir ag y mynnwch. Gallant gynnwys llythrennau a
+rhifau, ond ni allant ddechrau gyda rhif. Mae’n gyfreithlon defnyddio priflythrennau,
+ond mae’n gonfensiynol defnyddio dim ond llythrennau bach ar gyfer enwau newidynnau.</p>
+<p>Yr unig atalnodi a all ymddangos mewn enw newidyn yw’r cymeriad tanlinell, <code class="docutils literal notranslate"><span class="pre">_</span></code>. Fe’i
+defnyddir yn aml mewn enwau gyda sawl gair, fel <code class="docutils literal notranslate"><span class="pre">your_name</span></code> neu
+<code class="docutils literal notranslate"><span class="pre">airspeed_of_unladen_swallow</span></code>.</p>
+<p>Os rhowch enw anghyfreithlon i newidyn, cewch wall cystrawen. Mae’r enw <code class="docutils literal notranslate"><span class="pre">million!</span></code>
+yn anghyfreithlon am ei fod yn cynnwys atalnodi.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">expect</span> <span class="ne">SyntaxError</span>
+
+<span class="n">million</span><span class="err">!</span> <span class="o">=</span> <span class="mi">1000000</span>
+</pre></div>
+</div>
+<p>Mae <code class="docutils literal notranslate"><span class="pre">76trombones</span></code> yn anghyfreithlon am ei fod yn dechrau gyda rhif.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">expect</span> <span class="ne">SyntaxError</span>
+
+<span class="mi">76</span><span class="n">trombones</span> <span class="o">=</span> <span class="s1">'big parade'</span>
+</pre></div>
+</div>
+<p>Mae <code class="docutils literal notranslate"><span class="pre">class</span></code> hefyd yn anghyfreithlon, ond efallai nad yw’n amlwg pam.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">expect</span> <span class="ne">SyntaxError</span>
+
+<span class="k">class</span><span class="w"> </span><span class="err">= '</span><span class="nc">Self</span><span class="o">-</span><span class="n">Defence</span> <span class="n">Against</span> <span class="n">Fresh</span> <span class="n">Fruit</span><span class="s1">'</span>
+</pre></div>
+</div>
+<p>Mae’n ymddangos bod <code class="docutils literal notranslate"><span class="pre">class</span></code> yn <strong><a class="reference internal" href="../glossary.html#term-allweddair"><span class="xref std std-term">allweddair</span></a></strong>, sef gair arbennig a
+ddefnyddir i nodi strwythur rhaglen. Ni ellir defnyddio allweddeiriau fel enwau
+newidynnau.</p>
+<p>Dyma restr gyflawn o allweddeiriau Python:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kc">False</span>      <span class="k">await</span>      <span class="k">else</span>       <span class="kn">import</span><span class="w">     </span><span class="nn">pass</span>
+<span class="kc">None</span>       <span class="k">break</span>      <span class="k">except</span>     <span class="ow">in</span>         <span class="k">raise</span>
+<span class="kc">True</span>       <span class="k">class</span><span class="w">      </span><span class="nc">finally</span>    <span class="ow">is</span>         <span class="k">return</span>
+<span class="ow">and</span>        <span class="k">continue</span>   <span class="k">for</span>        <span class="k">lambda</span>     <span class="k">try</span>
+<span class="k">as</span>         <span class="k">def</span><span class="w">        </span><span class="nf">from</span>       <span class="k">nonlocal</span>   <span class="k">while</span>
+<span class="k">assert</span>     <span class="k">del</span>        <span class="k">global</span>     <span class="ow">not</span>        <span class="k">with</span>
+<span class="k">async</span>      <span class="k">elif</span>       <span class="k">if</span>         <span class="ow">or</span>         <span class="k">yield</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">keyword</span><span class="w"> </span><span class="kn">import</span> <span class="n">kwlist</span>
+
+<span class="nb">len</span><span class="p">(</span><span class="n">kwlist</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Does dim angen i chi gofio’r rhestr hon ar y cof. Yn y rhan fwyaf o amgylcheddau
+datblygu, dangosir allweddeiriau mewn lliw gwahanol; os ceisiwch ddefnyddio un fel
+enw newidyn, byddwch yn gwybod.</p>
+</section>
+<section id="y-gosodiad-import">
+<h2><span class="section-number">2.4. </span>Y Gosodiad Import<a class="headerlink" href="#y-gosodiad-import" title="Link to this heading">#</a></h2>
+<p>Er mwyn defnyddio rhai nodweddion Python, mae’n rhaid i chi eu <strong>mewnforio</strong>. Er
+enghraifft, mae’r gosodiad canlynol yn mewnforio’r modiwl <code class="docutils literal notranslate"><span class="pre">math</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+</pre></div>
+</div>
+<p>Mae <strong><a class="reference internal" href="../glossary.html#term-modiwl"><span class="xref std std-term">modiwl</span></a></strong> yn gasgliad o newidynnau a swyddogaethau. Mae’r modiwl math
+yn darparu newidyn o’r enw <code class="docutils literal notranslate"><span class="pre">pi</span></code> sy’n cynnwys gwerth y cysonyn mathemategol a
+ddynodir <span class="math notranslate nohighlight">\(\pi\)</span>. Gallwn ddangos ei werth fel hyn.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="n">pi</span>
+</pre></div>
+</div>
+<p>I ddefnyddio newidyn mewn modiwl, mae’n rhaid i chi ddefnyddio’r <strong><a class="reference internal" href="../glossary.html#term-gweithredydd-dot"><span class="xref std std-term">gweithredydd dot</span></a></strong>
+(<code class="docutils literal notranslate"><span class="pre">.</span></code>) rhwng enw’r modiwl ac enw’r newidyn.</p>
+<p>Mae’r modiwl math hefyd yn cynnwys swyddogaethau. Er enghraifft, mae <code class="docutils literal notranslate"><span class="pre">sqrt</span></code> yn
+cyfrifo ail isradd.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Ac mae <code class="docutils literal notranslate"><span class="pre">pow</span></code> yn codi un rhif i bŵer ail rif.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="n">pow</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Erbyn hyn rydym wedi gweld dwy ffordd o godi rhif i bŵer: gallwn ddefnyddio’r
+swyddogaeth <code class="docutils literal notranslate"><span class="pre">math.pow</span></code> neu’r gweithredydd esbonyddiad, <code class="docutils literal notranslate"><span class="pre">**</span></code>. Mae’r ddau’n iawn, ond
+defnyddir y gweithredydd yn amlach na’r swyddogaeth.</p>
+</section>
+<section id="mynegiadau-a-gosodiadau">
+<h2><span class="section-number">2.5. </span>Mynegiadau a Gosodiadau<a class="headerlink" href="#mynegiadau-a-gosodiadau" title="Link to this heading">#</a></h2>
+<p>Hyd yn hyn, rydym wedi gweld rhai mathau o fynegiadau. Gall mynegiad fod yn werth
+sengl, fel cyfanrif, rhif pwynt arnawf, neu linyn. Gall hefyd fod yn gasgliad o
+werthoedd a gweithredyddion. A gall gynnwys enwau newidynnau a galwadau
+swyddogaeth. Dyma fynegiad sy’n cynnwys sawl un o’r elfennau hyn.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">19</span> <span class="o">+</span> <span class="n">n</span> <span class="o">+</span> <span class="nb">round</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<p>Rydym hefyd wedi gweld rhai mathau o osodiadau. Mae <strong><a class="reference internal" href="../glossary.html#term-gosodiad"><span class="xref std std-term">gosodiad</span></a></strong> yn uned o
+god sydd ag effaith, ond dim gwerth. Er enghraifft, mae gosodiad neilltuad yn creu
+newidyn ac yn rhoi gwerth iddo, ond nid oes gan y gosodiad ei hun werth.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">17</span>
+</pre></div>
+</div>
+<p>Yn yr un modd, mae gan osodiad mewnforio effaith — mae’n mewnforio modiwl fel y
+gallwn ddefnyddio’r newidynnau a’r swyddogaethau y mae’n eu cynnwys — ond nid oes
+ganddo unrhyw effaith weladwy.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+</pre></div>
+</div>
+<p>Gelwir cyfrifo gwerth mynegiad yn <strong><a class="reference internal" href="../glossary.html#term-gwerthuso"><span class="xref std std-term">gwerthuso</span></a></strong>. Gelwir rhedeg gosodiad yn
+<strong><a class="reference internal" href="../glossary.html#term-cyflawniad"><span class="xref std std-term">cyflawniad</span></a></strong>.</p>
+</section>
+<section id="y-swyddogaeth-print">
+<h2><span class="section-number">2.6. </span>Y Swyddogaeth print<a class="headerlink" href="#y-swyddogaeth-print" title="Link to this heading">#</a></h2>
+<p>Pan fyddwch yn gwerthuso mynegiad, dangosir y canlyniad.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>Ond os byddwch yn gwerthuso mwy nag un mynegiad, dim ond gwerth yr olaf a
+ddangosir.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">+</span> <span class="mi">2</span>
+<span class="n">n</span> <span class="o">+</span> <span class="mi">3</span>
+</pre></div>
+</div>
+<p>I ddangos mwy nag un gwerth, gallwch ddefnyddio’r swyddogaeth <code class="docutils literal notranslate"><span class="pre">print</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Mae hefyd yn gweithio gyda rhifau pwynt arnawf a llinynnau.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">'The value of pi is approximately'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Gallwch hefyd ddefnyddio dilyniant o fynegiadau wedi’u gwahanu gan atalnodau.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">'The value of pi is approximately'</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Sylwch fod y swyddogaeth <code class="docutils literal notranslate"><span class="pre">print</span></code> yn rhoi bwlch rhwng y gwerthoedd.</p>
+</section>
+<section id="dadleuon">
+<h2><span class="section-number">2.7. </span>Dadleuon<a class="headerlink" href="#dadleuon" title="Link to this heading">#</a></h2>
+<p>Pan fyddwch yn galw swyddogaeth, gelwir y mynegiad mewn cromfachau yn
+<strong><a class="reference internal" href="../glossary.html#term-dadl"><span class="xref std std-term">dadl</span></a></strong>. Fel arfer byddwn yn esbonio pam, ond yn yr achos hwn nid oes gan
+ystyr technegol y term bron ddim i’w wneud ag ystyr cyffredin y gair, felly ni wnaf
+hyd yn oed geisio.</p>
+<p>Mae rhai o’r swyddogaethau rydym wedi’u gweld hyd yn hyn yn cymryd dim ond un ddadl,
+fel <code class="docutils literal notranslate"><span class="pre">int</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span><span class="p">(</span><span class="s1">'101'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Mae rhai’n cymryd dwy, fel <code class="docutils literal notranslate"><span class="pre">math.pow</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="n">pow</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Gall rhai gymryd dadleuon ychwanegol sy’n ddewisol. Er enghraifft, gall <code class="docutils literal notranslate"><span class="pre">int</span></code>
+gymryd ail ddadl sy’n nodi sail y rhif.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span><span class="p">(</span><span class="s1">'101'</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Mae’r dilyniant o ddigidau <code class="docutils literal notranslate"><span class="pre">101</span></code> yn sail 2 yn cynrychioli’r rhif 5 yn sail 10.</p>
+<p>Mae <code class="docutils literal notranslate"><span class="pre">round</span></code> hefyd yn cymryd ail ddadl ddewisol, sef nifer y lleoedd degol i
+dalgrynnu iddynt.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">round</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Gall rhai swyddogaethau gymryd unrhyw nifer o ddadleuon, fel <code class="docutils literal notranslate"><span class="pre">print</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">'Any'</span><span class="p">,</span> <span class="s1">'number'</span><span class="p">,</span> <span class="s1">'of'</span><span class="p">,</span> <span class="s1">'arguments'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Os galwch swyddogaeth a darparu gormod o ddadleuon, mae hynny’n <code class="docutils literal notranslate"><span class="pre">TypeError</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">expect</span> <span class="ne">TypeError</span>
+
+<span class="nb">float</span><span class="p">(</span><span class="s1">'123.0'</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Os darparwch rhy ychydig o ddadleuon, mae hynny hefyd yn <code class="docutils literal notranslate"><span class="pre">TypeError</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">expect</span> <span class="ne">TypeError</span>
+
+<span class="n">math</span><span class="o">.</span><span class="n">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Ac os darparwch ddadl gyda math na all y swyddogaeth ei thrin, mae hynny’n
+<code class="docutils literal notranslate"><span class="pre">TypeError</span></code>, hefyd.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">expect</span> <span class="ne">TypeError</span>
+
+<span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="s1">'123'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Gall y math hwn o wirio fod yn flinderus pan fyddwch yn dechrau, ond mae’n eich
+helpu i ganfod a chywiro gwallau.</p>
+</section>
+<section id="sylwadau">
+<h2><span class="section-number">2.8. </span>Sylwadau<a class="headerlink" href="#sylwadau" title="Link to this heading">#</a></h2>
+<p>Wrth i raglenni fynd yn fwy ac yn fwy cymhleth, maent yn mynd yn anoddach eu
+darllen. Mae ieithoedd ffurfiol yn ddwys, ac mae’n aml yn anodd edrych ar ddarn o
+god a chanfod beth mae’n ei wneud a pham.</p>
+<p>Am y rheswm hwn, mae’n syniad da ychwanegu nodiadau at eich rhaglenni i esbonio mewn
+iaith naturiol beth mae’r rhaglen yn ei wneud. Gelwir y nodiadau hyn yn
+**<a class="reference internal" href="../glossary.html#term-sylwad"><span class="xref std std-term">sylwad</span></a>**au, ac maent yn dechrau gyda’r symbol <code class="docutils literal notranslate"><span class="pre">#</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># nifer yr eiliadau mewn 42:42</span>
+<span class="n">seconds</span> <span class="o">=</span> <span class="mi">42</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">+</span> <span class="mi">42</span>
+</pre></div>
+</div>
+<p>Yn yr achos hwn, mae’r sylwad yn ymddangos ar linell ar ei phen ei hun. Gallwch
+hefyd roi sylwadau ar ddiwedd llinell:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">miles</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">/</span> <span class="mf">1.61</span>     <span class="c1"># 10 cilomedr mewn milltiroedd</span>
+</pre></div>
+</div>
+<p>Anwybyddir popeth o’r <code class="docutils literal notranslate"><span class="pre">#</span></code> i ddiwedd y llinell — nid oes ganddo unrhyw effaith ar
+gyflawniad y rhaglen.</p>
+<p>Mae sylwadau fwyaf defnyddiol pan fyddant yn dogfennu nodweddion nad ydynt yn
+amlwg yn y cod. Mae’n rhesymol tybio y gall y darllenydd ddarganfod <em>beth</em> mae’r
+cod yn ei wneud; mae’n fwy defnyddiol esbonio <em>pam</em>.</p>
+<p>Mae’r sylwad hwn yn ddiangen gyda’r cod ac yn ddiwerth:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">v</span> <span class="o">=</span> <span class="mi">8</span>     <span class="c1"># neilltuo 8 i v</span>
+</pre></div>
+</div>
+<p>Mae’r sylwad hwn yn cynnwys gwybodaeth ddefnyddiol nad yw yn y cod:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">v</span> <span class="o">=</span> <span class="mi">8</span>     <span class="c1"># cyflymder mewn milltiroedd yr awr</span>
+</pre></div>
+</div>
+<p>Gall enwau newidynnau da leihau’r angen am sylwadau, ond gall enwau hir wneud
+mynegiadau cymhleth yn anodd eu darllen, felly mae cyfaddawd.</p>
+</section>
+<section id="dadnamu">
+<h2><span class="section-number">2.9. </span>Dadnamu<a class="headerlink" href="#dadnamu" title="Link to this heading">#</a></h2>
+<p>Gall tri math o wallau ddigwydd mewn rhaglen: gwallau cystrawen, gwallau rhedeg, a
+gwallau semantig. Mae’n ddefnyddiol gwahaniaethu rhyngddynt er mwyn eu holrhain yn
+gyflymach.</p>
+<ul class="simple">
+<li><p><strong>Gwall cystrawen</strong>: Mae “cystrawen” yn cyfeirio at strwythur rhaglen a’r
+rheolau ynghylch y strwythur hwnnw. Os oes gwall cystrawen yn unrhyw le yn eich
+rhaglen, nid yw Python yn rhedeg y rhaglen. Mae’n dangos neges wall ar unwaith.</p></li>
+<li><p><strong>Gwall rhedeg</strong>: Os nad oes gwallau cystrawen yn eich rhaglen, gall ddechrau
+rhedeg. Ond os aiff rhywbeth o’i le, mae Python yn dangos neges wall ac yn
+stopio. Gelwir y math hwn o wall yn <strong><a class="reference internal" href="../glossary.html#term-gwall-rhedeg"><span class="xref std std-term">gwall rhedeg</span></a></strong>. Fe’i gelwir hefyd
+yn <strong><a class="reference internal" href="../glossary.html#term-eithriad"><span class="xref std std-term">eithriad</span></a></strong>, am ei fod yn dangos bod rhywbeth eithriadol wedi
+digwydd.</p></li>
+<li><p><strong>Gwall semantig</strong>: Y trydydd math o wall yw “semantig”, sy’n golygu’n ymwneud
+ag ystyr. Os oes <strong><a class="reference internal" href="../glossary.html#term-gwall-semantig"><span class="xref std std-term">gwall semantig</span></a></strong> yn eich rhaglen, mae’n rhedeg heb
+gynhyrchu negeseuon gwall, ond nid yw’n gwneud yr hyn a fwriadwyd gennych. Gall
+fod yn anodd adnabod gwallau semantig am ei bod yn ofynnol i chi weithio’n ôl
+drwy edrych ar allbwn y rhaglen a cheisio darganfod beth mae’n ei wneud.</p></li>
+</ul>
+<p>Fel rydym wedi gweld, mae enw newidyn anghyfreithlon yn wall cystrawen.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">expect</span> <span class="ne">SyntaxError</span>
+
+<span class="n">million</span><span class="err">!</span> <span class="o">=</span> <span class="mi">1000000</span>
+</pre></div>
+</div>
+<p>Os defnyddiwch weithredydd gyda math nad yw’n ei gefnogi, mae hynny’n wall rhedeg.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">expect</span> <span class="ne">TypeError</span>
+
+<span class="s1">'126'</span> <span class="o">/</span> <span class="mi">3</span>
+</pre></div>
+</div>
+<p>Yn olaf, dyma enghraifft o wall semantig. Tybiwch ein bod am gyfrifo cyfartaledd <code class="docutils literal notranslate"><span class="pre">1</span></code>
+a <code class="docutils literal notranslate"><span class="pre">3</span></code>, ond ein bod yn anghofio am drefn y gweithrediadau ac yn ysgrifennu hyn:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">/</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<p>Pan gaiff y mynegiad hwn ei werthuso, nid yw’n cynhyrchu neges wall, felly nid oes
+gwall cystrawen na gwall rhedeg. Ond nid cyfartaledd <code class="docutils literal notranslate"><span class="pre">1</span></code> a <code class="docutils literal notranslate"><span class="pre">3</span></code> yw’r canlyniad,
+felly nid yw’r rhaglen yn gywir. Mae hwn yn wall semantig am fod y rhaglen yn
+rhedeg ond nid yw’n gwneud yr hyn a fwriadwyd.</p>
+</section>
+<section id="rhestr-termau-r-bennod">
+<h2><span class="section-number">2.10. </span>Rhestr Termau’r Bennod<a class="headerlink" href="#rhestr-termau-r-bennod" title="Link to this heading">#</a></h2>
+<p><strong>newidyn:</strong>
+Enw sy’n cyfeirio at werth.</p>
+<p><strong>gosodiad neilltuad:</strong>
+Gosodiad sy’n neilltuo gwerth i newidyn.</p>
+<p><strong>diagram cyflwr:</strong>
+Cynrychiolaeth graffigol o set o newidynnau a’r gwerthoedd y maent yn cyfeirio
+atynt.</p>
+<p><strong>allweddair:</strong>
+Gair arbennig a ddefnyddir i nodi strwythur rhaglen.</p>
+<p><strong>gosodiad mewnforio:</strong>
+Gosodiad sy’n darllen ffeil modiwl fel y gallwn ddefnyddio’r newidynnau a’r
+swyddogaethau y mae’n eu cynnwys.</p>
+<p><strong>modiwl:</strong>
+Ffeil sy’n cynnwys cod Python, gan gynnwys diffiniadau swyddogaeth ac weithiau
+osodiadau eraill.</p>
+<p><strong>gweithredydd dot:</strong>
+Y gweithredydd, <code class="docutils literal notranslate"><span class="pre">.</span></code>, a ddefnyddir i gyrchu swyddogaeth mewn modiwl arall drwy nodi
+enw’r modiwl wedi’i ddilyn gan ddot ac enw’r swyddogaeth.</p>
+<p><strong>gwerthuso:</strong>
+Perfformio’r gweithrediadau mewn mynegiad er mwyn cyfrifo gwerth.</p>
+<p><strong>gosodiad:</strong>
+Un neu fwy o linellau cod sy’n cynrychioli gorchymyn neu weithred.</p>
+<p><strong>cyflawniad:</strong>
+Rhedeg gosodiad a gwneud yr hyn y mae’n ei ddweud.</p>
+<p><strong>dadl:</strong>
+Gwerth a ddarperir i swyddogaeth pan gaiff ei galw.</p>
+<p><strong>sylwad:</strong>
+Testun wedi’i gynnwys mewn rhaglen sy’n rhoi gwybodaeth am y rhaglen ond nad oes
+ganddo effaith ar ei chyflawniad.</p>
+<p><strong>gwall rhedeg:</strong>
+Gwall sy’n achosi i raglen ddangos neges wall a therfynu.</p>
+<p><strong>eithriad:</strong>
+Gwall a ganfyddir tra bo’r rhaglen yn rhedeg.</p>
+<p><strong>gwall semantig:</strong>
+Gwall sy’n achosi i raglen wneud y peth anghywir, ond heb ddangos neges wall.</p>
+</section>
+<section id="ymarferion">
+<h2><span class="section-number">2.11. </span>Ymarferion<a class="headerlink" href="#ymarferion" title="Link to this heading">#</a></h2>
+<section id="gofyn-i-gynorthwyydd-rhithwir">
+<h3><span class="section-number">2.11.1. </span>Gofyn i gynorthwyydd rhithwir<a class="headerlink" href="#gofyn-i-gynorthwyydd-rhithwir" title="Link to this heading">#</a></h3>
+<p>Unwaith eto, rwy’n eich annog i ddefnyddio cynorthwyydd rhithwir i ddysgu mwy am
+unrhyw un o bynciau’r bennod hon.</p>
+<p>Os ydych yn chwilfrydig am unrhyw un o’r allweddeiriau a restrais, gallech ofyn
+“Pam mae class yn allweddair?” neu “Pam na all enwau newidynnau fod yn
+allweddeiriau?”</p>
+<p>Efallai eich bod wedi sylwi nad yw <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code>, a <code class="docutils literal notranslate"><span class="pre">str</span></code> yn allweddeiriau Python.
+Maent yn newidynnau sy’n cynrychioli mathau, a gellir eu defnyddio fel
+swyddogaethau. Felly mae’n <em>gyfreithlon</em> cael newidyn neu swyddogaeth gydag un o’r
+enwau hynny, ond fe’i hanghymeradwyir yn gryf. Gofynnwch i gynorthwyydd “Pam mae’n
+ddrwg defnyddio int, float, a str fel enwau newidynnau?”</p>
+<p>Gofynnwch hefyd, “Beth yw’r swyddogaethau cynhenid yn Python?” Os ydych yn
+chwilfrydig am unrhyw un ohonynt, gofynnwch am ragor o wybodaeth.</p>
+<p>Yn y bennod hon fe wnaethom fewnforio’r modiwl <code class="docutils literal notranslate"><span class="pre">math</span></code> a defnyddio rhai o’r
+newidynnau a’r swyddogaethau y mae’n eu darparu. Gofynnwch i gynorthwyydd, “Pa
+newidynnau a swyddogaethau sydd yn y modiwl math?” a “Heblaw math, pa fodiwlau a
+ystyrir yn graidd Python?”</p>
+</section>
+<section id="ymarfer">
+<h3><span class="section-number">2.11.2. </span>Ymarfer<a class="headerlink" href="#ymarfer" title="Link to this heading">#</a></h3>
+<p>Gan ailadrodd fy nghyngor o’r bennod flaenorol, bob tro y dysgwch nodwedd newydd,
+dylech wneud camgymeriadau’n fwriadol i weld beth sy’n mynd o’i le.</p>
+<ul class="simple">
+<li><p>Rydym wedi gweld bod <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">=</span> <span class="pre">17</span></code> yn gyfreithlon. Beth am <code class="docutils literal notranslate"><span class="pre">17</span> <span class="pre">=</span> <span class="pre">n</span></code>?</p></li>
+<li><p>Beth am <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">y</span> <span class="pre">=</span> <span class="pre">1</span></code>?</p></li>
+<li><p>Mewn rhai ieithoedd mae pob gosodiad yn gorffen gydag hanner colon (<code class="docutils literal notranslate"><span class="pre">;</span></code>). Beth
+sy’n digwydd os rhowch hanner colon ar ddiwedd gosodiad Python?</p></li>
+<li><p>Beth os rhowch atalnod llawn ar ddiwedd gosodiad?</p></li>
+<li><p>Beth sy’n digwydd os sillafwch enw modiwl yn anghywir a cheisio mewnforio
+<code class="docutils literal notranslate"><span class="pre">maath</span></code>?</p></li>
+</ul>
+</section>
+<section id="id1">
+<h3><span class="section-number">2.11.3. </span>Ymarfer<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>Ymarferwch ddefnyddio dehonglydd Python fel cyfrifiannell:</p>
+<p><strong>Rhan 1.</strong> Cyfaint sffêr gyda radiws <span class="math notranslate nohighlight">\(r\)</span> yw <span class="math notranslate nohighlight">\(\frac{4}{3} \pi r^3\)</span>. Beth yw cyfaint
+sffêr gyda radiws 5? Dechreuwch gyda newidyn o’r enw <code class="docutils literal notranslate"><span class="pre">radius</span></code> ac yna neilltuwch y
+canlyniad i newidyn o’r enw <code class="docutils literal notranslate"><span class="pre">volume</span></code>. Dangoswch y canlyniad. Ychwanegwch sylwadau i
+nodi bod <code class="docutils literal notranslate"><span class="pre">radius</span></code> mewn centimetrau a <code class="docutils literal notranslate"><span class="pre">volume</span></code> mewn centimetrau ciwbig.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+<p><strong>Rhan 2.</strong> Mae rheol o drigonometreg yn dweud, ar gyfer unrhyw werth o <span class="math notranslate nohighlight">\(x\)</span>, fod
+<span class="math notranslate nohighlight">\((\cos x)^2 + (\sin x)^2 = 1\)</span>. Gadewch i ni weld a yw’n wir ar gyfer gwerth penodol
+o <span class="math notranslate nohighlight">\(x\)</span> fel 42.</p>
+<p>Crëwch newidyn o’r enw <code class="docutils literal notranslate"><span class="pre">x</span></code> gyda’r gwerth hwn. Yna defnyddiwch <code class="docutils literal notranslate"><span class="pre">math.cos</span></code> a
+<code class="docutils literal notranslate"><span class="pre">math.sin</span></code> i gyfrifo sin a cosin <span class="math notranslate nohighlight">\(x\)</span>, a swm eu sgwariau.</p>
+<p>Dylai’r canlyniad fod yn agos at 1. Efallai na fydd yn union 1 am nad yw
+rhifyddeg pwynt arnawf yn union — dim ond yn fras gywir y mae.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+<p><strong>Rhan 3.</strong> Yn ogystal â <code class="docutils literal notranslate"><span class="pre">pi</span></code>, y newidyn arall a ddiffinnir yn y modiwl <code class="docutils literal notranslate"><span class="pre">math</span></code> yw
+<code class="docutils literal notranslate"><span class="pre">e</span></code>, sy’n cynrychioli sail y logarithm naturiol, a ysgrifennir mewn nodiant
+mathemategol fel <span class="math notranslate nohighlight">\(e\)</span>. Os nad ydych yn gyfarwydd â’r gwerth hwn, gofynnwch i
+gynorthwyydd rhithwir “Beth yw <code class="docutils literal notranslate"><span class="pre">math.e</span></code>?” Nawr gadewch i ni gyfrifo <span class="math notranslate nohighlight">\(e^2\)</span> dair
+ffordd:</p>
+<ul class="simple">
+<li><p>Defnyddiwch <code class="docutils literal notranslate"><span class="pre">math.e</span></code> a’r gweithredydd esbonyddiad (<code class="docutils literal notranslate"><span class="pre">**</span></code>).</p></li>
+<li><p>Defnyddiwch <code class="docutils literal notranslate"><span class="pre">math.pow</span></code> i godi <code class="docutils literal notranslate"><span class="pre">math.e</span></code> i’r pŵer <code class="docutils literal notranslate"><span class="pre">2</span></code>.</p></li>
+<li><p>Defnyddiwch <code class="docutils literal notranslate"><span class="pre">math.exp</span></code>, sy’n cymryd gwerth, <span class="math notranslate nohighlight">\(x\)</span>, fel dadl, ac yn cyfrifo <span class="math notranslate nohighlight">\(e^x\)</span>.</p></li>
+</ul>
+<p>Efallai y sylwch fod y canlyniad olaf ychydig yn wahanol i’r ddau arall. Gweler a
+allwch ddarganfod pa un sy’n gywir.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p><a class="reference external" href="https://allendowney.github.io/ThinkPython/index.html">Think Python: 3rd Edition</a> gan
+Allen B. Downey. Cyfieithiad Cymraeg gan Wayne Aubrey.</p>
+<p>Hawlfraint 2024 <a class="reference external" href="https://allendowney.com">Allen B. Downey</a>. Trwydded testun: <a class="reference external" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative
+Commons Attribution-NonCommercial-ShareAlike 4.0 International</a>.</p>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -462,6 +938,38 @@
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#newidynnau">2.1. Newidynnau</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diagramau-cyflwr">2.2. Diagramau Cyflwr</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#enwau-newidynnau">2.3. Enwau Newidynnau</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#y-gosodiad-import">2.4. Y Gosodiad Import</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mynegiadau-a-gosodiadau">2.5. Mynegiadau a Gosodiadau</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#y-swyddogaeth-print">2.6. Y Swyddogaeth print</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dadleuon">2.7. Dadleuon</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sylwadau">2.8. Sylwadau</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dadnamu">2.9. Dadnamu</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rhestr-termau-r-bennod">2.10. Rhestr Termau’r Bennod</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ymarferion">2.11. Ymarferion</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gofyn-i-gynorthwyydd-rhithwir">2.11.1. Gofyn i gynorthwyydd rhithwir</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ymarfer">2.11.2. Ymarfer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2.11.3. Ymarfer</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
