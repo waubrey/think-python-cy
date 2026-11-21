@@ -579,4 +579,25 @@ prototeip a chlwt
 
 datblygu dylunio-yn-gyntaf
     design-first development
+
+iaith wrthrych-gyfeiriadol
+    object-oriented language
+
+derbynnydd
+    receiver
+
+dull statig
+    static method
+
+dull enghraifft
+    instance method
+
+dull arbennig
+    special method
+
+gorlwytho gweithredydd
+    operator overloading
+
+amod cyson
+    invariant
 ```

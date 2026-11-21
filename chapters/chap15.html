@@ -62,7 +62,7 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../_static/tippy/chapters/chap15.0a328c46-a3f9-4925-a409-0d0162fd931b.js"></script>
+    <script defer="defer" src="../_static/tippy/chapters/chap15.d7a230f2-7382-48aa-ba7b-3ea232cdf202.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/chap15';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -155,6 +155,10 @@
     </div>
   
 
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
   
 </div>
 
@@ -374,7 +378,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -390,6 +396,27 @@
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diffinio-dulliau">15.1. Diffinio Dulliau</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dull-arall">15.2. Dull Arall</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dulliau-statig">15.3. Dulliau Statig</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cymharu-gwrthrychau-time">15.4. Cymharu Gwrthrychau Time</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#y-dull-str">15.5. Y Dull <strong>str</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#y-dull-init">15.6. Y Dull init</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gorlwytho-gweithredydd">15.7. Gorlwytho Gweithredydd</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dadnamu">15.8. Dadnamu</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rhestr-termau-r-bennod">15.9. Rhestr Termau’r Bennod</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ymarferion">15.10. Ymarferion</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gofyn-i-gynorthwyydd-rhithwir">15.10.1. Gofyn i gynorthwyydd rhithwir</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ymarfer">15.10.2. Ymarfer</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -401,11 +428,450 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="dosbarthiadau-a-dulliau">
 <h1><span class="section-number">15. </span>Dosbarthiadau a Dulliau<a class="headerlink" href="#dosbarthiadau-a-dulliau" title="Link to this heading">#</a></h1>
-<div class="warning admonition">
-<p class="admonition-title">Statws cyfieithu</p>
-<p>Pennod heb ei chyfieithu eto. Ffynhonnell Saesneg: <strong>Classes and Methods</strong>
-(gweler y bennod wreiddiol yn <a class="reference external" href="https://allendowney.github.io/ThinkPython/">https://allendowney.github.io/ThinkPython/</a> ar gyfer y testun gwreiddiol).</p>
+<p>Mae Python yn <strong><a class="reference internal" href="../glossary.html#term-iaith-wrthrych-gyfeiriadol"><span class="xref std std-term">iaith wrthrych-gyfeiriadol</span></a></strong> — hynny yw, mae’n
+darparu nodweddion sy’n cefnogi rhaglennu gwrthrych-gyfeiriadol, sydd â’r
+nodweddion diffiniol hyn:</p>
+<ul class="simple">
+<li><p>Mynegir y rhan fwyaf o’r cyfrifiant mewn termau gweithrediadau ar
+wrthrychau.</p></li>
+<li><p>Mae gwrthrychau’n aml yn cynrychioli pethau yn y byd go iawn, ac mae
+dulliau’n aml yn cyfateb i’r ffyrdd y mae pethau yn y byd go iawn yn
+rhyngweithio.</p></li>
+<li><p>Mae rhaglenni’n cynnwys diffiniadau dosbarth a dull.</p></li>
+</ul>
+<p>Er enghraifft, yn y bennod flaenorol diffiniom ddosbarth <code class="docutils literal notranslate"><span class="pre">Time</span></code> sy’n
+cyfateb i’r ffordd y mae pobl yn cofnodi amser y dydd, a diffiniom
+swyddogaethau sy’n cyfateb i’r mathau o bethau y mae pobl yn eu gwneud
+gydag amseroedd. Ond nid oedd cysylltiad eglur rhwng diffiniad y dosbarth
+<code class="docutils literal notranslate"><span class="pre">Time</span></code> a’r diffiniadau swyddogaeth a ddilynodd. Gallwn wneud y cysylltiad
+yn eglur drwy ailysgrifennu swyddogaeth fel <strong><a class="reference internal" href="../glossary.html#term-dull"><span class="xref std std-term">dull</span></a></strong>, a ddiffinnir
+y tu mewn i ddiffiniad dosbarth.</p>
+<section id="diffinio-dulliau">
+<h2><span class="section-number">15.1. </span>Diffinio Dulliau<a class="headerlink" href="#diffinio-dulliau" title="Link to this heading">#</a></h2>
+<p>Yn y bennod flaenorol diffiniom ddosbarth o’r enw <code class="docutils literal notranslate"><span class="pre">Time</span></code> ac ysgrifennu
+swyddogaeth o’r enw <code class="docutils literal notranslate"><span class="pre">print_time</span></code> sy’n dangos amser y dydd.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Time</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Represents the time of day."""</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">print_time</span><span class="p">(</span><span class="n">time</span><span class="p">):</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">hour</span><span class="si">:</span><span class="s1">02d</span><span class="si">}</span><span class="s1">:</span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">minute</span><span class="si">:</span><span class="s1">02d</span><span class="si">}</span><span class="s1">:</span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">second</span><span class="si">:</span><span class="s1">02d</span><span class="si">}</span><span class="s1">'</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
 </div>
+<p>I wneud <code class="docutils literal notranslate"><span class="pre">print_time</span></code> yn ddull, y cyfan sydd angen i ni ei wneud yw symud y
+diffiniad swyddogaeth y tu mewn i’r diffiniad dosbarth. Sylwch ar y newid
+mewn mewnoliad.</p>
+<p>Ar yr un pryd, byddwn yn newid enw’r paramedr o <code class="docutils literal notranslate"><span class="pre">time</span></code> i <code class="docutils literal notranslate"><span class="pre">self</span></code>. Nid yw’r
+newid hwn yn angenrheidiol, ond mae’n gonfensiynol i baramedr cyntaf dull
+gael ei enwi’n <code class="docutils literal notranslate"><span class="pre">self</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Time</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Represents the time of day."""</span>    
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">print_time</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">hour</span><span class="si">:</span><span class="s1">02d</span><span class="si">}</span><span class="s1">:</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">minute</span><span class="si">:</span><span class="s1">02d</span><span class="si">}</span><span class="s1">:</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">second</span><span class="si">:</span><span class="s1">02d</span><span class="si">}</span><span class="s1">'</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>I alw’r dull hwn, mae’n rhaid i chi basio gwrthrych <code class="docutils literal notranslate"><span class="pre">Time</span></code> fel dadl. Dyma’r
+swyddogaeth y byddwn yn ei defnyddio i wneud gwrthrych <code class="docutils literal notranslate"><span class="pre">Time</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">make_time</span><span class="p">(</span><span class="n">hour</span><span class="p">,</span> <span class="n">minute</span><span class="p">,</span> <span class="n">second</span><span class="p">):</span>
+    <span class="n">time</span> <span class="o">=</span> <span class="n">Time</span><span class="p">()</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">hour</span> <span class="o">=</span> <span class="n">hour</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">minute</span> <span class="o">=</span> <span class="n">minute</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">second</span> <span class="o">=</span> <span class="n">second</span>
+    <span class="k">return</span> <span class="n">time</span>
+</pre></div>
+</div>
+<p>A dyma enghraifft <code class="docutils literal notranslate"><span class="pre">Time</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">start</span> <span class="o">=</span> <span class="n">make_time</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Nawr mae dwy ffordd o alw <code class="docutils literal notranslate"><span class="pre">print_time</span></code>. Y ffordd gyntaf (a lleiaf
+cyffredin) yw defnyddio cystrawen swyddogaeth.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Time</span><span class="o">.</span><span class="n">print_time</span><span class="p">(</span><span class="n">start</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Yn y fersiwn hon, <code class="docutils literal notranslate"><span class="pre">Time</span></code> yw enw’r dosbarth, <code class="docutils literal notranslate"><span class="pre">print_time</span></code> yw enw’r dull, a
+phasir <code class="docutils literal notranslate"><span class="pre">start</span></code> fel paramedr. Yr ail ffordd (a mwy idiomatig) yw defnyddio
+cystrawen dull:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">start</span><span class="o">.</span><span class="n">print_time</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Yn y fersiwn hon, <code class="docutils literal notranslate"><span class="pre">start</span></code> yw’r gwrthrych y gelwir y dull arno, a elwir yn
+<strong><a class="reference internal" href="../glossary.html#term-derbynnydd"><span class="xref std std-term">derbynnydd</span></a></strong>, yn seiliedig ar yr analogi bod galw dull yn debyg i
+anfon neges at wrthrych.</p>
+<p>Waeth beth yw’r gystrawen, mae ymddygiad y dull yr un fath. Neilltuir y
+derbynnydd i’r paramedr cyntaf, felly y tu mewn i’r dull, mae <code class="docutils literal notranslate"><span class="pre">self</span></code> yn
+cyfeirio at yr un gwrthrych â <code class="docutils literal notranslate"><span class="pre">start</span></code>.</p>
+</section>
+<section id="dull-arall">
+<h2><span class="section-number">15.2. </span>Dull Arall<a class="headerlink" href="#dull-arall" title="Link to this heading">#</a></h2>
+<p>Dyma’r swyddogaeth <code class="docutils literal notranslate"><span class="pre">time_to_int</span></code> o’r bennod flaenorol.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">time_to_int</span><span class="p">(</span><span class="n">time</span><span class="p">):</span>
+    <span class="n">minutes</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">hour</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">+</span> <span class="n">time</span><span class="o">.</span><span class="n">minute</span>
+    <span class="n">seconds</span> <span class="o">=</span> <span class="n">minutes</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">+</span> <span class="n">time</span><span class="o">.</span><span class="n">second</span>
+    <span class="k">return</span> <span class="n">seconds</span>
+</pre></div>
+</div>
+<p>A dyma fersiwn wedi’i hailysgrifennu fel dull.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">add_method_to</span> <span class="n">Time</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">time_to_int</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">minutes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">hour</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">minute</span>
+        <span class="n">seconds</span> <span class="o">=</span> <span class="n">minutes</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">second</span>
+        <span class="k">return</span> <span class="n">seconds</span>
+</pre></div>
+</div>
+<p>Mae’r llinell gyntaf yn defnyddio’r gorchymyn arbennig <code class="docutils literal notranslate"><span class="pre">add_method_to</span></code>,
+sy’n ychwanegu dull at ddosbarth a ddiffiniwyd o’r blaen. Mae’r gorchymyn
+hwn yn gweithio mewn llyfr nodiadau Jupyter, ond nid yw’n rhan o Python,
+felly ni fydd yn gweithio mewn amgylcheddau eraill. Fel arfer, mae holl
+ddulliau dosbarth y tu mewn i’r diffiniad dosbarth, felly fe’u diffinnir
+ar yr un pryd â’r dosbarth. Ond ar gyfer y llyfr hwn, mae’n ddefnyddiol
+diffinio un dull ar y tro.</p>
+<p>Fel yn yr enghraifft flaenorol, mae’r diffiniad dull wedi’i fewnoli ac
+mae enw’r paramedr yn <code class="docutils literal notranslate"><span class="pre">self</span></code>. Ar wahân i hynny, mae’r dull yr un fath â’r
+swyddogaeth. Dyma sut rydym yn ei alw.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">start</span><span class="o">.</span><span class="n">time_to_int</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Mae’n gyffredin dweud ein bod yn “galw” swyddogaeth ac yn “galw” dull, ond
+maent yn golygu’r un peth.</p>
+</section>
+<section id="dulliau-statig">
+<h2><span class="section-number">15.3. </span>Dulliau Statig<a class="headerlink" href="#dulliau-statig" title="Link to this heading">#</a></h2>
+<p>Fel enghraifft arall, gadewch i ni ystyried y swyddogaeth <code class="docutils literal notranslate"><span class="pre">int_to_time</span></code>.
+Dyma’r fersiwn o’r bennod flaenorol.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">int_to_time</span><span class="p">(</span><span class="n">seconds</span><span class="p">):</span>
+    <span class="n">minute</span><span class="p">,</span> <span class="n">second</span> <span class="o">=</span> <span class="nb">divmod</span><span class="p">(</span><span class="n">seconds</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="n">hour</span><span class="p">,</span> <span class="n">minute</span> <span class="o">=</span> <span class="nb">divmod</span><span class="p">(</span><span class="n">minute</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">make_time</span><span class="p">(</span><span class="n">hour</span><span class="p">,</span> <span class="n">minute</span><span class="p">,</span> <span class="n">second</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Mae’r swyddogaeth hon yn cymryd <code class="docutils literal notranslate"><span class="pre">seconds</span></code> fel paramedr ac yn dychwelyd
+gwrthrych <code class="docutils literal notranslate"><span class="pre">Time</span></code> newydd. Os trosom ef yn ddull o’r dosbarth <code class="docutils literal notranslate"><span class="pre">Time</span></code>, mae’n
+rhaid i ni ei alw ar wrthrych <code class="docutils literal notranslate"><span class="pre">Time</span></code>. Ond os ydym yn ceisio creu gwrthrych
+<code class="docutils literal notranslate"><span class="pre">Time</span></code> newydd, ar beth rydym i fod i’w alw?</p>
+<p>Gallwn ddatrys y broblem iâr-ac-wy hon gan ddefnyddio <strong><a class="reference internal" href="../glossary.html#term-dull-statig"><span class="xref std std-term">dull statig</span></a></strong>,
+sef dull nad yw’n gofyn am enghraifft o’r dosbarth i’w alw. Dyma sut
+rydym yn ailysgrifennu’r swyddogaeth hon fel dull statig.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">add_method_to</span> <span class="n">Time</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">int_to_time</span><span class="p">(</span><span class="n">seconds</span><span class="p">):</span>
+        <span class="n">minute</span><span class="p">,</span> <span class="n">second</span> <span class="o">=</span> <span class="nb">divmod</span><span class="p">(</span><span class="n">seconds</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+        <span class="n">hour</span><span class="p">,</span> <span class="n">minute</span> <span class="o">=</span> <span class="nb">divmod</span><span class="p">(</span><span class="n">minute</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">make_time</span><span class="p">(</span><span class="n">hour</span><span class="p">,</span> <span class="n">minute</span><span class="p">,</span> <span class="n">second</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Am ei fod yn ddull statig, nid oes ganddo <code class="docutils literal notranslate"><span class="pre">self</span></code> fel paramedr. I’w alw,
+rydym yn defnyddio <code class="docutils literal notranslate"><span class="pre">Time</span></code>, sef y gwrthrych dosbarth.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">start</span> <span class="o">=</span> <span class="n">Time</span><span class="o">.</span><span class="n">int_to_time</span><span class="p">(</span><span class="mi">34800</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Gwrthrych newydd sy’n cynrychioli 9:40 yw’r canlyniad.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">start</span><span class="o">.</span><span class="n">print_time</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Nawr ein bod gennym <code class="docutils literal notranslate"><span class="pre">Time.int_to_time</span></code>, gallwn ei defnyddio i ysgrifennu
+<code class="docutils literal notranslate"><span class="pre">add_time</span></code> fel dull. Dyma’r swyddogaeth o’r bennod flaenorol.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">add_time</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">hours</span><span class="p">,</span> <span class="n">minutes</span><span class="p">,</span> <span class="n">seconds</span><span class="p">):</span>
+    <span class="n">duration</span> <span class="o">=</span> <span class="n">make_time</span><span class="p">(</span><span class="n">hours</span><span class="p">,</span> <span class="n">minutes</span><span class="p">,</span> <span class="n">seconds</span><span class="p">)</span>
+    <span class="n">seconds</span> <span class="o">=</span> <span class="n">time_to_int</span><span class="p">(</span><span class="n">time</span><span class="p">)</span> <span class="o">+</span> <span class="n">time_to_int</span><span class="p">(</span><span class="n">duration</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">int_to_time</span><span class="p">(</span><span class="n">seconds</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>A dyma fersiwn wedi’i hailysgrifennu fel dull.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">add_method_to</span> <span class="n">Time</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">add_time</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hours</span><span class="p">,</span> <span class="n">minutes</span><span class="p">,</span> <span class="n">seconds</span><span class="p">):</span>
+        <span class="n">duration</span> <span class="o">=</span> <span class="n">make_time</span><span class="p">(</span><span class="n">hours</span><span class="p">,</span> <span class="n">minutes</span><span class="p">,</span> <span class="n">seconds</span><span class="p">)</span>
+        <span class="n">seconds</span> <span class="o">=</span> <span class="n">Time</span><span class="o">.</span><span class="n">time_to_int</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">+</span> <span class="n">Time</span><span class="o">.</span><span class="n">time_to_int</span><span class="p">(</span><span class="n">duration</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">Time</span><span class="o">.</span><span class="n">int_to_time</span><span class="p">(</span><span class="n">seconds</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Mae gan <code class="docutils literal notranslate"><span class="pre">add_time</span></code> <code class="docutils literal notranslate"><span class="pre">self</span></code> fel paramedr am nad yw’n ddull statig. Mae’n
+ddull cyffredin — a elwir hefyd yn <strong><a class="reference internal" href="../glossary.html#term-dull-enghraifft"><span class="xref std std-term">dull enghraifft</span></a></strong>. I’w alw,
+mae angen enghraifft <code class="docutils literal notranslate"><span class="pre">Time</span></code> arnom.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">end</span> <span class="o">=</span> <span class="n">start</span><span class="o">.</span><span class="n">add_time</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">end</span><span class="o">.</span><span class="n">print_time</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="cymharu-gwrthrychau-time">
+<h2><span class="section-number">15.4. </span>Cymharu Gwrthrychau Time<a class="headerlink" href="#cymharu-gwrthrychau-time" title="Link to this heading">#</a></h2>
+<p>Fel un enghraifft arall, gadewch i ni ysgrifennu <code class="docutils literal notranslate"><span class="pre">is_after</span></code> fel dull. Dyma’r
+swyddogaeth <code class="docutils literal notranslate"><span class="pre">is_after</span></code>, sy’n ddatrysiad i ymarfer yn y bennod flaenorol.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">is_after</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span> <span class="n">t2</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">time_to_int</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">time_to_int</span><span class="p">(</span><span class="n">t2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>A dyma hi fel dull.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">add_method_to</span> <span class="n">Time</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">is_after</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">time_to_int</span><span class="p">()</span> <span class="o">&gt;</span> <span class="n">other</span><span class="o">.</span><span class="n">time_to_int</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Am ein bod yn cymharu dau wrthrych, a’r paramedr cyntaf yn <code class="docutils literal notranslate"><span class="pre">self</span></code>, byddwn
+yn galw’r ail baramedr yn <code class="docutils literal notranslate"><span class="pre">other</span></code>. I ddefnyddio’r dull hwn, mae’n rhaid i
+ni ei alw ar un gwrthrych a phasio’r llall fel dadl.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">end</span><span class="o">.</span><span class="n">is_after</span><span class="p">(</span><span class="n">start</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Un peth braf am y gystrawen hon yw ei bod bron yn darllen fel cwestiwn,
+“ydy <code class="docutils literal notranslate"><span class="pre">end</span></code> ar ôl <code class="docutils literal notranslate"><span class="pre">start</span></code>?”</p>
+</section>
+<section id="y-dull-str">
+<h2><span class="section-number">15.5. </span>Y Dull <strong>str</strong><a class="headerlink" href="#y-dull-str" title="Link to this heading">#</a></h2>
+<p>Pan ysgrifennwch ddull, gallwch ddewis bron unrhyw enw a hoffech. Fodd
+bynnag, mae gan rai enwau ystyron arbennig. Er enghraifft, os oes gan
+wrthrych ddull o’r enw <code class="docutils literal notranslate"><span class="pre">__str__</span></code>, mae Python yn defnyddio’r dull hwnnw i
+drosi’r gwrthrych yn llinyn. Er enghraifft, dyma ddull <code class="docutils literal notranslate"><span class="pre">__str__</span></code> ar gyfer
+gwrthrych amser.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">add_method_to</span> <span class="n">Time</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">hour</span><span class="si">:</span><span class="s1">02d</span><span class="si">}</span><span class="s1">:</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">minute</span><span class="si">:</span><span class="s1">02d</span><span class="si">}</span><span class="s1">:</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">second</span><span class="si">:</span><span class="s1">02d</span><span class="si">}</span><span class="s1">'</span>
+        <span class="k">return</span> <span class="n">s</span>
+</pre></div>
+</div>
+<p>Mae’r dull hwn yn debyg i <code class="docutils literal notranslate"><span class="pre">print_time</span></code>, o’r bennod flaenorol, ac eithrio ei
+fod yn dychwelyd y llinyn yn hytrach na’i argraffu.</p>
+<p>Gallwch alw’r dull hwn yn y ffordd arferol.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">end</span><span class="o">.</span><span class="fm">__str__</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Ond gall Python hefyd ei alw ar eich rhan. Os defnyddiwch y swyddogaeth
+gynhenid <code class="docutils literal notranslate"><span class="pre">str</span></code> i drosi gwrthrych <code class="docutils literal notranslate"><span class="pre">Time</span></code> yn llinyn, mae Python yn defnyddio’r
+dull <code class="docutils literal notranslate"><span class="pre">__str__</span></code> yn nosbarth <code class="docutils literal notranslate"><span class="pre">Time</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">str</span><span class="p">(</span><span class="n">end</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Ac mae’n gwneud yr un peth os argraffwch wrthrych <code class="docutils literal notranslate"><span class="pre">Time</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">end</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Gelwir dulliau fel <code class="docutils literal notranslate"><span class="pre">__str__</span></code> yn <strong><a class="reference internal" href="../glossary.html#term-dull-arbennig"><span class="xref std std-term">dull arbennig</span></a></strong>. Gallwch eu
+hadnabod am fod eu henwau’n dechrau ac yn gorffen gyda dau danlinell.</p>
+</section>
+<section id="y-dull-init">
+<h2><span class="section-number">15.6. </span>Y Dull init<a class="headerlink" href="#y-dull-init" title="Link to this heading">#</a></h2>
+<p>Y mwyaf arbennig o’r dulliau arbennig yw <code class="docutils literal notranslate"><span class="pre">__init__</span></code>, a elwir felly am ei
+fod yn cychwyn priodoleddau gwrthrych newydd. Gallai dull <code class="docutils literal notranslate"><span class="pre">__init__</span></code> ar
+gyfer y dosbarth <code class="docutils literal notranslate"><span class="pre">Time</span></code> edrych fel hyn:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">add_method_to</span> <span class="n">Time</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hour</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">minute</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">second</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hour</span> <span class="o">=</span> <span class="n">hour</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">minute</span> <span class="o">=</span> <span class="n">minute</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">second</span> <span class="o">=</span> <span class="n">second</span>
+</pre></div>
+</div>
+<p>Nawr pan enghreifftiwn wrthrych <code class="docutils literal notranslate"><span class="pre">Time</span></code>, mae Python yn galw <code class="docutils literal notranslate"><span class="pre">__init__</span></code>, ac
+yn pasio’r dadleuon ymlaen. Felly gallwn greu gwrthrych a chychwyn y
+priodoleddau ar yr un pryd.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">time</span> <span class="o">=</span> <span class="n">Time</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">time</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Yn yr enghraifft hon, mae’r paramedrau’n ddewisol, felly os galwch <code class="docutils literal notranslate"><span class="pre">Time</span></code>
+heb ddadleuon, cewch y gwerthoedd rhagosodedig.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">time</span> <span class="o">=</span> <span class="n">Time</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">time</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Os darparwch un ddadl, mae’n disodli <code class="docutils literal notranslate"><span class="pre">hour</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">time</span> <span class="o">=</span> <span class="n">Time</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">time</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Os darparwch ddwy ddadl, maent yn disodli <code class="docutils literal notranslate"><span class="pre">hour</span></code> a <code class="docutils literal notranslate"><span class="pre">minute</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">time</span> <span class="o">=</span> <span class="n">Time</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">45</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">time</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Ac os darparwch dair dadl, maent yn disodli’r tri gwerth rhagosodedig.</p>
+<p>Pan ysgrifennaf ddosbarth newydd, bron bob amser byddaf yn dechrau drwy
+ysgrifennu <code class="docutils literal notranslate"><span class="pre">__init__</span></code>, sy’n ei gwneud hi’n haws creu gwrthrychau, ac
+<code class="docutils literal notranslate"><span class="pre">__str__</span></code>, sy’n ddefnyddiol ar gyfer dadnamu.</p>
+</section>
+<section id="gorlwytho-gweithredydd">
+<h2><span class="section-number">15.7. </span>Gorlwytho Gweithredydd<a class="headerlink" href="#gorlwytho-gweithredydd" title="Link to this heading">#</a></h2>
+<p>Drwy ddiffinio dulliau arbennig eraill, gallwch nodi ymddygiad
+gweithredyddion ar fathau a ddiffinnir gan raglenwyr. Er enghraifft, os
+diffiniwch ddull o’r enw <code class="docutils literal notranslate"><span class="pre">__add__</span></code> ar gyfer y dosbarth <code class="docutils literal notranslate"><span class="pre">Time</span></code>, gallwch
+ddefnyddio’r gweithredydd <code class="docutils literal notranslate"><span class="pre">+</span></code> ar wrthrychau Time.</p>
+<p>Dyma ddull <code class="docutils literal notranslate"><span class="pre">__add__</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">add_method_to</span> <span class="n">Time</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="n">seconds</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">time_to_int</span><span class="p">()</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">time_to_int</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">Time</span><span class="o">.</span><span class="n">int_to_time</span><span class="p">(</span><span class="n">seconds</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Gallwn ei defnyddio fel hyn.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">duration</span> <span class="o">=</span> <span class="n">Time</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="n">end</span> <span class="o">=</span> <span class="n">start</span> <span class="o">+</span> <span class="n">duration</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">end</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Mae llawer yn digwydd wrth i ni redeg y tair llinell hyn o god:</p>
+<ul class="simple">
+<li><p>Pan enghreifftiwn wrthrych <code class="docutils literal notranslate"><span class="pre">Time</span></code>, gelwir y dull <code class="docutils literal notranslate"><span class="pre">__init__</span></code>.</p></li>
+<li><p>Pan ddefnyddiwn y gweithredydd <code class="docutils literal notranslate"><span class="pre">+</span></code> gyda gwrthrych <code class="docutils literal notranslate"><span class="pre">Time</span></code>, gelwir ei
+ddull <code class="docutils literal notranslate"><span class="pre">__add__</span></code>.</p></li>
+<li><p>A phan argraffwn wrthrych <code class="docutils literal notranslate"><span class="pre">Time</span></code>, gelwir ei ddull <code class="docutils literal notranslate"><span class="pre">__str__</span></code>.</p></li>
+</ul>
+<p>Gelwir newid ymddygiad gweithredydd fel ei fod yn gweithio â mathau a
+ddiffinnir gan raglenwyr yn <strong><a class="reference internal" href="../glossary.html#term-gorlwytho-gweithredydd"><span class="xref std std-term">gorlwytho gweithredydd</span></a></strong>. Ar gyfer
+pob gweithredydd, fel <code class="docutils literal notranslate"><span class="pre">+</span></code>, mae dull arbennig cyfatebol, fel <code class="docutils literal notranslate"><span class="pre">__add__</span></code>.</p>
+</section>
+<section id="dadnamu">
+<h2><span class="section-number">15.8. </span>Dadnamu<a class="headerlink" href="#dadnamu" title="Link to this heading">#</a></h2>
+<p>Mae gwrthrych <code class="docutils literal notranslate"><span class="pre">Time</span></code> yn ddilys os yw gwerthoedd <code class="docutils literal notranslate"><span class="pre">minute</span></code> a <code class="docutils literal notranslate"><span class="pre">second</span></code> rhwng
+<code class="docutils literal notranslate"><span class="pre">0</span></code> a <code class="docutils literal notranslate"><span class="pre">60</span></code> — gan gynnwys <code class="docutils literal notranslate"><span class="pre">0</span></code> ond nid <code class="docutils literal notranslate"><span class="pre">60</span></code> — ac os yw <code class="docutils literal notranslate"><span class="pre">hour</span></code> yn bositif.
+Hefyd, dylai <code class="docutils literal notranslate"><span class="pre">hour</span></code> a <code class="docutils literal notranslate"><span class="pre">minute</span></code> fod yn werthoedd cyfanrif, ond efallai y
+caniatawn i <code class="docutils literal notranslate"><span class="pre">second</span></code> gael rhan ffracsiynol.</p>
+<p>Gelwir gofynion fel y rhain yn **<a class="reference internal" href="../glossary.html#term-amod-cyson"><span class="xref std std-term">amod cyson</span></a>**ion am y dylent fod
+bob amser yn wir. I’w ddweud ffordd arall, os nad ydynt yn wir, mae
+rhywbeth wedi mynd o’i le.</p>
+<p>Gall ysgrifennu cod i wirio amodau cyson helpu i ganfod gwallau a
+darganfod eu hachosion. Er enghraifft, efallai y bydd gennych ddull fel
+<code class="docutils literal notranslate"><span class="pre">is_valid</span></code> sy’n cymryd gwrthrych Time ac yn dychwelyd <code class="docutils literal notranslate"><span class="pre">False</span></code> os yw’n torri
+amod cyson.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">add_method_to</span> <span class="n">Time</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">is_valid</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">hour</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">minute</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">second</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">minute</span> <span class="o">&gt;=</span> <span class="mi">60</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">second</span> <span class="o">&gt;=</span> <span class="mi">60</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hour</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">minute</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">return</span> <span class="kc">True</span>
+</pre></div>
+</div>
+<p>Yna, ar ddechrau pob dull gallwch wirio’r dadleuon i wneud yn siŵr eu bod
+yn ddilys.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">add_method_to</span> <span class="n">Time</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">is_after</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_valid</span><span class="p">(),</span> <span class="s1">'self is not a valid Time'</span>
+        <span class="k">assert</span> <span class="n">other</span><span class="o">.</span><span class="n">is_valid</span><span class="p">(),</span> <span class="s1">'other is not a valid Time'</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">time_to_int</span><span class="p">()</span> <span class="o">&gt;</span> <span class="n">other</span><span class="o">.</span><span class="n">time_to_int</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Mae’r gosodiad <code class="docutils literal notranslate"><span class="pre">assert</span></code> yn gwerthuso’r mynegiad sy’n ei ddilyn. Os yw’r
+canlyniad yn <code class="docutils literal notranslate"><span class="pre">True</span></code>, nid yw’n gwneud dim; os yw’r canlyniad yn <code class="docutils literal notranslate"><span class="pre">False</span></code>, mae’n
+achosi <code class="docutils literal notranslate"><span class="pre">AssertionError</span></code>. Dyma enghraifft.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">duration</span> <span class="o">=</span> <span class="n">Time</span><span class="p">(</span><span class="n">minute</span><span class="o">=</span><span class="mi">132</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">duration</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">expect</span> <span class="ne">AssertionError</span>
+
+<span class="n">start</span><span class="o">.</span><span class="n">is_after</span><span class="p">(</span><span class="n">duration</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Mae gosodiadau <code class="docutils literal notranslate"><span class="pre">assert</span></code> yn ddefnyddiol am eu bod yn gwahaniaethu rhwng cod
+sy’n ymdrin ag amodau normal a chod sy’n gwirio am wallau.</p>
+</section>
+<section id="rhestr-termau-r-bennod">
+<h2><span class="section-number">15.9. </span>Rhestr Termau’r Bennod<a class="headerlink" href="#rhestr-termau-r-bennod" title="Link to this heading">#</a></h2>
+<p><strong>iaith wrthrych-gyfeiriadol:</strong>
+Iaith sy’n darparu nodweddion i gefnogi rhaglennu gwrthrych-gyfeiriadol, yn
+enwedig mathau a ddiffinnir gan ddefnyddwyr.</p>
+<p><strong>dull:</strong>
+Swyddogaeth a ddiffinnir y tu mewn i ddiffiniad dosbarth ac a elwir ar
+enghreifftiau’r dosbarth hwnnw.</p>
+<p><strong>derbynnydd:</strong>
+Y gwrthrych y gelwir dull arno.</p>
+<p><strong>dull statig:</strong>
+Dull y gellir ei alw heb wrthrych fel derbynnydd.</p>
+<p><strong>dull enghraifft:</strong>
+Dull y mae’n rhaid ei alw gyda gwrthrych fel derbynnydd.</p>
+<p><strong>dull arbennig:</strong>
+Dull sy’n newid y ffordd y mae gweithredyddion a rhai swyddogaethau’n
+gweithio gyda gwrthrych.</p>
+<p><strong>gorlwytho gweithredydd:</strong>
+Y broses o ddefnyddio dulliau arbennig i newid y ffordd y mae
+gweithredyddion yn gweithio gyda mathau a ddiffinnir gan ddefnyddwyr.</p>
+<p><strong>amod cyson:</strong>
+Amod a ddylai fod bob amser yn wir yn ystod cyflawniad rhaglen.</p>
+</section>
+<section id="ymarferion">
+<h2><span class="section-number">15.10. </span>Ymarferion<a class="headerlink" href="#ymarferion" title="Link to this heading">#</a></h2>
+<section id="gofyn-i-gynorthwyydd-rhithwir">
+<h3><span class="section-number">15.10.1. </span>Gofyn i gynorthwyydd rhithwir<a class="headerlink" href="#gofyn-i-gynorthwyydd-rhithwir" title="Link to this heading">#</a></h3>
+<p>Am fwy o wybodaeth am ddulliau statig, gofynnwch i gynorthwyydd rhithwir:</p>
+<ul class="simple">
+<li><p>“Beth yw’r gwahaniaeth rhwng dull enghraifft a dull statig?”</p></li>
+<li><p>“Pam gelwir dulliau statig yn ‘statig’?”</p></li>
+</ul>
+<p>Os gofynnwch i gynorthwyydd rhithwir gynhyrchu dull statig, mae’n debygol y
+bydd y canlyniad yn dechrau gyda <code class="docutils literal notranslate"><span class="pre">&#64;staticmethod</span></code>, sef “addurnwr” sy’n nodi
+mai dull statig ydyw. Nid yw addurnwyr wedi’u trafod yn y llyfr hwn, ond os
+ydych yn chwilfrydig, gallwch ofyn i gynorthwyydd rhithwir am ragor o
+wybodaeth.</p>
+<p>Yn y bennod hon fe wnaethom ailysgrifennu sawl swyddogaeth fel dulliau. Mae
+cynorthwywyr rhithwir yn gyffredinol yn dda am y math hwn o drawsnewidiad
+cod. Fel enghraifft, gludwch y swyddogaeth ganlynol i gynorthwyydd rhithwir
+a gofynnwch iddo, “Ailysgrifennwch y swyddogaeth hon fel dull o’r dosbarth
+<code class="docutils literal notranslate"><span class="pre">Time</span></code>.”</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">subtract_time</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span> <span class="n">t2</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">time_to_int</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span> <span class="o">-</span> <span class="n">time_to_int</span><span class="p">(</span><span class="n">t2</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="ymarfer">
+<h3><span class="section-number">15.10.2. </span>Ymarfer<a class="headerlink" href="#ymarfer" title="Link to this heading">#</a></h3>
+<p>Yn y bennod flaenorol, gofynnodd cyfres o ymarferion i chi ysgrifennu
+dosbarth <code class="docutils literal notranslate"><span class="pre">Date</span></code> a sawl swyddogaeth sy’n gweithio gyda gwrthrychau <code class="docutils literal notranslate"><span class="pre">Date</span></code>.
+Nawr gadewch i ni ymarfer ailysgrifennu’r swyddogaethau hynny fel dulliau.</p>
+<ol class="arabic simple">
+<li><p>Ysgrifennwch ddiffiniad ar gyfer dosbarth <code class="docutils literal notranslate"><span class="pre">Date</span></code> sy’n cynrychioli
+dyddiad — hynny yw, blwyddyn, mis, a diwrnod o’r mis.</p></li>
+<li><p>Ysgrifennwch ddull <code class="docutils literal notranslate"><span class="pre">__init__</span></code> sy’n cymryd <code class="docutils literal notranslate"><span class="pre">year</span></code>, <code class="docutils literal notranslate"><span class="pre">month</span></code>, a <code class="docutils literal notranslate"><span class="pre">day</span></code> fel
+paramedrau ac yn neilltuo’r paramedrau i briodoleddau. Crëwch wrthrych
+sy’n cynrychioli Mehefin 22, 1933.</p></li>
+<li><p>Ysgrifennwch ddull <code class="docutils literal notranslate"><span class="pre">__str__</span></code> sy’n defnyddio llinyn-f i fformatio’r
+priodoleddau ac yn dychwelyd y canlyniad. Os profwch ef gyda’r <code class="docutils literal notranslate"><span class="pre">Date</span></code> a
+grëoch, dylai’r canlyniad fod yn <code class="docutils literal notranslate"><span class="pre">1933-06-22</span></code>.</p></li>
+<li><p>Ysgrifennwch ddull o’r enw <code class="docutils literal notranslate"><span class="pre">is_after</span></code> sy’n cymryd dau wrthrych <code class="docutils literal notranslate"><span class="pre">Date</span></code> ac
+yn dychwelyd <code class="docutils literal notranslate"><span class="pre">True</span></code> os yw’r cyntaf yn dod ar ôl yr ail. Crëwch ail
+wrthrych sy’n cynrychioli Medi 17, 1933, a gwiriwch a yw’n dod ar ôl y
+gwrthrych cyntaf.</p></li>
+</ol>
+<p>Awgrym: Efallai y gwelwch hi’n ddefnyddiol ysgrifennu dull o’r enw
+<code class="docutils literal notranslate"><span class="pre">to_tuple</span></code> sy’n dychwelyd tŵpl sy’n cynnwys priodoleddau gwrthrych <code class="docutils literal notranslate"><span class="pre">Date</span></code>
+yn nhrefn blwyddyn-mis-diwrnod.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+<p>Gallwch ddefnyddio’r enghreifftiau hyn i brofi eich datrysiad.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">birthday1</span> <span class="o">=</span> <span class="n">Date</span><span class="p">(</span><span class="mi">1933</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">22</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">birthday1</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">birthday2</span> <span class="o">=</span> <span class="n">Date</span><span class="p">(</span><span class="mi">1933</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">17</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">birthday2</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">birthday1</span><span class="o">.</span><span class="n">is_after</span><span class="p">(</span><span class="n">birthday2</span><span class="p">)</span>  <span class="c1"># should be False</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">birthday2</span><span class="o">.</span><span class="n">is_after</span><span class="p">(</span><span class="n">birthday1</span><span class="p">)</span>  <span class="c1"># should be True</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p><a class="reference external" href="https://allendowney.github.io/ThinkPython/index.html">Think Python: 3rd Edition</a> gan
+Allen B. Downey. Cyfieithiad Cymraeg gan Wayne Aubrey.</p>
+<p>Hawlfraint 2024 <a class="reference external" href="https://allendowney.com">Allen B. Downey</a>. Trwydded testun: <a class="reference external" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative
+Commons Attribution-NonCommercial-ShareAlike 4.0 International</a>.</p>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -462,6 +928,36 @@
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diffinio-dulliau">15.1. Diffinio Dulliau</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dull-arall">15.2. Dull Arall</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dulliau-statig">15.3. Dulliau Statig</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cymharu-gwrthrychau-time">15.4. Cymharu Gwrthrychau Time</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#y-dull-str">15.5. Y Dull <strong>str</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#y-dull-init">15.6. Y Dull init</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gorlwytho-gweithredydd">15.7. Gorlwytho Gweithredydd</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dadnamu">15.8. Dadnamu</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rhestr-termau-r-bennod">15.9. Rhestr Termau’r Bennod</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ymarferion">15.10. Ymarferion</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gofyn-i-gynorthwyydd-rhithwir">15.10.1. Gofyn i gynorthwyydd rhithwir</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ymarfer">15.10.2. Ymarfer</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
