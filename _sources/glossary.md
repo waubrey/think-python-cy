@@ -606,4 +606,25 @@ copi bas
 
 copi dwfn
     deep copy
+
+amgodio
+    encode
+
+newidyn dosbarth
+    class variable
+
+wedi'u trefnu'n llwyr
+    totally ordered
+
+dirprwyo
+    delegation
+
+dosbarth rhiant
+    parent class
+
+dosbarth plentyn
+    child class
+
+arbenigaeth
+    specialization
 ```
