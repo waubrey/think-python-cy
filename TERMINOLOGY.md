@@ -241,6 +241,22 @@ earlier via Y Termiadur Addysg).
 Reused without change: *cyfrif* (counter), *dull* (method), *chwiliad llinol*
 (linear search) — all already in the glossary.
 
+## Chapter 8 vocabulary (string indexing/slicing, regular expressions, files)
+
+| English | Welsh | Status | Notes |
+|---|---|---|---|
+| slice (noun) | sleisen | ✅ | ordinary Welsh word ("sleisen o fara" = slice of bread); verb *sleisio* already confirmed |
+| empty string | llinyn gwag | ✅ | transparent |
+| immutable | anghyfnewidiol | 🟡 | *an-* + *cyfnewid* (exchange/change) + *-iol* — coined but from standard roots |
+| invocation (method call) | galwad dull | ✅ | compositional, both roots already confirmed |
+| regular expression | mynegiad rheolaidd | ✅ | compositional |
+| pattern | patrwm | ✅ | ordinary Welsh word |
+| string substitution | amnewid llinynnau | ✅ | *amnewid* = ordinary Welsh word for "substitute/replace" |
+| shell command | gorchymyn shell | 🟡 | "shell" kept as a loanword — this is specifically about the Unix/command-line sense, which doesn't map onto the physical "shell/husk" metaphor in Welsh |
+
+Reused without change: *dilyniant* (sequence), *nod* (character), *mynegai*
+(index), *gwrthrych* (object) — all already in the glossary.
+
 ## Important pattern to carry into translation
 
 In the official WJEC pseudocode (used throughout the Welsh-medium exam), **programming
