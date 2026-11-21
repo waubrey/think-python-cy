@@ -555,4 +555,28 @@ modd deuaidd
 
 crynodeb
     digest
+
+Rhaglennu Gwrthrych-gyfeiriadol
+    object-oriented programming
+
+gwrthrych dosbarth
+    class object
+
+enghreifftiad
+    instantiation
+
+diagram gwrthrych
+    object diagram
+
+penodwr fformat
+    format specifier
+
+arddull rhaglennu swyddogaethol
+    functional programming style
+
+prototeip a chlwt
+    prototype and patch
+
+datblygu dylunio-yn-gyntaf
+    design-first development
 ```

@@ -616,6 +616,7 @@ A chawn y canlyniad a ddisgwyliwyd gennym.
 Dyma'r enghraifft gyntaf i ni ei gweld lle mae'r gwerthoedd yn y geiriadur
 yn rhestri. Fe welwn fwy!
 
+(section_debugging_11)=
 ## Dadnamu
 
 Mae rhestri, geiriaduron, a thŵpls yn **{term}`strwythur data`**. Yn y
