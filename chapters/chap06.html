@@ -62,7 +62,9 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../_static/tippy/chapters/chap06.0029135d-e061-44fa-a9d2-0b9ea02f6ff8.js"></script>
+    <script defer="defer" src="../_static/tippy/chapters/chap06.97fe450f-58dd-4b59-ae69-c884e99bccfc.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/chap06';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -155,6 +157,10 @@
     </div>
   
 
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
   
 </div>
 
@@ -374,7 +380,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -390,6 +398,33 @@
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mae-gan-rai-swyddogaethau-werthoedd-dychwelyd">6.1. Mae Gan Rai Swyddogaethau Werthoedd Dychwelyd</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-mae-gan-rai-none">6.2. A Mae Gan Rai None</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gwerthoedd-dychwelyd-ac-amodolion">6.3. Gwerthoedd Dychwelyd ac Amodolion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datblygiad-graddol">6.4. Datblygiad Graddol</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#swyddogaethau-boole">6.5. Swyddogaethau Boole</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dychweliad-gyda-gwerthoedd-dychwelyd">6.6. Dychweliad gyda Gwerthoedd Dychwelyd</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naid-o-ffydd">6.7. Naid o Ffydd</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fibonacci">6.8. Fibonacci</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gwirio-mathau">6.9. Gwirio Mathau</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dadnamu">6.10. Dadnamu</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rhestr-termau-r-bennod">6.11. Rhestr Termau’r Bennod</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ymarferion">6.12. Ymarferion</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gofyn-i-gynorthwyydd-rhithwir">6.12.1. Gofyn i gynorthwyydd rhithwir</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ymarfer">6.12.2. Ymarfer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">6.12.3. Ymarfer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">6.12.4. Ymarfer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">6.12.5. Ymarfer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">6.12.6. Ymarfer</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -401,11 +436,785 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="gwerthoedd-dychwelyd">
 <h1><span class="section-number">6. </span>Gwerthoedd Dychwelyd<a class="headerlink" href="#gwerthoedd-dychwelyd" title="Link to this heading">#</a></h1>
-<div class="warning admonition">
-<p class="admonition-title">Statws cyfieithu</p>
-<p>Pennod heb ei chyfieithu eto. Ffynhonnell Saesneg: <strong>Return Values</strong>
-(gweler y bennod wreiddiol yn <a class="reference external" href="https://allendowney.github.io/ThinkPython/">https://allendowney.github.io/ThinkPython/</a> ar gyfer y testun gwreiddiol).</p>
+<p>Mewn penodau blaenorol, rydym wedi defnyddio swyddogaethau cynhenid — fel <code class="docutils literal notranslate"><span class="pre">abs</span></code>
+a <code class="docutils literal notranslate"><span class="pre">round</span></code> — a swyddogaethau yn y modiwl math — fel <code class="docutils literal notranslate"><span class="pre">sqrt</span></code> a <code class="docutils literal notranslate"><span class="pre">pow</span></code>. Pan alwch un
+o’r swyddogaethau hyn, mae’n dychwelyd gwerth y gallwch ei neilltuo i newidyn
+neu ei ddefnyddio fel rhan o fynegiad.</p>
+<p>Mae’r swyddogaethau rydym wedi’u hysgrifennu hyd yn hyn yn wahanol. Mae rhai’n
+defnyddio’r swyddogaeth <code class="docutils literal notranslate"><span class="pre">print</span></code> i ddangos gwerthoedd, ac mae rhai’n defnyddio
+swyddogaethau crwban i dynnu ffigurau. Ond nid ydynt yn dychwelyd gwerthoedd
+rydym yn eu neilltuo i newidynnau neu’n eu defnyddio mewn mynegiadau.</p>
+<p>Yn y bennod hon, byddwn yn gweld sut i ysgrifennu swyddogaethau sy’n dychwelyd
+gwerthoedd.</p>
+<section id="mae-gan-rai-swyddogaethau-werthoedd-dychwelyd">
+<h2><span class="section-number">6.1. </span>Mae Gan Rai Swyddogaethau Werthoedd Dychwelyd<a class="headerlink" href="#mae-gan-rai-swyddogaethau-werthoedd-dychwelyd" title="Link to this heading">#</a></h2>
+<p>Pan alwch swyddogaeth fel <code class="docutils literal notranslate"><span class="pre">math.sqrt</span></code>, gelwir y canlyniad yn <strong><a class="reference internal" href="../glossary.html#term-gwerth-dychwelyd"><span class="xref std std-term">gwerth dychwelyd</span></a></strong>.
+Os yw’r alwad swyddogaeth yn ymddangos ar ddiwedd cell, mae Jupyter yn dangos y
+gwerth dychwelyd ar unwaith.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+
+<span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">42</span> <span class="o">/</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+</pre></div>
 </div>
+<p>Os neilltuwch y gwerth dychwelyd i newidyn, ni chaiff ei ddangos.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">radius</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">42</span> <span class="o">/</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Ond gallwch ei ddangos yn ddiweddarach.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">radius</span>
+</pre></div>
+</div>
+<p>Neu gallwch ddefnyddio’r gwerth dychwelyd fel rhan o fynegiad.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">radius</span> <span class="o">+</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">42</span> <span class="o">/</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Dyma enghraifft o swyddogaeth sy’n dychwelyd gwerth.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">circle_area</span><span class="p">(</span><span class="n">radius</span><span class="p">):</span>
+    <span class="n">area</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">radius</span><span class="o">**</span><span class="mi">2</span>
+    <span class="k">return</span> <span class="n">area</span>
+</pre></div>
+</div>
+<p>Mae <code class="docutils literal notranslate"><span class="pre">circle_area</span></code> yn cymryd <code class="docutils literal notranslate"><span class="pre">radius</span></code> fel paramedr ac yn cyfrifo arwynebedd
+cylch gyda’r radiws hwnnw.</p>
+<p>Mae’r llinell olaf yn osodiad <code class="docutils literal notranslate"><span class="pre">return</span></code> sy’n dychwelyd gwerth <code class="docutils literal notranslate"><span class="pre">area</span></code>.</p>
+<p>Os galwn y swyddogaeth fel hyn, mae Jupyter yn dangos y gwerth dychwelyd.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">circle_area</span><span class="p">(</span><span class="n">radius</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Gallwn neilltuo’r gwerth dychwelyd i newidyn.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">circle_area</span><span class="p">(</span><span class="n">radius</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Neu ei ddefnyddio fel rhan o fynegiad.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">circle_area</span><span class="p">(</span><span class="n">radius</span><span class="p">)</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">circle_area</span><span class="p">(</span><span class="n">radius</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Yn ddiweddarach gallwn ddangos gwerth y newidyn y neilltuwyd y canlyniad iddo.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span>
+</pre></div>
+</div>
+<p>Ond ni allwn gyrchu <code class="docutils literal notranslate"><span class="pre">area</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">expect</span> <span class="ne">NameError</span>
+
+<span class="n">area</span>
+</pre></div>
+</div>
+<p>Mae <code class="docutils literal notranslate"><span class="pre">area</span></code> yn newidyn lleol mewn swyddogaeth, felly ni allwn ei gyrchu o’r tu
+allan i’r swyddogaeth.</p>
+</section>
+<section id="a-mae-gan-rai-none">
+<h2><span class="section-number">6.2. </span>A Mae Gan Rai None<a class="headerlink" href="#a-mae-gan-rai-none" title="Link to this heading">#</a></h2>
+<p>Os nad oes gan swyddogaeth osodiad <code class="docutils literal notranslate"><span class="pre">return</span></code>, mae’n dychwelyd <code class="docutils literal notranslate"><span class="pre">None</span></code>, sy’n
+werth arbennig fel <code class="docutils literal notranslate"><span class="pre">True</span></code> a <code class="docutils literal notranslate"><span class="pre">False</span></code>. Er enghraifft, dyma’r swyddogaeth <code class="docutils literal notranslate"><span class="pre">repeat</span></code>
+o Bennod 3.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">repeat</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">word</span> <span class="o">*</span> <span class="n">n</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Os galwn hi fel hyn, mae’n dangos llinell gyntaf cân Monty Python “Finland”.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">repeat</span><span class="p">(</span><span class="s1">'Finland, '</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Mae’r swyddogaeth hon yn defnyddio’r swyddogaeth <code class="docutils literal notranslate"><span class="pre">print</span></code> i ddangos llinyn, ond
+nid yw’n defnyddio gosodiad <code class="docutils literal notranslate"><span class="pre">return</span></code> i ddychwelyd gwerth. Os neilltuwn y
+canlyniad i newidyn, mae’n dangos y llinyn beth bynnag.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">repeat</span><span class="p">(</span><span class="s1">'Finland, '</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Ac os dangoswn werth y newidyn, cawn ddim byd.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span>
+</pre></div>
+</div>
+<p>Mae gan <code class="docutils literal notranslate"><span class="pre">result</span></code> werth mewn gwirionedd, ond nid yw Jupyter yn ei ddangos. Fodd
+bynnag, gallwn ei ddangos fel hyn.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">None</span></code> yw’r gwerth dychwelyd o <code class="docutils literal notranslate"><span class="pre">repeat</span></code>.</p>
+<p>Nawr dyma swyddogaeth debyg i <code class="docutils literal notranslate"><span class="pre">repeat</span></code> ac eithrio bod ganddi werth dychwelyd.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">repeat_string</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">word</span> <span class="o">*</span> <span class="n">n</span>
+</pre></div>
+</div>
+<p>Sylwch y gallwn ddefnyddio mynegiad mewn gosodiad <code class="docutils literal notranslate"><span class="pre">return</span></code>, nid dim ond
+newidyn.</p>
+<p>Gyda’r fersiwn hon, gallwn neilltuo’r canlyniad i newidyn. Pan fydd y
+swyddogaeth yn rhedeg, nid yw’n dangos dim byd.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">line</span> <span class="o">=</span> <span class="n">repeat_string</span><span class="p">(</span><span class="s1">'Spam, '</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Ond yn ddiweddarach gallwn ddangos y gwerth a neilltuwyd i <code class="docutils literal notranslate"><span class="pre">line</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">line</span>
+</pre></div>
+</div>
+<p>Gelwir swyddogaeth fel hon yn <strong><a class="reference internal" href="../glossary.html#term-swyddogaeth-bur"><span class="xref std std-term">swyddogaeth bur</span></a></strong> am nad yw’n dangos
+dim byd nac yn cael unrhyw effaith arall — heblaw dychwelyd gwerth.</p>
+</section>
+<section id="gwerthoedd-dychwelyd-ac-amodolion">
+<h2><span class="section-number">6.3. </span>Gwerthoedd Dychwelyd ac Amodolion<a class="headerlink" href="#gwerthoedd-dychwelyd-ac-amodolion" title="Link to this heading">#</a></h2>
+<p>Pe na bai Python yn darparu <code class="docutils literal notranslate"><span class="pre">abs</span></code>, gallem ei hysgrifennu fel hyn.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">absolute_value</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="o">-</span><span class="n">x</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">x</span>
+</pre></div>
+</div>
+<p>Os yw <code class="docutils literal notranslate"><span class="pre">x</span></code> yn negatif, mae’r gosodiad <code class="docutils literal notranslate"><span class="pre">return</span></code> cyntaf yn dychwelyd <code class="docutils literal notranslate"><span class="pre">-x</span></code> ac mae’r
+swyddogaeth yn dod i ben ar unwaith. Fel arall, mae’r ail osodiad <code class="docutils literal notranslate"><span class="pre">return</span></code> yn
+dychwelyd <code class="docutils literal notranslate"><span class="pre">x</span></code> ac mae’r swyddogaeth yn dod i ben. Felly mae’r swyddogaeth hon yn
+gywir.</p>
+<p>Fodd bynnag, os rhowch osodiadau <code class="docutils literal notranslate"><span class="pre">return</span></code> mewn amodol, mae’n rhaid i chi wneud
+yn siŵr bod pob llwybr posibl drwy’r rhaglen yn taro gosodiad <code class="docutils literal notranslate"><span class="pre">return</span></code>. Er
+enghraifft, dyma fersiwn anghywir o <code class="docutils literal notranslate"><span class="pre">absolute_value</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">absolute_value_wrong</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="o">-</span><span class="n">x</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">x</span>
+</pre></div>
+</div>
+<p>Dyma beth sy’n digwydd os galwn y swyddogaeth hon gyda <code class="docutils literal notranslate"><span class="pre">0</span></code> fel dadl.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">absolute_value_wrong</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Cawn ddim byd! Dyma’r broblem: pan fo <code class="docutils literal notranslate"><span class="pre">x</span></code> yn <code class="docutils literal notranslate"><span class="pre">0</span></code>, nid yw’r un o’r amodau’n
+wir, ac mae’r swyddogaeth yn dod i ben heb daro gosodiad <code class="docutils literal notranslate"><span class="pre">return</span></code>, sy’n golygu
+mai <code class="docutils literal notranslate"><span class="pre">None</span></code> yw’r gwerth dychwelyd, felly nid yw Jupyter yn dangos dim byd.</p>
+<p>Fel enghraifft arall, dyma fersiwn o <code class="docutils literal notranslate"><span class="pre">absolute_value</span></code> gyda gosodiad <code class="docutils literal notranslate"><span class="pre">return</span></code>
+ychwanegol ar y diwedd.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">absolute_value_extra_return</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="o">-</span><span class="n">x</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">x</span>
+    
+    <span class="k">return</span> <span class="s1">'This is dead code'</span>
+</pre></div>
+</div>
+<p>Os yw <code class="docutils literal notranslate"><span class="pre">x</span></code> yn negatif, mae’r gosodiad <code class="docutils literal notranslate"><span class="pre">return</span></code> cyntaf yn rhedeg ac mae’r
+swyddogaeth yn dod i ben. Fel arall mae’r ail osodiad <code class="docutils literal notranslate"><span class="pre">return</span></code> yn rhedeg ac mae’r
+swyddogaeth yn dod i ben. Naill ffordd, nid ydym byth yn cyrraedd y trydydd
+gosodiad <code class="docutils literal notranslate"><span class="pre">return</span></code> — felly ni all byth redeg.</p>
+<p>Gelwir cod na all byth redeg yn <strong><a class="reference internal" href="../glossary.html#term-cod-marw"><span class="xref std std-term">cod marw</span></a></strong>. Yn gyffredinol, nid yw
+cod marw’n gwneud unrhyw niwed, ond mae’n aml yn dangos camddealltwriaeth, a
+gallai fod yn ddryslyd i rywun sy’n ceisio deall y rhaglen.</p>
+</section>
+<section id="datblygiad-graddol">
+<h2><span class="section-number">6.4. </span>Datblygiad Graddol<a class="headerlink" href="#datblygiad-graddol" title="Link to this heading">#</a></h2>
+<p>Wrth i chi ysgrifennu swyddogaethau mwy, efallai y gwelwch eich hun yn treulio
+mwy o amser yn dadnamu. I ymdopi â rhaglenni cynyddol gymhleth, efallai yr
+hoffech roi cynnig ar <strong><a class="reference internal" href="../glossary.html#term-datblygiad-graddol"><span class="xref std std-term">datblygiad graddol</span></a></strong>, sef ffordd o ychwanegu a
+phrofi dim ond ychydig o god ar y tro.</p>
+<p>Fel enghraifft, tybiwch eich bod am ddarganfod y pellter rhwng dau bwynt a
+gynrychiolir gan y cyfesurynnau <span class="math notranslate nohighlight">\((x_1, y_1)\)</span> a <span class="math notranslate nohighlight">\((x_2, y_2)\)</span>. Yn ôl theorem
+Pythagoras, y pellter yw:</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{pellter} = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}\]</div>
+<p>Y cam cyntaf yw ystyried sut y dylai swyddogaeth <code class="docutils literal notranslate"><span class="pre">distance</span></code> edrych yn Python —
+hynny yw, beth yw’r mewnbynnau (paramedrau) a beth yw’r allbwn (gwerth
+dychwelyd)?</p>
+<p>Ar gyfer y swyddogaeth hon, y mewnbynnau yw cyfesurynnau’r pwyntiau. Y gwerth
+dychwelyd yw’r pellter. Ar unwaith gallwch ysgrifennu amlinelliad o’r
+swyddogaeth:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">distance</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mf">0.0</span>
+</pre></div>
+</div>
+<p>Nid yw’r fersiwn hon yn cyfrifo pellteroedd eto — mae bob amser yn dychwelyd
+sero. Ond mae’n swyddogaeth gyflawn gyda gwerth dychwelyd, sy’n golygu y
+gallwch ei phrofi cyn ei gwneud yn fwy cymhleth.</p>
+<p>I brofi’r swyddogaeth newydd, byddwn yn ei galw gyda dadleuon enghreifftiol:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">distance</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Dewisais y gwerthoedd hyn fel bod y pellter llorweddol yn <code class="docutils literal notranslate"><span class="pre">3</span></code> a’r pellter
+fertigol yn <code class="docutils literal notranslate"><span class="pre">4</span></code>. Felly, <code class="docutils literal notranslate"><span class="pre">5</span></code> yw’r canlyniad, hypotenws triongl ongl sgwâr
+<code class="docutils literal notranslate"><span class="pre">3-4-5</span></code>. Wrth brofi swyddogaeth, mae’n ddefnyddiol gwybod yr ateb cywir.</p>
+<p>Ar hyn o bryd rydym wedi cadarnhau bod y swyddogaeth yn rhedeg ac yn dychwelyd
+gwerth, a gallwn ddechrau ychwanegu cod at y corff. Cam nesaf da yw darganfod y
+gwahaniaethau <code class="docutils literal notranslate"><span class="pre">x2</span> <span class="pre">-</span> <span class="pre">x1</span></code> ac <code class="docutils literal notranslate"><span class="pre">y2</span> <span class="pre">-</span> <span class="pre">y1</span></code>. Dyma fersiwn sy’n storio’r gwerthoedd
+hynny mewn newidynnau dros dro ac yn eu dangos.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">distance</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">):</span>
+    <span class="n">dx</span> <span class="o">=</span> <span class="n">x2</span> <span class="o">-</span> <span class="n">x1</span>
+    <span class="n">dy</span> <span class="o">=</span> <span class="n">y2</span> <span class="o">-</span> <span class="n">y1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'dx is'</span><span class="p">,</span> <span class="n">dx</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'dy is'</span><span class="p">,</span> <span class="n">dy</span><span class="p">)</span>
+    <span class="k">return</span> <span class="mf">0.0</span>
+</pre></div>
+</div>
+<p>Os yw’r swyddogaeth yn gweithio, dylai ddangos <code class="docutils literal notranslate"><span class="pre">dx</span> <span class="pre">is</span> <span class="pre">3</span></code> a <code class="docutils literal notranslate"><span class="pre">dy</span> <span class="pre">is</span> <span class="pre">4</span></code>. Os felly,
+rydym yn gwybod bod y swyddogaeth yn cael y dadleuon cywir ac yn perfformio’r
+cyfrifiant cyntaf yn gywir. Os nad yw, dim ond ychydig o linellau sydd angen eu
+gwirio.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">distance</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Da hyd yn hyn. Nesaf byddwn yn cyfrifo swm sgwariau <code class="docutils literal notranslate"><span class="pre">dx</span></code> a <code class="docutils literal notranslate"><span class="pre">dy</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">distance</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">):</span>
+    <span class="n">dx</span> <span class="o">=</span> <span class="n">x2</span> <span class="o">-</span> <span class="n">x1</span>
+    <span class="n">dy</span> <span class="o">=</span> <span class="n">y2</span> <span class="o">-</span> <span class="n">y1</span>
+    <span class="n">dsquared</span> <span class="o">=</span> <span class="n">dx</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">dy</span><span class="o">**</span><span class="mi">2</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'dsquared is: '</span><span class="p">,</span> <span class="n">dsquared</span><span class="p">)</span>
+    <span class="k">return</span> <span class="mf">0.0</span>
+</pre></div>
+</div>
+<p>Unwaith eto, gallwn redeg y swyddogaeth a gwirio’r allbwn, a ddylai fod yn
+<code class="docutils literal notranslate"><span class="pre">25</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">distance</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Yn olaf, gallwn ddefnyddio <code class="docutils literal notranslate"><span class="pre">math.sqrt</span></code> i gyfrifo’r pellter:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">distance</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">):</span>
+    <span class="n">dx</span> <span class="o">=</span> <span class="n">x2</span> <span class="o">-</span> <span class="n">x1</span>
+    <span class="n">dy</span> <span class="o">=</span> <span class="n">y2</span> <span class="o">-</span> <span class="n">y1</span>
+    <span class="n">dsquared</span> <span class="o">=</span> <span class="n">dx</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">dy</span><span class="o">**</span><span class="mi">2</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">dsquared</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"result is"</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>A’i brofi.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">distance</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Mae’r canlyniad yn gywir, ond mae’r fersiwn hon o’r swyddogaeth yn dangos y
+canlyniad yn hytrach na’i ddychwelyd, felly <code class="docutils literal notranslate"><span class="pre">None</span></code> yw’r gwerth dychwelyd.</p>
+<p>Gallwn drwsio hynny drwy ddisodli’r swyddogaeth <code class="docutils literal notranslate"><span class="pre">print</span></code> â gosodiad <code class="docutils literal notranslate"><span class="pre">return</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">distance</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">):</span>
+    <span class="n">dx</span> <span class="o">=</span> <span class="n">x2</span> <span class="o">-</span> <span class="n">x1</span>
+    <span class="n">dy</span> <span class="o">=</span> <span class="n">y2</span> <span class="o">-</span> <span class="n">y1</span>
+    <span class="n">dsquared</span> <span class="o">=</span> <span class="n">dx</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">dy</span><span class="o">**</span><span class="mi">2</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">dsquared</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
+</pre></div>
+</div>
+<p>Mae’r fersiwn hon o <code class="docutils literal notranslate"><span class="pre">distance</span></code> yn swyddogaeth bur. Os galwn hi fel hyn, dim
+ond y canlyniad a ddangosir.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">distance</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Ac os neilltuwn y canlyniad i newidyn, ni ddangosir dim byd.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="n">distance</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Mae’r gosodiadau <code class="docutils literal notranslate"><span class="pre">print</span></code> a ysgrifennom yn ddefnyddiol ar gyfer dadnamu, ond
+unwaith y bydd y swyddogaeth yn gweithio, gallwn eu dileu. Gelwir cod fel
+hynny’n <strong><a class="reference internal" href="../glossary.html#term-sgaffaldiau"><span class="xref std std-term">sgaffaldiau</span></a></strong> am ei fod yn ddefnyddiol ar gyfer adeiladu’r
+rhaglen ond nid yw’n rhan o’r cynnyrch terfynol.</p>
+<p>Mae’r enghraifft hon yn dangos datblygiad graddol. Prif agweddau’r broses hon
+yw:</p>
+<ol class="arabic simple">
+<li><p>Dechreuwch gyda rhaglen sy’n gweithio, gwnewch newidiadau bach, a phrofwch
+ar ôl pob newid.</p></li>
+<li><p>Defnyddiwch newidynnau i ddal gwerthoedd rhyngol fel y gallwch eu dangos
+a’u gwirio.</p></li>
+<li><p>Unwaith y bydd y rhaglen yn gweithio, dilëwch y sgaffaldiau.</p></li>
+</ol>
+<p>Ar unrhyw adeg, os oes gwall, dylai fod gennych syniad da ble mae. Gall
+datblygiad graddol arbed llawer o amser dadnamu i chi.</p>
+</section>
+<section id="swyddogaethau-boole">
+<h2><span class="section-number">6.5. </span>Swyddogaethau Boole<a class="headerlink" href="#swyddogaethau-boole" title="Link to this heading">#</a></h2>
+<p>Gall swyddogaethau ddychwelyd y gwerthoedd Boole <code class="docutils literal notranslate"><span class="pre">True</span></code> a <code class="docutils literal notranslate"><span class="pre">False</span></code>, sy’n aml yn
+gyfleus ar gyfer amgáu prawf cymhleth mewn swyddogaeth. Er enghraifft, mae
+<code class="docutils literal notranslate"><span class="pre">is_divisible</span></code> yn gwirio a yw <code class="docutils literal notranslate"><span class="pre">x</span></code> yn rhanadwy â <code class="docutils literal notranslate"><span class="pre">y</span></code> heb weddill.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">is_divisible</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="n">y</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+</pre></div>
+</div>
+<p>Dyma sut rydym yn ei defnyddio.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">is_divisible</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">is_divisible</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Y tu mewn i’r swyddogaeth, mae canlyniad y gweithredydd <code class="docutils literal notranslate"><span class="pre">==</span></code> yn Boole, felly
+gallwn ysgrifennu’r swyddogaeth yn fwy cryno drwy ei ddychwelyd yn
+uniongyrchol.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">is_divisible</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">%</span> <span class="n">y</span> <span class="o">==</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<p>Defnyddir swyddogaethau Boole yn aml mewn gosodiadau amodol.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">is_divisible</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'divisible'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Gallai fod yn demtasiwn ysgrifennu rhywbeth fel hyn:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">is_divisible</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'divisible'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Ond mae’r cymhariaeth yn ddiangen.</p>
+</section>
+<section id="dychweliad-gyda-gwerthoedd-dychwelyd">
+<h2><span class="section-number">6.6. </span>Dychweliad gyda Gwerthoedd Dychwelyd<a class="headerlink" href="#dychweliad-gyda-gwerthoedd-dychwelyd" title="Link to this heading">#</a></h2>
+<p>Nawr ein bod yn gallu ysgrifennu swyddogaethau â gwerthoedd dychwelyd, gallwn
+ysgrifennu swyddogaethau dychweliadol gyda gwerthoedd dychwelyd, a chyda’r
+gallu hwnnw, rydym wedi croesi trothwy pwysig — mae’r is-set o Python sydd
+gennym bellach yn <strong><a class="reference internal" href="../glossary.html#term-Turing-gyflawn"><span class="xref std std-term">Turing-gyflawn</span></a></strong>, sy’n golygu y gallwn berfformio
+unrhyw gyfrifiant y gellir ei ddisgrifio gan algorithm.</p>
+<p>I ddangos dychweliad gyda gwerthoedd dychwelyd, byddwn yn gwerthuso ychydig o
+swyddogaethau mathemategol a ddiffinnir yn ddychweliadol. Mae diffiniad
+dychweliadol yn debyg i ddiffiniad cylchol, yn yr ystyr bod y diffiniad yn
+cyfeirio at y peth sy’n cael ei ddiffinio. Nid yw diffiniad gwirioneddol
+gylchol yn ddefnyddiol iawn:</p>
+<blockquote>
+<div><p>gwrthrychus: Ansoddair a ddefnyddir i ddisgrifio rhywbeth sy’n wrthrychus.</p>
+</div></blockquote>
+<p>Pe baech yn gweld y diffiniad hwnnw mewn geiriadur, efallai y byddech yn
+flinderus. Ar y llaw arall, os edrychwch ar ddiffiniad y swyddogaeth ffactorial,
+a ddynodir â’r symbol <span class="math notranslate nohighlight">\(!\)</span>, efallai y cewch rywbeth fel hyn:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+0! &amp;= 1 \\
+n! &amp;= n~(n-1)!
+\end{aligned}\end{split}\]</div>
+<p>Mae’r diffiniad hwn yn dweud mai <span class="math notranslate nohighlight">\(1\)</span> yw ffactorial <span class="math notranslate nohighlight">\(0\)</span>, ac mai <span class="math notranslate nohighlight">\(n\)</span> wedi’i
+luosi â ffactorial <span class="math notranslate nohighlight">\(n-1\)</span> yw ffactorial unrhyw werth arall, <span class="math notranslate nohighlight">\(n\)</span>.</p>
+<p>Os gallwch ysgrifennu diffiniad dychweliadol o rywbeth, gallwch ysgrifennu
+rhaglen Python i’w werthuso. Gan ddilyn proses datblygiad graddol, byddwn yn
+dechrau gyda swyddogaeth sy’n cymryd <code class="docutils literal notranslate"><span class="pre">n</span></code> fel paramedr ac sy’n dychwelyd <code class="docutils literal notranslate"><span class="pre">0</span></code>
+bob amser.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<p>Nawr gadewch i ni ychwanegu rhan gyntaf y diffiniad — os yw’r ddadl yn digwydd
+bod yn <code class="docutils literal notranslate"><span class="pre">0</span></code>, y cyfan sydd angen i ni ei wneud yw dychwelyd <code class="docutils literal notranslate"><span class="pre">1</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<p>Nawr gadewch i ni lenwi’r ail ran — os nad yw <code class="docutils literal notranslate"><span class="pre">n</span></code> yn <code class="docutils literal notranslate"><span class="pre">0</span></code>, mae’n rhaid i ni
+wneud galwad ddychweliadol i ddarganfod ffactorial <code class="docutils literal notranslate"><span class="pre">n-1</span></code> ac yna lluosi’r
+canlyniad â <code class="docutils literal notranslate"><span class="pre">n</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">recurse</span> <span class="o">=</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">recurse</span>
+</pre></div>
+</div>
+<p>Mae llif cyflawniad y rhaglen hon yn debyg i lif <code class="docutils literal notranslate"><span class="pre">countdown</span></code> ym Mhennod 5. Os
+galwn <code class="docutils literal notranslate"><span class="pre">factorial</span></code> gyda’r gwerth <code class="docutils literal notranslate"><span class="pre">3</span></code>:</p>
+<p>Gan nad yw <code class="docutils literal notranslate"><span class="pre">3</span></code> yn <code class="docutils literal notranslate"><span class="pre">0</span></code>, cymerwn yr ail gangen a chyfrifo ffactorial <code class="docutils literal notranslate"><span class="pre">n-1</span></code>…</p>
+<blockquote>
+<div><p>Gan nad yw <code class="docutils literal notranslate"><span class="pre">2</span></code> yn <code class="docutils literal notranslate"><span class="pre">0</span></code>, cymerwn yr ail gangen a chyfrifo ffactorial <code class="docutils literal notranslate"><span class="pre">n-1</span></code>…</p>
+<blockquote>
+<div><p>Gan nad yw <code class="docutils literal notranslate"><span class="pre">1</span></code> yn <code class="docutils literal notranslate"><span class="pre">0</span></code>, cymerwn yr ail gangen a chyfrifo ffactorial <code class="docutils literal notranslate"><span class="pre">n-1</span></code>…</p>
+<blockquote>
+<div><p>Gan fod <code class="docutils literal notranslate"><span class="pre">0</span></code> yn hafal i <code class="docutils literal notranslate"><span class="pre">0</span></code>, cymerwn y gangen gyntaf a dychwelyd <code class="docutils literal notranslate"><span class="pre">1</span></code> heb
+wneud rhagor o alwadau dychweliadol.</p>
+</div></blockquote>
+<p>Lluosir y gwerth dychwelyd, <code class="docutils literal notranslate"><span class="pre">1</span></code>, â <code class="docutils literal notranslate"><span class="pre">n</span></code>, sef <code class="docutils literal notranslate"><span class="pre">1</span></code>, a dychwelir y canlyniad.</p>
+</div></blockquote>
+<p>Lluosir y gwerth dychwelyd, <code class="docutils literal notranslate"><span class="pre">1</span></code>, â <code class="docutils literal notranslate"><span class="pre">n</span></code>, sef <code class="docutils literal notranslate"><span class="pre">2</span></code>, a dychwelir y canlyniad.</p>
+</div></blockquote>
+<p>Lluosir y gwerth dychwelyd <code class="docutils literal notranslate"><span class="pre">2</span></code> â <code class="docutils literal notranslate"><span class="pre">n</span></code>, sef <code class="docutils literal notranslate"><span class="pre">3</span></code>, ac mae’r canlyniad, <code class="docutils literal notranslate"><span class="pre">6</span></code>, yn
+dod yn werth dychwelyd yr alwad swyddogaeth a ddechreuodd y broses gyfan.</p>
+<p>Mae’r ffigur canlynol yn dangos y diagram pentwr ar gyfer y dilyniant hwn o
+alwadau swyddogaeth.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">diagram</span><span class="w"> </span><span class="kn">import</span> <span class="n">Frame</span><span class="p">,</span> <span class="n">Stack</span><span class="p">,</span> <span class="n">make_binding</span>
+
+<span class="n">main</span> <span class="o">=</span> <span class="n">Frame</span><span class="p">([],</span> <span class="n">name</span><span class="o">=</span><span class="s1">'__main__'</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">'left'</span><span class="p">)</span>
+<span class="n">frames</span> <span class="o">=</span> <span class="p">[</span><span class="n">main</span><span class="p">]</span>
+
+<span class="n">ns</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span>
+<span class="n">recurses</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span>
+<span class="n">results</span> <span class="o">=</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span>
+
+<span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">recurse</span><span class="p">,</span> <span class="n">result</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">ns</span><span class="p">,</span> <span class="n">recurses</span><span class="p">,</span> <span class="n">results</span><span class="p">):</span>
+    <span class="n">binding1</span> <span class="o">=</span> <span class="n">make_binding</span><span class="p">(</span><span class="s1">'n'</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+    <span class="n">binding2</span> <span class="o">=</span> <span class="n">make_binding</span><span class="p">(</span><span class="s1">'recurse'</span><span class="p">,</span> <span class="n">recurse</span><span class="p">)</span>
+    <span class="n">frame</span> <span class="o">=</span> <span class="n">Frame</span><span class="p">([</span><span class="n">binding1</span><span class="p">,</span> <span class="n">binding2</span><span class="p">],</span> 
+                  <span class="n">name</span><span class="o">=</span><span class="s1">'factorial'</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="n">result</span><span class="p">,</span>
+                  <span class="n">loc</span><span class="o">=</span><span class="s1">'left'</span><span class="p">,</span> <span class="n">dx</span><span class="o">=</span><span class="mf">1.2</span><span class="p">)</span>
+    <span class="n">frames</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">frame</span><span class="p">)</span>
+    
+<span class="n">binding1</span> <span class="o">=</span> <span class="n">make_binding</span><span class="p">(</span><span class="s1">'n'</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">frame</span> <span class="o">=</span> <span class="n">Frame</span><span class="p">([</span><span class="n">binding1</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s1">'factorial'</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
+              <span class="n">shim</span><span class="o">=</span><span class="mf">1.2</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">'left'</span><span class="p">,</span> <span class="n">dx</span><span class="o">=</span><span class="mf">1.4</span><span class="p">)</span>
+<span class="n">frames</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">frame</span><span class="p">)</span>
+
+<span class="n">stack</span> <span class="o">=</span> <span class="n">Stack</span><span class="p">(</span><span class="n">frames</span><span class="p">,</span> <span class="n">dy</span><span class="o">=-</span><span class="mf">0.45</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">diagram</span><span class="w"> </span><span class="kn">import</span> <span class="n">diagram</span><span class="p">,</span> <span class="n">adjust</span>
+
+<span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mf">2.74</span><span class="p">,</span> <span class="mf">2.26</span><span class="p">,</span> <span class="mf">0.73</span><span class="p">,</span> <span class="mf">2.05</span><span class="p">]</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">diagram</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
+<span class="n">bbox</span> <span class="o">=</span> <span class="n">stack</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="c1"># adjust(x, y, bbox)</span>
+</pre></div>
+</div>
+<p>Dangosir y gwerthoedd dychwelyd yn cael eu pasio’n ôl i fyny’r pentwr. Ym mhob
+ffram, y gwerth dychwelyd yw lluoswm <code class="docutils literal notranslate"><span class="pre">n</span></code> a <code class="docutils literal notranslate"><span class="pre">recurse</span></code>.</p>
+<p>Yn y ffram olaf, nid yw’r newidyn lleol <code class="docutils literal notranslate"><span class="pre">recurse</span></code> yn bodoli am nad yw’r gangen
+sy’n ei greu yn rhedeg.</p>
+</section>
+<section id="naid-o-ffydd">
+<h2><span class="section-number">6.7. </span>Naid o Ffydd<a class="headerlink" href="#naid-o-ffydd" title="Link to this heading">#</a></h2>
+<p>Dilyn llif cyflawniad yw un ffordd o ddarllen rhaglenni, ond gall ddod yn
+llethol yn gyflym. Dewis arall yw’r hyn a alwaf y “naid o ffydd”. Pan ddewch
+at alwad swyddogaeth, yn hytrach na dilyn llif cyflawniad, rydych yn <em>tybio</em>
+bod y swyddogaeth yn gweithio’n gywir ac yn dychwelyd y canlyniad cywir.</p>
+<p>Mewn gwirionedd, rydych eisoes yn ymarfer y naid o ffydd hon wrth ddefnyddio
+swyddogaethau cynhenid. Pan alwch <code class="docutils literal notranslate"><span class="pre">abs</span></code> neu <code class="docutils literal notranslate"><span class="pre">math.sqrt</span></code>, nid ydych yn archwilio
+cyrff y swyddogaethau hynny — rydych jest yn tybio eu bod yn gweithio.</p>
+<p>Mae’r un peth yn wir pan alwch un o’ch swyddogaethau eich hun. Er enghraifft,
+yn gynharach ysgrifennom swyddogaeth o’r enw <code class="docutils literal notranslate"><span class="pre">is_divisible</span></code> sy’n penderfynu a
+yw un rhif yn rhanadwy ag un arall. Unwaith y byddwn yn argyhoeddi ein hunain
+bod y swyddogaeth hon yn gywir, gallwn ei defnyddio heb edrych ar y corff eto.</p>
+<p>Mae’r un peth yn wir am raglenni dychweliadol. Pan ddewch at yr alwad
+ddychweliadol, yn hytrach na dilyn llif cyflawniad, dylech dybio bod yr alwad
+ddychweliadol yn gweithio ac yna gofyn i chi’ch hun, “Gan dybio y gallaf
+gyfrifo ffactorial <span class="math notranslate nohighlight">\(n-1\)</span>, a allaf gyfrifo ffactorial <span class="math notranslate nohighlight">\(n\)</span>?” Mae diffiniad
+dychweliadol ffactorial yn awgrymu y gallwch, drwy luosi â <span class="math notranslate nohighlight">\(n\)</span>.</p>
+<p>Wrth gwrs, mae braidd yn rhyfedd tybio bod y swyddogaeth yn gweithio’n gywir
+pan nad ydych wedi gorffen ei hysgrifennu, ond dyna pam y’i gelwir yn naid o
+ffydd!</p>
+</section>
+<section id="fibonacci">
+<h2><span class="section-number">6.8. </span>Fibonacci<a class="headerlink" href="#fibonacci" title="Link to this heading">#</a></h2>
+<p>Ar ôl <code class="docutils literal notranslate"><span class="pre">factorial</span></code>, enghraifft fwyaf cyffredin swyddogaeth ddychweliadol yw
+<code class="docutils literal notranslate"><span class="pre">fibonacci</span></code>, sydd â’r diffiniad canlynol:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\mathrm{fibonacci}(0) &amp;= 0 \\
+\mathrm{fibonacci}(1) &amp;= 1 \\
+\mathrm{fibonacci}(n) &amp;= \mathrm{fibonacci}(n-1) + \mathrm{fibonacci}(n-2)
+\end{aligned}\end{split}\]</div>
+<p>Wedi’i gyfieithu i Python, mae’n edrych fel hyn:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">elif</span>  <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Os ceisiwch ddilyn llif cyflawniad yma, hyd yn oed ar gyfer gwerthoedd bach o
+<span class="math notranslate nohighlight">\(n\)</span>, mae eich pen yn ffrwydro. Ond yn ôl y naid o ffydd, os tybiwch fod y ddwy
+alwad ddychweliadol yn gweithio’n gywir, gallwch fod yn hyderus bod y gosodiad
+<code class="docutils literal notranslate"><span class="pre">return</span></code> olaf yn gywir.</p>
+<p>Fel sylw ymylol, mae’r ffordd hon o gyfrifo rhifau Fibonacci yn aneffeithlon
+iawn. Ym Mhennod 10 byddaf yn esbonio pam ac yn awgrymu ffordd o’i wella.</p>
+</section>
+<section id="gwirio-mathau">
+<h2><span class="section-number">6.9. </span>Gwirio Mathau<a class="headerlink" href="#gwirio-mathau" title="Link to this heading">#</a></h2>
+<p>Beth sy’n digwydd os galwn <code class="docutils literal notranslate"><span class="pre">factorial</span></code> a rhoi <code class="docutils literal notranslate"><span class="pre">1.5</span></code> iddi fel dadl?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">expect</span> <span class="ne">RecursionError</span>
+
+<span class="n">factorial</span><span class="p">(</span><span class="mf">1.5</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Mae’n edrych fel dychweliad anfeidrol. Sut all hynny fod? Mae gan y
+swyddogaeth achosion sylfaenol pan fo <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">==</span> <span class="pre">1</span></code> neu <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">==</span> <span class="pre">0</span></code>. Ond os nad yw <code class="docutils literal notranslate"><span class="pre">n</span></code>
+yn gyfanrif, gallwn <em>fethu</em> â chyrraedd yr achos sylfaenol a dychwelyd am byth.</p>
+<p>Yn yr enghraifft hon, gwerth cychwynnol <code class="docutils literal notranslate"><span class="pre">n</span></code> yw <code class="docutils literal notranslate"><span class="pre">1.5</span></code>. Yn yr alwad ddychweliadol
+gyntaf, gwerth <code class="docutils literal notranslate"><span class="pre">n</span></code> yw <code class="docutils literal notranslate"><span class="pre">0.5</span></code>. Yn y nesaf, mae’n <code class="docutils literal notranslate"><span class="pre">-0.5</span></code>. O’r fan honno, mae’n
+mynd yn llai (yn fwy negatif), ond ni fydd byth yn <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
+<p>I osgoi dychweliad anfeidrol gallwn ddefnyddio’r swyddogaeth gynhenid
+<code class="docutils literal notranslate"><span class="pre">isinstance</span></code> i wirio math y ddadl. Dyma sut rydym yn gwirio a yw gwerth yn
+gyfanrif.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">isinstance</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">isinstance</span><span class="p">(</span><span class="mf">1.5</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Nawr dyma fersiwn o <code class="docutils literal notranslate"><span class="pre">factorial</span></code> gyda gwirio gwallau.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">'factorial is only defined for integers.'</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="k">elif</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">'factorial is not defined for negative numbers.'</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="k">elif</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Yn gyntaf mae’n gwirio a yw <code class="docutils literal notranslate"><span class="pre">n</span></code> yn gyfanrif. Os nad yw, mae’n dangos neges
+wall ac yn dychwelyd <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">factorial</span><span class="p">(</span><span class="s1">'crunchy frog'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Yna mae’n gwirio a yw <code class="docutils literal notranslate"><span class="pre">n</span></code> yn negatif. Os felly, mae’n dangos neges wall ac yn
+dychwelyd <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">factorial</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Os awn heibio i’r ddau wiriad, rydym yn gwybod bod <code class="docutils literal notranslate"><span class="pre">n</span></code> yn gyfanrif
+anghnegyddol, felly gallwn fod yn hyderus y bydd y dychweliad yn terfynu.
+Gelwir gwirio paramedrau swyddogaeth i wneud yn siŵr bod ganddynt y mathau a’r
+gwerthoedd cywir yn <strong><a class="reference internal" href="../glossary.html#term-dilysu-mewnbwn"><span class="xref std std-term">dilysu mewnbwn</span></a></strong>.</p>
+</section>
+<section id="dadnamu">
+<h2><span class="section-number">6.10. </span>Dadnamu<a class="headerlink" href="#dadnamu" title="Link to this heading">#</a></h2>
+<p>Mae rhannu rhaglen fawr yn swyddogaethau llai yn creu mannau gwirio naturiol
+ar gyfer dadnamu. Os nad yw swyddogaeth yn gweithio, mae tri phosibilrwydd i’w
+hystyried:</p>
+<ul class="simple">
+<li><p>Mae rhywbeth o’i le ar y dadleuon y mae’r swyddogaeth yn eu cael — hynny
+yw, mae rhag-amod wedi’i dorri.</p></li>
+<li><p>Mae rhywbeth o’i le ar y swyddogaeth — hynny yw, mae ôl-amod wedi’i dorri.</p></li>
+<li><p>Mae’r galwr yn gwneud rhywbeth o’i le gyda’r gwerth dychwelyd.</p></li>
+</ul>
+<p>I ddiystyru’r posibilrwydd cyntaf, gallwch ychwanegu gosodiad <code class="docutils literal notranslate"><span class="pre">print</span></code> ar
+ddechrau’r swyddogaeth sy’n dangos gwerthoedd y paramedrau (ac efallai eu
+mathau). Neu gallwch ysgrifennu cod sy’n gwirio’r rhag-amodau’n benodol.</p>
+<p>Os yw’r paramedrau’n edrych yn iawn, gallwch ychwanegu gosodiad <code class="docutils literal notranslate"><span class="pre">print</span></code> cyn
+pob gosodiad <code class="docutils literal notranslate"><span class="pre">return</span></code> a dangos y gwerth dychwelyd. Os yn bosibl, galwch y
+swyddogaeth gyda dadleuon sy’n ei gwneud yn hawdd gwirio’r canlyniad.</p>
+<p>Os yw’r swyddogaeth i’w gweld yn gweithio, edrychwch ar yr alwad swyddogaeth i
+wneud yn siŵr bod y gwerth dychwelyd yn cael ei ddefnyddio’n gywir — neu ei
+ddefnyddio o gwbl!</p>
+<p>Gall ychwanegu gosodiadau <code class="docutils literal notranslate"><span class="pre">print</span></code> ar ddechrau a diwedd swyddogaeth helpu i
+wneud llif cyflawniad yn fwy gweladwy. Er enghraifft, dyma fersiwn o
+<code class="docutils literal notranslate"><span class="pre">factorial</span></code> gyda gosodiadau print:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">space</span> <span class="o">=</span> <span class="s1">' '</span> <span class="o">*</span> <span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">n</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">space</span><span class="p">,</span> <span class="s1">'factorial'</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">space</span><span class="p">,</span> <span class="s1">'returning 1'</span><span class="p">)</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">recurse</span> <span class="o">=</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">n</span> <span class="o">*</span> <span class="n">recurse</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">space</span><span class="p">,</span> <span class="s1">'returning'</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">result</span>
+</pre></div>
+</div>
+<p>Mae <code class="docutils literal notranslate"><span class="pre">space</span></code> yn llinyn o nodau bwlch sy’n rheoli mewnoliad yr allbwn. Dyma
+ganlyniad <code class="docutils literal notranslate"><span class="pre">factorial(3)</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">factorial</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Os ydych wedi drysu ynghylch llif cyflawniad, gall y math hwn o allbwn fod yn
+ddefnyddiol. Mae’n cymryd peth amser i ddatblygu sgaffaldiau effeithiol, ond
+gall ychydig o sgaffaldiau arbed llawer o ddadnamu.</p>
+</section>
+<section id="rhestr-termau-r-bennod">
+<h2><span class="section-number">6.11. </span>Rhestr Termau’r Bennod<a class="headerlink" href="#rhestr-termau-r-bennod" title="Link to this heading">#</a></h2>
+<p><strong>gwerth dychwelyd:</strong>
+Canlyniad swyddogaeth. Os defnyddir galwad swyddogaeth fel mynegiad, y gwerth
+dychwelyd yw gwerth y mynegiad.</p>
+<p><strong>swyddogaeth bur:</strong>
+Swyddogaeth nad yw’n dangos dim byd nac yn cael unrhyw effaith arall, heblaw
+dychwelyd gwerth dychwelyd.</p>
+<p><strong>cod marw:</strong>
+Rhan o raglen na all byth redeg, yn aml am ei bod yn ymddangos ar ôl gosodiad
+<code class="docutils literal notranslate"><span class="pre">return</span></code>.</p>
+<p><strong>datblygiad graddol:</strong>
+Cynllun datblygu rhaglenni a fwriedir i osgoi dadnamu drwy ychwanegu a phrofi
+dim ond ychydig o god ar y tro.</p>
+<p><strong>sgaffaldiau:</strong>
+Cod a ddefnyddir yn ystod datblygiad rhaglen ond nad yw’n rhan o’r fersiwn
+derfynol.</p>
+<p><strong>Turing-gyflawn:</strong>
+Mae iaith, neu is-set o iaith, yn Turing-gyflawn os gall berfformio unrhyw
+gyfrifiant y gellir ei ddisgrifio gan algorithm.</p>
+<p><strong>dilysu mewnbwn:</strong>
+Gwirio paramedrau swyddogaeth i wneud yn siŵr bod ganddynt y mathau a’r
+gwerthoedd cywir.</p>
+</section>
+<section id="ymarferion">
+<h2><span class="section-number">6.12. </span>Ymarferion<a class="headerlink" href="#ymarferion" title="Link to this heading">#</a></h2>
+<section id="gofyn-i-gynorthwyydd-rhithwir">
+<h3><span class="section-number">6.12.1. </span>Gofyn i gynorthwyydd rhithwir<a class="headerlink" href="#gofyn-i-gynorthwyydd-rhithwir" title="Link to this heading">#</a></h3>
+<p>Yn y bennod hon, gwelsom swyddogaeth anghywir a all ddod i ben heb ddychwelyd
+gwerth.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">absolute_value_wrong</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="o">-</span><span class="n">x</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">x</span>
+</pre></div>
+</div>
+<p>A fersiwn o’r un swyddogaeth sydd â chod marw ar y diwedd.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">absolute_value_extra_return</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="o">-</span><span class="n">x</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">x</span>
+    
+    <span class="k">return</span> <span class="s1">'This is dead code.'</span>
+</pre></div>
+</div>
+<p>A gwelsom yr enghraifft ganlynol, sy’n gywir ond nad yw’n idiomatig.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">is_divisible</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="n">y</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+</pre></div>
+</div>
+<p>Gofynnwch i gynorthwyydd rhithwir beth sydd o’i le gyda phob un o’r
+swyddogaethau hyn a gweler a all nodi’r gwallau neu wella’r arddull.</p>
+<p>Yna gofynnwch “Ysgrifennwch swyddogaeth sy’n cymryd cyfesurynnau dau bwynt ac
+yn cyfrifo’r pellter rhyngddynt.” Gweler a yw’r canlyniad yn debyg i’r fersiwn
+o <code class="docutils literal notranslate"><span class="pre">distance</span></code> a ysgrifennom yn y bennod hon.</p>
+</section>
+<section id="ymarfer">
+<h3><span class="section-number">6.12.2. </span>Ymarfer<a class="headerlink" href="#ymarfer" title="Link to this heading">#</a></h3>
+<p>Defnyddiwch ddatblygiad graddol i ysgrifennu swyddogaeth o’r enw <code class="docutils literal notranslate"><span class="pre">hypot</span></code> sy’n
+dychwelyd hyd hypotenws triongl ongl sgwâr o gael hydoedd y ddwy goes arall
+fel dadleuon.</p>
+<p>Sylwch: Mae swyddogaeth yn y modiwl math o’r enw <code class="docutils literal notranslate"><span class="pre">hypot</span></code> sy’n gwneud yr un
+peth, ond ni ddylech ei defnyddio ar gyfer yr ymarfer hwn!</p>
+<p>Hyd yn oed os gallwch ysgrifennu’r swyddogaeth yn gywir y tro cyntaf,
+dechreuwch gyda swyddogaeth sy’n dychwelyd <code class="docutils literal notranslate"><span class="pre">0</span></code> bob amser ac ymarferwch wneud
+newidiadau bach, gan brofi wrth fynd. Pan fyddwch wedi gorffen, dylai’r
+swyddogaeth ond ddychwelyd gwerth — ni ddylai ddangos unrhyw beth.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+</section>
+<section id="id1">
+<h3><span class="section-number">6.12.3. </span>Ymarfer<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>Ysgrifennwch swyddogaeth Boole, <code class="docutils literal notranslate"><span class="pre">is_between(x,</span> <span class="pre">y,</span> <span class="pre">z)</span></code>, sy’n dychwelyd <code class="docutils literal notranslate"><span class="pre">True</span></code>
+os yw <span class="math notranslate nohighlight">\(x &lt; y &lt; z\)</span> neu os yw <span class="math notranslate nohighlight">\(z &lt; y &lt; x\)</span>, a <code class="docutils literal notranslate"><span class="pre">False</span></code> fel arall.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+<p>Gallwch ddefnyddio’r enghreifftiau hyn i brofi eich swyddogaeth.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">is_between</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>  <span class="c1"># should be True</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">is_between</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># should be True</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">is_between</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># should be False</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">is_between</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># should be False</span>
+</pre></div>
+</div>
+</section>
+<section id="id2">
+<h3><span class="section-number">6.12.4. </span>Ymarfer<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>Diffinnir swyddogaeth Ackermann, <span class="math notranslate nohighlight">\(A(m, n)\)</span>, fel:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+A(m, n) = \begin{cases} 
+              n+1 &amp; \mbox{if } m = 0 \\ 
+        A(m-1, 1) &amp; \mbox{if } m &gt; 0 \mbox{ and } n = 0 \\ 
+A(m-1, A(m, n-1)) &amp; \mbox{if } m &gt; 0 \mbox{ and } n &gt; 0.
+\end{cases} 
+\end{aligned}\end{split}\]</div>
+<p>Ysgrifennwch swyddogaeth o’r enw <code class="docutils literal notranslate"><span class="pre">ackermann</span></code> sy’n gwerthuso swyddogaeth
+Ackermann. Beth sy’n digwydd os galwch <code class="docutils literal notranslate"><span class="pre">ackermann(5,</span> <span class="pre">5)</span></code>?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+<p>Gallwch ddefnyddio’r enghreifftiau hyn i brofi eich swyddogaeth.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ackermann</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># should be 29</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ackermann</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>  <span class="c1"># should be 61</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ackermann</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>  <span class="c1"># should be 125</span>
+</pre></div>
+</div>
+<p>Os galwch y swyddogaeth hon gyda gwerthoedd mwy na 4, cewch <code class="docutils literal notranslate"><span class="pre">RecursionError</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">expect</span> <span class="ne">RecursionError</span>
+
+<span class="n">ackermann</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>I weld pam, ychwanegwch osodiad print ar ddechrau’r swyddogaeth i ddangos
+gwerthoedd y paramedrau, ac yna rhedwch yr enghreifftiau eto.</p>
+</section>
+<section id="id3">
+<h3><span class="section-number">6.12.5. </span>Ymarfer<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>Mae rhif, <span class="math notranslate nohighlight">\(a\)</span>, yn bŵer o <span class="math notranslate nohighlight">\(b\)</span> os yw’n rhanadwy â <span class="math notranslate nohighlight">\(b\)</span> ac mae <span class="math notranslate nohighlight">\(a/b\)</span> yn bŵer o
+<span class="math notranslate nohighlight">\(b\)</span>. Ysgrifennwch swyddogaeth o’r enw <code class="docutils literal notranslate"><span class="pre">is_power</span></code> sy’n cymryd paramedrau <code class="docutils literal notranslate"><span class="pre">a</span></code> a
+<code class="docutils literal notranslate"><span class="pre">b</span></code> ac yn dychwelyd <code class="docutils literal notranslate"><span class="pre">True</span></code> os yw <code class="docutils literal notranslate"><span class="pre">a</span></code> yn bŵer o <code class="docutils literal notranslate"><span class="pre">b</span></code>. Sylwch: bydd yn rhaid i
+chi feddwl am yr achos sylfaenol.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+<p>Gallwch ddefnyddio’r enghreifftiau hyn i brofi eich swyddogaeth.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">is_power</span><span class="p">(</span><span class="mi">65536</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>   <span class="c1"># should be True</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">is_power</span><span class="p">(</span><span class="mi">27</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>  <span class="c1"># should be True</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">is_power</span><span class="p">(</span><span class="mi">24</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># should be False</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">is_power</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">17</span><span class="p">)</span>   <span class="c1"># should be True</span>
+</pre></div>
+</div>
+</section>
+<section id="id4">
+<h3><span class="section-number">6.12.6. </span>Ymarfer<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p>Rhanwr cyffredin mwyaf (GCD) <span class="math notranslate nohighlight">\(a\)</span> a <span class="math notranslate nohighlight">\(b\)</span> yw’r rhif mwyaf sy’n rhannu’r ddau heb
+weddill.</p>
+<p>Un ffordd o ddarganfod GCD dau rif yw seiliedig ar yr arsylwad, os yw <span class="math notranslate nohighlight">\(r\)</span> yn
+weddill pan rennir <span class="math notranslate nohighlight">\(a\)</span> â <span class="math notranslate nohighlight">\(b\)</span>, bod <span class="math notranslate nohighlight">\(gcd(a, b) = gcd(b, r)\)</span>. Fel achos
+sylfaenol, gallwn ddefnyddio <span class="math notranslate nohighlight">\(gcd(a, 0) = a\)</span>.</p>
+<p>Ysgrifennwch swyddogaeth o’r enw <code class="docutils literal notranslate"><span class="pre">gcd</span></code> sy’n cymryd paramedrau <code class="docutils literal notranslate"><span class="pre">a</span></code> a <code class="docutils literal notranslate"><span class="pre">b</span></code> ac
+sy’n dychwelyd eu rhanwr cyffredin mwyaf.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+<p>Gallwch ddefnyddio’r enghreifftiau hyn i brofi eich swyddogaeth.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">gcd</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>    <span class="c1"># should be 4</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">gcd</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="mi">17</span><span class="p">)</span>   <span class="c1"># should be 1</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p><a class="reference external" href="https://allendowney.github.io/ThinkPython/index.html">Think Python: 3rd Edition</a> gan
+Allen B. Downey. Cyfieithiad Cymraeg gan Wayne Aubrey.</p>
+<p>Hawlfraint 2024 <a class="reference external" href="https://allendowney.com">Allen B. Downey</a>. Trwydded testun: <a class="reference external" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative
+Commons Attribution-NonCommercial-ShareAlike 4.0 International</a>.</p>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -462,6 +1271,42 @@
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mae-gan-rai-swyddogaethau-werthoedd-dychwelyd">6.1. Mae Gan Rai Swyddogaethau Werthoedd Dychwelyd</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-mae-gan-rai-none">6.2. A Mae Gan Rai None</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gwerthoedd-dychwelyd-ac-amodolion">6.3. Gwerthoedd Dychwelyd ac Amodolion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datblygiad-graddol">6.4. Datblygiad Graddol</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#swyddogaethau-boole">6.5. Swyddogaethau Boole</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dychweliad-gyda-gwerthoedd-dychwelyd">6.6. Dychweliad gyda Gwerthoedd Dychwelyd</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naid-o-ffydd">6.7. Naid o Ffydd</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fibonacci">6.8. Fibonacci</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gwirio-mathau">6.9. Gwirio Mathau</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dadnamu">6.10. Dadnamu</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rhestr-termau-r-bennod">6.11. Rhestr Termau’r Bennod</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ymarferion">6.12. Ymarferion</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gofyn-i-gynorthwyydd-rhithwir">6.12.1. Gofyn i gynorthwyydd rhithwir</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ymarfer">6.12.2. Ymarfer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">6.12.3. Ymarfer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">6.12.4. Ymarfer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">6.12.5. Ymarfer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">6.12.6. Ymarfer</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
