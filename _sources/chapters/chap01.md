@@ -1,6 +1,6 @@
 # Rhaglennu fel ffordd o feddwl
 
-Nod cyntaf y llyfr hwn yw dysgu i chi sut i raglennu yn Python.
+Nod cyntaf y llyfr hwn yw eich dysgu sut i raglennu yn Python.
 Ond mae dysgu rhaglennu yn golygu dysgu ffordd newydd o feddwl, felly ail nod y llyfr
 hwn yw eich helpu i feddwl fel gwyddonydd cyfrifiadurol.
 Mae'r ffordd hon o feddwl yn cyfuno rhai o nodweddion gorau mathemateg, peirianneg, a
