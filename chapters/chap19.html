@@ -62,7 +62,7 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../_static/tippy/chapters/chap19.9c8b6f87-ed57-4908-84ca-3a283e562666.js"></script>
+    <script defer="defer" src="../_static/tippy/chapters/chap19.3074fe8d-9b53-4558-bf1c-c11b309357d9.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/chap19';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -401,11 +401,90 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="meddyliau-terfynol">
 <h1><span class="section-number">19. </span>Meddyliau Terfynol<a class="headerlink" href="#meddyliau-terfynol" title="Link to this heading">#</a></h1>
-<div class="warning admonition">
-<p class="admonition-title">Statws cyfieithu</p>
-<p>Pennod heb ei chyfieithu eto. Ffynhonnell Saesneg: <strong>Final Thoughts</strong>
-(gweler y bennod wreiddiol yn <a class="reference external" href="https://allendowney.github.io/ThinkPython/">https://allendowney.github.io/ThinkPython/</a> ar gyfer y testun gwreiddiol).</p>
-</div>
+<p>Nid yw dysgu rhaglennu’n hawdd, ond os ydych wedi cyrraedd cyn belled â hyn, rydych
+wedi dechrau’n dda. Nawr mae gennyf rai awgrymiadau ar gyfer ffyrdd y gallwch barhau
+i ddysgu a chymhwyso’r hyn rydych wedi’i ddysgu.</p>
+<p>Bwriad y llyfr hwn yw bod yn gyflwyniad cyffredinol i raglennu, felly nid ydym wedi
+canolbwyntio ar gymwysiadau penodol. Yn dibynnu ar eich diddordebau, mae unrhyw nifer
+o feysydd lle gallwch gymhwyso’ch sgiliau newydd.</p>
+<p>Os oes gennych ddiddordeb mewn Gwyddor Data, mae tri llyfr gennyf y gallech eu
+mwynhau:</p>
+<ul class="simple">
+<li><p><em>Think Stats: Exploratory Data Analysis</em>, O’Reilly Media, 2014.</p></li>
+<li><p><em>Think Bayes: Bayesian Statistics in Python</em>, O’Reilly Media, 2021.</p></li>
+<li><p><em>Think DSP: Digital Signal Processing in Python</em>, O’Reilly Media, 2016.</p></li>
+</ul>
+<p>Os oes gennych ddiddordeb mewn modelu ffisegol a systemau cymhleth, efallai yr
+hoffech:</p>
+<ul class="simple">
+<li><p><em>Modeling and Simulation in Python: An Introduction for Scientists and Engineers</em>,
+No Starch Press, 2023.</p></li>
+<li><p><em>Think Complexity: Complexity Science and Computational Modeling</em>, O’Reilly Media,
+2018.</p></li>
+</ul>
+<p>Mae’r rhain yn defnyddio NumPy, SciPy, pandas, a llyfrgelloedd Python eraill ar gyfer
+gwyddor data a chyfrifiadura gwyddonol.</p>
+<p>Mae’r llyfr hwn yn ceisio dod o hyd i gydbwysedd rhwng egwyddorion cyffredinol
+rhaglennu a manylion Python. O ganlyniad, nid yw’n cynnwys pob nodwedd o’r iaith
+Python. Am ragor am Python, a chyngor da ar sut i’w defnyddio, rwy’n argymell <em>Fluent
+Python: Clear, Concise, and Effective Programming</em>, ail argraffiad gan Luciano
+Ramalho, O’Reilly Media, 2022.</p>
+<p>Ar ôl cyflwyniad i raglennu, cam nesaf cyffredin yw dysgu am strwythurau data ac
+algorithmau. Mae gennyf waith ar y gweill ar y pwnc hwn, o’r enw <em>Data Structures and
+Information Retrieval in Python</em>. Mae fersiwn electronig am ddim ar gael gan Green
+Tea Press yn <a class="reference external" href="https://greenteapress.com">https://greenteapress.com</a>.</p>
+<p>Wrth i chi weithio ar raglenni mwy cymhleth, byddwch yn dod ar draws heriau newydd.
+Efallai y byddwch yn ei chael hi’n ddefnyddiol adolygu’r adrannau yn y llyfr hwn am
+ddadnamu. Yn arbennig, cofiwch Chwe R dadnamu ym Mhennod 12: darllen, rhedeg,
+myfyrio, hwyaden-rwberu, cilio, a gorffwys.</p>
+<p>Mae’r llyfr hwn yn awgrymu teclynnau i helpu gyda dadnamu, gan gynnwys y swyddogaethau
+<code class="docutils literal notranslate"><span class="pre">print</span></code> a <code class="docutils literal notranslate"><span class="pre">repr</span></code>, y swyddogaeth <code class="docutils literal notranslate"><span class="pre">structshape</span></code> ym
+<a class="reference internal" href="chap11.html#section-debugging-11"><span class="std std-ref">Mhennod 11</span></a> — a’r swyddogaethau cynhenid <code class="docutils literal notranslate"><span class="pre">isinstance</span></code>,
+<code class="docutils literal notranslate"><span class="pre">hasattr</span></code>, a <code class="docutils literal notranslate"><span class="pre">vars</span></code> ym Mhennod 14.</p>
+<p>Mae hefyd yn awgrymu teclynnau ar gyfer profi rhaglenni, gan gynnwys y gosodiad
+<code class="docutils literal notranslate"><span class="pre">assert</span></code>, y modiwl <code class="docutils literal notranslate"><span class="pre">doctest</span></code>, a’r modiwl <code class="docutils literal notranslate"><span class="pre">unittest</span></code>. Mae cynnwys profion yn eich
+rhaglenni’n un o’r ffyrdd gorau o atal a chanfod gwallau, ac arbed amser dadnamu.</p>
+<p>Ond y math gorau o ddadnamu yw’r math nad oes rhaid i chi ei wneud. Os defnyddiwch
+broses ddatblygu raddol fel y disgrifiwyd ym Mhennod 6 — a phrofi wrth fynd — byddwch
+yn gwneud llai o wallau ac yn dod o hyd iddynt yn gyflymach pan wnewch. Hefyd,
+cofiwch amgaead a chyffredinoli o Bennod 4, sy’n arbennig o ddefnyddiol pan fyddwch yn
+datblygu cod mewn llyfrau nodiadau Jupyter.</p>
+<p>Ar hyd y llyfr hwn, rwyf wedi awgrymu ffyrdd o ddefnyddio cynorthwywyr rhithwir i’ch
+helpu i ddysgu, rhaglennu, a dadnamu. Rwy’n gobeithio eich bod yn gweld y teclynnau
+hyn yn ddefnyddiol.</p>
+<p>Yn ychwanegol at gynorthwywyr rhithwir fel ChatGPT, efallai yr hoffech hefyd ddefnyddio
+teclyn fel Copilot sy’n awtogwblhau cod wrth i chi deipio. Ni argymhellais ddefnyddio’r
+teclynnau hyn, yn wreiddiol, am y gallant fod yn llethol i ddechreuwyr. Ond efallai yr
+hoffech eu harchwilio nawr.</p>
+<p>Mae defnyddio teclynnau AI yn effeithiol yn gofyn am rywfaint o arbrofi a myfyrio i
+ddod o hyd i lif sy’n gweithio i chi. Os ydych yn meddwl ei bod yn niwsans copïo cod
+o ChatGPT i Jupyter, efallai y byddai’n well gennych rywbeth fel Copilot. Ond gall y
+gwaith gwybyddol a wnewch i lunio anogiad a dehongli’r ymateb fod mor werthfawr â’r
+cod y mae’r teclyn yn ei gynhyrchu, yn yr un modd â dadnamu hwyaden rwber.</p>
+<p>Wrth i chi ennill profiad rhaglennu, efallai yr hoffech archwilio amgylcheddau
+datblygu eraill. Rwy’n credu bod llyfrau nodiadau Jupyter yn lle da i ddechrau, ond
+maent yn gymharol newydd ac nid ydynt mor eang eu defnydd ag amgylcheddau datblygu
+integredig confensiynol (IDE). Ar gyfer Python, mae’r IDEau mwyaf poblogaidd yn
+cynnwys PyCharm a Spyder — a Thonny, sy’n cael ei argymell yn aml ar gyfer
+dechreuwyr. Mae IDEau eraill, fel Visual Studio Code ac Eclipse, yn gweithio ag
+ieithoedd rhaglennu eraill hefyd. Neu, fel dewis arall symlach, gallwch ysgrifennu
+rhaglenni Python gan ddefnyddio unrhyw olygydd testun yr hoffech ei ddefnyddio.</p>
+<p>Wrth i chi barhau â’ch taith raglennu, nid oes rhaid i chi fynd ar eich pen eich hun!
+Os ydych yn byw mewn neu ger dinas, mae siawns dda bod grŵp defnyddwyr Python y
+gallwch ymuno ag ef. Mae’r grwpiau hyn fel arfer yn gyfeillgar i ddechreuwyr, felly
+peidiwch â bod ag ofn. Os nad oes grŵp ger eich cartref, efallai y gallwch ymuno â
+digwyddiadau o bell. Hefyd, cadwch lygad am gynadleddau Python rhanbarthol.</p>
+<p>Un o’r ffyrdd gorau o wella’ch sgiliau rhaglennu yw dysgu iaith arall. Os oes gennych
+ddiddordeb mewn ystadegau a gwyddor data, efallai yr hoffech ddysgu R. Ond rwy’n
+argymell yn arbennig ddysgu iaith swyddogaethol fel Racket neu Elixir. Mae rhaglennu
+swyddogaethol yn gofyn am fath gwahanol o feddwl, sy’n newid y ffordd rydych yn
+meddwl am raglenni.</p>
+<p>Pob lwc!</p>
+<hr class="docutils" />
+<p><a class="reference external" href="https://allendowney.github.io/ThinkPython/index.html">Think Python: 3rd Edition</a> gan
+Allen B. Downey. Cyfieithiad Cymraeg gan Wayne Aubrey.</p>
+<p>Hawlfraint 2024 <a class="reference external" href="https://allendowney.com">Allen B. Downey</a>. Trwydded testun: <a class="reference external" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative
+Commons Attribution-NonCommercial-ShareAlike 4.0 International</a>.</p>
 </section>
 
     <script type="text/x-thebe-config">
