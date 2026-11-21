@@ -890,6 +890,7 @@ Yn ôl "Codes and Secret Writing" gan Zim, mae'r dilyniant o lythrennau yn
 nhrefn leihaol amlder yn Saesneg yn dechrau gyda "ETAONRISH". Sut mae'r
 dilyniant hwn yn cymharu â'r canlyniadau o *Dracula*?
 
+(section_exercise_11)=
 ### Ymarfer
 
 Mewn ymarfer blaenorol, profom a yw dau linyn yn anagramau drwy drefnu

@@ -310,6 +310,25 @@ research).
 | bigram / trigram / n-gram | deuair / triair / n-air | 🟡 | compositional from *gair* (word) + number prefixes, parallel pattern to the English bi-/tri-/n- |
 | rubber duck debugging | dadnamu hwyaden rwber | ✅ | compositional, playful but transparent |
 
+## Chapter 13 vocabulary (files, paths, YAML, shelve databases, hashing)
+
+| English | Welsh | Status | Notes |
+|---|---|---|---|
+| ephemeral | darfodedig | ✅ | ordinary Welsh word "transient/perishable" |
+| persistent | parhaus | ✅ | ordinary Welsh word "continuous/lasting" |
+| directory | cyfeiriadur | ✅ | standard Welsh computing term for file-system directory |
+| current working directory | cyfeiriadur gwaith cyfredol | ✅ | compositional, all ordinary words |
+| path / relative path / absolute path | llwybr / llwybr cymharol / llwybr absoliwt | ✅ | *llwybr* ordinary word "path"; *absoliwt* already confirmed (ch6, "gwerth absoliwt") |
+| f-string | llinyn-f | ✅ | keeps the literal "f" since it's the actual Python syntax marker |
+| configuration data | data cyfluniad | ✅ | *cyfluniad* = configuration, from *cyflunio* (to configure) |
+| serialization / deserialization | cyfresu / dadgyfresu | 🟡 | *cyfresu* from *cyfres* (series); *dad-* prefix parallel to *dadbacio* |
+| database | cronfa ddata | ✅ | extremely well-established standard Welsh term (government/tech usage) |
+| key-value store | storfa allwedd-gwerth | ✅ | *storfa* = store/storage facility, distinct from retail "siop" |
+| binary mode | modd deuaidd | ✅ | reuses *deuaidd* (binary) from "chwiliad deuaidd" (binary search) |
+| digest (hash digest) | crynodeb | ✅ | ordinary Welsh word "summary," natural extension |
+
+Reused without change: *swyddogaeth hash* (hash function, from ch10).
+
 ## Important pattern to carry into translation
 
 In the official WJEC pseudocode (used throughout the Welsh-medium exam), **programming
