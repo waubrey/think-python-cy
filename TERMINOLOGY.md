@@ -329,6 +329,22 @@ research).
 
 Reused without change: *swyddogaeth hash* (hash function, from ch10).
 
+## Chapter 14 vocabulary (classes, attributes, instantiation, dev plans)
+
+| English | Welsh | Status | Notes |
+|---|---|---|---|
+| class object | gwrthrych dosbarth | ✅ | compositional, both roots already confirmed |
+| instantiation | enghreifftiad | ✅ | noun form of *enghraifft* (instance), following standard Welsh *-iad* process-noun pattern |
+| object diagram | diagram gwrthrych | ✅ | compositional |
+| format specifier | penodwr fformat | 🟡 | *penodwr* (specifier) from *penodi* (to specify/designate) |
+| functional programming style | arddull rhaglennu swyddogaethol | ✅ | compositional, all roots already confirmed |
+| prototype and patch | prototeip a chlwt | ✅ | *prototeip* direct cognate; *clwt* = ordinary Welsh word for a patch |
+| design-first development | datblygu dylunio-yn-gyntaf | ✅ | compositional, all roots already confirmed |
+
+Reused without change: *rhaglennu gwrthrych-gyfeiriadol* (OOP), *dosbarth*
+(class), *enghraifft* (instance), *priodoledd* (attribute), *swyddogaeth bur*
+(pure function) — all already in the glossary.
+
 ## Important pattern to carry into translation
 
 In the official WJEC pseudocode (used throughout the Welsh-medium exam), **programming
