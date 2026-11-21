@@ -146,6 +146,21 @@ OOP terms.
 | debugging / debug | dadnamu | 🟡 | same localization convention as *nam* above (*dad-* + *nam* = "de-fault", i.e. remove the bug) |
 | concatenation | cydgatenu | 🟡 | calque matching English's own Latin root (*catena* = chain) — lowest-confidence pick in this batch, worth a second look |
 
+## Chapter 2 vocabulary (statements, modules, debugging categories)
+
+| English | Welsh | Status | Notes |
+|---|---|---|---|
+| statement | gosodiad | 🟡 | *gosod* = to set/place; very standard-feeling CS sense extension, not freshly sourced |
+| assignment statement | gosodiad neilltuad | 🟡 | compositional, built from confirmed *neilltuad* (assignment) |
+| state diagram | diagram cyflwr | 🟡 | *cyflwr* = state/condition, transparent compound |
+| keyword | allweddair | 🟡 | *allwedd* (key) + *gair* (word) — transparent, low-risk compound |
+| import statement | gosodiad mewnforio | 🟡 | *mewnforio* is the standard Welsh verb for "import" generally (trade, IT) |
+| dot operator | gweithredydd dot | 🟡 | "dot" borrowed directly rather than using *atalnod llawn* (full stop), since this is the punctuation-as-syntax sense, not prose punctuation |
+| evaluate / evaluation | gwerthuso | 🟡 | reused from the general Welsh verb "to evaluate/assess" (same word used for "evaluating trade-offs" in ch1) — dual-use caveat: context should make clear whether it means general assessment or "compute the value of an expression" |
+| execution | cyflawniad | 🟡 | *cyflawni* = to accomplish/carry out. Deliberately NOT *gweithrediad*, which is already used for "operation" — avoids a collision between two distinct CS concepts sharing one Welsh word |
+| runtime error | gwall rhedeg | 🟡 | *rhedeg* = to run, already used informally for "running" a program/line of code |
+| semantic error | gwall semantig | ✅ | direct cognate, low risk |
+
 ## Important pattern to carry into translation
 
 In the official WJEC pseudocode (used throughout the Welsh-medium exam), **programming

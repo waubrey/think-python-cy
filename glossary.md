@@ -219,4 +219,34 @@ Rhyngwyneb Defnyddiwr Graffigol (GUI)
 
 teclyn
     widget
+
+gosodiad
+    statement
+
+gosodiad neilltuad
+    assignment statement
+
+diagram cyflwr
+    state diagram
+
+allweddair
+    keyword
+
+gosodiad mewnforio
+    import statement
+
+gweithredydd dot
+    dot operator
+
+gwerthuso
+    evaluate / evaluation
+
+cyflawniad
+    execution
+
+gwall rhedeg
+    runtime error
+
+gwall semantig
+    semantic error
 ```
