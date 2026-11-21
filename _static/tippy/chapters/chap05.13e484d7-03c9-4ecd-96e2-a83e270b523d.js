@@ -1,4 +1,4 @@
-selector_to_html = {"a[href=\"#newidynnau-a-gosodiadau\"]": "<h1 class=\"tippy-header\" style=\"margin-top: 0;\">Newidynnau a Gosodiadau<a class=\"headerlink\" href=\"#newidynnau-a-gosodiadau\" title=\"Link to this heading\">#</a></h1>"}
+selector_to_html = {"a[href=\"#amodau-ac-ailadroddiad-recursion\"]": "<h1 class=\"tippy-header\" style=\"margin-top: 0;\"><span class=\"section-number\">5. </span>Amodau ac Ailadroddiad (Recursion)<a class=\"headerlink\" href=\"#amodau-ac-ailadroddiad-recursion\" title=\"Link to this heading\">#</a></h1>"}
 skip_classes = ["headerlink", "sd-stretched-link"]
 
 window.onload = function () {
