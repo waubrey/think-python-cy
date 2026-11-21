@@ -345,6 +345,18 @@ Reused without change: *rhaglennu gwrthrych-gyfeiriadol* (OOP), *dosbarth*
 (class), *enghraifft* (instance), *priodoledd* (attribute), *swyddogaeth bur*
 (pure function) — all already in the glossary.
 
+## Chapter 15 vocabulary (methods, static methods, special methods, operator overloading)
+
+| English | Welsh | Status | Notes |
+|---|---|---|---|
+| object-oriented language | iaith wrthrych-gyfeiriadol | ✅ | reuses the already-confirmed *gwrthrych-gyfeiriadol* root |
+| receiver | derbynnydd | ✅ | ordinary Welsh word "receiver" |
+| static method / instance method / special method | dull statig / dull enghraifft / dull arbennig | ✅ | compositional, all roots ordinary or already confirmed |
+| operator overloading | gorlwytho gweithredydd | ✅ | *gorlwytho* (overload) is a standard Welsh word formation (*gor-* + *llwytho*) |
+| invariant | amod cyson | 🟡 | *cyson* (constant/consistent) already used for "consistency check" in ch12 |
+
+Reused without change: *dull* (method, confirmed since ch7).
+
 ## Important pattern to carry into translation
 
 In the official WJEC pseudocode (used throughout the Welsh-medium exam), **programming
