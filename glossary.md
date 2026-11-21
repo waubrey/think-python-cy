@@ -369,4 +369,31 @@ Turing-gyflawn
 
 dilysu mewnbwn
     input validation
+
+newidyn dolen
+    loop variable
+
+gwrthrych ffeil
+    file object
+
+diweddariad
+    update
+
+cychwyn
+    initialize
+
+cynyddu
+    increment
+
+lleihau
+    decrement
+
+gweithredydd neilltuo estynedig
+    augmented assignment operator
+
+llwyddo
+    pass (a test)
+
+methu
+    fail (a test)
 ```

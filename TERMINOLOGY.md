@@ -224,6 +224,23 @@ earlier via Y Termiadur Addysg).
 | Turing complete | Turing-gyflawn | 🟡 | named technical compound — kept "Turing" capitalized/untranslated, as a proper noun |
 | input validation | dilysu mewnbwn | ✅ | both roots already confirmed |
 
+## Chapter 7 vocabulary (loops over strings/files, updating variables, doctests)
+
+| English | Welsh | Status | Notes |
+|---|---|---|---|
+| loop variable | newidyn dolen | ✅ | compositional, both roots already confirmed |
+| file object | gwrthrych ffeil | ✅ | compositional |
+| method | dull | ✅ | already confirmed (UWTSD OOP research) |
+| update (assignment) | diweddariad | ✅ | ordinary Welsh word for "update" |
+| initialize | cychwyn | ✅ | ordinary Welsh verb "to start/initiate" |
+| increment / decrement | cynyddu / lleihau | ✅ | ordinary Welsh verbs "increase"/"decrease" |
+| augmented assignment operator | gweithredydd neilltuo estynedig | 🟡 | compositional, "estynedig" = extended/augmented |
+| pass (a test) | llwyddo | ✅ | ordinary Welsh verb "to succeed" |
+| fail (a test) | methu | ✅ | ordinary Welsh verb "to fail" |
+
+Reused without change: *cyfrif* (counter), *dull* (method), *chwiliad llinol*
+(linear search) — all already in the glossary.
+
 ## Important pattern to carry into translation
 
 In the official WJEC pseudocode (used throughout the Welsh-medium exam), **programming

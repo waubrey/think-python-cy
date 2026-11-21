@@ -376,6 +376,7 @@ def circle(radius):
 Mae gan y ddwy swyddogaeth hyn yr un rhyngwyneb — maent yn cymryd yr un
 paramedrau ac yn gwneud yr un peth — ond mae ganddynt wahanol sylweddoliadau.
 
+(section_docstring)=
 ## Llinynnau Dogfennu
 
 Mae **{term}`llinyn dogfennu`** yn llinyn ar ddechrau swyddogaeth sy'n esbonio'r
