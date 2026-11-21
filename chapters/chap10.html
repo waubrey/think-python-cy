@@ -62,7 +62,7 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../_static/tippy/chapters/chap10.6af97c84-395d-4bc3-ab3d-87b9af8603f8.js"></script>
+    <script defer="defer" src="../_static/tippy/chapters/chap10.5f99bbb3-9e45-42f8-98e8-b237ad3b8c42.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/chap10';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -155,6 +155,10 @@
     </div>
   
 
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
   
 </div>
 
@@ -374,7 +378,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -390,6 +396,32 @@
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mae-geiriadur-yn-fapio">10.1. Mae Geiriadur yn Fapio</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creu-geiriaduron">10.2. Creu Geiriaduron</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#y-gweithredydd-in">10.3. Y Gweithredydd in</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#casgliad-o-gyfrifon">10.4. Casgliad o Gyfrifon</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dolennu-a-geiriaduron">10.5. Dolennu a Geiriaduron</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rhestri-a-geiriaduron">10.6. Rhestri a Geiriaduron</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#casglu-rhestr">10.7. Casglu Rhestr</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nodiadau">10.8. Nodiadau</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dadnamu">10.9. Dadnamu</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rhestr-termau-r-bennod">10.10. Rhestr Termau’r Bennod</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ymarferion">10.11. Ymarferion</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gofyn-i-gynorthwyydd-rhithwir">10.11.1. Gofyn i gynorthwyydd rhithwir</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ymarfer">10.11.2. Ymarfer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">10.11.3. Ymarfer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">10.11.4. Ymarfer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">10.11.5. Ymarfer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">10.11.6. Ymarfer</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -401,11 +433,763 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="geiriaduron">
 <h1><span class="section-number">10. </span>Geiriaduron<a class="headerlink" href="#geiriaduron" title="Link to this heading">#</a></h1>
-<div class="warning admonition">
-<p class="admonition-title">Statws cyfieithu</p>
-<p>Pennod heb ei chyfieithu eto. Ffynhonnell Saesneg: <strong>Dictionaries</strong>
-(gweler y bennod wreiddiol yn <a class="reference external" href="https://allendowney.github.io/ThinkPython/">https://allendowney.github.io/ThinkPython/</a> ar gyfer y testun gwreiddiol).</p>
+<p>Mae’r bennod hon yn cyflwyno math cynhenid o’r enw geiriadur. Mae’n un o
+nodweddion gorau Python — ac yn floc adeiladu llawer o algorithmau effeithlon
+a chain.</p>
+<p>Byddwn yn defnyddio geiriaduron i gyfrifo nifer y geiriau unigryw mewn llyfr
+a nifer y troeon y mae pob un yn ymddangos. Ac yn yr ymarferion, byddwn yn
+defnyddio geiriaduron i ddatrys posau geiriau.</p>
+<section id="mae-geiriadur-yn-fapio">
+<h2><span class="section-number">10.1. </span>Mae Geiriadur yn Fapio<a class="headerlink" href="#mae-geiriadur-yn-fapio" title="Link to this heading">#</a></h2>
+<p>Mae <strong><a class="reference internal" href="../glossary.html#term-geiriadur"><span class="xref std std-term">geiriadur</span></a></strong> yn debyg i restr, ond yn fwy cyffredinol. Mewn
+rhestr, mae’n rhaid i’r mynegeion fod yn gyfanrifau; mewn geiriadur gallant
+fod yn (bron) unrhyw fath. Er enghraifft, tybiwch ein bod yn gwneud rhestr o
+eiriau rhifau, fel hyn.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'zero'</span><span class="p">,</span> <span class="s1">'one'</span><span class="p">,</span> <span class="s1">'two'</span><span class="p">]</span>
+</pre></div>
 </div>
+<p>Gallwn ddefnyddio cyfanrif fel mynegai i gael y gair cyfatebol.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">lst</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Ond tybiwch ein bod am fynd i’r cyfeiriad arall, a chwilio am air i gael y
+cyfanrif cyfatebol. Ni allwn wneud hynny gyda rhestr, ond gallwn gyda
+geiriadur. Byddwn yn dechrau drwy greu geiriadur gwag a’i neilltuo i
+<code class="docutils literal notranslate"><span class="pre">numbers</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">numbers</span>
+</pre></div>
+</div>
+<p>Mae’r cromfachau cyrliog, <code class="docutils literal notranslate"><span class="pre">{}</span></code>, yn cynrychioli geiriadur gwag. I ychwanegu
+eitemau at y geiriadur, byddwn yn defnyddio cromfachau sgwâr.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span><span class="p">[</span><span class="s1">'zero'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<p>Mae’r neilltuad hwn yn ychwanegu <strong><a class="reference internal" href="../glossary.html#term-eitem"><span class="xref std std-term">eitem</span></a></strong> at y geiriadur, sy’n
+cynrychioli cysylltiad <strong><a class="reference internal" href="../glossary.html#term-allwedd"><span class="xref std std-term">allwedd</span></a></strong> a <strong><a class="reference internal" href="../glossary.html#term-gwerth"><span class="xref std std-term">gwerth</span></a></strong>. Yn yr
+enghraifft hon, y llinyn <code class="docutils literal notranslate"><span class="pre">'zero'</span></code> yw’r allwedd a’r cyfanrif <code class="docutils literal notranslate"><span class="pre">0</span></code> yw’r gwerth.
+Os dangoswn y geiriadur, gwelwn ei fod yn cynnwys un eitem, sy’n cynnwys
+allwedd a gwerth wedi’u gwahanu gan golon, <code class="docutils literal notranslate"><span class="pre">:</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span>
+</pre></div>
+</div>
+<p>Gallwn ychwanegu mwy o eitemau fel hyn.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span><span class="p">[</span><span class="s1">'one'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">numbers</span><span class="p">[</span><span class="s1">'two'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">numbers</span>
+</pre></div>
+</div>
+<p>Nawr mae’r geiriadur yn cynnwys tair eitem.</p>
+<p>I chwilio am allwedd a chael y gwerth cyfatebol, rydym yn defnyddio’r
+gweithredydd cromfachau.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span><span class="p">[</span><span class="s1">'two'</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Os nad yw’r allwedd yn y geiriadur, cawn <code class="docutils literal notranslate"><span class="pre">KeyError</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">expect</span> <span class="ne">KeyError</span>
+<span class="n">numbers</span><span class="p">[</span><span class="s1">'three'</span><span class="p">]</span>
+
+</pre></div>
+</div>
+<p>Mae’r swyddogaeth <code class="docutils literal notranslate"><span class="pre">len</span></code> yn gweithio ar eiriaduron; mae’n dychwelyd nifer yr
+eitemau.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Mewn iaith fathemategol, mae geiriadur yn cynrychioli <strong><a class="reference internal" href="../glossary.html#term-mapio"><span class="xref std std-term">mapio</span></a></strong> o
+allweddi i werthoedd, felly gallwch hefyd ddweud bod pob allwedd yn “mapio
+i” werth. Yn yr enghraifft hon, mae pob gair rhif yn mapio i’r cyfanrif
+cyfatebol.</p>
+<p>Mae’r ffigur canlynol yn dangos y diagram cyflwr ar gyfer <code class="docutils literal notranslate"><span class="pre">numbers</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">diagram</span><span class="w"> </span><span class="kn">import</span> <span class="n">make_dict</span><span class="p">,</span> <span class="n">Binding</span><span class="p">,</span> <span class="n">Value</span>
+
+<span class="n">d1</span> <span class="o">=</span> <span class="n">make_dict</span><span class="p">(</span><span class="n">numbers</span><span class="p">,</span> <span class="n">dy</span><span class="o">=-</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">offsetx</span><span class="o">=</span><span class="mf">0.37</span><span class="p">)</span>
+<span class="n">binding1</span> <span class="o">=</span> <span class="n">Binding</span><span class="p">(</span><span class="n">Value</span><span class="p">(</span><span class="s1">'numbers'</span><span class="p">),</span> <span class="n">d1</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">diagram</span><span class="w"> </span><span class="kn">import</span> <span class="n">diagram</span><span class="p">,</span> <span class="n">adjust</span><span class="p">,</span> <span class="n">Bbox</span>
+
+<span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.83</span><span class="p">,</span> <span class="mf">1.24</span><span class="p">,</span> <span class="mf">0.49</span><span class="p">,</span> <span class="mf">0.85</span><span class="p">]</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">diagram</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
+<span class="n">bbox</span> <span class="o">=</span> <span class="n">binding1</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="c1"># adjust(x, y, bbox)</span>
+</pre></div>
+</div>
+<p>Cynrychiolir geiriadur gan flwch gyda’r gair “dict” y tu allan a’r eitemau y
+tu mewn. Cynrychiolir pob eitem gan allwedd a saeth yn pwyntio at werth. Mae’r
+dyfynodau’n nodi mai llinynnau yw’r allweddi yma, nid enwau newidynnau.</p>
+</section>
+<section id="creu-geiriaduron">
+<h2><span class="section-number">10.2. </span>Creu Geiriaduron<a class="headerlink" href="#creu-geiriaduron" title="Link to this heading">#</a></h2>
+<p>Yn yr adran flaenorol fe wnaethom greu geiriadur gwag ac ychwanegu eitemau un
+ar y tro gan ddefnyddio’r gweithredydd cromfachau. Yn lle hynny, gallem fod
+wedi creu’r geiriadur i gyd ar unwaith fel hyn.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'zero'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">'one'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">'two'</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Mae pob eitem yn cynnwys allwedd a gwerth wedi’u gwahanu gan golon. Mae’r
+eitemau wedi’u gwahanu gan atalnodau ac wedi’u hamgáu mewn cromfachau cyrliog.</p>
+<p>Ffordd arall o greu geiriadur yw defnyddio’r swyddogaeth <code class="docutils literal notranslate"><span class="pre">dict</span></code>. Gallwn
+wneud geiriadur gwag fel hyn.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">empty</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="n">empty</span>
+</pre></div>
+</div>
+<p>A gallwn wneud copi o eiriadur fel hyn.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numbers_copy</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+<span class="n">numbers_copy</span>
+</pre></div>
+</div>
+<p>Mae’n aml yn ddefnyddiol gwneud copi cyn perfformio gweithrediadau sy’n
+addasu geiriaduron.</p>
+</section>
+<section id="y-gweithredydd-in">
+<span id="section-dictionary-in-operator"></span><h2><span class="section-number">10.3. </span>Y Gweithredydd in<a class="headerlink" href="#y-gweithredydd-in" title="Link to this heading">#</a></h2>
+<p>Mae’r gweithredydd <code class="docutils literal notranslate"><span class="pre">in</span></code> yn gweithio ar eiriaduron hefyd; mae’n dweud wrthych
+a yw rhywbeth yn ymddangos fel <em>allwedd</em> yn y geiriadur.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s1">'one'</span> <span class="ow">in</span> <span class="n">numbers</span>
+</pre></div>
+</div>
+<p>Nid yw’r gweithredydd <code class="docutils literal notranslate"><span class="pre">in</span></code> yn gwirio a yw rhywbeth yn ymddangos fel gwerth.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="ow">in</span> <span class="n">numbers</span>
+</pre></div>
+</div>
+<p>I weld a yw rhywbeth yn ymddangos fel gwerth mewn geiriadur, gallwch
+ddefnyddio’r dull <code class="docutils literal notranslate"><span class="pre">values</span></code>, sy’n dychwelyd dilyniant o werthoedd, ac yna
+ddefnyddio’r gweithredydd <code class="docutils literal notranslate"><span class="pre">in</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="ow">in</span> <span class="n">numbers</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Mae’r eitemau mewn geiriadur Python yn cael eu storio mewn <strong><a class="reference internal" href="../glossary.html#term-tabl-hash"><span class="xref std std-term">tabl hash</span></a></strong>,
+sef ffordd o drefnu data sydd â phriodwedd ryfeddol: mae’r gweithredydd <code class="docutils literal notranslate"><span class="pre">in</span></code>
+yn cymryd tua’r un faint o amser ni waeth faint o eitemau sydd yn y geiriadur.
+Mae hynny’n ei gwneud hi’n bosibl ysgrifennu rhai algorithmau rhyfeddol o
+effeithlon.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">download</span><span class="p">(</span><span class="s1">'https://raw.githubusercontent.com/AllenDowney/ThinkPython/v3/words.txt'</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>I ddangos hyn, byddwn yn cymharu dau algorithm ar gyfer darganfod parau o
+eiriau lle mae un yn wrthdro’r llall — fel <code class="docutils literal notranslate"><span class="pre">stressed</span></code> a <code class="docutils literal notranslate"><span class="pre">desserts</span></code>. Byddwn
+yn dechrau drwy ddarllen y rhestr eiriau.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">word_list</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'words.txt'</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">word_list</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>A dyma <code class="docutils literal notranslate"><span class="pre">reverse_word</span></code> o’r bennod flaenorol.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">reverse_word</span><span class="p">(</span><span class="n">word</span><span class="p">):</span>
+    <span class="k">return</span> <span class="s1">''</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">reversed</span><span class="p">(</span><span class="n">word</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Mae’r swyddogaeth ganlynol yn dolennu drwy’r geiriau yn y rhestr. Ar gyfer
+pob un, mae’n gwrthdroi’r llythrennau ac yna’n gwirio a yw’r gair wedi’i
+wrthdroi yn y rhestr eiriau.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">too_slow</span><span class="p">():</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">word_list</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">reverse_word</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="ow">in</span> <span class="n">word_list</span><span class="p">:</span>
+            <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">count</span>
+</pre></div>
+</div>
+<p>Mae’r swyddogaeth hon yn cymryd mwy na munud i redeg. Y broblem yw bod y
+gweithredydd <code class="docutils literal notranslate"><span class="pre">in</span></code> yn gwirio’r geiriau yn y rhestr un ar y tro, gan ddechrau
+ar y dechrau. Os nad yw’n darganfod yr hyn mae’n chwilio amdano — sy’n
+digwydd y rhan fwyaf o’r amser — mae’n rhaid iddo chwilio yr holl ffordd i’r
+diwedd.</p>
+<p>I fesur pa mor hir y mae swyddogaeth yn ei gymryd, gallwn ddefnyddio <code class="docutils literal notranslate"><span class="pre">%time</span></code>,
+sef un o “orchmynion hud cynhenid” Jupyter. Nid yw’r gorchmynion hyn yn rhan
+o iaith Python, felly efallai na fyddant yn gweithio mewn amgylcheddau
+datblygu eraill.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># %time too_slow()</span>
+</pre></div>
+</div>
+<p>Ac mae’r gweithredydd <code class="docutils literal notranslate"><span class="pre">in</span></code> y tu mewn i’r ddolen, felly mae’n rhedeg unwaith
+ar gyfer pob gair. Gan fod mwy na 100,000 o eiriau yn y rhestr, ac ar gyfer
+pob un rydym yn gwirio mwy na 100,000 o eiriau, cyfanswm nifer y cymariaethau
+yw nifer y geiriau wedi’i sgwario — yn fras — sy’n bron 13 biliwn.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">word_list</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+</pre></div>
+</div>
+<p>Gallwn wneud y swyddogaeth hon yn llawer cyflymach gyda geiriadur. Mae’r
+ddolen ganlynol yn creu geiriadur sy’n cynnwys y geiriau fel allweddi.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">word_dict</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">word_list</span><span class="p">:</span>
+    <span class="n">word_dict</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>Mae’r gwerthoedd yn <code class="docutils literal notranslate"><span class="pre">word_dict</span></code> i gyd yn <code class="docutils literal notranslate"><span class="pre">1</span></code>, ond gallent fod yn unrhyw
+beth, am na fyddwn byth yn chwilio amdanynt — dim ond i wirio a yw allwedd
+yn bodoli y byddwn yn defnyddio’r geiriadur hwn.</p>
+<p>Nawr dyma fersiwn o’r swyddogaeth flaenorol sy’n disodli <code class="docutils literal notranslate"><span class="pre">word_list</span></code> â
+<code class="docutils literal notranslate"><span class="pre">word_dict</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">much_faster</span><span class="p">():</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">word_dict</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">reverse_word</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="ow">in</span> <span class="n">word_dict</span><span class="p">:</span>
+            <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">count</span>
+</pre></div>
+</div>
+<p>Mae’r swyddogaeth hon yn cymryd llai na chanfed ran o eiliad, felly mae tua
+10,000 o weithiau’n gyflymach na’r fersiwn flaenorol.</p>
+<p>Yn gyffredinol, mae’r amser y mae’n ei gymryd i ddarganfod elfen mewn rhestr
+yn gymesur â hyd y rhestr. Mae’r amser y mae’n ei gymryd i ddarganfod
+allwedd mewn geiriadur bron yn gyson — waeth beth fo nifer yr eitemau.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">time</span> <span class="n">much_faster</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="casgliad-o-gyfrifon">
+<h2><span class="section-number">10.4. </span>Casgliad o Gyfrifon<a class="headerlink" href="#casgliad-o-gyfrifon" title="Link to this heading">#</a></h2>
+<p>Tybiwch fod gennych linyn a’ch bod am gyfrif sawl gwaith y mae pob llythyren
+yn ymddangos. Mae geiriadur yn arf da ar gyfer y gwaith hwn. Byddwn yn
+dechrau gyda geiriadur gwag.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">counter</span> <span class="o">=</span> <span class="p">{}</span>
+</pre></div>
+</div>
+<p>Wrth i ni ddolennu drwy’r llythrennau yn y llinyn, tybiwch ein bod yn gweld
+y llythyren <code class="docutils literal notranslate"><span class="pre">'a'</span></code> am y tro cyntaf. Gallwn ei hychwanegu at y geiriadur fel
+hyn.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">counter</span><span class="p">[</span><span class="s1">'a'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>Mae’r gwerth <code class="docutils literal notranslate"><span class="pre">1</span></code> yn nodi ein bod wedi gweld y llythyren unwaith. Yn
+ddiweddarach, os gwelwn yr un llythyren eto, gallwn gynyddu’r cyfrif fel hyn.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">counter</span><span class="p">[</span><span class="s1">'a'</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>Nawr mae’r gwerth sy’n gysylltiedig ag <code class="docutils literal notranslate"><span class="pre">'a'</span></code> yn <code class="docutils literal notranslate"><span class="pre">2</span></code>, am ein bod wedi gweld y
+llythyren ddwywaith.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">counter</span>
+</pre></div>
+</div>
+<p>Mae’r swyddogaeth ganlynol yn defnyddio’r nodweddion hyn i gyfrif nifer y
+troeon y mae pob llythyren yn ymddangos mewn llinyn.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">value_counts</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
+    <span class="n">counter</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">string</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">letter</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">counter</span><span class="p">:</span>
+            <span class="n">counter</span><span class="p">[</span><span class="n">letter</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">counter</span><span class="p">[</span><span class="n">letter</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">counter</span>
+</pre></div>
+</div>
+<p>Bob tro drwy’r ddolen, os nad yw <code class="docutils literal notranslate"><span class="pre">letter</span></code> yn y geiriadur, rydym yn creu
+eitem newydd gydag allwedd <code class="docutils literal notranslate"><span class="pre">letter</span></code> a gwerth <code class="docutils literal notranslate"><span class="pre">1</span></code>. Os yw <code class="docutils literal notranslate"><span class="pre">letter</span></code> eisoes yn y
+geiriadur rydym yn cynyddu’r gwerth sy’n gysylltiedig â <code class="docutils literal notranslate"><span class="pre">letter</span></code>.</p>
+<p>Dyma enghraifft.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">counter</span> <span class="o">=</span> <span class="n">value_counts</span><span class="p">(</span><span class="s1">'brontosaurus'</span><span class="p">)</span>
+<span class="n">counter</span>
+</pre></div>
+</div>
+<p>Mae’r eitemau yn <code class="docutils literal notranslate"><span class="pre">counter</span></code> yn dangos bod y llythyren <code class="docutils literal notranslate"><span class="pre">'b'</span></code> yn ymddangos
+unwaith, <code class="docutils literal notranslate"><span class="pre">'r'</span></code> yn ymddangos ddwywaith, ac yn y blaen.</p>
+</section>
+<section id="dolennu-a-geiriaduron">
+<h2><span class="section-number">10.5. </span>Dolennu a Geiriaduron<a class="headerlink" href="#dolennu-a-geiriaduron" title="Link to this heading">#</a></h2>
+<p>Os defnyddiwch eiriadur mewn gosodiad <code class="docutils literal notranslate"><span class="pre">for</span></code>, mae’n traversio allweddi’r
+geiriadur. I ddangos hyn, gadewch i ni wneud geiriadur sy’n cyfrif y
+llythrennau yn <code class="docutils literal notranslate"><span class="pre">'banana'</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">counter</span> <span class="o">=</span> <span class="n">value_counts</span><span class="p">(</span><span class="s1">'banana'</span><span class="p">)</span>
+<span class="n">counter</span>
+</pre></div>
+</div>
+<p>Mae’r ddolen ganlynol yn argraffu’r allweddi, sef y llythrennau.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">counter</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>I argraffu’r gwerthoedd, gallwn ddefnyddio’r dull <code class="docutils literal notranslate"><span class="pre">values</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">counter</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>I argraffu’r allweddi a’r gwerthoedd, gallwn ddolennu drwy’r allweddi a
+chwilio am y gwerthoedd cyfatebol.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">counter</span><span class="p">:</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="n">counter</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Yn y bennod nesaf, fe welwn ffordd fwy cryno o wneud yr un peth.</p>
+</section>
+<section id="rhestri-a-geiriaduron">
+<h2><span class="section-number">10.6. </span>Rhestri a Geiriaduron<a class="headerlink" href="#rhestri-a-geiriaduron" title="Link to this heading">#</a></h2>
+<p>Gallwch roi rhestr mewn geiriadur fel gwerth. Er enghraifft, dyma eiriadur
+sy’n mapio o’r rhif <code class="docutils literal notranslate"><span class="pre">4</span></code> i restr o bedair llythyren.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="mi">4</span><span class="p">:</span> <span class="p">[</span><span class="s1">'r'</span><span class="p">,</span> <span class="s1">'o'</span><span class="p">,</span> <span class="s1">'u'</span><span class="p">,</span> <span class="s1">'s'</span><span class="p">]}</span>
+<span class="n">d</span>
+</pre></div>
+</div>
+<p>Ond ni allwch roi rhestr mewn geiriadur fel allwedd. Dyma beth sy’n digwydd
+os ceisiwn.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">expect</span> <span class="ne">TypeError</span>
+<span class="n">letters</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="s1">'abcd'</span><span class="p">)</span>
+<span class="n">d</span><span class="p">[</span><span class="n">letters</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4</span>
+</pre></div>
+</div>
+<p>Soniais yn gynharach bod geiriaduron yn defnyddio tablau hash, a bod hynny’n
+golygu bod yn rhaid i’r allweddi fod yn <strong><a class="reference internal" href="../glossary.html#term-hashadwy"><span class="xref std std-term">hashadwy</span></a></strong>.</p>
+<p>Mae <strong>hash</strong> yn swyddogaeth sy’n cymryd gwerth (o unrhyw fath) ac yn
+dychwelyd cyfanrif. Mae geiriaduron yn defnyddio’r cyfanrifau hyn, a elwir
+yn werthoedd hash, i storio ac i chwilio am allweddi.</p>
+<p>Dim ond os yw allwedd yn anghyfnewidiol y mae’r system hon yn gweithio, fel
+bod ei gwerth hash bob amser yr un fath. Ond os yw allwedd yn gyfnewidiol,
+gallai ei gwerth hash newid, ac ni fyddai’r geiriadur yn gweithio. Dyna pam
+mae’n rhaid i allweddi fod yn hashadwy, a pham nad yw mathau cyfnewidiol fel
+rhestri.</p>
+<p>Gan fod geiriaduron yn gyfnewidiol, ni ellir eu defnyddio fel allweddi,
+chwaith. Ond <em>gallant</em> gael eu defnyddio fel gwerthoedd.</p>
+</section>
+<section id="casglu-rhestr">
+<h2><span class="section-number">10.7. </span>Casglu Rhestr<a class="headerlink" href="#casglu-rhestr" title="Link to this heading">#</a></h2>
+<p>Ar gyfer llawer o dasgau rhaglennu, mae’n ddefnyddiol dolennu drwy un rhestr
+neu eiriadur wrth adeiladu un arall. Fel enghraifft, byddwn yn dolennu drwy’r
+geiriau yn <code class="docutils literal notranslate"><span class="pre">word_dict</span></code> ac yn gwneud rhestr o balindromau — hynny yw, geiriau
+sy’n cael eu sillafu’r un fath ymlaen ac yn ôl, fel “noon” a “rotator”.</p>
+<p>Yn y bennod flaenorol, gofynnodd un o’r ymarferion i chi ysgrifennu
+swyddogaeth sy’n gwirio a yw gair yn balindrom. Dyma ddatrysiad sy’n
+defnyddio <code class="docutils literal notranslate"><span class="pre">reverse_word</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">is_palindrome</span><span class="p">(</span><span class="n">word</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Check if a word is a palindrome."""</span>
+    <span class="k">return</span> <span class="n">reverse_word</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="o">==</span> <span class="n">word</span>
+</pre></div>
+</div>
+<p>Os dolennwn drwy’r geiriau yn <code class="docutils literal notranslate"><span class="pre">word_dict</span></code>, gallwn gyfrif nifer y
+palindromau fel hyn.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">word_dict</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">is_palindrome</span><span class="p">(</span><span class="n">word</span><span class="p">):</span>
+        <span class="n">count</span> <span class="o">+=</span><span class="mi">1</span>
+        
+<span class="n">count</span>
+</pre></div>
+</div>
+<p>Erbyn hyn, mae’r patrwm hwn yn gyfarwydd.</p>
+<ul class="simple">
+<li><p>Cyn y ddolen, cychwynnir <code class="docutils literal notranslate"><span class="pre">count</span></code> i <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p></li>
+<li><p>Y tu mewn i’r ddolen, os yw <code class="docutils literal notranslate"><span class="pre">word</span></code> yn balindrom, rydym yn cynyddu
+<code class="docutils literal notranslate"><span class="pre">count</span></code>.</p></li>
+<li><p>Pan ddaw’r ddolen i ben, mae <code class="docutils literal notranslate"><span class="pre">count</span></code> yn cynnwys cyfanswm nifer y
+palindromau.</p></li>
+</ul>
+<p>Gallwn ddefnyddio patrwm tebyg i wneud rhestr o balindromau.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">palindromes</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">word_dict</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">is_palindrome</span><span class="p">(</span><span class="n">word</span><span class="p">):</span>
+        <span class="n">palindromes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+
+<span class="n">palindromes</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Dyma sut mae’n gweithio:</p>
+<ul class="simple">
+<li><p>Cyn y ddolen, cychwynnir <code class="docutils literal notranslate"><span class="pre">palindromes</span></code> gyda rhestr wag.</p></li>
+<li><p>Y tu mewn i’r ddolen, os yw <code class="docutils literal notranslate"><span class="pre">word</span></code> yn balindrom, rydym yn ei ychwanegu at
+ddiwedd <code class="docutils literal notranslate"><span class="pre">palindromes</span></code>.</p></li>
+<li><p>Pan ddaw’r ddolen i ben, mae <code class="docutils literal notranslate"><span class="pre">palindromes</span></code> yn rhestr o balindromau.</p></li>
+</ul>
+<p>Yn y ddolen hon, defnyddir <code class="docutils literal notranslate"><span class="pre">palindromes</span></code> fel <strong><a class="reference internal" href="../glossary.html#term-cronwr"><span class="xref std std-term">cronwr</span></a></strong>, sef newidyn
+sy’n casglu neu’n cronni data yn ystod cyfrifiant.</p>
+<p>Nawr tybiwch ein bod am ddewis dim ond palindromau sydd â saith llythyren
+neu fwy. Gallwn ddolennu drwy <code class="docutils literal notranslate"><span class="pre">palindromes</span></code> a gwneud rhestr newydd sy’n
+cynnwys dim ond palindromau hir.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">long_palindromes</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">palindromes</span><span class="p">:</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">7</span><span class="p">:</span>
+        <span class="n">long_palindromes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+        
+<span class="n">long_palindromes</span>
+</pre></div>
+</div>
+<p>Gelwir dolennu drwy restr fel hyn, gan ddewis rhai elfennau a hepgor eraill,
+yn <strong><a class="reference internal" href="../glossary.html#term-hidlo"><span class="xref std std-term">hidlo</span></a></strong>.</p>
+</section>
+<section id="nodiadau">
+<h2><span class="section-number">10.8. </span>Nodiadau<a class="headerlink" href="#nodiadau" title="Link to this heading">#</a></h2>
+<p>Os rhedoch y swyddogaeth <code class="docutils literal notranslate"><span class="pre">fibonacci</span></code> o Bennod 6 (<a class="reference internal" href="chap06.html#section-fibonacci"><span class="std std-ref">Fibonacci</span></a>),
+efallai eich bod wedi sylwi, po fwyaf yw’r ddadl a roddwch, hwyaf yr amser y
+mae’r swyddogaeth yn ei gymryd i redeg.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+
+    <span class="k">return</span> <span class="n">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Hefyd, mae’r amser rhedeg yn cynyddu’n gyflym. I ddeall pam, ystyriwch y
+ffigur canlynol, sy’n dangos y <strong><a class="reference internal" href="../glossary.html#term-graff-galwadau"><span class="xref std std-term">graff galwadau</span></a></strong> ar gyfer
+<code class="docutils literal notranslate"><span class="pre">fibonacci</span></code> gyda <code class="docutils literal notranslate"><span class="pre">n=4</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">diagram</span><span class="w"> </span><span class="kn">import</span> <span class="n">make_binding</span><span class="p">,</span> <span class="n">Frame</span><span class="p">,</span> <span class="n">Arrow</span>
+
+<span class="n">bindings</span> <span class="o">=</span> <span class="p">[</span><span class="n">make_binding</span><span class="p">(</span><span class="s1">'n'</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)]</span>
+<span class="n">frames</span> <span class="o">=</span> <span class="p">[</span><span class="n">Frame</span><span class="p">([</span><span class="n">binding</span><span class="p">])</span> <span class="k">for</span> <span class="n">binding</span> <span class="ow">in</span> <span class="n">bindings</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">arrowprops</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">arrowstyle</span><span class="o">=</span><span class="s2">"-"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'gray'</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">'-'</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">left_arrow</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">bbox1</span><span class="p">,</span> <span class="n">bbox2</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">bbox1</span><span class="o">.</span><span class="n">xmin</span> <span class="o">+</span> <span class="mf">0.1</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">bbox1</span><span class="o">.</span><span class="n">ymin</span>
+    <span class="n">dx</span> <span class="o">=</span> <span class="n">bbox2</span><span class="o">.</span><span class="n">xmax</span> <span class="o">-</span> <span class="n">x</span> <span class="o">-</span> <span class="mf">0.1</span>
+    <span class="n">dy</span> <span class="o">=</span> <span class="n">bbox2</span><span class="o">.</span><span class="n">ymax</span> <span class="o">-</span> <span class="n">y</span>
+    <span class="n">arrow</span> <span class="o">=</span> <span class="n">Arrow</span><span class="p">(</span><span class="n">dx</span><span class="o">=</span><span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="o">=</span><span class="n">dy</span><span class="p">,</span> <span class="n">arrowprops</span><span class="o">=</span><span class="n">arrowprops</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">arrow</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">right_arrow</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">bbox1</span><span class="p">,</span> <span class="n">bbox2</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">bbox1</span><span class="o">.</span><span class="n">xmax</span> <span class="o">-</span> <span class="mf">0.1</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">bbox1</span><span class="o">.</span><span class="n">ymin</span>
+    <span class="n">dx</span> <span class="o">=</span> <span class="n">bbox2</span><span class="o">.</span><span class="n">xmin</span> <span class="o">-</span> <span class="n">x</span> <span class="o">+</span> <span class="mf">0.1</span>
+    <span class="n">dy</span> <span class="o">=</span> <span class="n">bbox2</span><span class="o">.</span><span class="n">ymax</span> <span class="o">-</span> <span class="n">y</span>
+    <span class="n">arrow</span> <span class="o">=</span> <span class="n">Arrow</span><span class="p">(</span><span class="n">dx</span><span class="o">=</span><span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="o">=</span><span class="n">dy</span><span class="p">,</span> <span class="n">arrowprops</span><span class="o">=</span><span class="n">arrowprops</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">arrow</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">diagram</span><span class="w"> </span><span class="kn">import</span> <span class="n">diagram</span><span class="p">,</span> <span class="n">adjust</span><span class="p">,</span> <span class="n">Bbox</span>
+
+<span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mf">4.94</span><span class="p">,</span> <span class="mf">2.16</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.03</span><span class="p">,</span> <span class="mf">1.91</span><span class="p">]</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">diagram</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
+
+<span class="n">dx</span> <span class="o">=</span> <span class="mf">0.6</span>
+<span class="n">dy</span> <span class="o">=</span> <span class="mf">0.55</span>
+
+<span class="n">bboxes</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">bboxes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">frames</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">x</span><span class="o">+</span><span class="mi">6</span><span class="o">*</span><span class="n">dx</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+
+<span class="n">bboxes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">frames</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">x</span><span class="o">+</span><span class="mi">4</span><span class="o">*</span><span class="n">dx</span><span class="p">,</span> <span class="n">y</span><span class="o">-</span><span class="n">dy</span><span class="p">))</span>
+<span class="n">bboxes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">frames</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">x</span><span class="o">+</span><span class="mi">8</span><span class="o">*</span><span class="n">dx</span><span class="p">,</span> <span class="n">y</span><span class="o">-</span><span class="n">dy</span><span class="p">))</span>
+
+<span class="n">bboxes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">frames</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">x</span><span class="o">+</span><span class="mi">3</span><span class="o">*</span><span class="n">dx</span><span class="p">,</span> <span class="n">y</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">dy</span><span class="p">))</span>
+<span class="n">bboxes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">frames</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">x</span><span class="o">+</span><span class="mi">5</span><span class="o">*</span><span class="n">dx</span><span class="p">,</span> <span class="n">y</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">dy</span><span class="p">))</span>
+<span class="n">bboxes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">frames</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">x</span><span class="o">+</span><span class="mi">7</span><span class="o">*</span><span class="n">dx</span><span class="p">,</span> <span class="n">y</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">dy</span><span class="p">))</span>
+<span class="n">bboxes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">frames</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">x</span><span class="o">+</span><span class="mi">9</span><span class="o">*</span><span class="n">dx</span><span class="p">,</span> <span class="n">y</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">dy</span><span class="p">))</span>
+
+<span class="n">bboxes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">frames</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">x</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">dx</span><span class="p">,</span> <span class="n">y</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">dy</span><span class="p">))</span>
+<span class="n">bboxes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">frames</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">x</span><span class="o">+</span><span class="mi">4</span><span class="o">*</span><span class="n">dx</span><span class="p">,</span> <span class="n">y</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">dy</span><span class="p">))</span>
+
+<span class="n">left_arrow</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">bboxes</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">bboxes</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">left_arrow</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">bboxes</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">bboxes</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">left_arrow</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">bboxes</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">bboxes</span><span class="p">[</span><span class="mi">7</span><span class="p">])</span>
+<span class="n">left_arrow</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">bboxes</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">bboxes</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span>
+
+<span class="n">right_arrow</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">bboxes</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">bboxes</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">right_arrow</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">bboxes</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">bboxes</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
+<span class="n">right_arrow</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">bboxes</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">bboxes</span><span class="p">[</span><span class="mi">6</span><span class="p">])</span>
+<span class="n">right_arrow</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">bboxes</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">bboxes</span><span class="p">[</span><span class="mi">8</span><span class="p">])</span>
+
+<span class="n">bbox</span> <span class="o">=</span> <span class="n">Bbox</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">bboxes</span><span class="p">)</span>
+<span class="c1"># adjust(x, y, bbox)</span>
+</pre></div>
+</div>
+<p>Mae graff galwadau’n dangos set o fframiau swyddogaeth, gyda llinellau’n
+cysylltu pob ffram â fframiau’r swyddogaethau y mae’n eu galw. Ar frig y
+graff, mae <code class="docutils literal notranslate"><span class="pre">fibonacci</span></code> gyda <code class="docutils literal notranslate"><span class="pre">n=4</span></code> yn galw <code class="docutils literal notranslate"><span class="pre">fibonacci</span></code> gyda <code class="docutils literal notranslate"><span class="pre">n=3</span></code> ac <code class="docutils literal notranslate"><span class="pre">n=2</span></code>.
+Yn ei dro, mae <code class="docutils literal notranslate"><span class="pre">fibonacci</span></code> gyda <code class="docutils literal notranslate"><span class="pre">n=3</span></code> yn galw <code class="docutils literal notranslate"><span class="pre">fibonacci</span></code> gyda <code class="docutils literal notranslate"><span class="pre">n=2</span></code> ac
+<code class="docutils literal notranslate"><span class="pre">n=1</span></code>. Ac yn y blaen.</p>
+<p>Cyfrwch sawl gwaith y gelwir <code class="docutils literal notranslate"><span class="pre">fibonacci(0)</span></code> a <code class="docutils literal notranslate"><span class="pre">fibonacci(1)</span></code>. Mae hwn yn
+ddatrysiad aneffeithlon i’r broblem, ac mae’n gwaethygu wrth i’r ddadl fynd
+yn fwy.</p>
+<p>Un datrysiad yw cadw golwg ar werthoedd sydd eisoes wedi’u cyfrifo drwy eu
+storio mewn geiriadur. Gelwir gwerth a gyfrifwyd o’r blaen ac a storir i’w
+ddefnyddio’n ddiweddarach yn <strong><a class="reference internal" href="../glossary.html#term-nodyn"><span class="xref std std-term">nodyn</span></a></strong>. Dyma fersiwn “nodyn-ol” o
+<code class="docutils literal notranslate"><span class="pre">fibonacci</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">known</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">fibonacci_memo</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">known</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">known</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
+
+    <span class="n">res</span> <span class="o">=</span> <span class="n">fibonacci_memo</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fibonacci_memo</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">known</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">res</span>
+    <span class="k">return</span> <span class="n">res</span>
+</pre></div>
+</div>
+<p>Mae <code class="docutils literal notranslate"><span class="pre">known</span></code> yn eiriadur sy’n cadw golwg ar rifau Fibonacci rydym eisoes yn
+eu gwybod. Mae’n dechrau gyda dwy eitem: mae <code class="docutils literal notranslate"><span class="pre">0</span></code> yn mapio i <code class="docutils literal notranslate"><span class="pre">0</span></code> ac mae <code class="docutils literal notranslate"><span class="pre">1</span></code>
+yn mapio i <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
+<p>Pryd bynnag y gelwir <code class="docutils literal notranslate"><span class="pre">fibonacci_memo</span></code>, mae’n gwirio <code class="docutils literal notranslate"><span class="pre">known</span></code>. Os yw’r
+canlyniad eisoes yno, gall ddychwelyd ar unwaith. Fel arall mae’n rhaid
+iddo gyfrifo’r gwerth newydd, ei ychwanegu at y geiriadur, a’i ddychwelyd.</p>
+<p>Wrth gymharu’r ddwy swyddogaeth, mae <code class="docutils literal notranslate"><span class="pre">fibonacci(40)</span></code> yn cymryd tua 30
+eiliad i redeg. Mae <code class="docutils literal notranslate"><span class="pre">fibonacci_memo(40)</span></code> yn cymryd tua 30 microeiliad,
+felly mae tua miliwn o weithiau’n gyflymach. Yn llyfr nodiadau’r bennod hon,
+cewch weld o ble daw’r mesuriadau hyn.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># %time fibonacci(40)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">time</span> <span class="n">fibonacci_memo</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="dadnamu">
+<h2><span class="section-number">10.9. </span>Dadnamu<a class="headerlink" href="#dadnamu" title="Link to this heading">#</a></h2>
+<p>Wrth i chi weithio gyda setiau data mwy, gall ddod yn drwsgl dadnamu drwy
+argraffu a gwirio’r allbwn â llaw. Dyma rai awgrymiadau ar gyfer dadnamu
+setiau data mawr:</p>
+<ol class="arabic">
+<li><p>Lleihewch y mewnbwn: Os yn bosibl, lleihewch faint y set ddata. Er
+enghraifft, os yw’r rhaglen yn darllen ffeil destun, dechreuwch gyda dim
+ond y 10 llinell gyntaf, neu gyda’r enghraifft leiaf y gallwch ei
+darganfod. Gallwch naill ai olygu’r ffeiliau eu hunain, neu (yn well)
+addasu’r rhaglen fel ei bod ond yn darllen y <code class="docutils literal notranslate"><span class="pre">n</span></code> llinell gyntaf.</p>
+<p>Os oes gwall, gallwch leihau <code class="docutils literal notranslate"><span class="pre">n</span></code> i’r gwerth lleiaf lle mae’r gwall yn
+digwydd. Wrth i chi ddarganfod a chywiro gwallau, gallwch gynyddu <code class="docutils literal notranslate"><span class="pre">n</span></code>
+yn raddol.</p>
+</li>
+<li><p>Gwiriwch grynodebau a mathau: Yn lle argraffu a gwirio’r set ddata
+gyfan, ystyriwch argraffu crynodebau o’r data — er enghraifft, nifer yr
+eitemau mewn geiriadur neu gyfanswm rhestr o rifau.</p>
+<p>Achos cyffredin o wallau rhedeg yw gwerth nad yw o’r math cywir. I
+ddadnamu’r math hwn o wall, mae’n aml yn ddigon argraffu math gwerth.</p>
+</li>
+<li><p>Ysgrifennwch hunan-wiriadau: Weithiau gallwch ysgrifennu cod i wirio am
+wallau’n awtomatig. Er enghraifft, os ydych yn cyfrifo cyfartaledd
+rhestr o rifau, gallech wirio nad yw’r canlyniad yn fwy na’r elfen fwyaf
+yn y rhestr nac yn llai na’r lleiaf. Gelwir hyn yn “wiriad synnwyr” am ei
+fod yn canfod canlyniadau sy’n “ddiynsawdd”.</p>
+<p>Math arall o wiriad sy’n cymharu canlyniadau dau gyfrifiant gwahanol i
+weld a ydynt yn gyson. Gelwir hyn yn “wiriad cysondeb”.</p>
+</li>
+<li><p>Fformatiwch yr allbwn: Gall fformatio allbwn dadnamu ei gwneud yn haws
+sylwi ar wall. Gwelsom enghraifft ym Mhennod 6 (<a class="reference internal" href="chap06.html#section-debugging-factorial"><span class="std std-ref">Dadnamu</span></a>).
+Arf arall y gallech ei chael yn ddefnyddiol yw’r modiwl <code class="docutils literal notranslate"><span class="pre">pprint</span></code>, sy’n
+darparu swyddogaeth <code class="docutils literal notranslate"><span class="pre">pprint</span></code> sy’n dangos mathau cynhenid mewn fformat
+mwy darllenadwy i bobl (saif <code class="docutils literal notranslate"><span class="pre">pprint</span></code> am “pretty print”).</p>
+<p>Unwaith eto, gall amser a dreuliwch yn adeiladu sgaffaldiau leihau’r
+amser a dreuliwch yn dadnamu.</p>
+</li>
+</ol>
+</section>
+<section id="rhestr-termau-r-bennod">
+<h2><span class="section-number">10.10. </span>Rhestr Termau’r Bennod<a class="headerlink" href="#rhestr-termau-r-bennod" title="Link to this heading">#</a></h2>
+<p><strong>geiriadur:</strong>
+Gwrthrych sy’n cynnwys parau allwedd-gwerth, a elwir hefyd yn eitemau.</p>
+<p><strong>eitem:</strong>
+Mewn geiriadur, enw arall ar bâr allwedd-gwerth.</p>
+<p><strong>allwedd:</strong>
+Gwrthrych sy’n ymddangos mewn geiriadur fel rhan gyntaf pâr allwedd-gwerth.</p>
+<p><strong>gwerth:</strong>
+Gwrthrych sy’n ymddangos mewn geiriadur fel ail ran pâr allwedd-gwerth. Mae
+hyn yn fwy penodol na’n defnydd blaenorol o’r gair “gwerth”.</p>
+<p><strong>mapio:</strong>
+Perthynas lle mae pob elfen o un set yn cyfateb i elfen o set arall.</p>
+<p><strong>tabl hash:</strong>
+Casgliad o barau allwedd-gwerth wedi’u trefnu fel y gallwn chwilio am
+allwedd a darganfod ei gwerth yn effeithlon.</p>
+<p><strong>hashadwy:</strong>
+Mae mathau anghyfnewidiol fel cyfanrifau, rhifau pwynt arnawf, a llinynnau’n
+hashadwy. Nid yw mathau cyfnewidiol fel rhestri a geiriaduron.</p>
+<p><strong>swyddogaeth hash:</strong>
+Swyddogaeth sy’n cymryd gwrthrych ac yn cyfrifo cyfanrif a ddefnyddir i
+leoli allwedd mewn tabl hash.</p>
+<p><strong>cronwr:</strong>
+Newidyn a ddefnyddir mewn dolen i adio neu gronni canlyniad.</p>
+<p><strong>hidlo:</strong>
+Dolennu drwy ddilyniant a dewis neu hepgor elfennau.</p>
+<p><strong>graff galwadau:</strong>
+Diagram sy’n dangos pob ffram a grëwyd yn ystod cyflawniad rhaglen, gyda
+saeth o bob galwr i bob swyddogaeth a elwir.</p>
+<p><strong>nodyn:</strong>
+Gwerth a gyfrifwyd i’w storio er mwyn osgoi cyfrifiant diangen yn y
+dyfodol.</p>
+</section>
+<section id="ymarferion">
+<h2><span class="section-number">10.11. </span>Ymarferion<a class="headerlink" href="#ymarferion" title="Link to this heading">#</a></h2>
+<section id="gofyn-i-gynorthwyydd-rhithwir">
+<h3><span class="section-number">10.11.1. </span>Gofyn i gynorthwyydd rhithwir<a class="headerlink" href="#gofyn-i-gynorthwyydd-rhithwir" title="Link to this heading">#</a></h3>
+<p>Yn y bennod hon, dywedais fod yn rhaid i’r allweddi mewn geiriadur fod yn
+hashadwy a rhoddais esboniad byr. Os hoffech ragor o fanylion, gofynnwch i
+gynorthwyydd rhithwir, “Pam mae’n rhaid i allweddi mewn geiriaduron Python
+fod yn hashadwy?”</p>
+<p>Mewn adran flaenorol, fe wnaethom storio rhestr o eiriau fel allweddi mewn
+geiriadur fel y gallem ddefnyddio fersiwn effeithlon o’r gweithredydd <code class="docutils literal notranslate"><span class="pre">in</span></code>.
+Gallem fod wedi gwneud yr un peth gan ddefnyddio <code class="docutils literal notranslate"><span class="pre">set</span></code>, sy’n fath data
+cynhenid arall. Gofynnwch i gynorthwyydd rhithwir, “Sut rwy’n gwneud set
+Python o restr o linynnau a gwirio a yw llinyn yn elfen o’r set?”</p>
+</section>
+<section id="ymarfer">
+<h3><span class="section-number">10.11.2. </span>Ymarfer<a class="headerlink" href="#ymarfer" title="Link to this heading">#</a></h3>
+<p>Mae gan eiriaduron ddull o’r enw <code class="docutils literal notranslate"><span class="pre">get</span></code> sy’n cymryd allwedd a gwerth
+rhagosodedig. Os yw’r allwedd yn ymddangos yn y geiriadur, mae <code class="docutils literal notranslate"><span class="pre">get</span></code> yn
+dychwelyd y gwerth cyfatebol; fel arall mae’n dychwelyd y gwerth
+rhagosodedig. Er enghraifft, dyma eiriadur sy’n mapio o’r llythrennau mewn
+llinyn i nifer y troeon y maent yn ymddangos.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">counter</span> <span class="o">=</span> <span class="n">value_counts</span><span class="p">(</span><span class="s1">'brontosaurus'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Os chwiliwn am lythyren sy’n ymddangos yn y gair, mae <code class="docutils literal notranslate"><span class="pre">get</span></code> yn dychwelyd
+nifer y troeon y mae’n ymddangos.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">counter</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'b'</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Os chwiliwn am lythyren nad yw’n ymddangos, cawn y gwerth rhagosodedig, <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">counter</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'c'</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Defnyddiwch <code class="docutils literal notranslate"><span class="pre">get</span></code> i ysgrifennu fersiwn fwy cryno o <code class="docutils literal notranslate"><span class="pre">value_counts</span></code>. Dylech
+allu dileu’r gosodiad <code class="docutils literal notranslate"><span class="pre">if</span></code>.</p>
+</section>
+<section id="id1">
+<h3><span class="section-number">10.11.3. </span>Ymarfer<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>Beth yw’r gair hiraf y gallwch feddwl amdano lle mae pob llythyren yn
+ymddangos unwaith yn unig? Gadewch i ni weld a allwn ddarganfod un hirach
+na <code class="docutils literal notranslate"><span class="pre">unpredictably</span></code>.</p>
+<p>Ysgrifennwch swyddogaeth o’r enw <code class="docutils literal notranslate"><span class="pre">has_duplicates</span></code> sy’n cymryd dilyniant —
+fel rhestr neu linyn — fel paramedr ac yn dychwelyd <code class="docutils literal notranslate"><span class="pre">True</span></code> os oes unrhyw
+elfen sy’n ymddangos yn y dilyniant fwy nag unwaith.</p>
+<p>I’ch helpu ddechrau, dyma amlinelliad o’r swyddogaeth gyda doctestau.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">has_duplicates</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Check whether any element in a sequence appears more than once.</span>
+<span class="sd">    </span>
+<span class="sd">    &gt;&gt;&gt; has_duplicates('banana')</span>
+<span class="sd">    True</span>
+<span class="sd">    &gt;&gt;&gt; has_duplicates('ambidextrously')</span>
+<span class="sd">    False</span>
+<span class="sd">    &gt;&gt;&gt; has_duplicates([1, 2, 2])</span>
+<span class="sd">    True</span>
+<span class="sd">    &gt;&gt;&gt; has_duplicates([1, 2, 3])</span>
+<span class="sd">    False</span>
+<span class="sd">    """</span>
+    <span class="k">return</span> <span class="kc">None</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+<p>Gallwch ddefnyddio <code class="docutils literal notranslate"><span class="pre">doctest</span></code> i brofi eich swyddogaeth.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">doctest</span><span class="w"> </span><span class="kn">import</span> <span class="n">run_docstring_examples</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">run_doctests</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="n">run_docstring_examples</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="nb">globals</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+
+<span class="n">run_doctests</span><span class="p">(</span><span class="n">has_duplicates</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Gallwch ddefnyddio’r ddolen hon i ddarganfod y geiriau hiraf heb lythrennau
+wedi’u hailadrodd.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">no_repeats</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">word_list</span><span class="p">:</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">12</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">has_duplicates</span><span class="p">(</span><span class="n">word</span><span class="p">):</span>
+        <span class="n">no_repeats</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+        
+<span class="n">no_repeats</span>
+</pre></div>
+</div>
+</section>
+<section id="id2">
+<h3><span class="section-number">10.11.4. </span>Ymarfer<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>Ysgrifennwch swyddogaeth o’r enw <code class="docutils literal notranslate"><span class="pre">find_repeats</span></code> sy’n cymryd geiriadur sy’n
+mapio o bob allwedd i gyfrif, fel y canlyniad o <code class="docutils literal notranslate"><span class="pre">value_counts</span></code>. Dylai
+ddolennu drwy’r geiriadur a dychwelyd rhestr o allweddi sydd â chyfrifon
+mwy nag <code class="docutils literal notranslate"><span class="pre">1</span></code>. Gallwch ddefnyddio’r amlinelliad canlynol i ddechrau.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">find_repeats</span><span class="p">(</span><span class="n">counter</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Makes a list of keys with values greater than 1.</span>
+<span class="sd">    </span>
+<span class="sd">    counter: dictionary that maps from keys to counts</span>
+<span class="sd">    </span>
+<span class="sd">    returns: list of keys</span>
+<span class="sd">    """</span>
+    <span class="k">return</span> <span class="p">[]</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+<p>Gallwch ddefnyddio’r enghreifftiau canlynol i brofi eich cod. Yn gyntaf,
+byddwn yn gwneud geiriadur sy’n mapio o lythrennau i gyfrifon.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">counter1</span> <span class="o">=</span> <span class="n">value_counts</span><span class="p">(</span><span class="s1">'banana'</span><span class="p">)</span>
+<span class="n">counter1</span>
+</pre></div>
+</div>
+<p>Dylai’r canlyniad o <code class="docutils literal notranslate"><span class="pre">find_repeats</span></code> fod yn <code class="docutils literal notranslate"><span class="pre">['a',</span> <span class="pre">'n']</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">repeats</span> <span class="o">=</span> <span class="n">find_repeats</span><span class="p">(</span><span class="n">counter1</span><span class="p">)</span>
+<span class="n">repeats</span>
+</pre></div>
+</div>
+<p>Dyma enghraifft arall sy’n dechrau gyda rhestr o rifau. Dylai’r canlyniad
+fod yn <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2]</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">counter1</span> <span class="o">=</span> <span class="n">value_counts</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">repeats</span> <span class="o">=</span> <span class="n">find_repeats</span><span class="p">(</span><span class="n">counter1</span><span class="p">)</span>
+<span class="n">repeats</span>
+</pre></div>
+</div>
+</section>
+<section id="id3">
+<h3><span class="section-number">10.11.5. </span>Ymarfer<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>Tybiwch eich bod yn rhedeg <code class="docutils literal notranslate"><span class="pre">value_counts</span></code> gyda dau air gwahanol ac yn
+cadw’r canlyniadau mewn dau eiriadur.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">counter1</span> <span class="o">=</span> <span class="n">value_counts</span><span class="p">(</span><span class="s1">'brontosaurus'</span><span class="p">)</span>
+<span class="n">counter2</span> <span class="o">=</span> <span class="n">value_counts</span><span class="p">(</span><span class="s1">'apatosaurus'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Mae pob geiriadur yn mapio o set o lythrennau i nifer y troeon y maent yn
+ymddangos. Ysgrifennwch swyddogaeth o’r enw <code class="docutils literal notranslate"><span class="pre">add_counters</span></code> sy’n cymryd dau
+eiriadur fel hyn ac yn dychwelyd geiriadur newydd sy’n cynnwys pob un o’r
+llythrennau a chyfanswm nifer y troeon y maent yn ymddangos yn y naill air
+neu’r llall.</p>
+<p>Mae yna sawl ffordd o ddatrys y broblem hon. Unwaith y bydd gennych
+ddatrysiad sy’n gweithio, ystyriwch ofyn i gynorthwyydd rhithwir am
+ddatrysiadau gwahanol.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+</section>
+<section id="id4">
+<h3><span class="section-number">10.11.6. </span>Ymarfer<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p>Mae gair yn “ymgysylltol” os gallwn ei rannu’n ddau air drwy gymryd
+llythrennau bob yn ail. Er enghraifft, mae “schooled” yn air ymgysylltol am
+y gellir ei rannu’n “shoe” a “cold”.</p>
+<p>I ddewis llythrennau bob yn ail o linyn, gallwch ddefnyddio gweithredydd
+sleisio gyda thri chydran sy’n nodi ble i ddechrau, ble i stopio, a’r
+“maint cam” rhwng y llythrennau.</p>
+<p>Yn y sleisen ganlynol, <code class="docutils literal notranslate"><span class="pre">0</span></code> yw’r cydran cyntaf, felly rydym yn dechrau
+gyda’r llythyren gyntaf. <code class="docutils literal notranslate"><span class="pre">None</span></code> yw’r ail gydran, sy’n golygu y dylem fynd yr
+holl ffordd i ddiwedd y llinyn. A <code class="docutils literal notranslate"><span class="pre">2</span></code> yw’r trydydd cydran, felly mae dau
+gam rhwng y llythrennau rydym yn eu dewis.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">word</span> <span class="o">=</span> <span class="s1">'schooled'</span>
+<span class="n">first</span> <span class="o">=</span> <span class="n">word</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="kc">None</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">first</span>
+</pre></div>
+</div>
+<p>Yn lle darparu <code class="docutils literal notranslate"><span class="pre">None</span></code> fel yr ail gydran, gallwn gael yr un effaith drwy ei
+adael allan yn gyfan gwbl. Er enghraifft, mae’r sleisen ganlynol yn dewis
+llythrennau bob yn ail, gan ddechrau gyda’r ail lythyren.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">second</span> <span class="o">=</span> <span class="n">word</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">second</span>
+</pre></div>
+</div>
+<p>Ysgrifennwch swyddogaeth o’r enw <code class="docutils literal notranslate"><span class="pre">is_interlocking</span></code> sy’n cymryd gair fel dadl
+ac yn dychwelyd <code class="docutils literal notranslate"><span class="pre">True</span></code> os gellir ei rannu’n ddau air ymgysylltol.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+<p>Gallwch ddefnyddio’r ddolen ganlynol i ddarganfod y geiriau ymgysylltol yn
+y rhestr eiriau.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">word_list</span><span class="p">:</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">8</span> <span class="ow">and</span> <span class="n">is_interlocking</span><span class="p">(</span><span class="n">word</span><span class="p">):</span>
+        <span class="n">first</span> <span class="o">=</span> <span class="n">word</span><span class="p">[</span><span class="mi">0</span><span class="p">::</span><span class="mi">2</span><span class="p">]</span>
+        <span class="n">second</span> <span class="o">=</span> <span class="n">word</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">]</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">first</span><span class="p">,</span> <span class="n">second</span><span class="p">)</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p><a class="reference external" href="https://allendowney.github.io/ThinkPython/index.html">Think Python: 3rd Edition</a> gan
+Allen B. Downey. Cyfieithiad Cymraeg gan Wayne Aubrey.</p>
+<p>Hawlfraint 2024 <a class="reference external" href="https://allendowney.com">Allen B. Downey</a>. Trwydded testun: <a class="reference external" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative
+Commons Attribution-NonCommercial-ShareAlike 4.0 International</a>.</p>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -462,6 +1246,41 @@
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mae-geiriadur-yn-fapio">10.1. Mae Geiriadur yn Fapio</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creu-geiriaduron">10.2. Creu Geiriaduron</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#y-gweithredydd-in">10.3. Y Gweithredydd in</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#casgliad-o-gyfrifon">10.4. Casgliad o Gyfrifon</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dolennu-a-geiriaduron">10.5. Dolennu a Geiriaduron</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rhestri-a-geiriaduron">10.6. Rhestri a Geiriaduron</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#casglu-rhestr">10.7. Casglu Rhestr</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nodiadau">10.8. Nodiadau</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dadnamu">10.9. Dadnamu</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rhestr-termau-r-bennod">10.10. Rhestr Termau’r Bennod</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ymarferion">10.11. Ymarferion</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gofyn-i-gynorthwyydd-rhithwir">10.11.1. Gofyn i gynorthwyydd rhithwir</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ymarfer">10.11.2. Ymarfer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">10.11.3. Ymarfer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">10.11.4. Ymarfer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">10.11.5. Ymarfer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">10.11.6. Ymarfer</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

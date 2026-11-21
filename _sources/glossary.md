@@ -441,4 +441,31 @@ cyfeiriad
 
 arallenwi
     to alias / aliased
+
+eitem
+    item (dictionary)
+
+mapio
+    mapping
+
+tabl hash
+    hash table
+
+hashadwy
+    hashable
+
+swyddogaeth hash
+    hash function
+
+cronwr
+    accumulator
+
+hidlo
+    filtering
+
+graff galwadau
+    call graph
+
+nodyn
+    memo
 ```
