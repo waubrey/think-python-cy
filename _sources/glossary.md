@@ -468,4 +468,22 @@ graff galwadau
 
 nodyn
     memo
+
+pacio
+    pack
+
+dadbacio
+    unpack
+
+gwrthrych zip
+    zip object
+
+gwrthrych enumerate
+    enumerate object
+
+allwedd trefnu
+    sort key
+
+strwythur data
+    data structure
 ```
