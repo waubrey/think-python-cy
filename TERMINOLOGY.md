@@ -191,6 +191,27 @@ Reused without change from earlier chapters: *paramedr* (parameter), *dolen* (lo
 | multiline string | llinyn aml-linell | ✅ | transparent compound |
 | precondition / postcondition | rhag-amod / ôl-amod | ✅ | *amod* = condition (ordinary word, used in legal/contractual Welsh too), with standard *rhag-*/*ôl-* prefixes |
 
+## Chapter 5 vocabulary (conditionals, recursion)
+
+| English | Welsh | Status | Notes |
+|---|---|---|---|
+| modulus operator | gweithredydd modwlws | 🟡 | *modwlws* borrowed directly — reasonable since it's an international mathematical term |
+| boolean expression | mynegiad Boole | ✅ | compositional, both roots already confirmed |
+| relational operator | gweithredydd perthynol | ✅ | *perthynol* (relational) from *perthyn* (to relate/belong) |
+| logical operator | gweithredydd rhesymegol | ✅ | already confirmed from the WJEC spec's own pseudocode ("gweithredyddion rhesymegol") |
+| conditional statement | gosodiad amodol | ✅ | both roots already established |
+| condition | amod | ✅ | already implicit via *rhag-amod*/*ôl-amod*, now added as its own entry |
+| block | bloc | ✅ | direct cognate, unambiguous |
+| branch | cangen | ✅ | ordinary Welsh word for tree branch, natural extension |
+| chained conditional | amodol cadwynol | 🟡 | *cadwynol* (chained) from *cadwyn* (chain) |
+| nested conditional | amodol nythol | 🟡 | *nythol* (nested) from *nyth* (nest) |
+| base case | achos sylfaenol | ✅ | ordinary words |
+| infinite recursion | dychweliad anfeidrol | ✅ | *dychweliad* (recursion) already confirmed; *anfeidrol* = infinite, ordinary word |
+| newline | llinell newydd | ✅ | transparent |
+
+Reused without change: *dychweliad* / *dychweliadol* (recursion/recursive, confirmed
+earlier via Y Termiadur Addysg).
+
 ## Important pattern to carry into translation
 
 In the official WJEC pseudocode (used throughout the Welsh-medium exam), **programming
