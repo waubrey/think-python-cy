@@ -257,6 +257,20 @@ Reused without change: *cyfrif* (counter), *dull* (method), *chwiliad llinol*
 Reused without change: *dilyniant* (sequence), *nod* (character), *mynegai*
 (index), *gwrthrych* (object) — all already in the glossary.
 
+## Chapter 9 vocabulary (lists, objects/values, aliasing)
+
+| English | Welsh | Status | Notes |
+|---|---|---|---|
+| element | elfen | ✅ | ordinary Welsh word |
+| nested list | rhestr nythol | ✅ | reuses *nythol* (nested) coined in ch5 |
+| delimiter | terfynydd | 🟡 | from *terfyn* (boundary/end), ordinary root |
+| equivalent | cyfwerth | ✅ | ordinary Welsh word, used in maths too |
+| identical | unfath | ✅ | *un* (one) + *math* (type) — nice reuse of the already-confirmed *math* root |
+| reference | cyfeiriad | ✅ | ordinary word, also means "address" — context disambiguates |
+| aliased / to alias | arallenwi / wedi'i arallenwi | 🟡 | coined from *arall* (other) + *enw* (name) — "other-naming." Lowest-confidence pick this chapter, worth a second look |
+
+Reused without change: *priodoledd* (attribute, from the ch1 OOP decisions).
+
 ## Important pattern to carry into translation
 
 In the official WJEC pseudocode (used throughout the Welsh-medium exam), **programming
