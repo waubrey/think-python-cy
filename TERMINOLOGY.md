@@ -271,6 +271,22 @@ Reused without change: *dilyniant* (sequence), *nod* (character), *mynegai*
 
 Reused without change: *priodoledd* (attribute, from the ch1 OOP decisions).
 
+## Chapter 10 vocabulary (dictionaries, hashing, memoization)
+
+| English | Welsh | Status | Notes |
+|---|---|---|---|
+| item (dictionary) | eitem | ✅ | ordinary Welsh word, direct cognate |
+| mapping | mapio | ✅ | ordinary Welsh word, direct cognate |
+| hash table / hash function | tabl hash / swyddogaeth hash | 🟡 | "hash" kept as a loanword rather than calqued (e.g. as *stwnsh*) — safer choice, matches common practice in other languages too |
+| hashable | hashadwy | 🟡 | coined with the standard Welsh *-adwy* ("-able") suffix, e.g. *darllenadwy* = readable |
+| accumulator | cronwr | 🟡 | from *cronni* (to accumulate/dam up), same root as *cronfa* (fund/reservoir) |
+| filtering | hidlo | ✅ | ordinary Welsh verb "to filter" (water filter = *hidlydd*) |
+| call graph | graff galwadau | ✅ | compositional, both roots already confirmed |
+| memo | nodyn | ✅ | ordinary Welsh word for "note" |
+
+Reused without change: *geiriadur* (dictionary), *allwedd* (key), *gwerth*
+(value) — all already in the glossary.
+
 ## Important pattern to carry into translation
 
 In the official WJEC pseudocode (used throughout the Welsh-medium exam), **programming

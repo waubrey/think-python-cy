@@ -562,6 +562,7 @@ Wrth gwrs, mae braidd yn rhyfedd tybio bod y swyddogaeth yn gweithio'n gywir
 pan nad ydych wedi gorffen ei hysgrifennu, ond dyna pam y'i gelwir yn naid o
 ffydd!
 
+(section_fibonacci)=
 ## Fibonacci
 
 Ar ôl `factorial`, enghraifft fwyaf cyffredin swyddogaeth ddychweliadol yw
@@ -658,6 +659,7 @@ anghnegyddol, felly gallwn fod yn hyderus y bydd y dychweliad yn terfynu.
 Gelwir gwirio paramedrau swyddogaeth i wneud yn siŵr bod ganddynt y mathau a'r
 gwerthoedd cywir yn **{term}`dilysu mewnbwn`**.
 
+(section_debugging_factorial)=
 ## Dadnamu
 
 Mae rhannu rhaglen fawr yn swyddogaethau llai yn creu mannau gwirio naturiol
