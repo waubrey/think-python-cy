@@ -175,6 +175,22 @@ OOP terms.
 Reused without change from earlier chapters: *paramedr* (parameter), *dolen* (loop),
 *newidyn lleol* (local variable), *ffram* (frame) — all already in the glossary.
 
+## Chapter 4 vocabulary (interface design, turtle graphics)
+
+| English | Welsh | Status | Notes |
+|---|---|---|---|
+| interface / interface design | rhyngwyneb / dylunio rhyngwyneb | ✅ | *rhyngwyneb* was already confirmed (GUI section) but never actually added to `glossary.md` — fixed now, same gap as *ffram* in ch3 |
+| canvas | cynfas | ✅ | ordinary Welsh word for "canvas" (art sense), natural extension |
+| encapsulation | amgaead | 🟡 | from *amgáu* (to enclose) — chose this over calquing "amgapsiwleiddio" since it's a real Welsh word, not a borrowing |
+| generalization | cyffredinoli | ✅ | ordinary Welsh verb "to generalize" |
+| keyword argument | dadl allweddair | ✅ | compositional, both roots already confirmed |
+| refactoring | ailstrwythuro | ✅ | from *strwythur* (structure), already used in ch1 — natural, not a calque |
+| development plan | cynllun datblygu | ✅ | ordinary words, transparent |
+| implementation | sylweddoliad | 🟡 | deliberately distinct from *gweithrediad* (operation) and *cyflawniad* (execution) to avoid a three-way collision — from *sylweddoli* (to realize/bring into being), distinct in sense from *gwireddu* (already "verify") |
+| docstring | llinyn dogfennu | 🟡 | compositional ("documentation string"); some Welsh CS material may just borrow "docstring" directly as a loanword instead — worth a second look |
+| multiline string | llinyn aml-linell | ✅ | transparent compound |
+| precondition / postcondition | rhag-amod / ôl-amod | ✅ | *amod* = condition (ordinary word, used in legal/contractual Welsh too), with standard *rhag-*/*ôl-* prefixes |
+
 ## Important pattern to carry into translation
 
 In the official WJEC pseudocode (used throughout the Welsh-medium exam), **programming

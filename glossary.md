@@ -270,4 +270,43 @@ ffram
 
 hanes galwadau
     traceback
+
+rhyngwyneb
+    interface
+
+dylunio rhyngwyneb
+    interface design
+
+cynfas
+    canvas
+
+amgaead
+    encapsulation
+
+cyffredinoli
+    generalization
+
+dadl allweddair
+    keyword argument
+
+ailstrwythuro
+    refactoring
+
+cynllun datblygu
+    development plan
+
+sylweddoliad
+    implementation
+
+llinyn dogfennu
+    docstring
+
+llinyn aml-linell
+    multiline string
+
+rhag-amod
+    precondition
+
+ôl-amod
+    postcondition
 ```
