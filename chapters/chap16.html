@@ -62,7 +62,7 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../_static/tippy/chapters/chap16.236f600a-f18c-4705-962a-77192152ae6d.js"></script>
+    <script defer="defer" src="../_static/tippy/chapters/chap16.1463f5b5-6722-4d37-bb0f-06d959e681ab.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/chap16';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -155,6 +155,10 @@
     </div>
   
 
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
   
 </div>
 
@@ -374,7 +378,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -390,6 +396,31 @@
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creu-pwynt">16.1. Creu Pwynt</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creu-llinell">16.2. Creu Llinell</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cyfwerthedd-a-hunaniaeth">16.3. Cyfwerthedd a Hunaniaeth</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creu-petryal">16.4. Creu Petryal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#newid-petryalau">16.5. Newid Petryalau</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#copi-dwfn">16.6. Copi Dwfn</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#polymorffiaeth">16.7. Polymorffiaeth</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dadnamu">16.8. Dadnamu</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rhestr-termau-r-bennod">16.9. Rhestr Termau’r Bennod</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ymarferion">16.10. Ymarferion</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gofyn-i-gynorthwyydd-rhithwir">16.10.1. Gofyn i gynorthwyydd rhithwir</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ymarfer">16.10.2. Ymarfer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">16.10.3. Ymarfer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">16.10.4. Ymarfer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">16.10.5. Ymarfer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">16.10.6. Ymarfer</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -401,11 +432,666 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="dosbarthiadau-a-gwrthrychau">
 <h1><span class="section-number">16. </span>Dosbarthiadau a Gwrthrychau<a class="headerlink" href="#dosbarthiadau-a-gwrthrychau" title="Link to this heading">#</a></h1>
-<div class="warning admonition">
-<p class="admonition-title">Statws cyfieithu</p>
-<p>Pennod heb ei chyfieithu eto. Ffynhonnell Saesneg: <strong>Classes and Objects</strong>
-(gweler y bennod wreiddiol yn <a class="reference external" href="https://allendowney.github.io/ThinkPython/">https://allendowney.github.io/ThinkPython/</a> ar gyfer y testun gwreiddiol).</p>
+<p>Erbyn hyn rydym wedi diffinio dosbarthiadau a chreu gwrthrychau sy’n cynrychioli amser
+y dydd a diwrnod y flwyddyn. Ac rydym wedi diffinio dulliau sy’n creu, yn newid, ac yn
+perfformio cyfrifiadau â’r gwrthrychau hyn.</p>
+<p>Yn y bennod hon byddwn yn parhau â’n taith drwy raglennu gwrthrych-gyfeiriadol (OOP)
+drwy ddiffinio dosbarthiadau sy’n cynrychioli gwrthrychau geometrig, gan gynnwys
+pwyntiau, llinellau, petryalau, a chylchoedd. Byddwn yn ysgrifennu dulliau sy’n creu
+ac yn newid y gwrthrychau hyn, a byddwn yn defnyddio’r modiwl <code class="docutils literal notranslate"><span class="pre">jupyturtle</span></code> i’w tynnu.</p>
+<p>Byddaf yn defnyddio’r dosbarthiadau hyn i ddangos pynciau OOP gan gynnwys hunaniaeth
+a chyfwerthedd gwrthrychau, copïo bas a dwfn, a pholymorffiaeth.</p>
+<section id="creu-pwynt">
+<h2><span class="section-number">16.1. </span>Creu Pwynt<a class="headerlink" href="#creu-pwynt" title="Link to this heading">#</a></h2>
+<p>Mewn graffeg cyfrifiadurol, mae lleoliad ar y sgrin yn aml yn cael ei gynrychioli
+gan ddefnyddio pâr o gyfesurynnau mewn plân <code class="docutils literal notranslate"><span class="pre">x</span></code>-<code class="docutils literal notranslate"><span class="pre">y</span></code>. Yn ôl confensiwn, mae’r pwynt
+<code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">0)</span></code> fel arfer yn cynrychioli cornel chwith-uchaf y sgrin, ac mae <code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y)</span></code> yn
+cynrychioli’r pwynt <code class="docutils literal notranslate"><span class="pre">x</span></code> uned i’r dde a <code class="docutils literal notranslate"><span class="pre">y</span></code> uned i lawr o’r tarddbwynt. O’i gymharu
+â’r system gyfesurynnau Gartesaidd y gallech fod wedi’i gweld mewn dosbarth mathemateg,
+mae’r echelin <code class="docutils literal notranslate"><span class="pre">y</span></code> wyneb i waered.</p>
+<p>Mae sawl ffordd y gallem gynrychioli pwynt yn Python:</p>
+<ul class="simple">
+<li><p>Gallwn storio’r cyfesurynnau ar wahân mewn dau newidyn, <code class="docutils literal notranslate"><span class="pre">x</span></code> ac <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p></li>
+<li><p>Gallwn storio’r cyfesurynnau fel elfennau mewn rhestr neu dŵpl.</p></li>
+<li><p>Gallwn greu math newydd i gynrychioli pwyntiau fel gwrthrychau.</p></li>
+</ul>
+<p>Mewn rhaglennu gwrthrych-gyfeiriadol, byddai’n fwyaf idiomatig creu math newydd.
+I wneud hynny, byddwn yn dechrau gyda diffiniad dosbarth ar gyfer <code class="docutils literal notranslate"><span class="pre">Point</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Point</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Represents a point in 2-D space."""</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+        
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">'Point(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="si">}</span><span class="s1">)'</span>
+</pre></div>
 </div>
+<p>Mae’r dull <code class="docutils literal notranslate"><span class="pre">__init__</span></code> yn cymryd y cyfesurynnau fel paramedrau ac yn eu neilltuo i’r
+priodoleddau <code class="docutils literal notranslate"><span class="pre">x</span></code> ac <code class="docutils literal notranslate"><span class="pre">y</span></code>. Mae’r dull <code class="docutils literal notranslate"><span class="pre">__str__</span></code> yn dychwelyd cynrychiolaeth llinynnol
+o’r <code class="docutils literal notranslate"><span class="pre">Point</span></code>.</p>
+<p>Nawr gallwn enghreifftio ac arddangos gwrthrych <code class="docutils literal notranslate"><span class="pre">Point</span></code> fel hyn.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">start</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">start</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Yn gyffredinol, mae mathau a ddiffinnir gan raglenwyr yn newidiadwy, felly gallwn
+ysgrifennu dull fel <code class="docutils literal notranslate"><span class="pre">translate</span></code> sy’n cymryd dau rif, <code class="docutils literal notranslate"><span class="pre">dx</span></code> a <code class="docutils literal notranslate"><span class="pre">dy</span></code>, ac yn eu hychwanegu
+at y priodoleddau <code class="docutils literal notranslate"><span class="pre">x</span></code> ac <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">add_method_to</span> <span class="n">Point</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">translate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+=</span> <span class="n">dx</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+=</span> <span class="n">dy</span>
+</pre></div>
+</div>
+<p>Mae’r swyddogaeth hon yn trosi’r <code class="docutils literal notranslate"><span class="pre">Point</span></code> o un lleoliad yn y plân i’r llall. Os nad
+ydym am newid <code class="docutils literal notranslate"><span class="pre">Point</span></code> sy’n bodoli’n barod, gallwn ddefnyddio <code class="docutils literal notranslate"><span class="pre">copy</span></code> i gopïo’r
+gwrthrych gwreiddiol ac yna newid y copi.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">copy</span><span class="w"> </span><span class="kn">import</span> <span class="n">copy</span>
+
+<span class="n">end1</span> <span class="o">=</span> <span class="n">copy</span><span class="p">(</span><span class="n">start</span><span class="p">)</span>
+<span class="n">end1</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">end1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Gallwn amgáu’r camau hynny mewn dull arall o’r enw <code class="docutils literal notranslate"><span class="pre">translated</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">add_method_to</span> <span class="n">Point</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">translated</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dx</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">dy</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="n">point</span> <span class="o">=</span> <span class="n">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="n">point</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">point</span>
+</pre></div>
+</div>
+<p>Yn yr un modd ag y mae’r dull <code class="docutils literal notranslate"><span class="pre">sort</span></code> yn newid rhestr a’r swyddogaeth <code class="docutils literal notranslate"><span class="pre">sorted</span></code> yn
+creu rhestr newydd, mae gennym nawr ddull <code class="docutils literal notranslate"><span class="pre">translate</span></code> sy’n newid <code class="docutils literal notranslate"><span class="pre">Point</span></code> a dull
+<code class="docutils literal notranslate"><span class="pre">translated</span></code> sy’n creu un newydd.</p>
+<p>Dyma enghraifft:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">end2</span> <span class="o">=</span> <span class="n">start</span><span class="o">.</span><span class="n">translated</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">150</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">end2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Yn yr adran nesaf, byddwn yn defnyddio’r pwyntiau hyn i ddiffinio a thynnu llinell.</p>
+</section>
+<section id="creu-llinell">
+<h2><span class="section-number">16.2. </span>Creu Llinell<a class="headerlink" href="#creu-llinell" title="Link to this heading">#</a></h2>
+<p>Nawr gadewch i ni ddiffinio dosbarth sy’n cynrychioli’r llinell segment rhwng dau
+bwynt. Fel arfer, byddwn yn dechrau gyda dull <code class="docutils literal notranslate"><span class="pre">__init__</span></code> a dull <code class="docutils literal notranslate"><span class="pre">__str__</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Line</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">p1</span> <span class="o">=</span> <span class="n">p1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">p2</span> <span class="o">=</span> <span class="n">p2</span>
+        
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">'Line(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">p1</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">p2</span><span class="si">}</span><span class="s1">)'</span>
+</pre></div>
+</div>
+<p>Gyda’r ddau ddull hynny, gallwn enghreifftio ac arddangos gwrthrych <code class="docutils literal notranslate"><span class="pre">Line</span></code> y byddwn
+yn ei defnyddio i gynrychioli’r echelin <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">line1</span> <span class="o">=</span> <span class="n">Line</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">line1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Pan alwn <code class="docutils literal notranslate"><span class="pre">print</span></code> a phasio <code class="docutils literal notranslate"><span class="pre">line</span></code> fel paramedr, mae <code class="docutils literal notranslate"><span class="pre">print</span></code> yn galw <code class="docutils literal notranslate"><span class="pre">__str__</span></code> ar
+<code class="docutils literal notranslate"><span class="pre">line</span></code>. Mae’r dull <code class="docutils literal notranslate"><span class="pre">__str__</span></code> yn defnyddio llinyn-f i greu cynrychiolaeth llinynnol
+o’r <code class="docutils literal notranslate"><span class="pre">line</span></code>.</p>
+<p>Mae’r llinyn-f yn cynnwys dau fynegiad mewn bachau cyrliog, <code class="docutils literal notranslate"><span class="pre">self.p1</span></code> a <code class="docutils literal notranslate"><span class="pre">self.p2</span></code>.
+Pan werthuso’r mynegiadau hynny, gwrthrychau <code class="docutils literal notranslate"><span class="pre">Point</span></code> yw’r canlyniadau. Yna, pan
+drosir y rheiny’n llinynnau, caiff y dull <code class="docutils literal notranslate"><span class="pre">__str__</span></code> o ddosbarth <code class="docutils literal notranslate"><span class="pre">Point</span></code> ei alw.</p>
+<p>Dyna pam, pan arddangoswn <code class="docutils literal notranslate"><span class="pre">Line</span></code>, mae’r canlyniad yn cynnwys cynrychiolaethau
+llinynnol y gwrthrychau <code class="docutils literal notranslate"><span class="pre">Point</span></code>.</p>
+<p>Mae cynrychiolaethau llinynnol a diagramau gwrthrych yn ddefnyddiol ar gyfer
+dadnamu, ond pwrpas yr enghraifft hon yw cynhyrchu graffeg, nid testun! Felly
+byddwn yn defnyddio’r modiwl <code class="docutils literal notranslate"><span class="pre">jupyturtle</span></code> i dynnu llinellau ar y sgrin.</p>
+<p>Fel y gwnaethom ym <a class="reference internal" href="chap04.html#section-turtle-module"><span class="std std-ref">Mhennod 4</span></a>, byddwn yn defnyddio
+<code class="docutils literal notranslate"><span class="pre">make_turtle</span></code> i greu gwrthrych <code class="docutils literal notranslate"><span class="pre">Turtle</span></code> a chynfas bach lle gall dynnu lluniau.
+I dynnu llinellau, byddwn yn defnyddio dwy swyddogaeth newydd o’r modiwl
+<code class="docutils literal notranslate"><span class="pre">jupyturtle</span></code>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">jumpto</span></code>, sy’n cymryd dau gyfesuryn ac yn symud y <code class="docutils literal notranslate"><span class="pre">Turtle</span></code> i’r lleoliad a roddir
+heb dynnu llinell, a</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">moveto</span></code>, sy’n symud y <code class="docutils literal notranslate"><span class="pre">Turtle</span></code> o’i leoliad presennol i’r lleoliad a roddir, ac
+yn tynnu segment llinell rhyngddynt.</p></li>
+</ul>
+<p>Dyma sut rydym yn eu mewnforio.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">jupyturtle</span><span class="w"> </span><span class="kn">import</span> <span class="n">make_turtle</span><span class="p">,</span> <span class="n">jumpto</span><span class="p">,</span> <span class="n">moveto</span>
+</pre></div>
+</div>
+<p>A dyma ddull sy’n tynnu <code class="docutils literal notranslate"><span class="pre">Line</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">add_method_to</span> <span class="n">Line</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">jumpto</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">p1</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">p1</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+        <span class="n">moveto</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">p2</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">p2</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>I ddangos sut y caiff ei defnyddio, byddaf yn creu ail linell sy’n cynrychioli’r
+echelin <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">line2</span> <span class="o">=</span> <span class="n">Line</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">line2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Ac yna tynnu’r echelinau.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">make_turtle</span><span class="p">()</span>
+<span class="n">line1</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+<span class="n">line2</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Wrth i ni ddiffinio a thynnu rhagor o wrthrychau, byddwn yn defnyddio’r llinellau
+hyn eto. Ond yn gyntaf gadewch i ni siarad am gyfwerthedd a hunaniaeth gwrthrychau.</p>
+</section>
+<section id="cyfwerthedd-a-hunaniaeth">
+<h2><span class="section-number">16.3. </span>Cyfwerthedd a Hunaniaeth<a class="headerlink" href="#cyfwerthedd-a-hunaniaeth" title="Link to this heading">#</a></h2>
+<p>Tybiwch ein bod yn creu dau bwynt â’r un cyfesurynnau.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p1</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Os defnyddiwn y gweithredydd <code class="docutils literal notranslate"><span class="pre">==</span></code> i’w cymharu, cawn yr ymddygiad rhagosodedig ar
+gyfer mathau a ddiffinnir gan raglenwyr — mae’r canlyniad yn <code class="docutils literal notranslate"><span class="pre">True</span></code> dim ond os
+ydynt yn un gwrthrych, nad ydynt.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p1</span> <span class="o">==</span> <span class="n">p2</span>
+</pre></div>
+</div>
+<p>Os ydym am newid yr ymddygiad hwnnw, gallwn ddarparu dull arbennig o’r enw
+<code class="docutils literal notranslate"><span class="pre">__eq__</span></code> sy’n diffinio beth mae’n ei olygu i ddau wrthrych <code class="docutils literal notranslate"><span class="pre">Point</span></code> fod yn
+gyfwerth.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">add_method_to</span> <span class="n">Point</span>
+
+<span class="k">def</span><span class="w"> </span><span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Mae’r diffiniad hwn yn ystyried dau <code class="docutils literal notranslate"><span class="pre">Point</span></code> yn gyfwerth os yw eu priodoleddau’n
+gyfwerth. Nawr pan ddefnyddiwn y gweithredydd <code class="docutils literal notranslate"><span class="pre">==</span></code>, mae’n galw’r dull <code class="docutils literal notranslate"><span class="pre">__eq__</span></code>,
+sy’n dynodi bod <code class="docutils literal notranslate"><span class="pre">p1</span></code> a <code class="docutils literal notranslate"><span class="pre">p2</span></code> yn cael eu hystyried yn gyfwerth.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p1</span> <span class="o">==</span> <span class="n">p2</span>
+</pre></div>
+</div>
+<p>Ond mae’r gweithredydd <code class="docutils literal notranslate"><span class="pre">is</span></code> yn dal i ddynodi eu bod yn wrthrychau gwahanol.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p1</span> <span class="ow">is</span> <span class="n">p2</span>
+</pre></div>
+</div>
+<p>Nid yw’n bosib disodli’r gweithredydd <code class="docutils literal notranslate"><span class="pre">is</span></code> — mae bob amser yn gwirio a yw’r
+gwrthrychau’n unfath. Ond ar gyfer mathau a ddiffinnir gan raglenwyr, gallwch
+ddisodli’r gweithredydd <code class="docutils literal notranslate"><span class="pre">==</span></code> fel ei fod yn gwirio a yw’r gwrthrychau’n gyfwerth.
+A gallwch ddiffinio beth mae cyfwerth yn ei olygu.</p>
+</section>
+<section id="creu-petryal">
+<h2><span class="section-number">16.4. </span>Creu Petryal<a class="headerlink" href="#creu-petryal" title="Link to this heading">#</a></h2>
+<p>Nawr gadewch i ni ddiffinio dosbarth sy’n cynrychioli ac yn tynnu petryalau. I
+gadw pethau’n syml, byddwn yn tybio bod y petryalau naill ai’n fertigol neu’n
+llorweddol, ddim ar ongl. Pa briodoleddau ydych chi’n meddwl y dylem eu defnyddio
+i nodi lleoliad a maint petryal?</p>
+<p>Mae o leiaf dau bosibilrwydd:</p>
+<ul class="simple">
+<li><p>Gallech nodi lled a uchder y petryal a lleoliad un gornel.</p></li>
+<li><p>Gallech nodi dwy gornel sy’n gwrthwynebu ei gilydd.</p></li>
+</ul>
+<p>Ar hyn o bryd mae’n anodd dweud a yw’r naill yn well na’r llall, felly gadewch
+i ni weithredu’r cyntaf. Dyma’r diffiniad dosbarth.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Rectangle</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Represents a rectangle. </span>
+
+<span class="sd">    attributes: width, height, corner.</span>
+<span class="sd">    """</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">corner</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="n">width</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="n">height</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">corner</span> <span class="o">=</span> <span class="n">corner</span>
+        
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">'Rectangle(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">corner</span><span class="si">}</span><span class="s1">)'</span>
+</pre></div>
+</div>
+<p>Fel arfer, mae’r dull <code class="docutils literal notranslate"><span class="pre">__init__</span></code> yn neilltuo’r paramedrau i briodoleddau ac mae’r
+<code class="docutils literal notranslate"><span class="pre">__str__</span></code> yn dychwelyd cynrychiolaeth llinynnol o’r gwrthrych. Nawr gallwn
+enghreifftio gwrthrych <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code>, gan ddefnyddio <code class="docutils literal notranslate"><span class="pre">Point</span></code> fel lleoliad y gornel
+chwith-uchaf.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">corner</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">box1</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="n">corner</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">box1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>I dynnu petryal, byddwn yn defnyddio’r dull canlynol i wneud pedwar gwrthrych
+<code class="docutils literal notranslate"><span class="pre">Point</span></code> sy’n cynrychioli’r corneli.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">add_method_to</span> <span class="n">Rectangle</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">make_points</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">p1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">corner</span>
+        <span class="n">p2</span> <span class="o">=</span> <span class="n">p1</span><span class="o">.</span><span class="n">translated</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">p3</span> <span class="o">=</span> <span class="n">p2</span><span class="o">.</span><span class="n">translated</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="p">)</span>
+        <span class="n">p4</span> <span class="o">=</span> <span class="n">p3</span><span class="o">.</span><span class="n">translated</span><span class="p">(</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">p3</span><span class="p">,</span> <span class="n">p4</span>
+</pre></div>
+</div>
+<p>Yna byddwn yn gwneud pedwar gwrthrych <code class="docutils literal notranslate"><span class="pre">Line</span></code> i gynrychioli’r ochrau.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">add_method_to</span> <span class="n">Rectangle</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">make_lines</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">p3</span><span class="p">,</span> <span class="n">p4</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">make_points</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">Line</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">),</span> <span class="n">Line</span><span class="p">(</span><span class="n">p2</span><span class="p">,</span> <span class="n">p3</span><span class="p">),</span> <span class="n">Line</span><span class="p">(</span><span class="n">p3</span><span class="p">,</span> <span class="n">p4</span><span class="p">),</span> <span class="n">Line</span><span class="p">(</span><span class="n">p4</span><span class="p">,</span> <span class="n">p1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Yna byddwn yn tynnu’r ochrau.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">add_method_to</span> <span class="n">Rectangle</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">lines</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">make_lines</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+            <span class="n">line</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Dyma enghraifft.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">make_turtle</span><span class="p">()</span>
+<span class="n">line1</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+<span class="n">line2</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+<span class="n">box1</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Mae’r ffigur yn cynnwys dwy linell i gynrychioli’r echelinau.</p>
+</section>
+<section id="newid-petryalau">
+<h2><span class="section-number">16.5. </span>Newid Petryalau<a class="headerlink" href="#newid-petryalau" title="Link to this heading">#</a></h2>
+<p>Nawr gadewch i ni ystyried dau ddull sy’n newid petryalau, <code class="docutils literal notranslate"><span class="pre">grow</span></code> a <code class="docutils literal notranslate"><span class="pre">translate</span></code>.
+Fe welwn fod <code class="docutils literal notranslate"><span class="pre">grow</span></code> yn gweithio fel y disgwyliwyd, ond mae gan <code class="docutils literal notranslate"><span class="pre">translate</span></code> nam
+cynnil. Gwelwch a allwch ei ddarganfod cyn i mi egluro.</p>
+<p>Mae <code class="docutils literal notranslate"><span class="pre">grow</span></code> yn cymryd dau rif, <code class="docutils literal notranslate"><span class="pre">dwidth</span></code> a <code class="docutils literal notranslate"><span class="pre">dheight</span></code>, ac yn eu hychwanegu at
+briodoleddau <code class="docutils literal notranslate"><span class="pre">width</span></code> a <code class="docutils literal notranslate"><span class="pre">height</span></code> y petryal.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">add_method_to</span> <span class="n">Rectangle</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">grow</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dwidth</span><span class="p">,</span> <span class="n">dheight</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">+=</span> <span class="n">dwidth</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">+=</span> <span class="n">dheight</span>
+</pre></div>
+</div>
+<p>Dyma enghraifft sy’n dangos yr effaith drwy wneud copi o <code class="docutils literal notranslate"><span class="pre">box1</span></code> a galw <code class="docutils literal notranslate"><span class="pre">grow</span></code>
+ar y copi.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">box2</span> <span class="o">=</span> <span class="n">copy</span><span class="p">(</span><span class="n">box1</span><span class="p">)</span>
+<span class="n">box2</span><span class="o">.</span><span class="n">grow</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">box2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Os tynnwn <code class="docutils literal notranslate"><span class="pre">box1</span></code> a <code class="docutils literal notranslate"><span class="pre">box2</span></code>, gallwn gadarnhau bod <code class="docutils literal notranslate"><span class="pre">grow</span></code> yn gweithio fel y
+disgwyliwyd.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">make_turtle</span><span class="p">()</span>
+<span class="n">line1</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+<span class="n">line2</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+<span class="n">box1</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+<span class="n">box2</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Nawr gadewch i ni weld am <code class="docutils literal notranslate"><span class="pre">translate</span></code>. Mae’n cymryd dau rif, <code class="docutils literal notranslate"><span class="pre">dx</span></code> a <code class="docutils literal notranslate"><span class="pre">dy</span></code>, ac yn
+symud y petryal y pellteroedd a roddir yn y cyfeiriadau <code class="docutils literal notranslate"><span class="pre">x</span></code> ac <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">add_method_to</span> <span class="n">Rectangle</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">translate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">corner</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>I ddangos yr effaith, byddwn yn trosi <code class="docutils literal notranslate"><span class="pre">box2</span></code> i’r dde ac i lawr.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">box2</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">box2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Nawr gadewch i ni weld beth sy’n digwydd os tynnwn <code class="docutils literal notranslate"><span class="pre">box1</span></code> a <code class="docutils literal notranslate"><span class="pre">box2</span></code> eto.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">make_turtle</span><span class="p">()</span>
+<span class="n">line1</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+<span class="n">line2</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+<span class="n">box1</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+<span class="n">box2</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Mae’n edrych fel bod y ddau betryal wedi symud, nad yw’n yr hyn a fwriadwyd!
+Mae’r adran nesaf yn egluro beth aeth o’i le.</p>
+</section>
+<section id="copi-dwfn">
+<h2><span class="section-number">16.6. </span>Copi Dwfn<a class="headerlink" href="#copi-dwfn" title="Link to this heading">#</a></h2>
+<p>Pan ddefnyddiwn <code class="docutils literal notranslate"><span class="pre">copy</span></code> i ddyblygu <code class="docutils literal notranslate"><span class="pre">box1</span></code>, mae’n copïo’r gwrthrych <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code>
+ond nid y gwrthrych <code class="docutils literal notranslate"><span class="pre">Point</span></code> y mae’n ei gynnwys. Felly mae <code class="docutils literal notranslate"><span class="pre">box1</span></code> a <code class="docutils literal notranslate"><span class="pre">box2</span></code> yn
+wrthrychau gwahanol, fel y bwriadwyd.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">box1</span> <span class="ow">is</span> <span class="n">box2</span>
+</pre></div>
+</div>
+<p>Ond mae eu priodoleddau <code class="docutils literal notranslate"><span class="pre">corner</span></code> yn cyfeirio at yr un gwrthrych.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">box1</span><span class="o">.</span><span class="n">corner</span> <span class="ow">is</span> <span class="n">box2</span><span class="o">.</span><span class="n">corner</span>
+</pre></div>
+</div>
+<p>Yr hyn y mae <code class="docutils literal notranslate"><span class="pre">copy</span></code> yn ei wneud a elwir yn <strong><a class="reference internal" href="../glossary.html#term-copi-bas"><span class="xref std std-term">copi bas</span></a></strong> am ei fod yn
+copïo’r gwrthrych ond nid y gwrthrychau y mae’n eu cynnwys. O ganlyniad, nid
+yw newid <code class="docutils literal notranslate"><span class="pre">width</span></code> neu <code class="docutils literal notranslate"><span class="pre">height</span></code> un <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code> yn effeithio ar y llall, ond mae
+newid priodoleddau’r <code class="docutils literal notranslate"><span class="pre">Point</span></code> a rennir yn effeithio ar y ddau! Mae’r ymddygiad
+hwn yn ddryslyd ac yn dueddol o wallau.</p>
+<p>Yn ffodus, mae’r modiwl <code class="docutils literal notranslate"><span class="pre">copy</span></code> yn darparu swyddogaeth arall, o’r enw <code class="docutils literal notranslate"><span class="pre">deepcopy</span></code>,
+sy’n copïo nid yn unig y gwrthrych ond hefyd y gwrthrychau y mae’n cyfeirio
+atynt, a’r gwrthrychau y <em>maent hwy</em> yn cyfeirio atynt, ac yn y blaen. Gelwir y
+weithred hon yn <strong><a class="reference internal" href="../glossary.html#term-copi-dwfn"><span class="xref std std-term">copi dwfn</span></a></strong>.</p>
+<p>I ddangos, gadewch i ni ddechrau gyda <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code> newydd sy’n cynnwys <code class="docutils literal notranslate"><span class="pre">Point</span></code>
+newydd.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">corner</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">box3</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="n">corner</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">box3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>A byddwn yn gwneud copi dwfn.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">copy</span><span class="w"> </span><span class="kn">import</span> <span class="n">deepcopy</span>
+
+<span class="n">box4</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">box3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Gallwn gadarnhau bod y ddau wrthrych <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code> yn cyfeirio at wrthrychau
+<code class="docutils literal notranslate"><span class="pre">Point</span></code> gwahanol.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">box3</span><span class="o">.</span><span class="n">corner</span> <span class="ow">is</span> <span class="n">box4</span><span class="o">.</span><span class="n">corner</span>
+</pre></div>
+</div>
+<p>Am fod <code class="docutils literal notranslate"><span class="pre">box3</span></code> a <code class="docutils literal notranslate"><span class="pre">box4</span></code> yn wrthrychau cwbl ar wahân, gallwn newid un heb
+effeithio ar y llall. I ddangos, byddwn yn symud <code class="docutils literal notranslate"><span class="pre">box3</span></code> ac yn tyfu <code class="docutils literal notranslate"><span class="pre">box4</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">box3</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+<span class="n">box4</span><span class="o">.</span><span class="n">grow</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>A gallwn gadarnhau bod yr effaith fel y disgwylir.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">make_turtle</span><span class="p">()</span>
+<span class="n">line1</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+<span class="n">line2</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+<span class="n">box3</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+<span class="n">box4</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="polymorffiaeth">
+<h2><span class="section-number">16.7. </span>Polymorffiaeth<a class="headerlink" href="#polymorffiaeth" title="Link to this heading">#</a></h2>
+<p>Yn yr enghraifft flaenorol, galwom y dull <code class="docutils literal notranslate"><span class="pre">draw</span></code> ar ddau wrthrych <code class="docutils literal notranslate"><span class="pre">Line</span></code> a dau
+wrthrych <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code>. Gallwn wneud yr un peth yn fwy cryno drwy wneud rhestr o
+wrthrychau.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">shapes</span> <span class="o">=</span> <span class="p">[</span><span class="n">line1</span><span class="p">,</span> <span class="n">line2</span><span class="p">,</span> <span class="n">box3</span><span class="p">,</span> <span class="n">box4</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Mae elfennau’r rhestr hon yn fathau gwahanol, ond maent i gyd yn darparu dull
+<code class="docutils literal notranslate"><span class="pre">draw</span></code>, felly gallwn ddolennu drwy’r rhestr a galw <code class="docutils literal notranslate"><span class="pre">draw</span></code> ar bob un.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">make_turtle</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">shape</span> <span class="ow">in</span> <span class="n">shapes</span><span class="p">:</span>
+    <span class="n">shape</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Y tro cyntaf a’r ail dro drwy’r ddolen, mae <code class="docutils literal notranslate"><span class="pre">shape</span></code> yn cyfeirio at wrthrych
+<code class="docutils literal notranslate"><span class="pre">Line</span></code>, felly pan elwir <code class="docutils literal notranslate"><span class="pre">draw</span></code>, y dull sy’n rhedeg yw’r un a ddiffinnir yn
+nosbarth <code class="docutils literal notranslate"><span class="pre">Line</span></code>.</p>
+<p>Y trydydd a’r pedwerydd tro drwy’r ddolen, mae <code class="docutils literal notranslate"><span class="pre">shape</span></code> yn cyfeirio at wrthrych
+<code class="docutils literal notranslate"><span class="pre">Rectangle</span></code>, felly pan elwir <code class="docutils literal notranslate"><span class="pre">draw</span></code>, y dull sy’n rhedeg yw’r un a ddiffinnir yn
+nosbarth <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code>.</p>
+<p>Mewn ystyr, mae pob gwrthrych yn gwybod sut i’w dynnu ei hun. Gelwir y nodwedd
+hon yn <strong><a class="reference internal" href="../glossary.html#term-polymorffiaeth"><span class="xref std std-term">polymorffiaeth</span></a></strong>. Daw’r gair o wreiddiau Groegaidd sy’n golygu
+“llawer siâp”. Mewn rhaglennu gwrthrych-gyfeiriadol, polymorffiaeth yw’r gallu
+i wahanol fathau ddarparu’r un dulliau, sy’n ei gwneud hi’n bosib perfformio
+llawer o gyfrifiadau — fel tynnu siapiau — drwy alw’r un dull ar fathau
+gwahanol o wrthrychau.</p>
+<p>Fel ymarfer ar ddiwedd y bennod hon, byddwch yn diffinio dosbarth newydd sy’n
+cynrychioli cylch ac yn darparu dull <code class="docutils literal notranslate"><span class="pre">draw</span></code>. Yna gallwch ddefnyddio
+polymorffiaeth i dynnu llinellau, petryalau, a chylchoedd.</p>
+</section>
+<section id="dadnamu">
+<h2><span class="section-number">16.8. </span>Dadnamu<a class="headerlink" href="#dadnamu" title="Link to this heading">#</a></h2>
+<p>Yn y bennod hon, fe gawsom nam cynnil a ddigwyddodd am ein bod wedi creu
+<code class="docutils literal notranslate"><span class="pre">Point</span></code> a rennid gan ddau wrthrych <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code>, ac yna fe wnaethom newid y
+<code class="docutils literal notranslate"><span class="pre">Point</span></code>. Yn gyffredinol, mae dwy ffordd o osgoi problemau fel hyn: gallwch
+osgoi rhannu gwrthrychau neu gallwch osgoi eu newid.</p>
+<p>I osgoi rhannu gwrthrychau, gallwch ddefnyddio copi dwfn, fel y gwnaethom yn y
+bennod hon.</p>
+<p>I osgoi newid gwrthrychau, ystyriwch ddisodli swyddogaethau amhur fel
+<code class="docutils literal notranslate"><span class="pre">translate</span></code> â swyddogaethau pur fel <code class="docutils literal notranslate"><span class="pre">translated</span></code>. Er enghraifft, dyma fersiwn
+o <code class="docutils literal notranslate"><span class="pre">translated</span></code> sy’n creu <code class="docutils literal notranslate"><span class="pre">Point</span></code> newydd ac na fydd byth yn newid ei
+briodoleddau.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span><span class="w"> </span><span class="nf">translated</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dx</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">dy</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">dx</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">dy</span>
+        <span class="k">return</span> <span class="n">Point</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Mae Python yn darparu nodweddion sy’n ei gwneud hi’n haws osgoi newid
+gwrthrychau. Maent y tu hwnt i gwmpas y llyfr hwn, ond os ydych yn chwilfrydig,
+gofynnwch i gynorthwyydd rhithwir, “Sut rwy’n gwneud gwrthrych Python yn
+anghyfnewidiol?”</p>
+<p>Mae creu gwrthrych newydd yn cymryd mwy o amser na newid un sy’n bodoli’n
+barod, ond anaml y mae’r gwahaniaeth yn bwysig yn ymarferol. Mae rhaglenni
+sy’n osgoi gwrthrychau a rennir a swyddogaethau amhur yn aml yn haws eu
+datblygu, eu profi, a’u dadnamu — a’r math gorau o ddadnamu yw’r math nad oes
+rhaid i chi ei wneud.</p>
+</section>
+<section id="rhestr-termau-r-bennod">
+<h2><span class="section-number">16.9. </span>Rhestr Termau’r Bennod<a class="headerlink" href="#rhestr-termau-r-bennod" title="Link to this heading">#</a></h2>
+<p><strong>copi bas:</strong>
+Gweithrediad copïo nad yw’n copïo gwrthrychau nythol.</p>
+<p><strong>copi dwfn:</strong>
+Gweithrediad copïo sydd hefyd yn copïo gwrthrychau nythol.</p>
+<p><strong>polymorffiaeth:</strong>
+Gallu dull neu weithredydd i weithio gyda sawl math o wrthrych.</p>
+</section>
+<section id="ymarferion">
+<h2><span class="section-number">16.10. </span>Ymarferion<a class="headerlink" href="#ymarferion" title="Link to this heading">#</a></h2>
+<section id="gofyn-i-gynorthwyydd-rhithwir">
+<h3><span class="section-number">16.10.1. </span>Gofyn i gynorthwyydd rhithwir<a class="headerlink" href="#gofyn-i-gynorthwyydd-rhithwir" title="Link to this heading">#</a></h3>
+<p>Ar gyfer yr holl ymarferion canlynol, ystyriwch ofyn i gynorthwyydd rhithwir
+am gymorth. Os gwnewch hynny, byddwch am gynnwys y diffiniadau dosbarth ar
+gyfer <code class="docutils literal notranslate"><span class="pre">Point</span></code>, <code class="docutils literal notranslate"><span class="pre">Line</span></code>, a <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code> fel rhan o’r cais — fel arall bydd y
+cynorthwyydd rhithwir yn dyfalu am eu priodoleddau a’u swyddogaethau, ac ni
+fydd y cod y mae’n ei gynhyrchu’n gweithio.</p>
+</section>
+<section id="ymarfer">
+<h3><span class="section-number">16.10.2. </span>Ymarfer<a class="headerlink" href="#ymarfer" title="Link to this heading">#</a></h3>
+<p>Ysgrifennwch ddull <code class="docutils literal notranslate"><span class="pre">__eq__</span></code> ar gyfer dosbarth <code class="docutils literal notranslate"><span class="pre">Line</span></code> sy’n dychwelyd <code class="docutils literal notranslate"><span class="pre">True</span></code> os
+yw’r gwrthrychau <code class="docutils literal notranslate"><span class="pre">Line</span></code> yn cyfeirio at wrthrychau <code class="docutils literal notranslate"><span class="pre">Point</span></code> sy’n gyfwerth, mewn
+unrhyw drefn.</p>
+<p>Gallwch ddefnyddio’r amlinelliad canlynol i ddechrau.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">add_method_to</span> <span class="n">Line</span>
+
+<span class="k">def</span><span class="w"> </span><span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+    <span class="k">return</span> <span class="kc">None</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+<p>Gallwch ddefnyddio’r enghreifftiau hyn i brofi eich cod.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">start1</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">start2</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">end</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Dylai’r enghraifft hon fod yn <code class="docutils literal notranslate"><span class="pre">True</span></code> am fod y gwrthrychau <code class="docutils literal notranslate"><span class="pre">Line</span></code> yn cyfeirio
+at wrthrychau <code class="docutils literal notranslate"><span class="pre">Point</span></code> sy’n gyfwerth, yn yr un drefn.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">line_a</span> <span class="o">=</span> <span class="n">Line</span><span class="p">(</span><span class="n">start1</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
+<span class="n">line_b</span> <span class="o">=</span> <span class="n">Line</span><span class="p">(</span><span class="n">start2</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
+<span class="n">line_a</span> <span class="o">==</span> <span class="n">line_b</span>    <span class="c1"># should be True</span>
+</pre></div>
+</div>
+<p>Dylai’r enghraifft hon fod yn <code class="docutils literal notranslate"><span class="pre">True</span></code> am fod y gwrthrychau <code class="docutils literal notranslate"><span class="pre">Line</span></code> yn cyfeirio
+at wrthrychau <code class="docutils literal notranslate"><span class="pre">Point</span></code> sy’n gyfwerth, mewn trefn wrthdro.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">line_c</span> <span class="o">=</span> <span class="n">Line</span><span class="p">(</span><span class="n">end</span><span class="p">,</span> <span class="n">start1</span><span class="p">)</span>
+<span class="n">line_a</span> <span class="o">==</span> <span class="n">line_c</span>     <span class="c1"># should be True</span>
+</pre></div>
+</div>
+<p>Dylai cyfwerthedd fod bob amser yn drosglwyddadwy — hynny yw, os yw <code class="docutils literal notranslate"><span class="pre">line_a</span></code>
+a <code class="docutils literal notranslate"><span class="pre">line_b</span></code> yn gyfwerth, ac mae <code class="docutils literal notranslate"><span class="pre">line_a</span></code> a <code class="docutils literal notranslate"><span class="pre">line_c</span></code> yn gyfwerth, dylai <code class="docutils literal notranslate"><span class="pre">line_b</span></code>
+a <code class="docutils literal notranslate"><span class="pre">line_c</span></code> hefyd fod yn gyfwerth.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">line_b</span> <span class="o">==</span> <span class="n">line_c</span>     <span class="c1"># should be True</span>
+</pre></div>
+</div>
+<p>Dylai’r enghraifft hon fod yn <code class="docutils literal notranslate"><span class="pre">False</span></code> am nad yw’r gwrthrychau <code class="docutils literal notranslate"><span class="pre">Line</span></code> yn
+cyfeirio at wrthrychau <code class="docutils literal notranslate"><span class="pre">Point</span></code> sy’n gyfwerth.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">line_d</span> <span class="o">=</span> <span class="n">Line</span><span class="p">(</span><span class="n">start1</span><span class="p">,</span> <span class="n">start2</span><span class="p">)</span>
+<span class="n">line_a</span> <span class="o">==</span> <span class="n">line_d</span>    <span class="c1"># should be False</span>
+</pre></div>
+</div>
+</section>
+<section id="id1">
+<h3><span class="section-number">16.10.3. </span>Ymarfer<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>Ysgrifennwch ddull <code class="docutils literal notranslate"><span class="pre">Line</span></code> o’r enw <code class="docutils literal notranslate"><span class="pre">midpoint</span></code> sy’n cyfrifo canolbwynt segment
+llinell ac yn dychwelyd y canlyniad fel gwrthrych <code class="docutils literal notranslate"><span class="pre">Point</span></code>.</p>
+<p>Gallwch ddefnyddio’r amlinelliad canlynol i ddechrau.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">add_method_to</span> <span class="n">Line</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">midpoint</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">Point</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+<p>Gallwch ddefnyddio’r enghreifftiau canlynol i brofi eich cod a thynnu’r
+canlyniad.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">start</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">end1</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">end2</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">150</span><span class="p">)</span>
+<span class="n">line1</span> <span class="o">=</span> <span class="n">Line</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end1</span><span class="p">)</span>
+<span class="n">line2</span> <span class="o">=</span> <span class="n">Line</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end2</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mid1</span> <span class="o">=</span> <span class="n">line1</span><span class="o">.</span><span class="n">midpoint</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mid1</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mid2</span> <span class="o">=</span> <span class="n">line2</span><span class="o">.</span><span class="n">midpoint</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mid2</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">line3</span> <span class="o">=</span> <span class="n">Line</span><span class="p">(</span><span class="n">mid1</span><span class="p">,</span> <span class="n">mid2</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">make_turtle</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">shape</span> <span class="ow">in</span> <span class="p">[</span><span class="n">line1</span><span class="p">,</span> <span class="n">line2</span><span class="p">,</span> <span class="n">line3</span><span class="p">]:</span>
+    <span class="n">shape</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="id2">
+<h3><span class="section-number">16.10.4. </span>Ymarfer<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>Ysgrifennwch ddull <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code> o’r enw <code class="docutils literal notranslate"><span class="pre">midpoint</span></code> sy’n canfod y pwynt yng
+nghanol petryal ac yn dychwelyd y canlyniad fel gwrthrych <code class="docutils literal notranslate"><span class="pre">Point</span></code>.</p>
+<p>Gallwch ddefnyddio’r amlinelliad canlynol i ddechrau.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">add_method_to</span> <span class="n">Rectangle</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">midpoint</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">Point</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+<p>Gallwch ddefnyddio’r enghraifft ganlynol i brofi eich cod.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">corner</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">rectangle</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="n">corner</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mid</span> <span class="o">=</span> <span class="n">rectangle</span><span class="o">.</span><span class="n">midpoint</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mid</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">diagonal</span> <span class="o">=</span> <span class="n">Line</span><span class="p">(</span><span class="n">corner</span><span class="p">,</span> <span class="n">mid</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">make_turtle</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">shape</span> <span class="ow">in</span> <span class="p">[</span><span class="n">line1</span><span class="p">,</span> <span class="n">line2</span><span class="p">,</span> <span class="n">rectangle</span><span class="p">,</span> <span class="n">diagonal</span><span class="p">]:</span>
+    <span class="n">shape</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="id3">
+<h3><span class="section-number">16.10.5. </span>Ymarfer<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>Ysgrifennwch ddull <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code> o’r enw <code class="docutils literal notranslate"><span class="pre">make_cross</span></code> sydd:</p>
+<ol class="arabic simple">
+<li><p>Yn defnyddio <code class="docutils literal notranslate"><span class="pre">make_lines</span></code> i gael rhestr o wrthrychau <code class="docutils literal notranslate"><span class="pre">Line</span></code> sy’n
+cynrychioli pedair ochr y petryal.</p></li>
+<li><p>Yn cyfrifo canolbwyntiau’r pedair llinell.</p></li>
+<li><p>Yn gwneud ac yn dychwelyd rhestr o ddau wrthrych <code class="docutils literal notranslate"><span class="pre">Line</span></code> sy’n cynrychioli
+llinellau sy’n cysylltu canolbwyntiau sy’n gwrthwynebu ei gilydd, gan
+ffurfio croes drwy ganol y petryal.</p></li>
+</ol>
+<p>Gallwch ddefnyddio’r amlinelliad hwn i ddechrau.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">add_method_to</span> <span class="n">Rectangle</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">make_diagonals</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">[]</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+<p>Gallwch ddefnyddio’r enghraifft ganlynol i brofi eich cod.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">corner</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">rectangle</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="n">corner</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">lines</span> <span class="o">=</span> <span class="n">rectangle</span><span class="o">.</span><span class="n">make_cross</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">make_turtle</span><span class="p">()</span>
+
+<span class="n">rectangle</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+    <span class="n">line</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="id4">
+<h3><span class="section-number">16.10.6. </span>Ymarfer<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p>Ysgrifennwch ddiffiniad ar gyfer dosbarth o’r enw <code class="docutils literal notranslate"><span class="pre">Circle</span></code> â phriodoleddau
+<code class="docutils literal notranslate"><span class="pre">center</span></code> a <code class="docutils literal notranslate"><span class="pre">radius</span></code>, lle mae <code class="docutils literal notranslate"><span class="pre">center</span></code> yn wrthrych Point ac mae <code class="docutils literal notranslate"><span class="pre">radius</span></code> yn
+rif. Cynhwyswch ddulliau arbennig <code class="docutils literal notranslate"><span class="pre">__init__</span></code> a <code class="docutils literal notranslate"><span class="pre">__str__</span></code>, a dull o’r enw
+<code class="docutils literal notranslate"><span class="pre">draw</span></code> sy’n defnyddio swyddogaethau <code class="docutils literal notranslate"><span class="pre">jupyturtle</span></code> i dynnu’r cylch.</p>
+<p>Gallwch ddefnyddio’r swyddogaeth ganlynol, sy’n fersiwn o’r swyddogaeth
+<code class="docutils literal notranslate"><span class="pre">circle</span></code> a ysgrifennom ym Mhennod 4.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">jupyturtle</span><span class="w"> </span><span class="kn">import</span> <span class="n">make_turtle</span><span class="p">,</span> <span class="n">forward</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+    
+<span class="k">def</span><span class="w"> </span><span class="nf">draw_circle</span><span class="p">(</span><span class="n">radius</span><span class="p">):</span>
+    <span class="n">circumference</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">radius</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="mi">30</span>
+    <span class="n">length</span> <span class="o">=</span> <span class="n">circumference</span> <span class="o">/</span> <span class="n">n</span>
+    <span class="n">angle</span> <span class="o">=</span> <span class="mi">360</span> <span class="o">/</span> <span class="n">n</span>
+    <span class="n">left</span><span class="p">(</span><span class="n">angle</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">forward</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
+        <span class="n">left</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+<p>Gallwch ddefnyddio’r enghraifft ganlynol i brofi eich cod. Byddwn yn dechrau
+gyda <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code> sgwâr â lled a uchder <code class="docutils literal notranslate"><span class="pre">100</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">corner</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">rectangle</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="n">corner</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Dylai’r cod canlynol greu <code class="docutils literal notranslate"><span class="pre">Circle</span></code> sy’n ffitio y tu mewn i’r sgwâr.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">center</span> <span class="o">=</span> <span class="n">rectangle</span><span class="o">.</span><span class="n">midpoint</span><span class="p">()</span>
+<span class="n">radius</span> <span class="o">=</span> <span class="n">rectangle</span><span class="o">.</span><span class="n">height</span> <span class="o">/</span> <span class="mi">2</span>
+
+<span class="n">circle</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">(</span><span class="n">center</span><span class="p">,</span> <span class="n">radius</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">circle</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Os aeth popeth yn iawn, dylai’r cod canlynol dynnu’r cylch y tu mewn i’r
+sgwâr (yn cyffwrdd ar bob un o’r pedair ochr).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">make_turtle</span><span class="p">(</span><span class="n">delay</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
+
+<span class="n">rectangle</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+<span class="n">circle</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p><a class="reference external" href="https://allendowney.github.io/ThinkPython/index.html">Think Python: 3rd Edition</a> gan
+Allen B. Downey. Cyfieithiad Cymraeg gan Wayne Aubrey.</p>
+<p>Hawlfraint 2024 <a class="reference external" href="https://allendowney.com">Allen B. Downey</a>. Trwydded testun: <a class="reference external" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative
+Commons Attribution-NonCommercial-ShareAlike 4.0 International</a>.</p>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -462,6 +1148,40 @@
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creu-pwynt">16.1. Creu Pwynt</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creu-llinell">16.2. Creu Llinell</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cyfwerthedd-a-hunaniaeth">16.3. Cyfwerthedd a Hunaniaeth</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creu-petryal">16.4. Creu Petryal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#newid-petryalau">16.5. Newid Petryalau</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#copi-dwfn">16.6. Copi Dwfn</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#polymorffiaeth">16.7. Polymorffiaeth</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dadnamu">16.8. Dadnamu</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rhestr-termau-r-bennod">16.9. Rhestr Termau’r Bennod</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ymarferion">16.10. Ymarferion</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gofyn-i-gynorthwyydd-rhithwir">16.10.1. Gofyn i gynorthwyydd rhithwir</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ymarfer">16.10.2. Ymarfer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">16.10.3. Ymarfer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">16.10.4. Ymarfer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">16.10.5. Ymarfer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">16.10.6. Ymarfer</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
