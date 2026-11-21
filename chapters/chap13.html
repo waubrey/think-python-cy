@@ -62,7 +62,7 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../_static/tippy/chapters/chap13.3603c797-2d97-45e0-816a-e3cd6fa0f626.js"></script>
+    <script defer="defer" src="../_static/tippy/chapters/chap13.0373d2ea-e99f-42b8-8b67-e91a0be2bd93.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/chap13';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -155,6 +155,10 @@
     </div>
   
 
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
   
 </div>
 
@@ -374,7 +378,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -390,6 +396,29 @@
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#enwau-ffeiliau-a-llwybrau">13.1. Enwau Ffeiliau a Llwybrau</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#llinynnau-f">13.2. Llinynnau-f</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#yaml">13.3. YAML</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shelve">13.4. Shelve</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#storio-strwythurau-data">13.5. Storio Strwythurau Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gwirio-ffeiliau-cyfwerth">13.6. Gwirio Ffeiliau Cyfwerth</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cerdded-cyfeiriaduron">13.7. Cerdded Cyfeiriaduron</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dadnamu">13.8. Dadnamu</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rhestr-termau-r-bennod">13.9. Rhestr Termau’r Bennod</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ymarferion">13.10. Ymarferion</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gofyn-i-gynorthwyydd-rhithwir">13.10.1. Gofyn i gynorthwyydd rhithwir</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ymarfer">13.10.2. Ymarfer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">13.10.3. Ymarfer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">13.10.4. Ymarfer</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -401,11 +430,789 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="ffeiliau-a-chronfeydd-data">
 <h1><span class="section-number">13. </span>Ffeiliau a Chronfeydd Data<a class="headerlink" href="#ffeiliau-a-chronfeydd-data" title="Link to this heading">#</a></h1>
-<div class="warning admonition">
-<p class="admonition-title">Statws cyfieithu</p>
-<p>Pennod heb ei chyfieithu eto. Ffynhonnell Saesneg: <strong>Files and Databases</strong>
-(gweler y bennod wreiddiol yn <a class="reference external" href="https://allendowney.github.io/ThinkPython/">https://allendowney.github.io/ThinkPython/</a> ar gyfer y testun gwreiddiol).</p>
+<p>Mae’r rhan fwyaf o’r rhaglenni rydym wedi’u gweld hyd yn hyn yn
+<strong><a class="reference internal" href="../glossary.html#term-darfodedig"><span class="xref std std-term">darfodedig</span></a></strong> yn yr ystyr eu bod yn rhedeg am gyfnod byr ac yn
+cynhyrchu allbwn, ond pan ddônt i ben, mae eu data’n diflannu. Bob tro y
+rhedwch raglen ddarfodedig, mae’n dechrau gyda llechen lân.</p>
+<p>Mae rhaglenni eraill yn <strong><a class="reference internal" href="../glossary.html#term-parhaus"><span class="xref std std-term">parhaus</span></a></strong>: maent yn rhedeg am amser hir
+(neu drwy’r amser); maent yn cadw o leiaf rhywfaint o’u data mewn storfa
+hirdymor; ac os ydynt yn cau i lawr ac yn ailddechrau, maent yn codi lle
+gadawsant.</p>
+<p>Ffordd syml i raglenni gynnal eu data yw drwy ddarllen ac ysgrifennu
+ffeiliau testun. Dewis amgen mwy amryddawn yw storio data mewn cronfa
+ddata. Mae cronfeydd data’n ffeiliau arbenigol y gellir eu darllen a’u
+hysgrifennu’n fwy effeithlon na ffeiliau testun, ac maent yn darparu
+galluoedd ychwanegol.</p>
+<p>Yn y bennod hon, byddwn yn ysgrifennu rhaglenni sy’n darllen ac yn
+ysgrifennu ffeiliau testun a chronfeydd data, ac fel ymarfer byddwch yn
+ysgrifennu rhaglen sy’n chwilio casgliad o luniau am ddyblygiadau. Ond cyn y
+gallwch weithio gyda ffeil, mae’n rhaid i chi ei darganfod, felly byddwn yn
+dechrau gydag enwau ffeiliau, llwybrau, a chyfeiriaduron.</p>
+<section id="enwau-ffeiliau-a-llwybrau">
+<h2><span class="section-number">13.1. </span>Enwau Ffeiliau a Llwybrau<a class="headerlink" href="#enwau-ffeiliau-a-llwybrau" title="Link to this heading">#</a></h2>
+<p>Mae ffeiliau wedi’u trefnu’n **<a class="reference internal" href="../glossary.html#term-cyfeiriadur"><span class="xref std std-term">cyfeiriadur</span></a>**ion, a elwir hefyd yn
+“ffolderi”. Mae gan bob rhaglen sy’n rhedeg <strong><a class="reference internal" href="../glossary.html#term-cyfeiriadur-gwaith-cyfredol"><span class="xref std std-term">cyfeiriadur gwaith cyfredol</span></a></strong>,
+sef y cyfeiriadur rhagosodedig ar gyfer y rhan fwyaf o weithrediadau. Er
+enghraifft, pan agorwch ffeil, mae Python yn chwilio amdani yn y cyfeiriadur
+gwaith cyfredol.</p>
+<p>Mae’r modiwl <code class="docutils literal notranslate"><span class="pre">os</span></code> yn darparu swyddogaethau ar gyfer gweithio gyda ffeiliau a
+chyfeiriaduron (“os” yw talfyriad “operating system”). Mae’n darparu
+swyddogaeth o’r enw <code class="docutils literal notranslate"><span class="pre">getcwd</span></code> sy’n cael enw’r cyfeiriadur gwaith cyfredol.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># this cell replaces `os.cwd` with a function that returns a fake path</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">getcwd</span><span class="p">():</span>
+    <span class="k">return</span> <span class="s2">"/home/dinsdale"</span>
+
+<span class="n">os</span><span class="o">.</span><span class="n">getcwd</span> <span class="o">=</span> <span class="n">getcwd</span>
+</pre></div>
 </div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+
+<span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Cyfeiriadur cartref defnyddiwr o’r enw <code class="docutils literal notranslate"><span class="pre">dinsdale</span></code> yw’r canlyniad yn yr
+enghraifft hon. Gelwir llinyn fel <code class="docutils literal notranslate"><span class="pre">'/home/dinsdale'</span></code> sy’n adnabod ffeil neu
+gyfeiriadur yn <strong><a class="reference internal" href="../glossary.html#term-llwybr"><span class="xref std std-term">llwybr</span></a></strong>.</p>
+<p>Ystyrir enw ffeil syml fel <code class="docutils literal notranslate"><span class="pre">'memo.txt'</span></code> hefyd yn llwybr, ond mae’n
+<strong><a class="reference internal" href="../glossary.html#term-llwybr-cymharol"><span class="xref std std-term">llwybr cymharol</span></a></strong> am ei fod yn nodi enw ffeil yn gymharol i’r
+cyfeiriadur cyfredol. Yn yr enghraifft hon, y cyfeiriadur cyfredol yw
+<code class="docutils literal notranslate"><span class="pre">/home/dinsdale</span></code>, felly mae <code class="docutils literal notranslate"><span class="pre">'memo.txt'</span></code> yn gyfystyr â’r llwybr cyflawn
+<code class="docutils literal notranslate"><span class="pre">/home/dinsdale/memo.txt</span></code>.</p>
+<p>Nid yw llwybr sy’n dechrau gyda <code class="docutils literal notranslate"><span class="pre">/</span></code> yn dibynnu ar y cyfeiriadur cyfredol —
+gelwir ef yn <strong><a class="reference internal" href="../glossary.html#term-llwybr-absoliwt"><span class="xref std std-term">llwybr absoliwt</span></a></strong>. I ddarganfod y llwybr absoliwt at
+ffeil, gallwch ddefnyddio <code class="docutils literal notranslate"><span class="pre">abspath</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">'memo.txt'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Mae’r modiwl <code class="docutils literal notranslate"><span class="pre">os</span></code> yn darparu swyddogaethau eraill ar gyfer gweithio gydag
+enwau ffeiliau a llwybrau. Mae <code class="docutils literal notranslate"><span class="pre">listdir</span></code> yn dychwelyd rhestr o gynnwys y
+cyfeiriadur penodol, gan gynnwys ffeiliau a chyfeiriaduron eraill. Dyma
+enghraifft sy’n rhestru cynnwys cyfeiriadur o’r enw <code class="docutils literal notranslate"><span class="pre">photos</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s1">'photos'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Mae’r cyfeiriadur hwn yn cynnwys ffeil destun o’r enw <code class="docutils literal notranslate"><span class="pre">notes.txt</span></code> a thri
+chyfeiriadur. Mae’r cyfeiriaduron yn cynnwys ffeiliau delwedd ar ffurf
+JPEG.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s1">'photos/jan-2023'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>I wirio a yw ffeil neu gyfeiriadur yn bodoli, gallwn ddefnyddio
+<code class="docutils literal notranslate"><span class="pre">os.path.exists</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s1">'photos'</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s1">'photos/apr-2023'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>I wirio a yw llwybr yn cyfeirio at ffeil neu gyfeiriadur, gallwn ddefnyddio
+<code class="docutils literal notranslate"><span class="pre">isdir</span></code>, sy’n dychwelyd <code class="docutils literal notranslate"><span class="pre">True</span></code> os yw llwybr yn cyfeirio at gyfeiriadur.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="s1">'photos'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Ac <code class="docutils literal notranslate"><span class="pre">isfile</span></code> sy’n dychwelyd <code class="docutils literal notranslate"><span class="pre">True</span></code> os yw llwybr yn cyfeirio at ffeil.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="s1">'photos/notes.txt'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Un her wrth weithio gyda llwybrau yw eu bod yn edrych yn wahanol ar
+wahanol systemau gweithredu. Ar macOS a systemau UNIX fel Linux, gwahenir
+enwau cyfeiriaduron a ffeiliau mewn llwybr gan flaenslaes, <code class="docutils literal notranslate"><span class="pre">/</span></code>. Mae Windows
+yn defnyddio ôl-slaes, <code class="docutils literal notranslate"><span class="pre">\</span></code>. Felly, os rhedwch yr enghreifftiau hyn ar
+Windows, fe welwch ôl-slaesys yn y llwybrau, a bydd yn rhaid i chi ddisodli’r
+blaenslaesys yn yr enghreifftiau.</p>
+<p>Neu, i ysgrifennu cod sy’n gweithio ar y ddwy system, gallwch ddefnyddio
+<code class="docutils literal notranslate"><span class="pre">os.path.join</span></code>, sy’n cydio enwau cyfeiriadur a ffeil mewn llwybr gan
+ddefnyddio blaenslaes neu ôl-slaes, yn dibynnu ar ba system weithredu rydych
+yn ei defnyddio.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">'photos'</span><span class="p">,</span> <span class="s1">'jan-2023'</span><span class="p">,</span> <span class="s1">'photo1.jpg'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Yn ddiweddarach yn y bennod hon byddwn yn defnyddio’r swyddogaethau hyn i
+chwilio set o gyfeiriaduron a darganfod yr holl ffeiliau delwedd.</p>
+</section>
+<section id="llinynnau-f">
+<h2><span class="section-number">13.2. </span>Llinynnau-f<a class="headerlink" href="#llinynnau-f" title="Link to this heading">#</a></h2>
+<p>Un ffordd i raglenni storio data yw ei ysgrifennu i ffeil destun. Er
+enghraifft, tybiwch eich bod yn wyliwr camelod, a’ch bod am gofnodi nifer y
+camelod rydych wedi’u gweld yn ystod cyfnod o arsylwi. A thybiwch, mewn
+blwyddyn a hanner, eich bod wedi gweld <code class="docutils literal notranslate"><span class="pre">23</span></code> camel. Gallai’r data yn eich
+llyfr gwylio camelod edrych fel hyn.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">num_years</span> <span class="o">=</span> <span class="mf">1.5</span>
+<span class="n">num_camels</span> <span class="o">=</span> <span class="mi">23</span>
+</pre></div>
+</div>
+<p>I ysgrifennu’r data hwn i ffeil, gallwch ddefnyddio’r dull <code class="docutils literal notranslate"><span class="pre">write</span></code>, a
+welsom ym Mhennod 8. Mae’n rhaid i ddadl <code class="docutils literal notranslate"><span class="pre">write</span></code> fod yn llinyn, felly os
+ydym am roi gwerthoedd eraill mewn ffeil, mae’n rhaid i ni eu trosi’n
+llinynnau. Y ffordd hawsaf o wneud hynny yw gyda’r swyddogaeth gynhenid
+<code class="docutils literal notranslate"><span class="pre">str</span></code>.</p>
+<p>Dyma sut mae’n edrych:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">writer</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'camel-spotting-book.txt'</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span>
+<span class="n">writer</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">num_years</span><span class="p">))</span>
+<span class="n">writer</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">num_camels</span><span class="p">))</span>
+<span class="n">writer</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Mae hynny’n gweithio, ond nid yw <code class="docutils literal notranslate"><span class="pre">write</span></code> yn ychwanegu bwlch na llinell
+newydd oni bai eich bod yn ei gynnwys yn benodol. Os darllenwn y ffeil yn
+ôl, gwelwn fod y ddau rif wedi’u rhedeg at ei gilydd.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">open</span><span class="p">(</span><span class="s1">'camel-spotting-book.txt'</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Ar y lleiaf, dylem ychwanegu bwlch gwyn rhwng y rhifau. A tra byddwn wrthi,
+gadewch i ni ychwanegu peth testun esboniadol.</p>
+<p>I ysgrifennu cyfuniad o linynnau a gwerthoedd eraill, gallwn ddefnyddio
+<strong><a class="reference internal" href="../glossary.html#term-llinyn-f"><span class="xref std std-term">llinyn-f</span></a></strong>, sef llinyn sydd â’r llythyren <code class="docutils literal notranslate"><span class="pre">f</span></code> cyn y dyfynnod
+agoriadol, ac sy’n cynnwys un mynegiad Python neu fwy mewn cromfachau
+cyrliog. Mae’r llinyn-f canlynol yn cynnwys un mynegiad, sef enw newidyn.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sa">f</span><span class="s1">'I have spotted </span><span class="si">{</span><span class="n">num_camels</span><span class="si">}</span><span class="s1"> camels'</span>
+</pre></div>
+</div>
+<p>Llinyn lle mae’r mynegiad wedi’i werthuso a’i ddisodli â’r canlyniad yw’r
+canlyniad. Gall fod mwy nag un mynegiad.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sa">f</span><span class="s1">'In </span><span class="si">{</span><span class="n">num_years</span><span class="si">}</span><span class="s1"> years I have spotted </span><span class="si">{</span><span class="n">num_camels</span><span class="si">}</span><span class="s1"> camels'</span>
+</pre></div>
+</div>
+<p>A gall y mynegiadau gynnwys gweithredyddion a galwadau swyddogaeth.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">line</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">'In </span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="n">num_years</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">12</span><span class="p">)</span><span class="si">}</span><span class="s1"> months I have spotted </span><span class="si">{</span><span class="n">num_camels</span><span class="si">}</span><span class="s1"> camels'</span>
+<span class="n">line</span>
+</pre></div>
+</div>
+<p>Felly gallem ysgrifennu’r data i ffeil destun fel hyn.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">writer</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'camel-spotting-book.txt'</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span>
+<span class="n">writer</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Years of observation: </span><span class="si">{</span><span class="n">num_years</span><span class="si">}</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
+<span class="n">writer</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Camels spotted: </span><span class="si">{</span><span class="n">num_camels</span><span class="si">}</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
+<span class="n">writer</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Mae’r ddau linyn-f yn gorffen gyda’r dilyniant <code class="docutils literal notranslate"><span class="pre">\n</span></code>, sy’n ychwanegu nod
+llinell newydd.</p>
+<p>Gallwn ddarllen y ffeil yn ôl fel hyn:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'camel-spotting-book.txt'</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Mewn llinyn-f, trosir mynegiad mewn cromfachau cyrliog yn llinyn, felly
+gallwch gynnwys rhestri, geiriaduron, a mathau eraill.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'one'</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
+<span class="sa">f</span><span class="s1">'Here is a list </span><span class="si">{</span><span class="n">t</span><span class="si">}</span><span class="s1"> and a dictionary </span><span class="si">{</span><span class="n">d</span><span class="si">}</span><span class="s1">'</span>
+</pre></div>
+</div>
+<p>Os yw llinyn-f yn cynnwys mynegiad annilys, gwall yw’r canlyniad.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">expect</span> <span class="ne">TypeError</span>
+
+<span class="sa">f</span><span class="s1">'This is not a valid expression </span><span class="si">{</span><span class="n">t</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">2</span><span class="si">}</span><span class="s1">'</span>
+</pre></div>
+</div>
+</section>
+<section id="yaml">
+<h2><span class="section-number">13.3. </span>YAML<a class="headerlink" href="#yaml" title="Link to this heading">#</a></h2>
+<p>Un o’r rhesymau mae rhaglenni’n darllen ac yn ysgrifennu ffeiliau yw i
+storio <strong><a class="reference internal" href="../glossary.html#term-data-cyfluniad"><span class="xref std std-term">data cyfluniad</span></a></strong>, sef gwybodaeth sy’n nodi beth y dylai’r
+rhaglen ei wneud a sut.</p>
+<p>Er enghraifft, mewn rhaglen sy’n chwilio am luniau dyblyg, efallai y bydd
+gennym eiriadur o’r enw <code class="docutils literal notranslate"><span class="pre">config</span></code> sy’n cynnwys enw’r cyfeiriadur i’w chwilio,
+enw cyfeiriadur arall lle dylai storio’r canlyniadau, a rhestr o estyniadau
+ffeil y dylai eu defnyddio i adnabod ffeiliau delwedd.</p>
+<p>Dyma sut y gallai edrych:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">config</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">'photo_dir'</span><span class="p">:</span> <span class="s1">'photos'</span><span class="p">,</span>
+    <span class="s1">'data_dir'</span><span class="p">:</span> <span class="s1">'photo_info'</span><span class="p">,</span>
+    <span class="s1">'extensions'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'jpg'</span><span class="p">,</span> <span class="s1">'jpeg'</span><span class="p">],</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>I ysgrifennu’r data hwn mewn ffeil destun, gallem ddefnyddio llinynnau-f,
+fel yn yr adran flaenorol. Ond mae’n haws defnyddio modiwl o’r enw <code class="docutils literal notranslate"><span class="pre">yaml</span></code>
+sydd wedi’i ddylunio ar gyfer union y math hwn o beth.</p>
+<p>Mae’r modiwl <code class="docutils literal notranslate"><span class="pre">yaml</span></code> yn darparu swyddogaethau i weithio gyda ffeiliau YAML,
+sef ffeiliau testun wedi’u fformatio i fod yn hawdd i bobl <em>a</em> rhaglenni eu
+darllen a’u hysgrifennu.</p>
+<p>Dyma enghraifft sy’n defnyddio’r swyddogaeth <code class="docutils literal notranslate"><span class="pre">dump</span></code> i ysgrifennu’r geiriadur
+<code class="docutils literal notranslate"><span class="pre">config</span></code> i ffeil YAML.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># this cell installs the pyyaml package, which provides the yaml module</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">yaml</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">pyyaml</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">yaml</span>
+
+<span class="n">config_filename</span> <span class="o">=</span> <span class="s1">'config.yaml'</span>
+<span class="n">writer</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">config_filename</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span>
+<span class="n">yaml</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="n">writer</span><span class="p">)</span>
+<span class="n">writer</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Os darllenwn gynnwys y ffeil yn ôl, gallwn weld sut mae’r fformat YAML yn
+edrych.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">readback</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">config_filename</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">readback</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Nawr, gallwn ddefnyddio <code class="docutils literal notranslate"><span class="pre">safe_load</span></code> i ddarllen y ffeil YAML yn ôl.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">reader</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">config_filename</span><span class="p">)</span>
+<span class="n">config_readback</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">safe_load</span><span class="p">(</span><span class="n">reader</span><span class="p">)</span>
+<span class="n">config_readback</span>
+</pre></div>
+</div>
+<p>Geiriadur newydd sy’n cynnwys yr un wybodaeth â’r gwreiddiol yw’r canlyniad,
+ond nid yr un geiriadur ydyw.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">config</span> <span class="ow">is</span> <span class="n">config_readback</span>
+</pre></div>
+</div>
+<p>Gelwir trosi gwrthrych fel geiriadur yn llinyn yn <strong><a class="reference internal" href="../glossary.html#term-cyfresu"><span class="xref std std-term">cyfresu</span></a></strong>.
+Gelwir trosi’r llinyn yn ôl yn wrthrych yn <strong><a class="reference internal" href="../glossary.html#term-dadgyfresu"><span class="xref std std-term">dadgyfresu</span></a></strong>. Os
+cyfresoch ac yna dadgyfresu gwrthrych, dylai’r canlyniad fod yn gyfwerth
+â’r gwreiddiol.</p>
+</section>
+<section id="shelve">
+<h2><span class="section-number">13.4. </span>Shelve<a class="headerlink" href="#shelve" title="Link to this heading">#</a></h2>
+<p>Hyd yn hyn rydym wedi bod yn darllen ac yn ysgrifennu ffeiliau testun —
+nawr gadewch i ni ystyried cronfeydd data. Mae <strong><a class="reference internal" href="../glossary.html#term-cronfa-ddata"><span class="xref std std-term">cronfa ddata</span></a></strong> yn
+ffeil sydd wedi’i threfnu ar gyfer storio data. Mae rhai cronfeydd data
+wedi’u trefnu fel tabl gyda rhesi a cholofnau o wybodaeth. Mae eraill
+wedi’u trefnu fel geiriadur sy’n mapio o allweddi i werthoedd; fe’u gelwir
+weithiau’n **<a class="reference internal" href="../glossary.html#term-storfa-allwedd-gwerth"><span class="xref std std-term">storfa allwedd-gwerth</span></a>**oedd.</p>
+<p>Mae’r modiwl <code class="docutils literal notranslate"><span class="pre">shelve</span></code> yn darparu swyddogaethau ar gyfer creu a diweddaru
+storfa allwedd-gwerth o’r enw “silff”. Fel enghraifft, byddwn yn creu silff
+i gynnwys capsiynau ar gyfer y ffigurau yn y cyfeiriadur <code class="docutils literal notranslate"><span class="pre">photos</span></code>. Byddwn
+yn defnyddio’r geiriadur <code class="docutils literal notranslate"><span class="pre">config</span></code> i gael enw’r cyfeiriadur lle dylem roi’r
+silff.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">config</span><span class="p">[</span><span class="s1">'data_dir'</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Gallwn ddefnyddio <code class="docutils literal notranslate"><span class="pre">os.makedirs</span></code> i greu’r cyfeiriadur hwn, os nad yw eisoes
+yn bodoli.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s1">'data_dir'</span><span class="p">],</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>A <code class="docutils literal notranslate"><span class="pre">os.path.join</span></code> i wneud llwybr sy’n cynnwys enw’r cyfeiriadur ac enw ffeil
+y silff, <code class="docutils literal notranslate"><span class="pre">captions</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">db_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s1">'data_dir'</span><span class="p">],</span> <span class="s1">'captions'</span><span class="p">)</span>
+<span class="n">db_file</span>
+</pre></div>
+</div>
+<p>Nawr gallwn ddefnyddio <code class="docutils literal notranslate"><span class="pre">shelve.open</span></code> i agor ffeil y silff. Mae’r ddadl <code class="docutils literal notranslate"><span class="pre">c</span></code>
+yn nodi y dylid creu’r ffeil os oes angen.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">shelve</span>
+
+<span class="n">db</span> <span class="o">=</span> <span class="n">shelve</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">db_file</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">)</span>
+<span class="n">db</span>
+</pre></div>
+</div>
+<p>Os cewch wall fel <code class="docutils literal notranslate"><span class="pre">db</span> <span class="pre">type</span> <span class="pre">could</span> <span class="pre">not</span> <span class="pre">be</span> <span class="pre">determined</span></code>, yr achos mwyaf
+tebygol yw bod ffeil â’r un enw eisoes yn bodoli ond nad yw’n gronfa ddata
+shelve ddilys (er enghraifft, efallai ei bod wedi’i llygru neu ei chreu gan
+rywbeth arall).</p>
+<p>Yn yr achos hwnnw, y datrysiad symlaf yw dileu’r ffeil bresennol a rhedeg y
+cod eto fel y gall <code class="docutils literal notranslate"><span class="pre">shelve.open</span></code> greu cronfa ddata newydd.</p>
+<p>Yn swyddogol, gwrthrych <code class="docutils literal notranslate"><span class="pre">DbfilenameShelf</span></code> yw’r gwerth dychwelyd, a elwir yn
+fwy achlysurol yn wrthrych silff.</p>
+<p>Mae’r gwrthrych silff yn ymddwyn mewn sawl ffordd fel geiriadur. Er
+enghraifft, gallwn ddefnyddio’r gweithredydd cromfachau i ychwanegu eitem,
+sef mapio o allwedd i werth.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">key</span> <span class="o">=</span> <span class="s1">'jan-2023/photo1.jpg'</span> 
+<span class="n">db</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Cat nose'</span>
+</pre></div>
+</div>
+<p>Yn yr enghraifft hon, llwybr at ffeil ddelwedd yw’r allwedd a llinyn sy’n
+disgrifio’r ddelwedd yw’r gwerth.</p>
+<p>Rydym hefyd yn defnyddio’r gweithredydd cromfachau i chwilio am allwedd a
+chael y gwerth cyfatebol.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">value</span> <span class="o">=</span> <span class="n">db</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+<span class="n">value</span>
+</pre></div>
+</div>
+<p>Os gwnewch neilltuad arall i allwedd bresennol, mae <code class="docutils literal notranslate"><span class="pre">shelve</span></code> yn disodli’r
+hen werth.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Close up view of a cat nose'</span>
+<span class="n">db</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Mae rhai dulliau geiriadur, fel <code class="docutils literal notranslate"><span class="pre">keys</span></code>, <code class="docutils literal notranslate"><span class="pre">values</span></code> ac <code class="docutils literal notranslate"><span class="pre">items</span></code>, hefyd yn
+gweithio gyda gwrthrychau silff.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>Gallwn ddefnyddio’r gweithredydd <code class="docutils literal notranslate"><span class="pre">in</span></code> i wirio a yw allwedd yn ymddangos
+yn y silff.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">key</span> <span class="ow">in</span> <span class="n">db</span>
+</pre></div>
+</div>
+<p>A gallwn ddefnyddio gosodiad <code class="docutils literal notranslate"><span class="pre">for</span></code> i ddolennu drwy’r allweddi.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">db</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="s1">':'</span><span class="p">,</span> <span class="n">db</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>Fel gyda ffeiliau eraill, dylech gau’r gronfa ddata pan fyddwch wedi
+gorffen.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Nawr os rhestrwn gynnwys y cyfeiriadur data, gwelwn ddwy ffeil.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># When you open a shelve file, a backup file is created that has the suffix `.bak`.</span>
+<span class="c1"># If you run this notebook more than once, you might see that file left behind.</span>
+<span class="c1"># This cell removes it so the output shown in the book is correct.</span>
+
+<span class="err">!</span><span class="n">rm</span> <span class="o">-</span><span class="n">f</span> <span class="n">photo_info</span><span class="o">/</span><span class="n">captions</span><span class="o">.</span><span class="n">bak</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s1">'data_dir'</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>Mae <code class="docutils literal notranslate"><span class="pre">captions.dat</span></code> yn cynnwys y data rydym newydd ei storio. Mae
+<code class="docutils literal notranslate"><span class="pre">captions.dir</span></code> yn cynnwys gwybodaeth am drefniant y gronfa ddata sy’n ei
+gwneud yn fwy effeithlon i’w chyrchu. Mae’r ôl-ddodiad <code class="docutils literal notranslate"><span class="pre">dir</span></code> yn sefyll am
+“directory”, ond nid oes a wnelo ddim â’r cyfeiriaduron rydym wedi bod yn
+gweithio gyda nhw sy’n cynnwys ffeiliau.</p>
+</section>
+<section id="storio-strwythurau-data">
+<span id="section-storing-data-structure"></span><h2><span class="section-number">13.5. </span>Storio Strwythurau Data<a class="headerlink" href="#storio-strwythurau-data" title="Link to this heading">#</a></h2>
+<p>Yn yr enghraifft flaenorol, llinynnau yw’r allweddi a’r gwerthoedd yn y
+silff. Ond gallwn hefyd ddefnyddio silff i gynnwys strwythurau data fel
+rhestri a geiriaduron.</p>
+<p>Fel enghraifft, gadewch i ni ailymweld â’r enghraifft anagramau o ymarfer
+ym Mhennod 11 (<a class="reference internal" href="chap11.html#section-exercise-11"><span class="std std-ref">Ymarfer</span></a>). Cofiwch ein bod wedi gwneud
+geiriadur sy’n mapio o linyn wedi’i drefnu o lythrennau i’r rhestr o
+eiriau y gellir eu sillafu gyda’r llythrennau hynny. Er enghraifft, mae’r
+allwedd <code class="docutils literal notranslate"><span class="pre">'opst'</span></code> yn mapio i’r rhestr <code class="docutils literal notranslate"><span class="pre">['opts',</span> <span class="pre">'post',</span> <span class="pre">'pots',</span> <span class="pre">'spot',</span> <span class="pre">'stop',</span> <span class="pre">'tops']</span></code>.</p>
+<p>Byddwn yn defnyddio’r swyddogaeth ganlynol i drefnu llythrennau gair.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">sort_word</span><span class="p">(</span><span class="n">word</span><span class="p">):</span>
+    <span class="k">return</span> <span class="s1">''</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">word</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>A dyma enghraifft.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">word</span> <span class="o">=</span> <span class="s1">'pots'</span>
+<span class="n">key</span> <span class="o">=</span> <span class="n">sort_word</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+<span class="n">key</span>
+</pre></div>
+</div>
+<p>Nawr gadewch i ni agor silff o’r enw <code class="docutils literal notranslate"><span class="pre">anagram_map</span></code>. Mae’r ddadl <code class="docutils literal notranslate"><span class="pre">'n'</span></code> yn
+golygu y dylem bob amser greu silff newydd, wag, hyd yn oed os oes un eisoes
+yn bodoli.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">db</span> <span class="o">=</span> <span class="n">shelve</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">'anagram_map'</span><span class="p">,</span> <span class="s1">'n'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Nawr gallwn ychwanegu eitem at y silff fel hyn.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">word</span><span class="p">]</span>
+<span class="n">db</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Yn yr eitem hon, llinyn yw’r allwedd a rhestr o linynnau yw’r gwerth.</p>
+<p>Nawr tybiwch ein bod yn darganfod gair arall sy’n cynnwys yr un llythrennau,
+fel <code class="docutils literal notranslate"><span class="pre">tops</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">word</span> <span class="o">=</span> <span class="s1">'tops'</span>
+<span class="n">key</span> <span class="o">=</span> <span class="n">sort_word</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+<span class="n">key</span>
+</pre></div>
+</div>
+<p>Mae’r allwedd yr un fath â’r enghraifft flaenorol, felly rydym am ychwanegu
+ail air at yr un rhestr o linynnau. Dyma sut y byddem yn ei wneud pe bai
+<code class="docutils literal notranslate"><span class="pre">db</span></code> yn eiriadur.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>          <span class="c1"># INCORRECT</span>
+</pre></div>
+</div>
+<p>Ond os rhedwn hynny ac yna chwilio am yr allwedd yn y silff, mae’n edrych
+fel nad yw wedi’i diweddaru.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Dyma’r broblem: pan chwiliwn am yr allwedd, cawn restr o linynnau, ond os
+addaswn y rhestr o linynnau, nid yw’n effeithio ar y silff. Os ydym am
+ddiweddaru’r silff, mae’n rhaid i ni ddarllen yr hen werth, ei ddiweddaru,
+ac yna ysgrifennu’r gwerth newydd yn ôl i’r silff.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">anagram_list</span> <span class="o">=</span> <span class="n">db</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+<span class="n">anagram_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+<span class="n">db</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">anagram_list</span>
+</pre></div>
+</div>
+<p>Nawr mae’r gwerth yn y silff wedi’i ddiweddaru.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Fel ymarfer, gallwch orffen yr enghraifft hon drwy ddarllen y rhestr eiriau
+a storio’r holl anagramau mewn silff.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="gwirio-ffeiliau-cyfwerth">
+<h2><span class="section-number">13.6. </span>Gwirio Ffeiliau Cyfwerth<a class="headerlink" href="#gwirio-ffeiliau-cyfwerth" title="Link to this heading">#</a></h2>
+<p>Nawr gadewch i ni ddychwelyd at nod y bennod hon: chwilio am wahanol
+ffeiliau sy’n cynnwys yr un data. Un ffordd o wirio yw darllen cynnwys y
+ddwy ffeil a’u cymharu.</p>
+<p>Os yw’r ffeiliau’n cynnwys delweddau, mae’n rhaid i ni eu hagor gyda modd
+<code class="docutils literal notranslate"><span class="pre">'rb'</span></code>, lle mae <code class="docutils literal notranslate"><span class="pre">'r'</span></code> yn golygu ein bod am ddarllen y cynnwys ac mae <code class="docutils literal notranslate"><span class="pre">'b'</span></code>
+yn nodi <strong><a class="reference internal" href="../glossary.html#term-modd-deuaidd"><span class="xref std std-term">modd deuaidd</span></a></strong>. Mewn modd deuaidd, ni ddehonglir y
+cynnwys fel testun — fe’u trinir fel dilyniant o fytiau.</p>
+<p>Dyma enghraifft sy’n agor ac yn darllen ffeil ddelwedd.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">path1</span> <span class="o">=</span> <span class="s1">'photos/jan-2023/photo1.jpg'</span>
+<span class="n">data1</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">path1</span><span class="p">,</span> <span class="s1">'rb'</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">data1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Gwrthrych <code class="docutils literal notranslate"><span class="pre">bytes</span></code> yw’r canlyniad o <code class="docutils literal notranslate"><span class="pre">read</span></code> — fel mae’r enw’n awgrymu, mae’n
+cynnwys dilyniant o fytiau.</p>
+<p>Yn gyffredinol nid yw cynnwys ffeil ddelwedd yn ddarllenadwy i bobl. Ond os
+darllenwn gynnwys ail ffeil, gallwn ddefnyddio’r gweithredydd <code class="docutils literal notranslate"><span class="pre">==</span></code> i
+gymharu.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">path2</span> <span class="o">=</span> <span class="s1">'photos/jan-2023/photo2.jpg'</span>
+<span class="n">data2</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">path2</span><span class="p">,</span> <span class="s1">'rb'</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="n">data1</span> <span class="o">==</span> <span class="n">data2</span>
+</pre></div>
+</div>
+<p>Nid yw’r ddwy ffeil hyn yn gyfwerth.</p>
+<p>Gadewch i ni amgáu’r hyn sydd gennym hyd yn hyn mewn swyddogaeth.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">same_contents</span><span class="p">(</span><span class="n">path1</span><span class="p">,</span> <span class="n">path2</span><span class="p">):</span>
+    <span class="n">data1</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">path1</span><span class="p">,</span> <span class="s1">'rb'</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="n">data2</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">path2</span><span class="p">,</span> <span class="s1">'rb'</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">data1</span> <span class="o">==</span> <span class="n">data2</span>
+</pre></div>
+</div>
+<p>Os mai dim ond dwy ffeil sydd gennym, mae’r swyddogaeth hon yn ddewis da.
+Ond tybiwch fod gennym nifer fawr o ffeiliau a’n bod am wybod a oes unrhyw
+ddwy ohonynt yn cynnwys yr un data. Byddai’n aneffeithlon cymharu pob pâr o
+ffeiliau.</p>
+<p>Dewis amgen yw defnyddio swyddogaeth hash, sy’n cymryd cynnwys ffeil ac yn
+cyfrifo <strong><a class="reference internal" href="../glossary.html#term-crynodeb"><span class="xref std std-term">crynodeb</span></a></strong>, sydd fel arfer yn gyfanrif mawr. Os yw dwy
+ffeil yn cynnwys yr un data, bydd ganddynt yr un crynodeb. Os yw dwy ffeil
+yn wahanol, <em>bron bob amser</em> bydd ganddynt wahanol grynodebau.</p>
+<p>Mae’r modiwl <code class="docutils literal notranslate"><span class="pre">hashlib</span></code> yn darparu sawl swyddogaeth hash — yr un y byddwn
+yn ei defnyddio yw <code class="docutils literal notranslate"><span class="pre">md5</span></code>. Byddwn yn dechrau drwy ddefnyddio <code class="docutils literal notranslate"><span class="pre">hashlib.md5</span></code>
+i greu gwrthrych <code class="docutils literal notranslate"><span class="pre">HASH</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">hashlib</span>
+
+<span class="n">md5_hash</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">md5</span><span class="p">()</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">md5_hash</span><span class="p">)</span>
+</pre></div>
+</div>
+<p id="section-md5-digest">Mae’r gwrthrych <code class="docutils literal notranslate"><span class="pre">HASH</span></code> yn darparu dull <code class="docutils literal notranslate"><span class="pre">update</span></code> sy’n cymryd cynnwys y
+ffeil fel dadl.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">md5_hash</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">data1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Nawr gallwn ddefnyddio <code class="docutils literal notranslate"><span class="pre">hexdigest</span></code> i gael y crynodeb fel llinyn o ddigidau
+hecsadegol sy’n cynrychioli cyfanrif yn sail 16.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">digest</span> <span class="o">=</span> <span class="n">md5_hash</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>
+<span class="n">digest</span>
+</pre></div>
+</div>
+<p>Mae’r swyddogaeth ganlynol yn amgáu’r camau hyn.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">md5_digest</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">'rb'</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="n">md5_hash</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">md5</span><span class="p">()</span>
+    <span class="n">md5_hash</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">digest</span> <span class="o">=</span> <span class="n">md5_hash</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">digest</span>
+</pre></div>
+</div>
+<p>Os hasiwn gynnwys ffeil wahanol, gallwn gadarnhau ein bod yn cael crynodeb
+gwahanol.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">filename2</span> <span class="o">=</span> <span class="s1">'photos/feb-2023/photo2.jpg'</span>
+<span class="n">md5_digest</span><span class="p">(</span><span class="n">filename2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Nawr mae gennym bron bopeth sydd ei angen arnom i ddarganfod ffeiliau
+cyfwerth. Y cam olaf yw chwilio cyfeiriadur a darganfod yr holl ffeiliau
+delwedd.</p>
+</section>
+<section id="cerdded-cyfeiriaduron">
+<span id="section-walking-directories"></span><h2><span class="section-number">13.7. </span>Cerdded Cyfeiriaduron<a class="headerlink" href="#cerdded-cyfeiriaduron" title="Link to this heading">#</a></h2>
+<p>Mae’r swyddogaeth ganlynol yn cymryd fel dadl y cyfeiriadur rydym am ei
+chwilio. Mae’n defnyddio <code class="docutils literal notranslate"><span class="pre">listdir</span></code> i ddolennu drwy gynnwys y cyfeiriadur.
+Pan ddarganfyddir ffeil, mae’n argraffu ei llwybr cyflawn. Pan ddarganfyddir
+cyfeiriadur, mae’n galw ei hun yn ddychweliadol i chwilio’r is-gyfeiriadur.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">walk</span><span class="p">(</span><span class="n">dirname</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">dirname</span><span class="p">):</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dirname</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+            <span class="n">walk</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Gallwn ei defnyddio fel hyn:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">walk</span><span class="p">(</span><span class="s1">'photos'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Mae trefn y canlyniadau’n dibynnu ar fanylion y system weithredu.</p>
+</section>
+<section id="dadnamu">
+<h2><span class="section-number">13.8. </span>Dadnamu<a class="headerlink" href="#dadnamu" title="Link to this heading">#</a></h2>
+<p>Pan fyddwch yn darllen ac yn ysgrifennu ffeiliau, efallai y dowch ar draws
+problemau gyda bylchau gwyn. Gall y gwallau hyn fod yn anodd eu dadnamu am
+fod nodau bwlch gwyn fel arfer yn anweledig. Er enghraifft, dyma linyn
+sy’n cynnwys bylchau, tab a gynrychiolir gan y dilyniant <code class="docutils literal notranslate"><span class="pre">\t</span></code>, a llinell
+newydd a gynrychiolir gan y dilyniant <code class="docutils literal notranslate"><span class="pre">\n</span></code>. Pan argraffwn ef, nid ydym yn
+gweld y nodau bwlch gwyn.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">'1 2</span><span class="se">\t</span><span class="s1"> 3</span><span class="se">\n</span><span class="s1"> 4'</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Gall y swyddogaeth gynhenid <code class="docutils literal notranslate"><span class="pre">repr</span></code> helpu. Mae’n cymryd unrhyw wrthrych fel
+dadl ac yn dychwelyd cynrychiolaeth linyn o’r gwrthrych. Ar gyfer
+llinynnau, mae’n cynrychioli nodau bwlch gwyn gyda dilyniannau slaes
+wrthol.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Gall hyn fod yn ddefnyddiol ar gyfer dadnamu.</p>
+<p>Problem arall y gallech ddod ar ei thraws yw bod gwahanol systemau’n
+defnyddio gwahanol nodau i nodi diwedd llinell. Mae rhai systemau’n
+defnyddio llinell newydd, a gynrychiolir fel <code class="docutils literal notranslate"><span class="pre">\n</span></code>. Mae eraill yn defnyddio
+nod dychwel, a gynrychiolir fel <code class="docutils literal notranslate"><span class="pre">\r</span></code>. Mae rhai’n defnyddio’r ddau. Os
+symudwch ffeiliau rhwng gwahanol systemau, gall yr anghysondebau hyn
+achosi problemau.</p>
+<p>Mae priflythrennu enwau ffeiliau yn fater arall y gallech ddod ar ei draws
+os gweithiwch gyda gwahanol systemau gweithredu. Ar macOS a UNIX, gall
+enwau ffeiliau gynnwys llythrennau bach a phriflythrennau, digidau, a’r
+rhan fwyaf o symbolau. Ond mae llawer o gymwysiadau Windows yn anwybyddu’r
+gwahaniaeth rhwng llythrennau bach a phriflythrennau, ac nid yw sawl
+symbol a ganiateir yn macOS a UNIX yn cael eu caniatáu yn Windows.</p>
+</section>
+<section id="rhestr-termau-r-bennod">
+<h2><span class="section-number">13.9. </span>Rhestr Termau’r Bennod<a class="headerlink" href="#rhestr-termau-r-bennod" title="Link to this heading">#</a></h2>
+<p><strong>darfodedig:</strong>
+Mae rhaglen ddarfodedig fel arfer yn rhedeg am gyfnod byr a, phan ddaw i
+ben, collir ei data.</p>
+<p><strong>parhaus:</strong>
+Mae rhaglen barhaus yn rhedeg yn ddiddiwedd ac yn cadw o leiaf rhywfaint
+o’i data mewn storfa barhaol.</p>
+<p><strong>cyfeiriadur:</strong>
+Casgliad o ffeiliau a chyfeiriaduron eraill.</p>
+<p><strong>cyfeiriadur gwaith cyfredol:</strong>
+Y cyfeiriadur rhagosodedig a ddefnyddir gan raglen oni nodir cyfeiriadur
+arall.</p>
+<p><strong>llwybr:</strong>
+Llinyn sy’n nodi dilyniant o gyfeiriaduron, yn aml yn arwain at ffeil.</p>
+<p><strong>llwybr cymharol:</strong>
+Llwybr sy’n dechrau o’r cyfeiriadur gwaith cyfredol, neu gyfeiriadur
+penodol arall.</p>
+<p><strong>llwybr absoliwt:</strong>
+Llwybr nad yw’n dibynnu ar y cyfeiriadur cyfredol.</p>
+<p><strong>llinyn-f:</strong>
+Llinyn sydd â’r llythyren <code class="docutils literal notranslate"><span class="pre">f</span></code> cyn y dyfynnod agoriadol, ac sy’n cynnwys un
+mynegiad neu fwy mewn cromfachau cyrliog.</p>
+<p><strong>data cyfluniad:</strong>
+Data, wedi’u storio mewn ffeil yn aml, sy’n nodi beth y dylai rhaglen ei
+wneud a sut.</p>
+<p><strong>cyfresu:</strong>
+Trosi gwrthrych yn llinyn.</p>
+<p><strong>dadgyfresu:</strong>
+Trosi llinyn yn wrthrych.</p>
+<p><strong>cronfa ddata:</strong>
+Ffeil y mae ei chynnwys wedi’i drefnu i berfformio gweithrediadau penodol
+yn effeithlon.</p>
+<p><strong>storfa allwedd-gwerth:</strong>
+Cronfa ddata y mae ei chynnwys wedi’i drefnu fel geiriadur ag allweddi
+sy’n cyfateb i werthoedd.</p>
+<p><strong>modd deuaidd:</strong>
+Ffordd o agor ffeil fel y dehonglir y cynnwys fel dilyniant o fytiau yn
+hytrach na dilyniant o nodau.</p>
+<p><strong>swyddogaeth hash:</strong>
+Swyddogaeth sy’n cymryd gwrthrych ac yn cyfrifo cyfanrif, a elwir weithiau
+yn grynodeb.</p>
+<p><strong>crynodeb:</strong>
+Canlyniad swyddogaeth hash, yn enwedig pan ddefnyddir ef i wirio a yw dau
+wrthrych yr un fath.</p>
+</section>
+<section id="ymarferion">
+<h2><span class="section-number">13.10. </span>Ymarferion<a class="headerlink" href="#ymarferion" title="Link to this heading">#</a></h2>
+<section id="gofyn-i-gynorthwyydd-rhithwir">
+<h3><span class="section-number">13.10.1. </span>Gofyn i gynorthwyydd rhithwir<a class="headerlink" href="#gofyn-i-gynorthwyydd-rhithwir" title="Link to this heading">#</a></h3>
+<p>Mae sawl pwnc a gododd yn y bennod hon na wnes i eu hesbonio’n fanwl. Dyma
+rai cwestiynau y gallwch eu gofyn i gynorthwyydd rhithwir i gael rhagor o
+wybodaeth.</p>
+<ul class="simple">
+<li><p>“Beth yw’r gwahaniaethau rhwng rhaglenni darfodedig a pharhaus?”</p></li>
+<li><p>“Beth yw rhai enghreifftiau o raglenni parhaus?”</p></li>
+<li><p>“Beth yw’r gwahaniaeth rhwng llwybr cymharol a llwybr absoliwt?”</p></li>
+<li><p>“Pam mae gan y modiwl <code class="docutils literal notranslate"><span class="pre">yaml</span></code> swyddogaethau o’r enw <code class="docutils literal notranslate"><span class="pre">load</span></code> a <code class="docutils literal notranslate"><span class="pre">safe_load</span></code>?”</p></li>
+<li><p>“Pan ysgrifennaf silff Python, beth yw’r ffeiliau ag ôl-ddodiadau <code class="docutils literal notranslate"><span class="pre">dat</span></code> a
+<code class="docutils literal notranslate"><span class="pre">dir</span></code>?”</p></li>
+<li><p>“Heblaw storfeydd allwedd-gwerth, pa fathau eraill o gronfeydd data sydd
+yna?”</p></li>
+<li><p>“Pan ddarllenaf ffeil, beth yw’r gwahaniaeth rhwng modd deuaidd a modd
+testun?”</p></li>
+<li><p>“Beth yw’r gwahaniaethau rhwng gwrthrych bytes a llinyn?”</p></li>
+<li><p>“Beth yw swyddogaeth hash?”</p></li>
+<li><p>“Beth yw crynodeb MD5?”</p></li>
+</ul>
+<p>Fel arfer, os ewch yn sownd ar unrhyw un o’r ymarferion canlynol, ystyriwch
+ofyn i gynorthwyydd rhithwir am help. Ynghyd â’ch cwestiwn, efallai yr
+hoffech ludo’r swyddogaethau perthnasol o’r bennod hon.</p>
+</section>
+<section id="ymarfer">
+<h3><span class="section-number">13.10.2. </span>Ymarfer<a class="headerlink" href="#ymarfer" title="Link to this heading">#</a></h3>
+<p>Ysgrifennwch swyddogaeth o’r enw <code class="docutils literal notranslate"><span class="pre">replace_all</span></code> sy’n cymryd fel dadleuon
+linyn patrwm, llinyn disodli, a dau enw ffeil. Dylai ddarllen y ffeil
+gyntaf ac ysgrifennu’r cynnwys i’r ail ffeil (gan ei chreu os oes angen).
+Os yw’r llinyn patrwm yn ymddangos yn unrhyw le yn y cynnwys, dylid ei
+ddisodli â’r llinyn disodli.</p>
+<p>Dyma amlinelliad o’r swyddogaeth i’ch helpu ddechrau.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">replace_all</span><span class="p">(</span><span class="n">old</span><span class="p">,</span> <span class="n">new</span><span class="p">,</span> <span class="n">source_path</span><span class="p">,</span> <span class="n">dest_path</span><span class="p">):</span>
+    <span class="c1"># read the contents of the source file</span>
+    <span class="n">reader</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">source_path</span><span class="p">)</span>
+
+    <span class="c1"># replace the old string with the new</span>
+    
+    <span class="c1"># write the result into the destination file</span>
+    
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+<p>I brofi eich swyddogaeth, darllenwch y ffeil <code class="docutils literal notranslate"><span class="pre">photos/notes.txt</span></code>, disodli
+<code class="docutils literal notranslate"><span class="pre">'photos'</span></code> â <code class="docutils literal notranslate"><span class="pre">'images'</span></code>, ac ysgrifennu’r canlyniad i’r ffeil
+<code class="docutils literal notranslate"><span class="pre">photos/new_notes.txt</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">source_path</span> <span class="o">=</span> <span class="s1">'photos/notes.txt'</span>
+<span class="nb">open</span><span class="p">(</span><span class="n">source_path</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dest_path</span> <span class="o">=</span> <span class="s1">'photos/new_notes.txt'</span>
+<span class="n">old</span> <span class="o">=</span> <span class="s1">'photos'</span>
+<span class="n">new</span> <span class="o">=</span> <span class="s1">'images'</span>
+<span class="n">replace_all</span><span class="p">(</span><span class="n">old</span><span class="p">,</span> <span class="n">new</span><span class="p">,</span> <span class="n">source_path</span><span class="p">,</span> <span class="n">dest_path</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">open</span><span class="p">(</span><span class="n">dest_path</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="id1">
+<h3><span class="section-number">13.10.3. </span>Ymarfer<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>Mewn adran flaenorol (<a class="reference internal" href="#section-storing-data-structure"><span class="std std-ref">Storio Strwythurau Data</span></a>), fe wnaethom
+ddefnyddio’r modiwl <code class="docutils literal notranslate"><span class="pre">shelve</span></code> i wneud storfa allwedd-gwerth sy’n mapio o
+linyn wedi’i drefnu o lythrennau i restr o anagramau. I orffen yr
+enghraifft, ysgrifennwch swyddogaeth o’r enw <code class="docutils literal notranslate"><span class="pre">add_word</span></code> sy’n cymryd fel
+dadleuon linyn a gwrthrych silff.</p>
+<p>Dylai drefnu llythrennau’r gair i wneud allwedd, yna gwirio a yw’r allwedd
+eisoes yn y silff. Os nad yw, dylai wneud rhestr sy’n cynnwys y gair newydd
+a’i hychwanegu at y silff. Os yw, dylai ychwanegu’r gair newydd at y gwerth
+presennol.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+<p>Gallwch ddefnyddio’r ddolen hon i brofi eich swyddogaeth.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">download</span><span class="p">(</span><span class="s1">'https://raw.githubusercontent.com/AllenDowney/ThinkPython/v3/words.txt'</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">word_list</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'words.txt'</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+
+<span class="n">db</span> <span class="o">=</span> <span class="n">shelve</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">'anagram_map'</span><span class="p">,</span> <span class="s1">'n'</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">word_list</span><span class="p">:</span>
+    <span class="n">add_word</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">db</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Os yw popeth yn gweithio, dylech allu chwilio am allwedd fel <code class="docutils literal notranslate"><span class="pre">'opst'</span></code> a
+chael rhestr o eiriau y gellir eu sillafu gyda’r llythrennau hynny.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="p">[</span><span class="s1">'opst'</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">db</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">8</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="id2">
+<h3><span class="section-number">13.10.4. </span>Ymarfer<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>Mewn casgliad mawr o ffeiliau, efallai y bydd mwy nag un copi o’r un ffeil,
+wedi’u storio mewn gwahanol gyfeiriaduron neu gydag enwau ffeil gwahanol.
+Nod yr ymarfer hwn yw chwilio am ddyblygiadau. Fel enghraifft, byddwn yn
+gweithio gyda ffeiliau delwedd yn y cyfeiriadur <code class="docutils literal notranslate"><span class="pre">photos</span></code>.</p>
+<p>Dyma sut y bydd yn gweithio:</p>
+<ul class="simple">
+<li><p>Byddwn yn defnyddio’r swyddogaeth <code class="docutils literal notranslate"><span class="pre">walk</span></code> o’r adran ar gerdded cyfeiriaduron
+(<a class="reference internal" href="#section-walking-directories"><span class="std std-ref">Cerdded Cyfeiriaduron</span></a>) i chwilio’r cyfeiriadur hwn am
+ffeiliau sy’n gorffen gydag un o’r estyniadau yn <code class="docutils literal notranslate"><span class="pre">config['extensions']</span></code>.</p></li>
+<li><p>Ar gyfer pob ffeil, byddwn yn defnyddio <code class="docutils literal notranslate"><span class="pre">md5_digest</span></code>
+(<a class="reference internal" href="#section-md5-digest"><span class="std std-ref">uchod</span></a>) i gyfrifo crynodeb o’r cynnwys.</p></li>
+<li><p>Gan ddefnyddio silff, byddwn yn gwneud mapio o bob crynodeb i restr o
+lwybrau â’r crynodeb hwnnw.</p></li>
+<li><p>Yn olaf, byddwn yn chwilio’r silff am unrhyw grynodebau sy’n mapio i sawl
+ffeil.</p></li>
+<li><p>Os darganfyddwn rai, byddwn yn defnyddio <code class="docutils literal notranslate"><span class="pre">same_contents</span></code> i gadarnhau bod
+y ffeiliau’n cynnwys yr un data.</p></li>
+</ul>
+<p>Awgrymaf rai swyddogaethau i’w hysgrifennu’n gyntaf, ac yna byddwn yn dod â
+phopeth at ei gilydd.</p>
+<ol class="arabic simple">
+<li><p>I adnabod ffeiliau delwedd, ysgrifennwch swyddogaeth o’r enw <code class="docutils literal notranslate"><span class="pre">is_image</span></code>
+sy’n cymryd llwybr a rhestr o estyniadau ffeil, ac yn dychwelyd <code class="docutils literal notranslate"><span class="pre">True</span></code>
+os yw’r llwybr yn gorffen gydag un o’r estyniadau yn y rhestr. Awgrym:
+Defnyddiwch <code class="docutils literal notranslate"><span class="pre">os.path.splitext</span></code> — neu gofynnwch i gynorthwyydd rhithwir
+ysgrifennu’r swyddogaeth hon i chi.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+<p>Gallwch ddefnyddio <code class="docutils literal notranslate"><span class="pre">doctest</span></code> i brofi eich swyddogaeth.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">doctest</span><span class="w"> </span><span class="kn">import</span> <span class="n">run_docstring_examples</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">run_doctests</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="n">run_docstring_examples</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="nb">globals</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+
+<span class="n">run_doctests</span><span class="p">(</span><span class="n">is_image</span><span class="p">)</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Ysgrifennwch swyddogaeth o’r enw <code class="docutils literal notranslate"><span class="pre">add_path</span></code> sy’n cymryd fel dadleuon
+lwybr a silff. Dylai ddefnyddio <code class="docutils literal notranslate"><span class="pre">md5_digest</span></code> i gyfrifo crynodeb o
+gynnwys y ffeil. Yna dylai ddiweddaru’r silff, naill ai drwy greu eitem
+newydd sy’n mapio o’r crynodeb i restr sy’n cynnwys y llwybr, neu drwy
+ychwanegu’r llwybr at y rhestr os yw’n bodoli.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Ysgrifennwch fersiwn o <code class="docutils literal notranslate"><span class="pre">walk</span></code> o’r enw <code class="docutils literal notranslate"><span class="pre">walk_images</span></code> sy’n cymryd
+cyfeiriadur ac yn cerdded drwy’r ffeiliau yn y cyfeiriadur a’i
+is-gyfeiriaduron. Ar gyfer pob ffeil, dylai ddefnyddio <code class="docutils literal notranslate"><span class="pre">is_image</span></code> i
+wirio a yw’n ffeil ddelwedd a <code class="docutils literal notranslate"><span class="pre">add_path</span></code> i’w hychwanegu at y silff.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+<p>Pan fydd popeth yn gweithio, gallwch ddefnyddio’r rhaglen ganlynol i greu’r
+silff, chwilio’r cyfeiriadur <code class="docutils literal notranslate"><span class="pre">photos</span></code> ac ychwanegu llwybrau at y silff, ac
+yna gwirio a oes sawl ffeil â’r un crynodeb.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">db</span> <span class="o">=</span> <span class="n">shelve</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">'photos/digests'</span><span class="p">,</span> <span class="s1">'n'</span><span class="p">)</span>
+<span class="n">walk_images</span><span class="p">(</span><span class="s1">'photos'</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">digest</span><span class="p">,</span> <span class="n">paths</span> <span class="ow">in</span> <span class="n">db</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">paths</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">paths</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Dylech ddarganfod un pâr o ffeiliau sydd â’r un crynodeb. Defnyddiwch
+<code class="docutils literal notranslate"><span class="pre">same_contents</span></code> i wirio a ydynt yn cynnwys yr un data.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p><a class="reference external" href="https://allendowney.github.io/ThinkPython/index.html">Think Python: 3rd Edition</a> gan
+Allen B. Downey. Cyfieithiad Cymraeg gan Wayne Aubrey.</p>
+<p>Hawlfraint 2024 <a class="reference external" href="https://allendowney.com">Allen B. Downey</a>. Trwydded testun: <a class="reference external" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative
+Commons Attribution-NonCommercial-ShareAlike 4.0 International</a>.</p>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -462,6 +1269,38 @@
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#enwau-ffeiliau-a-llwybrau">13.1. Enwau Ffeiliau a Llwybrau</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#llinynnau-f">13.2. Llinynnau-f</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#yaml">13.3. YAML</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shelve">13.4. Shelve</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#storio-strwythurau-data">13.5. Storio Strwythurau Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gwirio-ffeiliau-cyfwerth">13.6. Gwirio Ffeiliau Cyfwerth</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cerdded-cyfeiriaduron">13.7. Cerdded Cyfeiriaduron</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dadnamu">13.8. Dadnamu</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rhestr-termau-r-bennod">13.9. Rhestr Termau’r Bennod</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ymarferion">13.10. Ymarferion</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gofyn-i-gynorthwyydd-rhithwir">13.10.1. Gofyn i gynorthwyydd rhithwir</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ymarfer">13.10.2. Ymarfer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">13.10.3. Ymarfer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">13.10.4. Ymarfer</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

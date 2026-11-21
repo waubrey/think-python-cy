@@ -510,4 +510,49 @@ n-air
 
 dadnamu hwyaden rwber
     rubber duck debugging
+
+darfodedig
+    ephemeral
+
+parhaus
+    persistent
+
+cyfeiriadur
+    directory
+
+cyfeiriadur gwaith cyfredol
+    current working directory
+
+llwybr
+    path
+
+llwybr cymharol
+    relative path
+
+llwybr absoliwt
+    absolute path
+
+llinyn-f
+    f-string
+
+data cyfluniad
+    configuration data
+
+cyfresu
+    serialization
+
+dadgyfresu
+    deserialization
+
+cronfa ddata
+    database
+
+storfa allwedd-gwerth
+    key-value store
+
+modd deuaidd
+    binary mode
+
+crynodeb
+    digest
 ```
