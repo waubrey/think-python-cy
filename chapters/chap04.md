@@ -6,6 +6,7 @@ modiwl hwn i ysgrifennu swyddogaethau sy'n tynnu sgwariau, polygonau, a chylchoe
 — ac i ddangos **{term}`dylunio rhyngwyneb`**, sef ffordd o ddylunio swyddogaethau
 sy'n gweithio gyda'i gilydd.
 
+(section_turtle_module)=
 ## Y Modiwl jupyturtle
 
 I ddefnyddio'r modiwl `jupyturtle`, gallwn ei fewnforio fel hyn.

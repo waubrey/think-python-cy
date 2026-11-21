@@ -600,4 +600,10 @@ gorlwytho gweithredydd
 
 amod cyson
     invariant
+
+copi bas
+    shallow copy
+
+copi dwfn
+    deep copy
 ```

@@ -357,6 +357,18 @@ Reused without change: *rhaglennu gwrthrych-gyfeiriadol* (OOP), *dosbarth*
 
 Reused without change: *dull* (method, confirmed since ch7).
 
+## Chapter 16 vocabulary (points, lines, rectangles, equivalence/identity, shallow/deep copy, polymorphism)
+
+| English | Welsh | Status | Notes |
+|---|---|---|---|
+| copy (noun/verb) | copi / copïo | ✅ | confirmed via Y Termiadur Addysg (ITC category) — e.g. *copi wrth gefn* "backup copy", *copïo a gludo* "copy and paste" |
+| shallow copy | copi bas | 🟡 | compositional: *copi* (✅ above) + *bas* (shallow), ordinary Welsh adjective; no exact compound found in Y Termiadur Addysg |
+| deep copy | copi dwfn | 🟡 | compositional: *copi* (✅ above) + *dwfn* (deep), ordinary Welsh adjective |
+| polymorphism | polymorffiaeth | ✅ | already confirmed and in glossary since ch14 |
+
+Reused without change: *cyfwerth* (equivalent) and *unfath* (identical), both confirmed
+since ch9, used again here for the equivalence-vs-identity discussion (`==` vs `is`).
+
 ## Important pattern to carry into translation
 
 In the official WJEC pseudocode (used throughout the Welsh-medium exam), **programming
