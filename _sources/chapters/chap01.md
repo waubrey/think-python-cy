@@ -5,15 +5,15 @@ Ond mae dysgu rhaglennu yn golygu dysgu ffordd newydd o feddwl, felly ail nod y 
 hwn yw eich helpu i feddwl fel gwyddonydd cyfrifiadurol.
 Mae'r ffordd hon o feddwl yn cyfuno rhai o nodweddion gorau mathemateg, peirianneg, a
 gwyddoniaeth naturiol.
-Fel mathemategwyr, mae gwyddonwyr cyfrifiadurol yn defnyddio {term}`iaith ffurfiol` i
-ddynodi syniadau — cyfrifiadau yn benodol.
-Fel peirianwyr, maen nhw'n dylunio pethau, gan gydosod cydrannau yn systemau a
-gwerthuso cyfaddawdau rhwng dewisiadau amgen.
+Fel mathemategwyr, mae gwyddonwyr cyfrifiadurol yn defnyddio {term}`iaith ffurfiol`au i
+ddynodi syniadau — cyfrifiannau yn benodol.
+Fel peirianwyr, maen nhw'n dylunio pethau, yn cydosod cydrannau i systemau ac yn
+gwerthuso cyfaddawdau ymhlith dewisiadau amgen.
 Fel gwyddonwyr, maen nhw'n arsylwi ymddygiad systemau cymhleth, yn llunio
 damcaniaethau, ac yn profi rhagfynegiadau.
 
-Byddwn yn dechrau gydag elfennau mwyaf sylfaenol rhaglennu ac yn gweithio ein ffordd i
-fyny. Yn y bennod hon, byddwn yn gweld sut mae Python yn cynrychioli rhifau,
+Byddwn yn dechrau gydag elfennau mwyaf sylfaenol rhaglennu ac yn symud ymlaen oddi
+yno. Yn y bennod hon, byddwn yn gweld sut mae Python yn cynrychioli rhifau,
 llythrennau, a geiriau. A byddwch yn dysgu sut i berfformio gweithrediadau rhifyddol.
 
 Byddwch hefyd yn dechrau dysgu geirfa rhaglennu, gan gynnwys termau fel
@@ -23,7 +23,7 @@ gyfathrebu â rhaglenwyr eraill, ac i ddefnyddio a deall cynorthwywyr rhithwir.
 
 ## Gweithredyddion Rhifyddol
 
-Mae **{term}`gweithredydd rhifyddol`** yn symbol sy'n cynrychioli cyfrifiad
+Mae **{term}`gweithredydd rhifyddol`** yn symbol sy'n cynrychioli cyfrifiant
 rhifyddol. Er enghraifft, mae'r arwydd adio, `+`, yn perfformio adio.
 
 ```python
@@ -99,9 +99,9 @@ cynnwys dau weithredydd.
 6 + 6 ** 2
 ```
 
-Sylwch fod esbonyddiad yn digwydd cyn adio. Mae Python yn dilyn y drefn gweithredu y
-gallech fod wedi'i dysgu mewn gwers fathemateg: mae esbonyddiad yn digwydd cyn lluosi
-a rhannu, sy'n digwydd cyn adio a thynnu.
+Sylwch fod esbonyddiad yn digwydd cyn adio. Mae Python yn dilyn trefn y gweithrediadau
+y gallech fod wedi'u dysgu mewn gwers fathemateg: mae esbonyddiad yn digwydd cyn
+lluosi a rhannu, sy'n digwydd cyn adio a thynnu.
 
 Yn yr enghraifft ganlynol, mae lluosi'n digwydd cyn adio.
 
@@ -362,7 +362,7 @@ Mae **{term}`iaith ffurfiol`**au yn ieithoedd a ddyluniwyd gan bobl ar gyfer
 cymwysiadau penodol. Er enghraifft, mae'r nodiant a ddefnyddir gan fathemategwyr yn
 iaith ffurfiol sy'n arbennig o dda am ddynodi perthnasoedd rhwng rhifau a symbolau. Yn
 yr un modd, mae ieithoedd rhaglennu yn ieithoedd ffurfiol sydd wedi'u dylunio i fynegi
-cyfrifiadau.
+cyfrifiannau.
 
 Er bod gan ieithoedd ffurfiol a naturiol rai nodweddion yn gyffredin, mae
 gwahaniaethau pwysig:
