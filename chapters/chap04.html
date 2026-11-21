@@ -62,7 +62,7 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../_static/tippy/chapters/chap04.82484504-42db-4f09-af2b-a701f98aced2.js"></script>
+    <script defer="defer" src="../_static/tippy/chapters/chap04.c64dfcb4-3edc-4f2d-be0c-d55c13f01bde.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/chap04';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -155,6 +155,10 @@
     </div>
   
 
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
   
 </div>
 
@@ -374,7 +378,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -390,6 +396,32 @@
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#y-modiwl-jupyturtle">4.1. Y Modiwl jupyturtle</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gwneud-sgwar">4.2. Gwneud Sgwâr</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#amgau-a-chyffredinoli">4.3. Amgáu a Chyffredinoli</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brasamcanu-cylch">4.4. Brasamcanu Cylch</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ailstrwythuro">4.5. Ailstrwythuro</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diagram-pentwr">4.6. Diagram Pentwr</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cynllun-datblygu">4.7. Cynllun Datblygu</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#llinynnau-dogfennu">4.8. Llinynnau Dogfennu</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dadnamu">4.9. Dadnamu</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rhestr-termau-r-bennod">4.10. Rhestr Termau’r Bennod</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ymarferion">4.11. Ymarferion</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ymarfer">4.11.1. Ymarfer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">4.11.2. Ymarfer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">4.11.3. Ymarfer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">4.11.4. Ymarfer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">4.11.5. Ymarfer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gofyn-i-gynorthwyydd-rhithwir">4.11.6. Gofyn i gynorthwyydd rhithwir</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -401,11 +433,586 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="swyddogaethau-a-rhyngwynebau">
 <h1><span class="section-number">4. </span>Swyddogaethau a Rhyngwynebau<a class="headerlink" href="#swyddogaethau-a-rhyngwynebau" title="Link to this heading">#</a></h1>
-<div class="warning admonition">
-<p class="admonition-title">Statws cyfieithu</p>
-<p>Pennod heb ei chyfieithu eto. Ffynhonnell Saesneg: <strong>Functions and Interfaces</strong>
-(gweler y bennod wreiddiol yn <a class="reference external" href="https://allendowney.github.io/ThinkPython/">https://allendowney.github.io/ThinkPython/</a> ar gyfer y testun gwreiddiol).</p>
+<p>Mae’r bennod hon yn cyflwyno modiwl o’r enw <code class="docutils literal notranslate"><span class="pre">jupyturtle</span></code>, sy’n caniatáu i chi greu
+lluniadau syml drwy roi cyfarwyddiadau i grwban dychmygol. Byddwn yn defnyddio’r
+modiwl hwn i ysgrifennu swyddogaethau sy’n tynnu sgwariau, polygonau, a chylchoedd
+— ac i ddangos <strong><a class="reference internal" href="../glossary.html#term-dylunio-rhyngwyneb"><span class="xref std std-term">dylunio rhyngwyneb</span></a></strong>, sef ffordd o ddylunio swyddogaethau
+sy’n gweithio gyda’i gilydd.</p>
+<section id="y-modiwl-jupyturtle">
+<h2><span class="section-number">4.1. </span>Y Modiwl jupyturtle<a class="headerlink" href="#y-modiwl-jupyturtle" title="Link to this heading">#</a></h2>
+<p>I ddefnyddio’r modiwl <code class="docutils literal notranslate"><span class="pre">jupyturtle</span></code>, gallwn ei fewnforio fel hyn.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">jupyturtle</span>
+</pre></div>
 </div>
+<p>Nawr gallwn ddefnyddio’r swyddogaethau a ddiffinnir yn y modiwl, fel <code class="docutils literal notranslate"><span class="pre">make_turtle</span></code>
+a <code class="docutils literal notranslate"><span class="pre">forward</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">jupyturtle</span><span class="o">.</span><span class="n">make_turtle</span><span class="p">()</span>
+<span class="n">jupyturtle</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Mae <code class="docutils literal notranslate"><span class="pre">make_turtle</span></code> yn creu <strong><a class="reference internal" href="../glossary.html#term-cynfas"><span class="xref std std-term">cynfas</span></a></strong>, sef gofod ar y sgrin lle gallwn
+dynnu, a chrwban, a gynrychiolir gan gragen gron a phen trionglog. Mae’r cylch yn
+dangos lleoliad y crwban ac mae’r triongl yn nodi’r cyfeiriad y mae’n wynebu.</p>
+<p>Mae <code class="docutils literal notranslate"><span class="pre">forward</span></code> yn symud y crwban bellter penodol yn y cyfeiriad y mae’n wynebu,
+gan dynnu segment llinell ar hyd y ffordd. Mae’r pellter mewn unedau mympwyol —
+mae’r maint gwirioneddol yn dibynnu ar sgrin eich cyfrifiadur.</p>
+<p>Byddwn yn defnyddio swyddogaethau a ddiffinnir yn y modiwl <code class="docutils literal notranslate"><span class="pre">jupyturtle</span></code> sawl
+gwaith, felly byddai’n braf pe na bai’n rhaid i ni ysgrifennu enw’r modiwl bob tro.
+Mae hynny’n bosibl os mewnforiwn y modiwl fel hyn.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">jupyturtle</span><span class="w"> </span><span class="kn">import</span> <span class="n">make_turtle</span><span class="p">,</span> <span class="n">forward</span>
+</pre></div>
+</div>
+<p>Mae’r fersiwn hon o’r gosodiad mewnforio yn mewnforio <code class="docutils literal notranslate"><span class="pre">make_turtle</span></code> a <code class="docutils literal notranslate"><span class="pre">forward</span></code> o’r
+modiwl <code class="docutils literal notranslate"><span class="pre">jupyturtle</span></code> fel y gallwn eu galw fel hyn.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">make_turtle</span><span class="p">()</span>
+<span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Mae <code class="docutils literal notranslate"><span class="pre">jupyturtle</span></code> yn darparu dwy swyddogaeth arall y byddwn yn eu defnyddio, o’r
+enw <code class="docutils literal notranslate"><span class="pre">left</span></code> a <code class="docutils literal notranslate"><span class="pre">right</span></code>. Byddwn yn eu mewnforio fel hyn.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">jupyturtle</span><span class="w"> </span><span class="kn">import</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span>
+</pre></div>
+</div>
+<p>Mae <code class="docutils literal notranslate"><span class="pre">left</span></code> yn achosi i’r crwban droi i’r chwith. Mae’n cymryd un ddadl, sef ongl y
+tro mewn graddau. Er enghraifft, gallwn wneud tro 90 gradd i’r chwith fel hyn.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">make_turtle</span><span class="p">()</span>
+<span class="n">forward</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">forward</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Mae’r rhaglen hon yn symud y crwban i’r dwyrain ac yna i’r gogledd, gan adael dau
+segment llinell ar ei hôl. Cyn i chi fynd ymlaen, gweler a allwch addasu’r
+rhaglen flaenorol i wneud sgwâr.</p>
+</section>
+<section id="gwneud-sgwar">
+<h2><span class="section-number">4.2. </span>Gwneud Sgwâr<a class="headerlink" href="#gwneud-sgwar" title="Link to this heading">#</a></h2>
+<p>Dyma un ffordd o wneud sgwâr.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">make_turtle</span><span class="p">()</span>
+
+<span class="n">forward</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+
+<span class="n">forward</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+
+<span class="n">forward</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+
+<span class="n">forward</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Gan fod y rhaglen hon yn ailadrodd yr un pâr o linellau bedair gwaith, gallwn wneud
+yr un peth yn fwy cryno gyda dolen <code class="docutils literal notranslate"><span class="pre">for</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">make_turtle</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+    <span class="n">forward</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+    <span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="amgau-a-chyffredinoli">
+<h2><span class="section-number">4.3. </span>Amgáu a Chyffredinoli<a class="headerlink" href="#amgau-a-chyffredinoli" title="Link to this heading">#</a></h2>
+<p>Gadewch i ni gymryd y cod tynnu-sgwâr o’r adran flaenorol a’i roi mewn swyddogaeth
+o’r enw <code class="docutils literal notranslate"><span class="pre">square</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">square</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+        <span class="n">forward</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+        <span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Nawr gallwn alw’r swyddogaeth fel hyn.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">make_turtle</span><span class="p">()</span>
+<span class="n">square</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Gelwir lapio darn o god mewn swyddogaeth yn <strong><a class="reference internal" href="../glossary.html#term-amgaead"><span class="xref std std-term">amgaead</span></a></strong>. Un o fanteision
+amgáu yw ei fod yn clymu enw wrth y cod, sy’n gweithredu fel math o ddogfennaeth.
+Mantais arall yw, os ailddefnyddiwch y cod, ei bod yn fwy cryno galw swyddogaeth
+ddwywaith nag yw copïo a gludo’r corff!</p>
+<p>Yn y fersiwn gyfredol, maint y sgwâr yw <code class="docutils literal notranslate"><span class="pre">50</span></code> bob amser. Os ydym am dynnu sgwariau
+â gwahanol feintiau, gallwn gymryd hyd yr ochrau fel paramedr.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">square</span><span class="p">(</span><span class="n">length</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+        <span class="n">forward</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
+        <span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Nawr gallwn dynnu sgwariau â gwahanol feintiau.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">make_turtle</span><span class="p">()</span>
+<span class="n">square</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+<span class="n">square</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Gelwir ychwanegu paramedr at swyddogaeth yn <strong><a class="reference internal" href="../glossary.html#term-cyffredinoli"><span class="xref std std-term">cyffredinoli</span></a></strong> am ei fod yn
+gwneud y swyddogaeth yn fwy cyffredinol: gyda’r fersiwn flaenorol, mae’r sgwâr
+bob amser yr un maint; gyda’r fersiwn hon gall fod unrhyw faint.</p>
+<p>Os ychwanegwn baramedr arall, gallwn ei gwneud hyd yn oed yn fwy cyffredinol. Mae’r
+swyddogaeth ganlynol yn tynnu polygonau rheolaidd gyda nifer penodol o ochrau.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">polygon</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">length</span><span class="p">):</span>
+    <span class="n">angle</span> <span class="o">=</span> <span class="mi">360</span> <span class="o">/</span> <span class="n">n</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">forward</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
+        <span class="n">left</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Mewn polygon rheolaidd gyda <code class="docutils literal notranslate"><span class="pre">n</span></code> ochr, yr ongl rhwng ochrau cyfagos yw <code class="docutils literal notranslate"><span class="pre">360</span> <span class="pre">/</span> <span class="pre">n</span></code>
+gradd.</p>
+<p>Mae’r enghraifft ganlynol yn tynnu polygon <code class="docutils literal notranslate"><span class="pre">7</span></code>-ochr gyda hyd ochr <code class="docutils literal notranslate"><span class="pre">30</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">make_turtle</span><span class="p">()</span>
+<span class="n">polygon</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Pan fo gan swyddogaeth fwy na rhyw ychydig o ddadleuon rhifiadol, mae’n hawdd
+anghofio beth ydynt, neu ym mha drefn y dylent fod. Gall fod yn syniad da cynnwys
+enwau’r paramedrau yn y rhestr ddadleuon.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">make_turtle</span><span class="p">()</span>
+<span class="n">polygon</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Gelwir y rhain weithiau’n “ddadleuon wedi’u henwi” am eu bod yn cynnwys enwau’r
+paramedrau. Ond yn Python fe’u gelwir yn amlach yn <strong><a class="reference internal" href="../glossary.html#term-dadl-allweddair"><span class="xref std std-term">dadl allweddair</span></a></strong>
+(peidiwch â’u drysu ag allweddeiriau Python fel <code class="docutils literal notranslate"><span class="pre">for</span></code> a <code class="docutils literal notranslate"><span class="pre">def</span></code>).</p>
+<p>Mae’r defnydd hwn o’r gweithredydd neilltuo, <code class="docutils literal notranslate"><span class="pre">=</span></code>, yn atgoffa sut mae dadleuon a
+pharamedrau’n gweithio — pan alwch swyddogaeth, caiff y dadleuon eu neilltuo i’r
+paramedrau.</p>
+</section>
+<section id="brasamcanu-cylch">
+<h2><span class="section-number">4.4. </span>Brasamcanu Cylch<a class="headerlink" href="#brasamcanu-cylch" title="Link to this heading">#</a></h2>
+<p>Nawr tybiwch ein bod am dynnu cylch. Gallwn wneud hynny, yn fras, drwy dynnu
+polygon gyda nifer fawr o ochrau, fel bod pob ochr yn ddigon bach fel ei bod yn
+anodd ei gweld. Dyma swyddogaeth sy’n defnyddio <code class="docutils literal notranslate"><span class="pre">polygon</span></code> i dynnu polygon <code class="docutils literal notranslate"><span class="pre">30</span></code>-ochr
+sy’n brasamcanu cylch.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">circle</span><span class="p">(</span><span class="n">radius</span><span class="p">):</span>
+    <span class="n">circumference</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">radius</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="mi">30</span>
+    <span class="n">length</span> <span class="o">=</span> <span class="n">circumference</span> <span class="o">/</span> <span class="n">n</span>
+    <span class="n">polygon</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">length</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Mae <code class="docutils literal notranslate"><span class="pre">circle</span></code> yn cymryd radiws y cylch fel paramedr. Mae’n cyfrifo <code class="docutils literal notranslate"><span class="pre">circumference</span></code>,
+sef cylchedd cylch gyda’r radiws penodol. <code class="docutils literal notranslate"><span class="pre">n</span></code> yw nifer yr ochrau, felly
+<code class="docutils literal notranslate"><span class="pre">circumference</span> <span class="pre">/</span> <span class="pre">n</span></code> yw hyd pob ochr.</p>
+<p>Gallai’r swyddogaeth hon gymryd amser hir i redeg. Gallwn ei chyflymu drwy alw
+<code class="docutils literal notranslate"><span class="pre">make_turtle</span></code> gyda dadl allweddair o’r enw <code class="docutils literal notranslate"><span class="pre">delay</span></code> sy’n gosod yr amser, mewn
+eiliadau, y mae’r crwban yn aros ar ôl pob cam. Y gwerth rhagosodedig yw <code class="docutils literal notranslate"><span class="pre">0.2</span></code>
+eiliad — os gosodwn ef i <code class="docutils literal notranslate"><span class="pre">0.02</span></code> mae’n rhedeg tua 10 gwaith yn gyflymach.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">make_turtle</span><span class="p">(</span><span class="n">delay</span><span class="o">=</span><span class="mf">0.02</span><span class="p">)</span>
+<span class="n">circle</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Cyfyngiad y datrysiad hwn yw bod <code class="docutils literal notranslate"><span class="pre">n</span></code> yn gysonyn, sy’n golygu, ar gyfer cylchoedd
+mawr iawn, fod yr ochrau’n rhy hir, ac ar gyfer cylchoedd bach, ein bod yn gwastraffu
+amser yn tynnu ochrau byr iawn. Un dewis yw cyffredinoli’r swyddogaeth drwy gymryd
+<code class="docutils literal notranslate"><span class="pre">n</span></code> fel paramedr. Ond gadewch i ni gadw pethau’n syml am y tro.</p>
+</section>
+<section id="ailstrwythuro">
+<h2><span class="section-number">4.5. </span>Ailstrwythuro<a class="headerlink" href="#ailstrwythuro" title="Link to this heading">#</a></h2>
+<p>Nawr gadewch i ni ysgrifennu fersiwn fwy cyffredinol o <code class="docutils literal notranslate"><span class="pre">circle</span></code>, o’r enw <code class="docutils literal notranslate"><span class="pre">arc</span></code>, sy’n
+cymryd ail baramedr, <code class="docutils literal notranslate"><span class="pre">angle</span></code>, ac yn tynnu arc o gylch sy’n rhychwantu’r ongl
+benodol. Er enghraifft, os yw <code class="docutils literal notranslate"><span class="pre">angle</span></code> yn <code class="docutils literal notranslate"><span class="pre">360</span></code> gradd, mae’n tynnu cylch cyflawn.
+Os yw <code class="docutils literal notranslate"><span class="pre">angle</span></code> yn <code class="docutils literal notranslate"><span class="pre">180</span></code> gradd, mae’n tynnu hanner cylch.</p>
+<p>I ysgrifennu <code class="docutils literal notranslate"><span class="pre">circle</span></code>, roeddem yn gallu ailddefnyddio <code class="docutils literal notranslate"><span class="pre">polygon</span></code>, am fod polygon
+ag iddo lawer o ochrau yn frasamcan da o gylch. Ond ni allwn ddefnyddio <code class="docutils literal notranslate"><span class="pre">polygon</span></code>
+i ysgrifennu <code class="docutils literal notranslate"><span class="pre">arc</span></code>.</p>
+<p>Yn lle hynny, byddwn yn creu’r fersiwn fwy cyffredinol o <code class="docutils literal notranslate"><span class="pre">polygon</span></code>, o’r enw
+<code class="docutils literal notranslate"><span class="pre">polyline</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">polyline</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">length</span><span class="p">,</span> <span class="n">angle</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">forward</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
+        <span class="n">left</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Mae <code class="docutils literal notranslate"><span class="pre">polyline</span></code> yn cymryd fel paramedrau nifer y segmentau llinell i’w tynnu, <code class="docutils literal notranslate"><span class="pre">n</span></code>,
+hyd y segmentau, <code class="docutils literal notranslate"><span class="pre">length</span></code>, a’r ongl rhyngddynt, <code class="docutils literal notranslate"><span class="pre">angle</span></code>.</p>
+<p>Nawr gallwn ailysgrifennu <code class="docutils literal notranslate"><span class="pre">polygon</span></code> i ddefnyddio <code class="docutils literal notranslate"><span class="pre">polyline</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">polygon</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">length</span><span class="p">):</span>
+    <span class="n">angle</span> <span class="o">=</span> <span class="mf">360.0</span> <span class="o">/</span> <span class="n">n</span>
+    <span class="n">polyline</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">length</span><span class="p">,</span> <span class="n">angle</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>A gallwn ddefnyddio <code class="docutils literal notranslate"><span class="pre">polyline</span></code> i ysgrifennu <code class="docutils literal notranslate"><span class="pre">arc</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">arc</span><span class="p">(</span><span class="n">radius</span><span class="p">,</span> <span class="n">angle</span><span class="p">):</span>
+    <span class="n">arc_length</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">radius</span> <span class="o">*</span> <span class="n">angle</span> <span class="o">/</span> <span class="mi">360</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="mi">30</span>
+    <span class="n">length</span> <span class="o">=</span> <span class="n">arc_length</span> <span class="o">/</span> <span class="n">n</span>
+    <span class="n">step_angle</span> <span class="o">=</span> <span class="n">angle</span> <span class="o">/</span> <span class="n">n</span>
+    <span class="n">polyline</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">length</span><span class="p">,</span> <span class="n">step_angle</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Mae <code class="docutils literal notranslate"><span class="pre">arc</span></code> yn debyg i <code class="docutils literal notranslate"><span class="pre">circle</span></code>, ac eithrio ei bod yn cyfrifo <code class="docutils literal notranslate"><span class="pre">arc_length</span></code>, sy’n
+ffracsiwn o gylchedd cylch.</p>
+<p>Yn olaf, gallwn ailysgrifennu <code class="docutils literal notranslate"><span class="pre">circle</span></code> i ddefnyddio <code class="docutils literal notranslate"><span class="pre">arc</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">circle</span><span class="p">(</span><span class="n">radius</span><span class="p">):</span>
+    <span class="n">arc</span><span class="p">(</span><span class="n">radius</span><span class="p">,</span>  <span class="mi">360</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>I wirio bod y swyddogaethau hyn yn gweithio fel y disgwylir, byddwn yn eu
+defnyddio i dynnu rhywbeth tebyg i falwen. Gyda <code class="docutils literal notranslate"><span class="pre">delay=0</span></code>, mae’r crwban yn rhedeg
+mor gyflym â phosibl.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">make_turtle</span><span class="p">(</span><span class="n">delay</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">polygon</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
+<span class="n">arc</span><span class="p">(</span><span class="n">radius</span><span class="o">=</span><span class="mi">70</span><span class="p">,</span> <span class="n">angle</span><span class="o">=</span><span class="mi">70</span><span class="p">)</span>
+<span class="n">circle</span><span class="p">(</span><span class="n">radius</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Yn yr enghraifft hon, fe wnaethom ddechrau gyda chod oedd yn gweithio a’i
+ad-drefnu gyda gwahanol swyddogaethau. Gelwir newidiadau fel hyn, sy’n gwella’r
+cod heb newid ei ymddygiad, yn <strong><a class="reference internal" href="../glossary.html#term-ailstrwythuro"><span class="xref std std-term">ailstrwythuro</span></a></strong>.</p>
+<p>Pe baem wedi cynllunio ymlaen llaw, efallai y byddem wedi ysgrifennu <code class="docutils literal notranslate"><span class="pre">polyline</span></code>
+yn gyntaf a osgoi ailstrwythuro, ond yn aml nid ydych yn gwybod digon ar ddechrau
+prosiect i ddylunio’r holl swyddogaethau. Unwaith y byddwch yn dechrau codio,
+rydych yn deall y broblem yn well. Weithiau mae ailstrwythuro’n arwydd eich bod
+wedi dysgu rhywbeth.</p>
+</section>
+<section id="diagram-pentwr">
+<h2><span class="section-number">4.6. </span>Diagram Pentwr<a class="headerlink" href="#diagram-pentwr" title="Link to this heading">#</a></h2>
+<p>Pan alwn <code class="docutils literal notranslate"><span class="pre">circle</span></code>, mae’n galw <code class="docutils literal notranslate"><span class="pre">arc</span></code>, sy’n galw <code class="docutils literal notranslate"><span class="pre">polyline</span></code>. Gallwn ddefnyddio
+diagram pentwr i ddangos y dilyniant hwn o alwadau swyddogaeth a’r paramedrau ar
+gyfer pob un.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">diagram</span><span class="w"> </span><span class="kn">import</span> <span class="n">make_binding</span><span class="p">,</span> <span class="n">make_frame</span><span class="p">,</span> <span class="n">Frame</span><span class="p">,</span> <span class="n">Stack</span>
+
+<span class="n">frame1</span> <span class="o">=</span> <span class="n">make_frame</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">radius</span><span class="o">=</span><span class="mi">30</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s1">'circle'</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">'left'</span><span class="p">)</span>
+
+<span class="n">frame2</span> <span class="o">=</span> <span class="n">make_frame</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">radius</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">angle</span><span class="o">=</span><span class="mi">360</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s1">'arc'</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">'left'</span><span class="p">,</span> <span class="n">dx</span><span class="o">=</span><span class="mf">1.1</span><span class="p">)</span>
+
+<span class="n">frame3</span> <span class="o">=</span> <span class="n">make_frame</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mf">3.04</span><span class="p">,</span> <span class="n">angle</span><span class="o">=</span><span class="mf">5.8</span><span class="p">),</span> 
+                    <span class="n">name</span><span class="o">=</span><span class="s1">'polyline'</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">'left'</span><span class="p">,</span> <span class="n">dx</span><span class="o">=</span><span class="mf">1.1</span><span class="p">,</span> <span class="n">offsetx</span><span class="o">=-</span><span class="mf">0.27</span><span class="p">)</span>
+
+<span class="n">stack</span> <span class="o">=</span> <span class="n">Stack</span><span class="p">([</span><span class="n">frame1</span><span class="p">,</span> <span class="n">frame2</span><span class="p">,</span> <span class="n">frame3</span><span class="p">],</span> <span class="n">dy</span><span class="o">=-</span><span class="mf">0.4</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">diagram</span><span class="w"> </span><span class="kn">import</span> <span class="n">diagram</span><span class="p">,</span> <span class="n">adjust</span>
+
+<span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mf">3.58</span><span class="p">,</span> <span class="mf">1.31</span><span class="p">,</span> <span class="mf">0.98</span><span class="p">,</span> <span class="mf">1.06</span><span class="p">]</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">diagram</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
+<span class="n">bbox</span> <span class="o">=</span> <span class="n">stack</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="c1">#adjust(x, y, bbox)</span>
+</pre></div>
+</div>
+<p>Sylwch fod gwerth <code class="docutils literal notranslate"><span class="pre">angle</span></code> yn <code class="docutils literal notranslate"><span class="pre">polyline</span></code> yn wahanol i werth <code class="docutils literal notranslate"><span class="pre">angle</span></code> yn <code class="docutils literal notranslate"><span class="pre">arc</span></code>. Mae
+paramedrau’n lleol, sy’n golygu y gallwch ddefnyddio’r un enw paramedr mewn
+gwahanol swyddogaethau; mae’n newidyn gwahanol ym mhob swyddogaeth, a gall
+gyfeirio at wahanol werth.</p>
+</section>
+<section id="cynllun-datblygu">
+<h2><span class="section-number">4.7. </span>Cynllun Datblygu<a class="headerlink" href="#cynllun-datblygu" title="Link to this heading">#</a></h2>
+<p>Mae <strong><a class="reference internal" href="../glossary.html#term-cynllun-datblygu"><span class="xref std std-term">cynllun datblygu</span></a></strong> yn broses ar gyfer ysgrifennu rhaglenni. Y broses
+a ddefnyddiom yn y bennod hon yw “amgáu a chyffredinoli”. Camau’r broses hon yw:</p>
+<ol class="arabic simple">
+<li><p>Dechreuwch drwy ysgrifennu rhaglen fach heb ddiffiniadau swyddogaeth.</p></li>
+<li><p>Unwaith y byddwch wedi cael y rhaglen i weithio, nodwch ddarn cydlynol ohoni,
+amgaewch y darn mewn swyddogaeth a rhowch enw iddi.</p></li>
+<li><p>Cyffredinolwch y swyddogaeth drwy ychwanegu paramedrau priodol.</p></li>
+<li><p>Ailadroddwch Gamau 1 i 3 nes bod gennych set o swyddogaethau sy’n gweithio.</p></li>
+<li><p>Chwiliwch am gyfleoedd i wella’r rhaglen drwy ailstrwythuro. Er enghraifft, os
+oes gennych god tebyg mewn sawl lle, ystyriwch ei ffactora’n swyddogaeth
+briodol o gyffredinol.</p></li>
+</ol>
+<p>Mae gan y broses hon rai anfanteision — fe welwn ddewisiadau amgen yn ddiweddarach
+— ond gall fod yn ddefnyddiol os nad ydych yn gwybod ymlaen llaw sut i rannu’r
+rhaglen yn swyddogaethau. Mae’r dull hwn yn caniatáu i chi ddylunio wrth fynd
+ymlaen.</p>
+<p>Mae gan ddyluniad swyddogaeth ddwy ran:</p>
+<ul class="simple">
+<li><p>Y <strong><a class="reference internal" href="../glossary.html#term-rhyngwyneb"><span class="xref std std-term">rhyngwyneb</span></a></strong> yw sut y defnyddir y swyddogaeth, gan gynnwys ei henw,
+y paramedrau y mae’n eu cymryd a’r hyn y mae i fod i’w wneud.</p></li>
+<li><p>Y <strong><a class="reference internal" href="../glossary.html#term-sylweddoliad"><span class="xref std std-term">sylweddoliad</span></a></strong> yw sut mae’r swyddogaeth yn gwneud yr hyn y mae i
+fod i’w wneud.</p></li>
+</ul>
+<p>Er enghraifft, dyma fersiwn gyntaf <code class="docutils literal notranslate"><span class="pre">circle</span></code> a ysgrifennom, sy’n defnyddio
+<code class="docutils literal notranslate"><span class="pre">polygon</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">circle</span><span class="p">(</span><span class="n">radius</span><span class="p">):</span>
+    <span class="n">circumference</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">radius</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="mi">30</span>
+    <span class="n">length</span> <span class="o">=</span> <span class="n">circumference</span> <span class="o">/</span> <span class="n">n</span>
+    <span class="n">polygon</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">length</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>A dyma’r fersiwn ailstrwythuredig sy’n defnyddio <code class="docutils literal notranslate"><span class="pre">arc</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">circle</span><span class="p">(</span><span class="n">radius</span><span class="p">):</span>
+    <span class="n">arc</span><span class="p">(</span><span class="n">radius</span><span class="p">,</span>  <span class="mi">360</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Mae gan y ddwy swyddogaeth hyn yr un rhyngwyneb — maent yn cymryd yr un
+paramedrau ac yn gwneud yr un peth — ond mae ganddynt wahanol sylweddoliadau.</p>
+</section>
+<section id="llinynnau-dogfennu">
+<h2><span class="section-number">4.8. </span>Llinynnau Dogfennu<a class="headerlink" href="#llinynnau-dogfennu" title="Link to this heading">#</a></h2>
+<p>Mae <strong><a class="reference internal" href="../glossary.html#term-llinyn-dogfennu"><span class="xref std std-term">llinyn dogfennu</span></a></strong> yn llinyn ar ddechrau swyddogaeth sy’n esbonio’r
+rhyngwyneb (“doc” yn fyr am “dogfennaeth”). Dyma enghraifft:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">polyline</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">length</span><span class="p">,</span> <span class="n">angle</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Draws line segments with the given length and angle between them.</span>
+<span class="sd">    </span>
+<span class="sd">    n: integer number of line segments</span>
+<span class="sd">    length: length of the line segments</span>
+<span class="sd">    angle: angle between segments (in degrees)</span>
+<span class="sd">    """</span>    
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">forward</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
+        <span class="n">left</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Yn ôl confensiwn, llinynnau dogfennu yw llinynnau tridyfynodol, a elwir hefyd yn
+<strong><a class="reference internal" href="../glossary.html#term-llinyn-aml-linell"><span class="xref std std-term">llinyn aml-linell</span></a></strong> am fod y tridyfynodau’n caniatáu i’r llinyn
+rychwantu mwy nag un llinell.</p>
+<p>Dylai llinyn dogfennu:</p>
+<ul class="simple">
+<li><p>Esbonio’n gryno beth mae’r swyddogaeth yn ei wneud, heb fynd i mewn i fanylion
+sut mae’n gweithio,</p></li>
+<li><p>Esbonio pa effaith sydd gan bob paramedr ar ymddygiad y swyddogaeth, a</p></li>
+<li><p>Nodi pa fath y dylai pob paramedr fod, os nad yw’n amlwg.</p></li>
+</ul>
+<p>Mae ysgrifennu’r math hwn o ddogfennaeth yn rhan bwysig o ddylunio rhyngwyneb.
+Dylai rhyngwyneb wedi’i ddylunio’n dda fod yn syml i’w esbonio; os cewch chi
+drafferth esbonio un o’ch swyddogaethau, efallai y gellid gwella’r rhyngwyneb.</p>
+</section>
+<section id="dadnamu">
+<h2><span class="section-number">4.9. </span>Dadnamu<a class="headerlink" href="#dadnamu" title="Link to this heading">#</a></h2>
+<p>Mae rhyngwyneb fel contract rhwng swyddogaeth a galwr. Mae’r galwr yn cytuno i
+ddarparu dadleuon penodol ac mae’r swyddogaeth yn cytuno i wneud gwaith penodol.</p>
+<p>Er enghraifft, mae <code class="docutils literal notranslate"><span class="pre">polyline</span></code> yn gofyn am dair dadl: mae’n rhaid i <code class="docutils literal notranslate"><span class="pre">n</span></code> fod yn
+gyfanrif; dylai <code class="docutils literal notranslate"><span class="pre">length</span></code> fod yn rif positif; ac mae’n rhaid i <code class="docutils literal notranslate"><span class="pre">angle</span></code> fod yn rif,
+a ddeallir i fod mewn graddau.</p>
+<p>Gelwir y gofynion hyn yn **<a class="reference internal" href="../glossary.html#term-rhag-amod"><span class="xref std std-term">rhag-amod</span></a>**au am eu bod i fod yn wir cyn i’r
+swyddogaeth ddechrau cyflawni. I’r gwrthwyneb, gelwir amodau ar ddiwedd y
+swyddogaeth yn **<a class="reference internal" href="../glossary.html#term-ol-amod"><span class="xref std std-term">ôl-amod</span></a>**au. Mae ôl-amodau’n cynnwys effaith fwriadedig
+y swyddogaeth (fel tynnu segmentau llinell) ac unrhyw sgil-effeithiau (fel symud
+y crwban neu wneud newidiadau eraill).</p>
+<p>Cyfrifoldeb y galwr yw’r rhag-amodau. Os bydd y galwr yn torri rhag-amod ac nad
+yw’r swyddogaeth yn gweithio’n gywir, mae’r nam yn y galwr, nid yn y swyddogaeth.</p>
+<p>Os bodlonir y rhag-amodau a heb fodloni’r ôl-amodau, mae’r nam yn y swyddogaeth.
+Os yw eich rhag-amodau a’ch ôl-amodau’n glir, gallant helpu gyda dadnamu.</p>
+</section>
+<section id="rhestr-termau-r-bennod">
+<h2><span class="section-number">4.10. </span>Rhestr Termau’r Bennod<a class="headerlink" href="#rhestr-termau-r-bennod" title="Link to this heading">#</a></h2>
+<p><strong>dylunio rhyngwyneb:</strong>
+Proses ar gyfer dylunio rhyngwyneb swyddogaeth, sy’n cynnwys y paramedrau y dylai
+eu cymryd.</p>
+<p><strong>cynfas:</strong>
+Ffenestr a ddefnyddir i ddangos elfennau graffigol gan gynnwys llinellau,
+cylchoedd, petryalau, a siapiau eraill.</p>
+<p><strong>amgaead:</strong>
+Y broses o drawsnewid dilyniant o osodiadau yn ddiffiniad swyddogaeth.</p>
+<p><strong>cyffredinoli:</strong>
+Y broses o ddisodli rhywbeth sy’n ddiangen o benodol (fel rhif) â rhywbeth sy’n
+briodol o gyffredinol (fel newidyn neu baramedr).</p>
+<p><strong>dadl allweddair:</strong>
+Dadl sy’n cynnwys enw’r paramedr.</p>
+<p><strong>ailstrwythuro:</strong>
+Y broses o addasu rhaglen sy’n gweithio er mwyn gwella rhyngwynebau swyddogaeth
+ac agweddau eraill ar y cod.</p>
+<p><strong>cynllun datblygu:</strong>
+Proses ar gyfer ysgrifennu rhaglenni.</p>
+<p><strong>llinyn dogfennu:</strong>
+Llinyn sy’n ymddangos ar ddechrau diffiniad swyddogaeth i ddogfennu rhyngwyneb y
+swyddogaeth.</p>
+<p><strong>llinyn aml-linell:</strong>
+Llinyn wedi’i amgáu mewn tridyfynodau a all rychwantu mwy nag un llinell o
+raglen.</p>
+<p><strong>rhag-amod:</strong>
+Gofyniad y dylai’r galwr ei fodloni cyn i swyddogaeth ddechrau.</p>
+<p><strong>ôl-amod:</strong>
+Gofyniad y dylai’r swyddogaeth ei fodloni cyn iddi ddod i ben.</p>
+</section>
+<section id="ymarferion">
+<h2><span class="section-number">4.11. </span>Ymarferion<a class="headerlink" href="#ymarferion" title="Link to this heading">#</a></h2>
+<p>Ar gyfer yr ymarferion isod, mae ychydig mwy o swyddogaethau crwban y gallech
+fod am eu defnyddio.</p>
+<ul class="simple">
+<li><p>Mae <code class="docutils literal notranslate"><span class="pre">penup</span></code> yn codi pin dychmygol y crwban fel nad yw’n gadael ôl wrth symud.</p></li>
+<li><p>Mae <code class="docutils literal notranslate"><span class="pre">pendown</span></code> yn rhoi’r pin yn ôl i lawr.</p></li>
+</ul>
+<p>Mae’r swyddogaeth ganlynol yn defnyddio <code class="docutils literal notranslate"><span class="pre">penup</span></code> a <code class="docutils literal notranslate"><span class="pre">pendown</span></code> i symud y crwban heb
+adael ôl.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">jupyturtle</span><span class="w"> </span><span class="kn">import</span> <span class="n">penup</span><span class="p">,</span> <span class="n">pendown</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">jump</span><span class="p">(</span><span class="n">length</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Move forward length units without leaving a trail.</span>
+<span class="sd">    </span>
+<span class="sd">    Postcondition: Leaves the pen down.</span>
+<span class="sd">    """</span>
+    <span class="n">penup</span><span class="p">()</span>
+    <span class="n">forward</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
+    <span class="n">pendown</span><span class="p">()</span>
+</pre></div>
+</div>
+<section id="ymarfer">
+<h3><span class="section-number">4.11.1. </span>Ymarfer<a class="headerlink" href="#ymarfer" title="Link to this heading">#</a></h3>
+<p>Ysgrifennwch swyddogaeth o’r enw <code class="docutils literal notranslate"><span class="pre">rectangle</span></code> sy’n tynnu petryal gyda hydoedd
+ochr penodol. Er enghraifft, dyma betryal sy’n <code class="docutils literal notranslate"><span class="pre">80</span></code> uned o led a <code class="docutils literal notranslate"><span class="pre">40</span></code> uned o
+daldra.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+<p>Gallwch ddefnyddio’r cod canlynol i brofi eich swyddogaeth.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">make_turtle</span><span class="p">()</span>
+<span class="n">rectangle</span><span class="p">(</span><span class="mi">80</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id1">
+<h3><span class="section-number">4.11.2. </span>Ymarfer<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>Ysgrifennwch swyddogaeth o’r enw <code class="docutils literal notranslate"><span class="pre">rhombus</span></code> sy’n tynnu rhombws gyda hyd ochr
+penodol ac ongl fewnol benodol. Er enghraifft, dyma rombws gyda hyd ochr <code class="docutils literal notranslate"><span class="pre">50</span></code>
+ac ongl fewnol o <code class="docutils literal notranslate"><span class="pre">60</span></code> gradd.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+<p>Gallwch ddefnyddio’r cod canlynol i brofi eich swyddogaeth.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">make_turtle</span><span class="p">()</span>
+<span class="n">rhombus</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id2">
+<h3><span class="section-number">4.11.3. </span>Ymarfer<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>Nawr ysgrifennwch swyddogaeth fwy cyffredinol o’r enw <code class="docutils literal notranslate"><span class="pre">parallelogram</span></code> sy’n tynnu
+pedrochr ag ochrau cyfochrog. Yna ailysgrifennwch <code class="docutils literal notranslate"><span class="pre">rectangle</span></code> a <code class="docutils literal notranslate"><span class="pre">rhombus</span></code> i
+ddefnyddio <code class="docutils literal notranslate"><span class="pre">parallelogram</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+<p>Gallwch ddefnyddio’r cod canlynol i brofi eich swyddogaethau.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">make_turtle</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
+<span class="n">jump</span><span class="p">(</span><span class="o">-</span><span class="mi">120</span><span class="p">)</span>
+
+<span class="n">rectangle</span><span class="p">(</span><span class="mi">80</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
+<span class="n">jump</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">rhombus</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+<span class="n">jump</span><span class="p">(</span><span class="mi">80</span><span class="p">)</span>
+<span class="n">parallelogram</span><span class="p">(</span><span class="mi">80</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id3">
+<h3><span class="section-number">4.11.4. </span>Ymarfer<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>Ysgrifennwch set briodol o gyffredinol o swyddogaethau a all dynnu siapiau fel
+hyn.</p>
+<p><img alt="" src="https://github.com/AllenDowney/ThinkPython/raw/v3/jupyturtle_pie.png" /></p>
+<p>Awgrym: Ysgrifennwch swyddogaeth o’r enw <code class="docutils literal notranslate"><span class="pre">triangle</span></code> sy’n tynnu un segment
+trionglog, ac yna swyddogaeth o’r enw <code class="docutils literal notranslate"><span class="pre">draw_pie</span></code> sy’n defnyddio <code class="docutils literal notranslate"><span class="pre">triangle</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+<p>Gallwch ddefnyddio’r cod canlynol i brofi eich swyddogaethau.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">turtle</span> <span class="o">=</span> <span class="n">make_turtle</span><span class="p">(</span><span class="n">delay</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">jump</span><span class="p">(</span><span class="o">-</span><span class="mi">80</span><span class="p">)</span>
+
+<span class="n">size</span> <span class="o">=</span> <span class="mi">40</span>
+<span class="n">draw_pie</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
+<span class="n">jump</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">size</span><span class="p">)</span>
+<span class="n">draw_pie</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
+<span class="n">jump</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">size</span><span class="p">)</span>
+<span class="n">draw_pie</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+</section>
+<section id="id4">
+<h3><span class="section-number">4.11.5. </span>Ymarfer<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p>Ysgrifennwch set briodol o gyffredinol o swyddogaethau a all dynnu blodau fel
+hyn.</p>
+<p><img alt="" src="https://github.com/AllenDowney/ThinkPython/raw/v3/jupyturtle_flower.png" /></p>
+<p>Awgrym: Defnyddiwch <code class="docutils literal notranslate"><span class="pre">arc</span></code> i ysgrifennu swyddogaeth o’r enw <code class="docutils literal notranslate"><span class="pre">petal</span></code> sy’n tynnu un
+petal blodyn.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+<p>Gallwch ddefnyddio’r cod canlynol i brofi eich swyddogaethau.</p>
+<p>Am fod yr ateb yn tynnu llawer o segmentau llinell bach, mae’n tueddu i arafu
+wrth redeg. I osgoi hynny, gallwch ychwanegu’r ddadl allweddair <code class="docutils literal notranslate"><span class="pre">auto_render=False</span></code>
+i osgoi tynnu ar ôl pob cam, ac yna galw’r swyddogaeth <code class="docutils literal notranslate"><span class="pre">render</span></code> ar y diwedd i
+ddangos y canlyniad.</p>
+<p>Tra byddwch yn dadnamu, efallai yr hoffech dynnu <code class="docutils literal notranslate"><span class="pre">auto_render=False</span></code> allan.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">jupyturtle</span><span class="w"> </span><span class="kn">import</span> <span class="n">render</span>
+
+<span class="n">turtle</span> <span class="o">=</span> <span class="n">make_turtle</span><span class="p">(</span><span class="n">auto_render</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">jump</span><span class="p">(</span><span class="o">-</span><span class="mi">60</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="n">radius</span> <span class="o">=</span> <span class="mi">60</span>
+<span class="n">angle</span> <span class="o">=</span> <span class="mi">60</span>
+<span class="n">flower</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">radius</span><span class="p">,</span> <span class="n">angle</span><span class="p">)</span>
+
+<span class="n">jump</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">9</span>
+<span class="n">radius</span> <span class="o">=</span> <span class="mi">40</span>
+<span class="n">angle</span> <span class="o">=</span> <span class="mi">85</span>
+<span class="n">flower</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">radius</span><span class="p">,</span> <span class="n">angle</span><span class="p">)</span>
+
+<span class="n">render</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+</section>
+<section id="gofyn-i-gynorthwyydd-rhithwir">
+<h3><span class="section-number">4.11.6. </span>Gofyn i gynorthwyydd rhithwir<a class="headerlink" href="#gofyn-i-gynorthwyydd-rhithwir" title="Link to this heading">#</a></h3>
+<p>Mae sawl modiwl fel <code class="docutils literal notranslate"><span class="pre">jupyturtle</span></code> yn Python, ac mae’r un a ddefnyddiwyd gennym yn
+y bennod hon wedi’i deilwra ar gyfer y llyfr hwn. Felly os gofynnwch i
+gynorthwyydd rhithwir am help, ni fydd yn gwybod pa fodiwl i’w ddefnyddio. Ond os
+rhowch ychydig o enghreifftiau iddo i weithio gyda nhw, mae’n debygol y gall ei
+ddarganfod. Er enghraifft, rhowch gynnig ar yr anogiad hwn a gweler a all
+ysgrifennu swyddogaeth sy’n tynnu sbiral:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">following</span> <span class="n">program</span> <span class="n">uses</span> <span class="n">a</span> <span class="n">turtle</span> <span class="n">graphics</span> <span class="n">module</span> <span class="n">to</span> <span class="n">draw</span> <span class="n">a</span> <span class="n">circle</span><span class="p">:</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">jupyturtle</span><span class="w"> </span><span class="kn">import</span> <span class="n">make_turtle</span><span class="p">,</span> <span class="n">forward</span><span class="p">,</span> <span class="n">left</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">polygon</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">length</span><span class="p">):</span>
+    <span class="n">angle</span> <span class="o">=</span> <span class="mi">360</span> <span class="o">/</span> <span class="n">n</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">forward</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
+        <span class="n">left</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
+        
+<span class="k">def</span><span class="w"> </span><span class="nf">circle</span><span class="p">(</span><span class="n">radius</span><span class="p">):</span>
+    <span class="n">circumference</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">radius</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="mi">30</span>
+    <span class="n">length</span> <span class="o">=</span> <span class="n">circumference</span> <span class="o">/</span> <span class="n">n</span>
+    <span class="n">polygon</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">length</span><span class="p">)</span>
+    
+<span class="n">make_turtle</span><span class="p">(</span><span class="n">delay</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">circle</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+
+<span class="n">Write</span> <span class="n">a</span> <span class="n">function</span> <span class="n">that</span> <span class="n">draws</span> <span class="n">a</span> <span class="n">spiral</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>Cofiwch y gallai’r canlyniad ddefnyddio nodweddion nad ydym wedi’u gweld eto, ac
+y gallai gynnwys gwallau. Copïwch y cod o’r cynorthwyydd rhithwir a gweler a
+allwch ei gael i weithio. Os na chawsoch yr hyn roeddech ei eisiau, ceisiwch
+addasu’r anogiad.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ateb yma</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p><a class="reference external" href="https://allendowney.github.io/ThinkPython/index.html">Think Python: 3rd Edition</a> gan
+Allen B. Downey. Cyfieithiad Cymraeg gan Wayne Aubrey.</p>
+<p>Hawlfraint 2024 <a class="reference external" href="https://allendowney.com">Allen B. Downey</a>. Trwydded testun: <a class="reference external" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative
+Commons Attribution-NonCommercial-ShareAlike 4.0 International</a>.</p>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -462,6 +1069,41 @@
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#y-modiwl-jupyturtle">4.1. Y Modiwl jupyturtle</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gwneud-sgwar">4.2. Gwneud Sgwâr</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#amgau-a-chyffredinoli">4.3. Amgáu a Chyffredinoli</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brasamcanu-cylch">4.4. Brasamcanu Cylch</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ailstrwythuro">4.5. Ailstrwythuro</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diagram-pentwr">4.6. Diagram Pentwr</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cynllun-datblygu">4.7. Cynllun Datblygu</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#llinynnau-dogfennu">4.8. Llinynnau Dogfennu</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dadnamu">4.9. Dadnamu</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rhestr-termau-r-bennod">4.10. Rhestr Termau’r Bennod</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ymarferion">4.11. Ymarferion</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ymarfer">4.11.1. Ymarfer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">4.11.2. Ymarfer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">4.11.3. Ymarfer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">4.11.4. Ymarfer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">4.11.5. Ymarfer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gofyn-i-gynorthwyydd-rhithwir">4.11.6. Gofyn i gynorthwyydd rhithwir</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
