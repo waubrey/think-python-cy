@@ -212,6 +212,18 @@ Reused without change from earlier chapters: *paramedr* (parameter), *dolen* (lo
 Reused without change: *dychweliad* / *dychweliadol* (recursion/recursive, confirmed
 earlier via Y Termiadur Addysg).
 
+## Chapter 6 vocabulary (return values, incremental development, recursion)
+
+| English | Welsh | Status | Notes |
+|---|---|---|---|
+| return value | gwerth dychwelyd | ✅ | compositional, both roots already confirmed |
+| pure function | swyddogaeth bur | ✅ | *pur* = pure, ordinary Welsh adjective |
+| dead code | cod marw | ✅ | transparent |
+| incremental development | datblygiad graddol | 🟡 | *graddol* = gradual, chosen over a clunkier neologism for "incremental" |
+| scaffolding | sgaffaldiau | ✅ | genuinely the ordinary Welsh word for physical scaffolding, natural metaphor extension |
+| Turing complete | Turing-gyflawn | 🟡 | named technical compound — kept "Turing" capitalized/untranslated, as a proper noun |
+| input validation | dilysu mewnbwn | ✅ | both roots already confirmed |
+
 ## Important pattern to carry into translation
 
 In the official WJEC pseudocode (used throughout the Welsh-medium exam), **programming

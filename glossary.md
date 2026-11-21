@@ -348,4 +348,25 @@ dychweliad anfeidrol
 
 llinell newydd
     newline
+
+gwerth dychwelyd
+    return value
+
+swyddogaeth bur
+    pure function
+
+cod marw
+    dead code
+
+datblygiad graddol
+    incremental development
+
+sgaffaldiau
+    scaffolding
+
+Turing-gyflawn
+    Turing complete
+
+dilysu mewnbwn
+    input validation
 ```
