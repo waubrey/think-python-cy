@@ -1,0 +1,623 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Think Python → Cymraeg &#8212; Meddwl yn Python</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=6a604523" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script data-sd-tabs-storage-prefix="sphinx-design-tab-id-" src="_static/design-tabs.js?v=fcb327ea"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
+    <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
+    <script defer="defer" src="_static/tippy/CLAUDE.b5dd2fa7-cdb3-469a-8095-7c9622745b11.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'CLAUDE';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="chapters/chap00.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Meddwl yn Python</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="chapters/chap00.html">
+                    Rhagair
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Penodau</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="chapters/chap01.html">1. Rhaglennu fel ffordd o feddwl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/chap02.html">2. Newidynnau a Gosodiadau</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/chap03.html">3. Swyddogaethau</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/chap04.html">4. Swyddogaethau a Rhyngwynebau</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/chap05.html">5. Amodau ac Ailadroddiad (Recursion)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/chap06.html">6. Gwerthoedd Dychwelyd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/chap07.html">7. Iteriad a Chwilio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/chap08.html">8. Llinynnau a Mynegiadau Rheolaidd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/chap09.html">9. Rhestri</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/chap10.html">10. Geiriaduron</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/chap11.html">11. Tŵpls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/chap12.html">12. Dadansoddi a Chynhyrchu Testun</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/chap13.html">13. Ffeiliau a Chronfeydd Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/chap14.html">14. Dosbarthiadau a Swyddogaethau</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/chap15.html">15. Dosbarthiadau a Dulliau</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/chap16.html">16. Dosbarthiadau a Gwrthrychau</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/chap17.html">17. Etifeddiaeth</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/chap18.html">18. Ychwanegion Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/chap19.html">19. Meddyliau Terfynol</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Atodiadau</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Rhestr Termau</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/waubrey/think-python-cy" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/CLAUDE.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Think Python → Cymraeg</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#status">Status</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#build">Build</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-things-live">Where things live</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#translation-conventions">Translation conventions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gotcha-term-roles-must-match-the-glossary-headword-exactly">Gotcha: <code class="docutils literal notranslate"><span class="pre">{term}</span></code> roles must match the glossary headword exactly</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#next-step">Next step</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="think-python-cymraeg">
+<h1>Think Python → Cymraeg<a class="headerlink" href="#think-python-cymraeg" title="Link to this heading">#</a></h1>
+<p>Welsh translation of <em>Think Python</em>, 3rd edition (Allen B. Downey, CC BY-NC-SA 4.0),
+for free distribution to UK higher-education students — target audience is year 2 CS
+undergrads who’ve completed C and Java modules. Hosted on GitHub Pages from this repo
+(<code class="docutils literal notranslate"><span class="pre">waubrey/think-python-cy</span></code>).</p>
+<section id="status">
+<h2>Status<a class="headerlink" href="#status" title="Link to this heading">#</a></h2>
+<p>All 19 chapters are translated, built, and pushed. The book builds with zero warnings.
+Outstanding: the 🟡 “reasoned” glossary terms (see below) haven’t been checked by a
+Welsh-medium CS teacher or CBAC yet — that’s the one piece of this project that needs
+a human, not Claude.</p>
+</section>
+<section id="build">
+<h2>Build<a class="headerlink" href="#build" title="Link to this heading">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt<span class="w">   </span><span class="c1"># jupyter-book&lt;2 (classic Sphinx-based, NOT v2/Node) + sphinx-tippy</span>
+jupyter-book<span class="w"> </span>build<span class="w"> </span>.
+</pre></div>
+</div>
+<p>Always check the build output for warnings — <code class="docutils literal notranslate"><span class="pre">WARNING:</span> <span class="pre">term</span> <span class="pre">not</span> <span class="pre">in</span> <span class="pre">glossary:</span> <span class="pre">'X'</span></code>
+means a <code class="docutils literal notranslate"><span class="pre">{term}</span></code>…`` role was added in a chapter but the matching entry was never
+added to <code class="docutils literal notranslate"><span class="pre">glossary.md</span></code>, and a cross-reference warning means a <code class="docutils literal notranslate"><span class="pre">(label)=</span></code> anchor is
+missing or misplaced. Grep output with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter-book<span class="w"> </span>build<span class="w"> </span>.<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-iE<span class="w"> </span><span class="s2">"WARNING|ERROR|CRITICAL"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-v<span class="w"> </span><span class="s2">"NotOpenSSL\|urllib3\|^\[01m"</span>
+</pre></div>
+</div>
+<p>Pushing to <code class="docutils literal notranslate"><span class="pre">main</span></code> auto-deploys via <code class="docutils literal notranslate"><span class="pre">.github/workflows/</span></code> to GitHub Pages. Pushing
+requires <code class="docutils literal notranslate"><span class="pre">gh</span></code> CLI authenticated (<code class="docutils literal notranslate"><span class="pre">gh</span> <span class="pre">auth</span> <span class="pre">login</span></code>, then <code class="docutils literal notranslate"><span class="pre">gh</span> <span class="pre">auth</span> <span class="pre">refresh</span> <span class="pre">-s</span> <span class="pre">repo,workflow</span></code> — plain PATs without the <code class="docutils literal notranslate"><span class="pre">workflow</span></code> scope will be rejected by GitHub
+when a workflow file is touched).</p>
+</section>
+<section id="where-things-live">
+<h2>Where things live<a class="headerlink" href="#where-things-live" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">chapters/chapNN.md</span></code> — the chapters themselves (MyST Markdown).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">glossary.md</span></code> — the live Sphinx <code class="docutils literal notranslate"><span class="pre">{glossary}</span></code> directive. Every <code class="docutils literal notranslate"><span class="pre">{term}</span></code>…`` role
+used in a chapter must have an <em>exactly matching</em> headword here (see gotcha below).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TERMINOLOGY.md</span></code> — research/sourcing notes, one section per chapter. This is the
+real record of <em>why</em> each Welsh term was chosen and how confident the choice is.
+Excluded from the book build (<code class="docutils literal notranslate"><span class="pre">exclude_patterns</span></code> in <code class="docutils literal notranslate"><span class="pre">_config.yml</span></code>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">notes/</span></code> — personal, gitignored scratch space (e.g. review documents). Never commit
+anything from here.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code> — chapter order/numbering. <code class="docutils literal notranslate"><span class="pre">numbered:</span> <span class="pre">true</span></code> only on the <code class="docutils literal notranslate"><span class="pre">Penodau</span></code> part,
+not the <code class="docutils literal notranslate"><span class="pre">Atodiadau</span></code> (appendices) part.</p></li>
+</ul>
+</section>
+<section id="translation-conventions">
+<h2>Translation conventions<a class="headerlink" href="#translation-conventions" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Sourcing hierarchy</strong>, most to least authoritative: WJEC/CBAC Welsh-medium GCSE
+(3460CS) and A-level (1500CS) specs → Y Termiadur Addysg
+(termiaduraddysg.cymru — must be driven via a real browser, direct fetches return a
+stale homepage) → Welsh university programme pages (compare Welsh/English versions)
+→ reasoned compositional coinage.</p></li>
+<li><p><strong>Confidence flags</strong> in <code class="docutils literal notranslate"><span class="pre">TERMINOLOGY.md</span></code>: ✅ confirmed (sourced from the above) · 🟡
+adopted/reasoned (built from confirmed roots, not itself sourced — good enough to
+ship, flagged for later review) · ⚠️ unconfirmed (don’t currently have any of
+these — everything reached at least 🟡).</p></li>
+<li><p><strong>Python code stays in English, always</strong> — keywords, builtins, string literals,
+variable names. This mirrors WJEC’s own Welsh-medium pseudocode, which keeps
+<code class="docutils literal notranslate"><span class="pre">Declare</span></code>, <code class="docutils literal notranslate"><span class="pre">If/Then/Else</span></code>, <code class="docutils literal notranslate"><span class="pre">For/To/Next</span></code> etc. in English even in otherwise fully
+Welsh exam materials. Only the surrounding prose is Welsh.</p></li>
+<li><p><strong>Card game vocabulary (ch. 17–18) stays in English</strong> — Spades, Hearts, Jack, Queen,
+King, Ace — because the Python code itself uses these as English string literals
+(<code class="docutils literal notranslate"><span class="pre">'Spades'</span></code>, <code class="docutils literal notranslate"><span class="pre">'Queen'</span></code>). Translating the prose names while the code output stays
+English would disconnect what students read from what they run.</p></li>
+<li><p><strong>Keep <code class="docutils literal notranslate"><span class="pre">swyddogaeth</span></code> (function, programming) and <code class="docutils literal notranslate"><span class="pre">ffwythiant</span></code> (function,
+mathematical) distinct</strong> — easy to slip and use the wrong one.</p></li>
+<li><p>When genuinely unsure of a translation, cross-check with Google Translate and note
+the discrepancy rather than guessing.</p></li>
+</ul>
+<section id="gotcha-term-roles-must-match-the-glossary-headword-exactly">
+<h3>Gotcha: <code class="docutils literal notranslate"><span class="pre">{term}</span></code> roles must match the glossary headword exactly<a class="headerlink" href="#gotcha-term-roles-must-match-the-glossary-headword-exactly" title="Link to this heading">#</a></h3>
+<p>Sphinx-tippy links a <code class="docutils literal notranslate"><span class="pre">{term}</span></code>word<code class="docutils literal notranslate"> <span class="pre">role</span> <span class="pre">to</span> <span class="pre">its</span> <span class="pre">glossary</span> <span class="pre">entry</span> <span class="pre">by</span> <span class="pre">exact</span> <span class="pre">text</span> <span class="pre">match.</span> <span class="pre">A</span> <span class="pre">mutated</span> <span class="pre">Welsh</span> <span class="pre">form</span> <span class="pre">(treiglad)</span> <span class="pre">—</span> <span class="pre">e.g.</span> <span class="pre">`{term}`ddosbarth</span> <span class="pre">rhiant</span></code> when the glossary
+headword is <code class="docutils literal notranslate"><span class="pre">dosbarth</span> <span class="pre">rhiant</span></code> — breaks the link and produces a
+<code class="docutils literal notranslate"><span class="pre">WARNING:</span> <span class="pre">term</span> <span class="pre">not</span> <span class="pre">in</span> <span class="pre">glossary</span></code> build warning even though the entry exists. Fix by
+rewording the sentence to avoid triggering the mutation inside the role (e.g. swap
+<code class="docutils literal notranslate"><span class="pre">yn</span> <span class="pre">ddosbarth</span> <span class="pre">rhiant</span></code> for <code class="docutils literal notranslate"><span class="pre">fel</span> <span class="pre">dosbarth</span> <span class="pre">rhiant</span></code>), not by adding a duplicate glossary
+entry for the mutated form.</p>
+</section>
+</section>
+<section id="next-step">
+<h2>Next step<a class="headerlink" href="#next-step" title="Link to this heading">#</a></h2>
+<p>Get the 🟡 terms in <code class="docutils literal notranslate"><span class="pre">TERMINOLOGY.md</span></code> checked by a Welsh-medium CS teacher or CBAC’s
+subject officer (<code class="docutils literal notranslate"><span class="pre">cyfrifiadureg&#64;cbac.co.uk</span></code>). Highest priority: <em>priodoledd</em>
+(attribute), <em>Adeiladydd</em> (constructor), and <em>enghraifft</em> (instance) — these recur in
+nearly every chapter from 14 onward, so confirming just these three de-risks most of
+the book.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#status">Status</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#build">Build</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-things-live">Where things live</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#translation-conventions">Translation conventions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gotcha-term-roles-must-match-the-glossary-headword-exactly">Gotcha: <code class="docutils literal notranslate"><span class="pre">{term}</span></code> roles must match the glossary headword exactly</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#next-step">Next step</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Cyfieithwyd gan Wayne Aubrey
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
